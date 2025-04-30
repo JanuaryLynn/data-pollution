@@ -19,6 +19,9 @@ This project aims to simulate the spread of data pollution on social media platf
 - `README.md`  
   This documentation file.
 
+- `License.md`
+  Copyright statement.
+
 ## 💻 How to Run the Simulation
 
 1. Install NetLogo (version 6.4.0 or above recommended);
