@@ -1,4 +1,4 @@
-# Data Pollution Governance Simulation on Social Media
+# Dynamic Evaluation of Governance Strategies for Mitigating Social Media Data Pollution: An Agent-Based Modeling Approach
 
 This project aims to simulate the spread of data pollution on social media platforms, particularly caused by AI-generated content (such as synthetic text). It evaluates the effectiveness of different governance strategies, including legal interventions and platform self-regulation. The experiment uses Agent-Based Modeling (ABM) and is implemented through the NetLogo platform, enabling simulation, data export, and subsequent visualization.
 
