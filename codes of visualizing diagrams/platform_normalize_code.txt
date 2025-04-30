@@ -1,0 +1,113 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+# Set professional style for publication
+sns.set_theme(style="whitegrid")
+plt.rcParams.update({
+    'font.family': 'serif',
+    'font.size': 11,
+    'axes.labelsize': 12,
+    'axes.titlesize': 14,
+    'xtick.labelsize': 10,
+    'ytick.labelsize': 10
+})
+
+# Create figure with subplots for different pollution levels
+fig, axes = plt.subplots(1, 3, figsize=(18, 6), sharey=True)
+pollution_levels = [10, 30, 50]
+titles = ['Low Pollution (10%)', 'Medium Pollution (30%)', 'High Pollution (50%)']
+
+# Reference values (no treatment)
+no_treatment = [14.943, 8.575, 5.240]
+
+# Platform accuracy sensitivity (when platform-speed = 75)
+accuracy_values = [70, 80, 90]
+accuracy_effect = [
+    [32.131, 34.238, 36.671],  # 10% pollution
+    [26.281, 28.678, 31.077],  # 30% pollution
+    [23.159, 25.849, 27.815]   # 50% pollution
+]
+
+# Platform speed sensitivity (when platform-accuracy = 80)
+speed_values = [50, 75, 100]
+speed_effect = [
+    [28.053, 34.238, 40.456],  # 10% pollution
+    [22.420, 28.678, 34.935],  # 30% pollution
+    [18.889, 25.849, 32.257]   # 50% pollution
+]
+
+# Plot data
+for i, pollution in enumerate(pollution_levels):
+    ax = axes[i]
+    
+    # Plot accuracy sensitivity
+    ax.plot(accuracy_values, accuracy_effect[i], 'o-',
+            color='#1f77b4', linewidth=2, markersize=8,
+            label='platform-accuracy (speed=75)')
+    
+    # Plot speed sensitivity
+    ax.plot(speed_values, speed_effect[i], 's-',
+            color='#ff7f0e', linewidth=2, markersize=8,
+            label='platform-speed (accuracy=80)')
+    
+    # Reference line for no treatment
+    ax.axhline(y=no_treatment[i], linestyle='--', color='gray',
+               label='no treatment')
+    
+    # Annotate sensitivity slopes for accuracy
+    for j in range(len(accuracy_values)-1):
+        slope = (accuracy_effect[i][j+1] - accuracy_effect[i][j]) / (accuracy_values[j+1] - accuracy_values[j])
+        norm_slope = slope * (accuracy_values[j] / accuracy_effect[i][j])
+        ax.annotate(f'S={norm_slope:.2f}',
+                    xy=((accuracy_values[j] + accuracy_values[j+1]) / 2,
+                        (accuracy_effect[i][j] + accuracy_effect[i][j+1]) / 2),
+                    xytext=(0, -12),  # shifted right and up
+                    textcoords='offset points',
+                    color='#1f77b4', backgroundcolor='white', fontsize=8)
+    
+    # Annotate sensitivity slopes for speed
+    for j in range(len(speed_values)-1):
+        slope = (speed_effect[i][j+1] - speed_effect[i][j]) / (speed_values[j+1] - speed_values[j])
+        norm_slope = slope * (speed_values[j] / speed_effect[i][j])
+        ax.annotate(f'S={norm_slope:.2f}',
+                    xy=((speed_values[j] + speed_values[j+1]) / 2,
+                        (speed_effect[i][j] + speed_effect[i][j+1]) / 2),
+                    xytext=(-17, 13),  # shifted right and down
+                    textcoords='offset points',
+                    color='#ff7f0e', backgroundcolor='white', fontsize=8)
+    
+    # Labels and titles
+    ax.set_xlabel('platform-accuracy')
+    if i == 0:
+        ax.set_ylabel('Effectiveness')
+    # Increase pad to separate from secondary axis label
+    ax.set_title(titles[i], pad=15)
+    
+    # Twin x-axis for speed
+    ax2 = ax.twiny()
+    ax2.set_xlim(ax.get_xlim())
+    ax2.set_xticks(speed_values)
+    ax2.set_xticklabels(speed_values)
+    ax2.set_xlabel('platform-speed')
+    
+    # Primary x-axis ticks
+    ax.set_xticks(accuracy_values)
+    ax.set_xticklabels(accuracy_values)
+
+# Add global header (suptitle)
+plt.subplots_adjust(top=0.85)
+fig.suptitle('Parameter Sensitivity Analysis for Platform Self-Regulation',
+             fontsize=16, fontweight='bold')
+
+# Add figure-level legend near header
+handles, labels = axes[0].get_legend_handles_labels()
+fig.legend(handles, labels,
+           loc='upper left', bbox_to_anchor=(0.01, 0.92), framealpha=0.9,
+           title='Legend (S = normalized sensitivity coefficient)', title_fontsize=10)
+
+# Adjust layout to avoid overlap
+plt.tight_layout(rect=[0, 0.0, 1, 0.82])
+
+plt.savefig('platform_parameter_sensitivity_curves.png', dpi=300, bbox_inches='tight')
+plt.show()
