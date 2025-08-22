@@ -24,8 +24,8 @@ This project aims to simulate the spread of data pollution on social media platf
 1. Install NetLogo (version 6.4.0 or above recommended);
 2. Navigate to the `netlogo experiment` folder and open the `.nlogo` file;
 3. Use NetLogo's built-in **BehaviorSpace tool** to run batch simulations;
-4. Exported data will be saved as `.csv` or `.txt` files in the `data of series experiments` folder;
-5. Run Python scripts in the `codes of visualizing diagrams` folder to analyze and visualize results.
+4. Exported data will be saved as `.csv` files in the `experiment data` folder;
+5. Run Python scripts in the `visual analysis` folder to analyze and visualize results.
 
 ## 🧰 Python Dependencies
 
