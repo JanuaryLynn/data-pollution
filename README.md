@@ -27,7 +27,7 @@ This project aims to simulate the spread of data pollution on social media platf
 4. Exported data will be saved as `.csv` files in the `experiment data` folder;
 5. Run Python scripts in the `visual analysis` folder to analyze and visualize results.
 
-## 🧰 Python Dependencies
+## 📦 Python Dependencies
 
 To run the visualization scripts, please ensure the following Python libraries are installed:
 
