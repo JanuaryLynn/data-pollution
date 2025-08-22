@@ -1,0 +1,63 @@
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+
+# Figure
+fig, ax = plt.subplots(figsize=(7.2, 5.8), facecolor="white")
+ax.set_facecolor("white")
+
+# Box specs: (x, y, width, height, header, details)
+boxes = [
+    (0.1, 0.78, 0.80, 0.11,
+     "Step 1: Network Initialization",
+     "BA graph (N = 1000)\nSeed pollution (10% / 30% / 50%)\nTag 1% super-spreaders"),
+    (0.1, 0.58, 0.80, 0.11,
+     "Step 2: Parameter Configuration",
+     "Select regime: None / Legal / Platform\nSet legal (L, τL) or platform (α, np)"),
+    (0.1, 0.38, 0.80, 0.11,
+     "Step 3: Simulation Execution",
+     "Diffusion: polluted → neighbors\nGovernance: apply regime-specific action"),
+    (0.1, 0.18, 0.80, 0.11,
+     "Step 4: Effectiveness Calculation",
+     r"Compute $E(t) = 1 - \frac{N_p(t)}{N}$ each tick"
+"\n"
+R"Average over 50 ticks × 10 replications"),
+    (0.1, -0.02, 0.80, 0.11,
+     "Step 5: Output Aggregation",
+     "Mean effectiveness per setting\nExport for visual analysis & hypothesis tests"),
+]
+
+# Draw rounded boxes and text
+for (x, y, w, h, header, details) in boxes:
+    rect = mpatches.FancyBboxPatch(
+        (x, y), w, h,
+        boxstyle="round,pad=0.02",
+        linewidth=1.2,
+        facecolor="white",
+        edgecolor="black"
+    )
+    ax.add_patch(rect)
+    # Header
+    ax.text(x + w/2, y + h*0.85, header, ha='center', va='center',
+            fontsize=12, fontweight='bold', family="Times New Roman")
+    # Details
+    ax.text(x + w/2, y + h*0.25, details, ha='center', va='center',
+            fontsize=9, linespacing=1.4, family="Times New Roman")
+
+# Arrows: 实心黑三角
+for i in range(len(boxes) - 1):
+    x_start = boxes[i][0] + boxes[i][2] / 2
+    y_start = boxes[i][1] -0.014
+    x_end = boxes[i+1][0] + boxes[i+1][2] / 2
+    y_end = boxes[i+1][1] + boxes[i+1][3] +0.015
+    ax.annotate('', xy=(x_end, y_end), xytext=(x_start, y_start),
+                arrowprops=dict(arrowstyle="simple", fc="black", ec="black", linewidth=0.9))
+
+# Clean layout
+ax.set_xlim(0, 1)
+ax.set_ylim(-0.1, 1)
+ax.axis('off')
+
+# Save outputs
+plt.tight_layout()
+plt.savefig("fig1_simulation_workflow_ieee.pdf", bbox_inches="tight", facecolor="white")
+plt.show()

@@ -1,0 +1,56 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# 设置字体和样式
+plt.rcParams.update({
+    "font.family": "Times New Roman",
+    "text.usetex": False,
+    "font.size": 9
+})
+
+# 表格数据
+data = {
+    "Hypothesis": [
+        "H1: Non-linear Parameter Effect",
+        "H2: Parameter Dimensional Sensitivity",
+        "H3: Strategy-Context Adaptation"
+    ],
+    "Outcome": [
+        "Supported",
+        "Supported",
+        "Not supported"
+    ],
+    "Summary": [
+        "Clear thresholds and curvature shifts observed.",
+        "Temporal parameters dominate\nand their leverage grows with pollution.",
+        "Legal intervention remains superior\nat low pollution and converges, rather than reverses, at high pollution."
+    ]
+}
+
+df = pd.DataFrame(data)
+
+# 绘图
+fig, ax = plt.subplots(figsize=(8, 2))
+ax.axis('off')
+
+# 创建表格
+table = ax.table(cellText=df.values,
+                 colLabels=df.columns,
+                 cellLoc='center',
+                 loc='center')
+
+# 样式设置
+table.auto_set_font_size(False)
+table.set_fontsize(9)
+
+# 设置列宽：Summary 最宽
+col_widths = [0.3, 0.13, 0.6]
+for i in range(len(df.columns)):
+    for j in range(len(df) + 1):  # 包括标题行
+        table[j, i].set_width(col_widths[i])
+
+table.scale(1.2, 2.2)
+
+# 保存为 PDF
+plt.savefig("table4_key_findings.pdf", bbox_inches='tight', dpi=600)
+plt.show()
