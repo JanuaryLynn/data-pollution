@@ -7,14 +7,11 @@ This project aims to simulate the spread of data pollution on social media platf
 - `netlogo experiment/`  
   Contains NetLogo experiment models (`.nlogo`) and simulation configuration files.
 
-- `data of series experiments/`  
+- `experiment data/`  
   Stores all experiment data, including raw data exported from NetLogo's built-in BehaviorSpace tool and processed Excel files. Data is organized by experimental group.
 
-- `codes of visualizing diagrams/`  
-  Python scripts used for data visualization, mainly using `matplotlib` and `pandas`.
-
-- `visualizing diagrams/`  
-  Charts and figures generated from the visualization scripts, useful for academic presentation or publication.
+- `visual analysis/`  
+  Diagrams and figures generated from the visualization scripts, useful for academic presentation or publication.  And python scripts used for data visualization, mainly using `matplotlib` and `pandas`.
 
 - `README.md`  
   This documentation file.
