@@ -1,0 +1,150 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# ---------------------------
+# Global styling (IEEE-friendly)
+# ---------------------------
+plt.rcParams.update({
+    'font.family': 'Times New Roman',
+    'font.size': 9.5,
+    'axes.labelsize': 9.5,
+    'axes.titlesize': 10.5,   # 加大标题字号
+    'xtick.labelsize': 9,
+    'ytick.labelsize': 9
+})
+
+# ---------------------------
+# Data
+# ---------------------------
+pollution_titles = ['Low (10%)', 'Medium (30%)', 'High (50%)']
+colors = ['#d7191c', '#2c7bb6']  # Decrease, Increase
+
+# --- Legal (row 0) ---
+legal_parameters = ['legal\nstrength', 'response\ntime']
+legal_ranges = ['(30↔90)', '(1↔10)']
+legal_sensitivity = [
+    [[(18.273 - 22.399) / 22.399 * 100, (28.453 - 22.399) / 22.399 * 100],
+     [(99.459 - 22.399) / 22.399 * 100, (19.477 - 22.399) / 22.399 * 100]],
+    [[(10.976 - 13.875) / 13.875 * 100, (16.557 - 13.875) / 13.875 * 100],
+     [(39.492 - 13.875) / 13.875 * 100, (11.249 - 13.875) / 13.875 * 100]],
+    [[(7.314 - 10.003) / 10.003 * 100, (12.524 - 10.003) / 10.003 * 100],
+     [(32.820 - 10.003) / 10.003 * 100, (7.594 - 10.003) / 10.003 * 100]]
+]
+legal_xranges = [(-50, 350), (-50, 200), (-50, 250)]
+
+# --- Platform (row 1) ---
+plat_parameters = ['platform\naccuracy', 'platform\nspeed']
+plat_ranges = ['(70↔90)', '(50↔100)']
+plat_sensitivity = [
+    [[-6.15, 7.11],  [-18.07, 18.16]],
+    [[-8.36, 8.37],  [-21.82, 21.82]],
+    [[-10.41, 7.61], [-26.93, 24.79]]
+]
+plat_xranges = [(-30, 30), (-30, 30), (-30, 30)]
+
+# ---------------------------
+# Helper to draw tornado
+# ---------------------------
+def draw_tornado(ax, sens_pairs, params, pranges, xr, show_legend=False, title='', show_xlabel=True):
+    # 更紧凑的两条柱的位置
+    y = np.array([0.00, 0.30])           # 两条水平柱更靠近
+    bar_h = 0.10                         # 略小的柱高，避免拥挤
+
+    # 依据影响排序
+    impacts = [max(abs(p[0]), abs(p[1])) for p in sens_pairs]
+    sorted_idx = np.argsort(impacts)[::-1]
+
+    # 画柱
+    for j, idx in enumerate(sorted_idx):
+        neg, pos = sens_pairs[idx]
+        ax.barh(y[j], neg, bar_h, color=colors[0], alpha=0.8,
+                label='Decrease' if (show_legend and j == 0) else "")
+        ax.barh(y[j], pos, bar_h, color=colors[1], alpha=0.8,
+                label='Increase' if (show_legend and j == 0) else "")
+
+        # 更紧凑的数值标注偏移
+        # 下条（time/speed）文字向上偏一点；上条（strength/accuracy）向下偏一点
+        is_lower_bar = (params[idx] in ['resp-time', 'platform-speed'])
+        y_off = 0.05 if is_lower_bar else -0.05   
+        va = 'bottom' if is_lower_bar else 'top'
+       
+        # 去掉百分号
+        ax.text(neg, y[j] + y_off, f'{neg:.1f}', ha='center', va=va,
+                fontsize=7, fontweight='bold')
+        ax.text(pos, y[j] + y_off, f'{pos:.1f}', ha='center', va=va,
+                fontsize=7, fontweight='bold')
+
+    # y 轴标签
+    ax.set_yticks(y)
+    ax.set_yticklabels([f"{params[idx]}\n{pranges[idx]}" for idx in sorted_idx])
+
+    # x 轴
+    ax.set_xlim(xr)
+    ax.axvline(0, color='black', lw=0.8, alpha=0.6)
+    ax.grid(True, axis='x', ls='--', alpha=0.6)
+
+    # 顶排不显示 x 轴标题；底排显示
+    if show_xlabel:
+        ax.set_xlabel('% Change in Effectiveness')
+    else:
+        ax.set_xlabel('')
+
+    ax.set_title(title, pad=6, fontsize=10.5, fontweight='bold')
+
+    # x 刻度
+    xmin, xmax = xr
+    ticks = [0]
+    step = 50 if xmax > 100 else 10
+    v = -step
+    while v >= xmin:
+        ticks.append(v)
+        v -= step
+    v = step
+    while v <= xmax:
+        ticks.append(v)
+        v += step
+    ax.set_xticks(sorted(ticks))
+
+# ---------------------------
+# Build 2x3 figure
+# ---------------------------
+fig, axes = plt.subplots(2, 3, figsize=(7.2, 5.2))
+
+letters = ['(a)', '(b)', '(c)', '(d)', '(e)', '(f)']
+
+# Row 0: Legal（不显示 x 轴标题）
+for i in range(3):
+    show_legend = (i == 0)
+    draw_tornado(
+        ax=axes[0, i],
+        sens_pairs=legal_sensitivity[i],
+        params=legal_parameters,
+        pranges=legal_ranges,
+        xr=legal_xranges[i],
+        show_legend=show_legend,
+        title=f'{letters[i]} Legal — {pollution_titles[i]}',
+        show_xlabel=False  # 顶排不显示 x 轴标题
+    )
+
+# Row 1: Platform（显示 x 轴标题）
+for i in range(3):
+    draw_tornado(
+        ax=axes[1, i],
+        sens_pairs=plat_sensitivity[i],
+        params=plat_parameters,
+        pranges=plat_ranges,
+        xr=plat_xranges[i],
+        show_legend=False,
+        title=f'{letters[i+3]} Platform — {pollution_titles[i]}',
+        show_xlabel=True   # 底排显示 x 轴标题
+    )
+
+# Legend
+handles, labels = axes[0,0].get_legend_handles_labels()
+fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 1.02),
+           ncol=2, frameon=False, fontsize=9)
+
+plt.tight_layout(rect=(0, 0, 1, 0.96))
+plt.savefig('fig4_5_tornado_combined_2x3.pdf', format='pdf', dpi=600, bbox_inches='tight')
+plt.show()
+print('Combined tornado figure saved: fig4_5_tornado_combined_2x3.pdf')

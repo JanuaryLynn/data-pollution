@@ -1,0 +1,115 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+# —— 全局样式（紧凑、IEEE 友好）——
+sns.set_theme(style="whitegrid")
+plt.rcParams.update({
+    'font.family': 'Times New Roman',
+    'font.size': 9.5,
+    'axes.labelsize': 9.5,
+    'axes.titlesize': 9.5,
+    'xtick.labelsize': 9,
+    'ytick.labelsize': 9
+})
+
+# —— 数据 —— 
+pollution_levels = [10, 30, 50]
+titles = ['Low Pollution (10%)', 'Medium Pollution (30%)', 'High Pollution (50%)']
+no_treatment = [14.943, 8.575, 5.240]
+
+strength_values = [30, 60, 90]
+strength_effect = [
+    [18.273, 22.399, 28.453],
+    [10.976, 13.875, 16.557],
+    [7.314, 10.003, 12.524]
+]
+
+response_values = [1, 5, 10]
+response_effect = [
+    [99.459, 22.399, 19.477],
+    [39.492, 13.875, 11.249],
+    [32.820, 10.003, 7.594]
+]
+
+# —— 横向一行三图 —— 
+fig, axes = plt.subplots(1, 3, figsize=(11, 3.4), sharex=False, sharey=True)
+plt.subplots_adjust(wspace=0.25)  # 子图之间更紧凑
+
+for i, pollution in enumerate(pollution_levels):
+    ax = axes[i]
+
+    # 折线
+    ax.plot(strength_values, strength_effect[i], 'o-', color='#1f77b4',
+            linewidth=1.4, markersize=4.5,
+            label='legal-strength (response-time=5)')
+    ax.plot(response_values, response_effect[i], 's-', color='#ff7f0e',
+            linewidth=1.4, markersize=4.5,
+            label='legal-response-time (strength=60)')
+
+    # baseline
+    ax.axhline(y=no_treatment[i], linestyle='--', color='gray', linewidth=1.0,
+               label='no treatment')
+
+    # 标注标准化敏感度 S
+    for j in range(len(strength_values) - 1):
+        slope = (strength_effect[i][j + 1] - strength_effect[i][j]) / (strength_values[j + 1] - strength_values[j])
+        norm_slope = slope * (strength_values[j] / strength_effect[i][j])
+        ax.annotate(f'S={norm_slope:.2f}',
+                    xy=((strength_values[j] + strength_values[j + 1]) / 2,
+                        (strength_effect[i][j] + strength_effect[i][j + 1]) / 2),
+                    xytext=(0, 10), textcoords='offset points',
+                    color='#1f77b4', fontsize=8, backgroundcolor='white')
+
+    for j in range(len(response_values) - 1):
+        slope = (response_effect[i][j + 1] - response_effect[i][j]) / (response_values[j + 1] - response_values[j])
+        norm_slope = slope * (response_values[j] / response_effect[i][j])
+        ax.annotate(f'S={norm_slope:.2f}',
+                    xy=((response_values[j] + response_values[j + 1]) / 2,
+                        (response_effect[i][j] + response_effect[i][j + 1]) / 2),
+                    xytext=(5, 8), textcoords='offset points',
+                    color='#ff7f0e', fontsize=8, backgroundcolor='white')
+
+    # 轴与标题
+    ax.set_title(f'({chr(97+i)}) {titles[i]}', pad=6, fontweight='bold')
+    ax.set_ylabel('Effectiveness' if i == 0 else '')
+    ax.set_xlabel('legal-strength')
+    ax.set_xticks(strength_values)
+    ax.set_xticklabels(strength_values)
+
+    # 顶部第二 X 轴（response-time）
+    ax2 = ax.twiny()
+    ax2.set_xlim(ax.get_xlim())
+    ax2.set_xticks(response_values)
+    ax2.set_xticklabels(response_values)
+    ax2.set_xlabel('legal-response-time')
+
+# —— 合并图例：置于底部 —— 
+handles, labels = [], []
+for ax in axes:
+    h, l = ax.get_legend_handles_labels()
+    handles += h
+    labels += l
+# 去重保序
+seen = set()
+uniq = []
+for h, l in zip(handles, labels):
+    if l not in seen:
+        uniq.append((h, l))
+        seen.add(l)
+
+fig.legend([h for h, _ in uniq], [l for _, l in uniq],
+           loc='lower center', bbox_to_anchor=(0.5, -0.02),
+           ncol=3, frameon=False, fontsize=9,
+           title='Legend (S = normalized sensitivity coefficient)',
+           title_fontsize=9)
+
+# 为底部图例留白
+plt.tight_layout(rect=(0, 0.08, 1, 1))
+
+# 保存
+plt.savefig('parameter_sensitivity_horizontal_1x3.pdf',
+            format='pdf', dpi=600, bbox_inches='tight')
+plt.show()
+plt.close()
+print('fig2的pdf成功输出')
