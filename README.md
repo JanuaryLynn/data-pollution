@@ -3,21 +3,13 @@
 This project aims to simulate the spread of data pollution on social media platforms, particularly caused by AI-generated content (such as synthetic text). It evaluates the effectiveness of different governance strategies, including legal interventions and platform self-regulation. The experiment uses Agent-Based Modeling (ABM) and is implemented through the NetLogo platform, enabling simulation, data export, and subsequent visualization.
 
 ## 📁 Project Structure
-
-- `netlogo experiment/`  
-  Contains NetLogo experiment models (`.nlogo`) and simulation configuration files.
-
-- `experiment data/`  
-  Stores all experiment data, including raw data exported from NetLogo's built-in BehaviorSpace tool and processed Excel files. Data is organized by experimental group.
-
-- `visual analysis/`  
-  Diagrams and figures generated from the visualization scripts, useful for academic presentation or publication.  And python scripts used for data visualization, mainly using `matplotlib` and `pandas`.
-
 - `README.md`  
   This documentation file.
 
 - `License.md`  
   Copyright statement.  
+
+
   
 ## 💻 How to Run the Simulation
 
@@ -27,13 +19,6 @@ This project aims to simulate the spread of data pollution on social media platf
 4. Exported data will be saved as `.csv` files in the `experiment data` folder;
 5. Run Python scripts in the `visual analysis` folder to analyze and visualize results.
 
-## 📦 Python Dependencies
-
-To run the visualization scripts, please ensure the following Python libraries are installed:
-
-```bash
-pip install matplotlib pandas openpyxl
-```
 
 ## 📌 Use Cases
 
@@ -56,4 +41,5 @@ Thanks for your reading.
 
 This project is licensed under the MIT License. You are free to copy, modify, and distribute the content with proper attribution and inclusion of the license notice.
 
-
+Jingyu Lin
+14 Sept. 2026
