@@ -6,14 +6,22 @@ This repository contains the simulation model, experimental data, analysis files
 
 The study uses agent-based modeling (ABM) to simulate the diffusion of data pollution on social media networks and to evaluate different governance strategies, including legal intervention and platform self-regulation. The model is implemented in **NetLogo**, with batch experiments conducted using **BehaviorSpace**.
 
-## Repository Structure
+## 📌 Repository Structure
+
+### Branches
+
+The `main` branch contains the latest version of the simulation model, experimental data, analysis files, and manuscript figures.
+
+The `Version-1` branch preserves an earlier version of the project, including the pre-revision model and associated experimental files, for reference.
+
+### Main_Newest
 
 - `data/` contains raw experimental outputs exported from NetLogo BehaviorSpace.
 - `data_analysis/` contains processed datasets and analysis files used for result interpretation and figure preparation.
 - `exp/` contains the NetLogo model and supporting experiment code.
 - `fig/` contains the figures used in the current manuscript.
 
-## How to Run the Simulation
+## ⚙️ How to Run the Simulation
 
 1. Install **NetLogo 6.4.0** or a compatible later version.
 2. Open the `.nlogo` model file in the `exp/` folder.
@@ -23,13 +31,7 @@ The study uses agent-based modeling (ABM) to simulate the diffusion of data poll
 
 Because the model includes stochastic processes, the reported results are based on repeated simulation runs and aggregated outcomes rather than individual trajectories.
 
-## Branches
-
-The `main` branch contains the latest version of the simulation model, experimental data, analysis files, and manuscript figures.
-
-The `Version-1` branch preserves an earlier version of the project, including the pre-revision model and associated experimental files, for reference.
-
-## Experiment Organization
+## 💡 Experiment Organization
 The repository includes three groups of experiments.
 ### Main experiments
 `exp1–exp3` provide the baseline, legal-intervention, and platform self-regulation results used for the main analysis.
@@ -39,7 +41,7 @@ The repository includes three groups of experiments.
 `exp6` evaluates the model under alternative network topologies, while `exp7a` and `exp7b` examine the robustness of the results under different network scales.
 
 
-## Research Scope
+## 📑 Research Scope
 
 This project focuses on:
 
@@ -48,15 +50,15 @@ This project focuses on:
 - comparative evaluation of legal intervention and platform self-regulation;
 - sensitivity and robustness analysis under different governance and network conditions.
 
-## Citation
+## 🖇️ Citation
 
 If you use the model, data, or results from this repository in academic work, please cite the associated paper.
 
 Full citation information will be added after publication.
 
-## License
+## ✅ License
 
-This repository is distributed under the MIT License. You are free to copy, modify, and distribute the content with proper attribution and inclusion of the license notice.
+This repository is distributed under the MIT License. You are free to copy, modify, and distribute the content with proper attribution and inclusion of the license notice. See `LICENSE` for details.
 
 ## 🌻 Acknowledgments 
 
