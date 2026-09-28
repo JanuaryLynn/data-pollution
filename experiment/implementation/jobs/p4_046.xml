@@ -1,0 +1,5051 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+<experiments>
+  <experiment name="p4_046" repetitions="1" runMetricsEveryStep="false">
+    <setup>set run-seed (20260922 + 1000 * condition-id + replicate-id)
+setup</setup>
+    <go>go</go>
+    <exitCondition>ticks &gt;= max-ticks</exitCondition>
+    <metric>run-seed</metric>
+    <metric>model-version</metric>
+    <metric>effectiveness</metric>
+    <metric>over-removal-rate</metric>
+    <metric>net-effectiveness</metric>
+    <metric>removal-precision</metric>
+    <metric>precision-defined?</metric>
+    <metric>mean-effectiveness</metric>
+    <metric>mean-net-effectiveness</metric>
+    <metric>observation-count</metric>
+    <metric>current-pollution-rate</metric>
+    <metric>count-wrongly-removed</metric>
+    <metric>initial-polluted-count</metric>
+    <metric>pollution-count</metric>
+    <metric>polluted-pre-review</metric>
+    <metric>step-reviews</metric>
+    <metric>step-tp</metric>
+    <metric>step-fp</metric>
+    <metric>step-tn</metric>
+    <metric>step-fn</metric>
+    <metric>cumulative-reviews</metric>
+    <metric>cumulative-tp</metric>
+    <metric>cumulative-fp</metric>
+    <metric>cumulative-tn</metric>
+    <metric>cumulative-fn</metric>
+    <metric>step-clean-reviews</metric>
+    <metric>cumulative-clean-reviews</metric>
+    <metric>actual-review-coverage</metric>
+    <metric>legal-action-opportunities</metric>
+    <metric>active-review-steps</metric>
+    <metric>network-node-count</metric>
+    <metric>network-edge-count</metric>
+    <metric>mean-degree</metric>
+    <metric>max-degree</metric>
+    <metric>degree-sd</metric>
+    <metric>count-isolates</metric>
+    <metric>mean-super-degree</metric>
+    <metric>mean-ordinary-degree</metric>
+    <metric>count-super-spreaders</metric>
+    <metric>legal-load</metric>
+    <metric>audit-load</metric>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="31.359743085669507" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="96.72645690674263" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="96.72645690674263" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2446" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="36.84156441263846" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="94.08676894147666" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="94.08676894147666" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2447" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="76.36199840836112" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="67.62507336576047" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="67.62507336576047" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2448" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="15.663133530158849" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="89.883896322234" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="89.883896322234" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2449" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="31.500516783704683" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="61.89423976287718" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="61.89423976287718" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2450" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="80.77917265304387" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="91.2362582285989" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="91.2362582285989" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2451" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="92.70000552352501" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="91.4530525920669" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="91.4530525920669" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2452" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="42.34610959347489" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="85.23120315902854" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="85.23120315902854" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2453" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="54.84621589804818" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="74.77505546922065" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="74.77505546922065" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2454" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="83.28394923889145" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="84.82336965786513" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="84.82336965786513" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2455" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="58.50503403102706" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="76.17254495853271" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="76.17254495853271" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2456" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="82.65634423454762" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="97.87841578266836" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="97.87841578266836" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2457" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="88.23137400437813" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="84.36983115903254" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="84.36983115903254" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2458" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="96.84184525473383" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="67.92684909160445" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="67.92684909160445" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2459" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="97.70914076157173" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="78.02996973707454" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="78.02996973707454" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2460" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="32.63697705765431" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="82.92274088287512" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="82.92274088287512" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2461" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="37.123157982573794" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="97.48228298247861" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="97.48228298247861" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2462" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="70.94480921181984" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="98.77510097782528" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="98.77510097782528" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2463" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="63.614787482992355" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="70.0237173361841" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="70.0237173361841" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2464" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="30.14701651991054" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="91.09019572657087" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="91.09019572657087" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2465" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="46.75281142146785" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="74.71261886948993" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="74.71261886948993" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2466" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="49.278173507925146" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="86.66157807273487" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="86.66157807273487" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2467" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="22.279546261746127" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="95.49728353842795" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="95.49728353842795" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2468" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="44.356457515162965" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="71.82702576566341" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="71.82702576566341" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2469" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="51.59048539032185" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="77.09676499973898" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="77.09676499973898" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2470" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="10.61102048582109" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="83.1689882357807" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="83.1689882357807" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2471" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="9.507042784536136" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="79.74220472867901" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="79.74220472867901" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2472" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="87.83426642095237" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="96.40309715261895" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="96.40309715261895" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2473" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="51.90776385895215" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="90.8745942483004" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="90.8745942483004" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2474" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="87.33328777485504" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="93.43485901274573" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="93.43485901274573" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2475" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="84.21211590381664" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="88.45352775385943" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="88.45352775385943" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2476" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="4.986365681907783" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="88.25436379632418" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="88.25436379632418" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2477" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="63.80026109016458" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="96.14428100651952" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="96.14428100651952" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2478" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="93.27804789391472" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="79.25071157604192" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="79.25071157604192" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2479" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="44.810226799330806" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="83.50404147570404" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="83.50404147570404" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2480" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="46.47779170528537" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="72.49726449432399" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="72.49726449432399" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2481" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="10.986634740400024" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="80.04873855828379" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="80.04873855828379" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2482" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="43.00553559869964" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="89.02341281593488" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="89.02341281593488" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2483" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="92.37038999188367" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="83.03104292943408" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="83.03104292943408" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2484" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="55.05078057204908" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="86.17877194705946" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="86.17877194705946" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2485" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="29.326556828830157" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="89.84145311750206" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="89.84145311750206" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2486" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="94.38463008124741" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="76.49101123898507" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="76.49101123898507" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2487" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="94.09843509976521" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="71.8685154396231" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="71.8685154396231" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2488" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="73.63468048804073" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="87.48707288158644" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="87.48707288158644" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2489" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="77.19523111737523" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="72.22807223981816" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="72.22807223981816" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2490" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="2.434862587203559" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="74.62704872357982" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="74.62704872357982" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2491" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="29.77952171938107" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="91.04369175614981" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="91.04369175614981" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2492" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="65.77725043115501" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="85.39922356153279" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="85.39922356153279" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2493" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="33.995188964568136" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="62.40794475805115" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="62.40794475805115" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2494" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+    <subExperiment>
+      <enumeratedValueSet variable="network-type">
+        <value value="&quot;BA&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="num-nodes">
+        <value value="1000" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ba-m">
+        <value value="2" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="ws-rewire-prob">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="p0">
+        <value value="30" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="beta0">
+        <value value="0.1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="amplification">
+        <value value="0.5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="super-ratio">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="treatment">
+        <value value="&quot;platform&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="targeting-mode">
+        <value value="&quot;targeted&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-strength">
+        <value value="70" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-response-time">
+        <value value="5" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tpr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="legal-tnr">
+        <value value="95" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-speed">
+        <value value="18.9071656544364" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tpr">
+        <value value="83.82366595613622" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-tnr">
+        <value value="83.82366595613622" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="platform-workload-mode">
+        <value value="&quot;fixed&quot;" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="demand-kappa">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="lambda-weight">
+        <value value="1" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="max-ticks">
+        <value value="50" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="condition-id">
+        <value value="2495" />
+      </enumeratedValueSet>
+      <enumeratedValueSet variable="replicate-id">
+        <value value="1" />
+        <value value="2" />
+        <value value="3" />
+        <value value="4" />
+        <value value="5" />
+        <value value="6" />
+        <value value="7" />
+        <value value="8" />
+        <value value="9" />
+        <value value="10" />
+        <value value="11" />
+        <value value="12" />
+        <value value="13" />
+        <value value="14" />
+        <value value="15" />
+        <value value="16" />
+        <value value="17" />
+        <value value="18" />
+        <value value="19" />
+        <value value="20" />
+        <value value="21" />
+        <value value="22" />
+        <value value="23" />
+        <value value="24" />
+        <value value="25" />
+        <value value="26" />
+        <value value="27" />
+        <value value="28" />
+        <value value="29" />
+        <value value="30" />
+      </enumeratedValueSet>
+    </subExperiment>
+  </experiment>
+</experiments>

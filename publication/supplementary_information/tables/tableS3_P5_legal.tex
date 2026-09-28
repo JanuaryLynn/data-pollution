@@ -1,0 +1,63 @@
+% Table S4. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 184mm+10\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}C{13mm}C{16mm}L{30mm}C{19mm}R{53mm}R{53mm}@{}}
+\caption{Legal outcomes under random and degree-targeted selection}\label{tab:tableS3_P5_legal}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Selection} & \multicolumn{1}{c}{$L$ (\%)} & \multicolumn{1}{r}{$\bar E$} & \multicolumn{1}{r}{$O(50)$} \\
+\midrule
+\endfirsthead
+\caption[]{Legal outcomes under random and degree-targeted selection (continued)}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Selection} & \multicolumn{1}{c}{$L$ (\%)} & \multicolumn{1}{r}{$\bar E$} & \multicolumn{1}{r}{$O(50)$} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{6}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Means with pointwise 95\% Student-$t$ confidence intervals in brackets; 30 independent runs per condition. Intervals are not clipped. $p_0$, coverage $L$ and outcomes are percentages. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. Targeted selection prioritizes accounts by degree. The response interval is $\tau_L=5$ steps and $\mathrm{TPR}=\mathrm{TNR}=95\%$; 70\% is the benchmark coverage. All networks are BA with $N=1000$. Repeated condition IDs denote the same runs. Unrounded results, condition IDs and sample sizes are in \texttt{tableS3\_P5\_legal.csv}.}}\\
+\endlastfoot
+109 & 10 & Random & 5 & \ABMci{15.61}{15.39}{15.83} & \ABMci{0.46}{0.38}{0.53} \\*
+106 & 10 & Targeted & 5 & \ABMci{15.75}{15.51}{16.00} & \ABMci{0.23}{0.18}{0.27} \\
+\addlinespace[2pt]
+110 & 10 & Random & 10 & \ABMci{19.18}{18.87}{19.49} & \ABMci{0.99}{0.86}{1.12} \\*
+107 & 10 & Targeted & 10 & \ABMci{18.98}{18.66}{19.31} & \ABMci{0.57}{0.49}{0.65} \\
+\addlinespace[2pt]
+111 & 10 & Random & 20 & \ABMci{25.92}{25.72}{26.12} & \ABMci{2.04}{1.89}{2.18} \\*
+108 & 10 & Targeted & 20 & \ABMci{26.28}{25.85}{26.70} & \ABMci{1.73}{1.59}{1.87} \\
+\addlinespace[2pt]
+58 & 10 & Random & 70 & \ABMci{67.23}{66.79}{67.67} & \ABMci{15.44}{14.94}{15.94} \\*
+8 & 10 & Targeted & 70 & \ABMci{77.86}{77.39}{78.34} & \ABMci{18.39}{17.98}{18.81} \\
+\midrule
+121 & 30 & Random & 5 & \ABMci{10.29}{10.17}{10.40} & \ABMci{0.27}{0.20}{0.34} \\*
+118 & 30 & Targeted & 5 & \ABMci{9.36}{9.23}{9.49} & \ABMci{0.12}{0.08}{0.16} \\
+\addlinespace[2pt]
+122 & 30 & Random & 10 & \ABMci{13.82}{13.66}{13.97} & \ABMci{0.63}{0.54}{0.72} \\*
+119 & 30 & Targeted & 10 & \ABMci{11.89}{11.74}{12.04} & \ABMci{0.31}{0.25}{0.37} \\
+\addlinespace[2pt]
+123 & 30 & Random & 20 & \ABMci{21.14}{20.94}{21.34} & \ABMci{1.64}{1.51}{1.78} \\*
+120 & 30 & Targeted & 20 & \ABMci{18.32}{18.16}{18.49} & \ABMci{1.07}{0.98}{1.17} \\
+\addlinespace[2pt]
+60 & 30 & Random & 70 & \ABMci{64.52}{64.24}{64.80} & \ABMci{13.64}{13.30}{13.98} \\*
+17 & 30 & Targeted & 70 & \ABMci{73.59}{73.19}{74.00} & \ABMci{16.18}{15.83}{16.53} \\
+\midrule
+133 & 50 & Random & 5 & \ABMci{7.41}{7.30}{7.53} & \ABMci{0.19}{0.14}{0.24} \\*
+130 & 50 & Targeted & 5 & \ABMci{5.97}{5.86}{6.08} & \ABMci{0.05}{0.02}{0.08} \\
+\addlinespace[2pt]
+134 & 50 & Random & 10 & \ABMci{11.11}{11.01}{11.21} & \ABMci{0.39}{0.30}{0.48} \\*
+131 & 50 & Targeted & 10 & \ABMci{8.09}{8.01}{8.18} & \ABMci{0.15}{0.11}{0.19} \\
+\addlinespace[2pt]
+135 & 50 & Random & 20 & \ABMci{18.53}{18.37}{18.69} & \ABMci{1.04}{0.92}{1.16} \\*
+132 & 50 & Targeted & 20 & \ABMci{14.05}{13.93}{14.17} & \ABMci{0.77}{0.67}{0.87} \\
+\addlinespace[2pt]
+62 & 50 & Random & 70 & \ABMci{62.96}{62.71}{63.21} & \ABMci{12.13}{11.74}{12.53} \\*
+26 & 50 & Targeted & 70 & \ABMci{71.26}{70.81}{71.70} & \ABMci{14.54}{14.03}{15.05} \\
+\end{longtable}
+\endgroup

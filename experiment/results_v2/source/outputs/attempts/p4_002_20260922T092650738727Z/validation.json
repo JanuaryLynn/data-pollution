@@ -1,0 +1,11 @@
+{
+  "attempt": "p4_002_20260922T092650738727Z",
+  "valid_runs": 1500,
+  "expected_runs": 1500,
+  "invalid_runs": 0,
+  "file_issues": [],
+  "runtime_error_in_log": false,
+  "returncode": 0,
+  "checked_at_utc": "2026-09-22T10:21:06+00:00",
+  "run_issues": {}
+}

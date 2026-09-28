@@ -1,0 +1,2841 @@
+{
+  "status": "PASS",
+  "scope": "S1–S4 plotting CSV and original TeX checked against formal condition_summary and run metadata; independent mean/SD/SE/Student-t CI recomputation from all involved existing run_metrics, including effective PR sample sizes and event-versus-percentage semantics. No simulation rerun or raw-trajectory reconstruction.",
+  "csv_files": 33,
+  "plotted_records": 222,
+  "unique_condition_outcome_pairs": 216,
+  "unique_conditions": 90,
+  "tex_figures": 4,
+  "heatmap_hardcoded_labels_checked": 162,
+  "precision_n_labels_checked": 12,
+  "source_summary_path": "/workspace/scratch/7bb7c0cf7233/revision_review/results_v2/processed/condition_summary.csv",
+  "source_summary_sha256": "ddc9f21a9e87c1f1a30b2a718851564f3c177e09b73f759607c4fad0ae5439ea",
+  "source_run_metrics_path": "/workspace/scratch/7bb7c0cf7233/revision_review/results_v2/processed/run_metrics.csv",
+  "source_run_metrics_sha256": "56aa809179a2516c915512b5e2a52a45aefef7ffedc88113ca8cc75fa60f2ee1",
+  "numeric_tolerance": {
+    "absolute": 1e-10,
+    "relative": 1e-12
+  },
+  "max_absolute_deviations": {
+    "summary_fields": 0.0,
+    "metadata_fields": 0.0,
+    "plot_transform_fields": 3.552713678800501e-15,
+    "hardcoded_labels": 0.0
+  },
+  "comparison_counts": {
+    "summary_fields": 2442,
+    "metadata_fields": 6216,
+    "plot_transform_fields": 1110,
+    "hardcoded_labels": 174
+  },
+  "issues": [],
+  "semantic_notes": [
+    "O_final / O(50) is a percentage of distinct accounts ever wronged by step 50; it is not a count of wrongful review events.",
+    "cumulative_reviews and clean_review_exposure count review events over steps 1–50, including repeat reviews; plot_scale=1000 means thousands of events, not a percentage.",
+    "PR_final is the mean of defined run-level precision ratios; all 12 displayed S1 precision cells have n=30, n_total=30, n_missing=0.",
+    "S1 Fixed has demand-kappa=1 recorded but kappa is inactive in fixed mode; the displayed Fixed category correctly avoids interpreting it as responsive kappa=1.",
+    "S2–S4 retain CI endpoints in CSV but show only means on the heatmaps; the hardcoded numeric labels display one decimal.",
+    "The attachment lacks figure_style.tex; these standalone sources require the established shared style file to compile."
+  ],
+  "data_files": [
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/E_mean_p10.csv",
+      "sha256": "ef7b9dfe59467f5cfd96ca2b2c0a0f37a43927d728d8da7f4555326565f42015",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "35",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "97",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "98",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "99",
+          "outcome": "E_mean",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/E_mean_p30.csv",
+      "sha256": "1fea4d49e2ad26060f5fbcc07198a6d4537692bbf1f753ed806216399285d501",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "44",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "100",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "101",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "102",
+          "outcome": "E_mean",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/E_mean_p50.csv",
+      "sha256": "cfcccf759be59a1f99a2e2cd87aca0a6a49514a33f236cbae7a5d678bf0d800c",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "53",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "103",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "104",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "105",
+          "outcome": "E_mean",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/O_final_p10.csv",
+      "sha256": "c2be3d98894ece9f734a254f6947cf339fda8110941a638d3ec51b737c2779fd",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "35",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "97",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "98",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "99",
+          "outcome": "O_final",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/O_final_p30.csv",
+      "sha256": "8420d2babfcdddc5051369c896a7368bdf0a2d457a0f457321e20e3a7b7a41d7",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "44",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "100",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "101",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "102",
+          "outcome": "O_final",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/O_final_p50.csv",
+      "sha256": "a189b2917e3d76b2cc05216c3b8218e730a616bf5b80d23aefe1ce74d5ad9fd7",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "53",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "103",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "104",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "105",
+          "outcome": "O_final",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/PR_final_p10.csv",
+      "sha256": "c97e293ac1e2d5326d370ece2686ceae5a64baa42496977ad14af1679985deb2",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "35",
+          "outcome": "PR_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "97",
+          "outcome": "PR_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "98",
+          "outcome": "PR_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "99",
+          "outcome": "PR_final",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/PR_final_p30.csv",
+      "sha256": "8c907134ae825e5aa30db248c91ffdb1db81e3d208951b096faaf794a101ad63",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "44",
+          "outcome": "PR_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "100",
+          "outcome": "PR_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "101",
+          "outcome": "PR_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "102",
+          "outcome": "PR_final",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/PR_final_p50.csv",
+      "sha256": "62197ca5f295eac4821b6a9a6a8f0c8e44840b30ece2e74a2fc38397be53e6b5",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "53",
+          "outcome": "PR_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "103",
+          "outcome": "PR_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "104",
+          "outcome": "PR_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "105",
+          "outcome": "PR_final",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/clean_review_exposure_p10.csv",
+      "sha256": "f3e301d45878e419b1f466f192d22f4afe1cb2f2d7cda6c11195c2d618688e81",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "35",
+          "outcome": "clean_review_exposure",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "97",
+          "outcome": "clean_review_exposure",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "98",
+          "outcome": "clean_review_exposure",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "99",
+          "outcome": "clean_review_exposure",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/clean_review_exposure_p30.csv",
+      "sha256": "e88b87d4d78ff45174a03f7cfe4ae3b8cfc15566eb607e5de83e38934f2bd6a0",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "44",
+          "outcome": "clean_review_exposure",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "100",
+          "outcome": "clean_review_exposure",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "101",
+          "outcome": "clean_review_exposure",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "102",
+          "outcome": "clean_review_exposure",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/clean_review_exposure_p50.csv",
+      "sha256": "46fbcad18837af4765bc092f6adc3e683877b3318f76a7b6ebbd19f3e0099a57",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "53",
+          "outcome": "clean_review_exposure",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "103",
+          "outcome": "clean_review_exposure",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "104",
+          "outcome": "clean_review_exposure",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "105",
+          "outcome": "clean_review_exposure",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/cumulative_reviews_p10.csv",
+      "sha256": "e485cbf97c3b55dab61fddbb41d4fa652f7d0f3160f27e1adc6a100de55634a9",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "35",
+          "outcome": "cumulative_reviews",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "97",
+          "outcome": "cumulative_reviews",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "98",
+          "outcome": "cumulative_reviews",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "99",
+          "outcome": "cumulative_reviews",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/cumulative_reviews_p30.csv",
+      "sha256": "9b63c5c55c62ace6772a664b78d59b38bfd74d09a795cf5aef4988e1df33addf",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "44",
+          "outcome": "cumulative_reviews",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "100",
+          "outcome": "cumulative_reviews",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "101",
+          "outcome": "cumulative_reviews",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "102",
+          "outcome": "cumulative_reviews",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS1_workload/cumulative_reviews_p50.csv",
+      "sha256": "b25e5598021193a735f8021463121ad6f1bcf5c33f0efa944a64109a6d7b75c8",
+      "rows": 4,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "53",
+          "outcome": "cumulative_reviews",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "103",
+          "outcome": "cumulative_reviews",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "104",
+          "outcome": "cumulative_reviews",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "105",
+          "outcome": "cumulative_reviews",
+          "plot_x": 3,
+          "plot_y": 0,
+          "scale": 1000,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p10/legal70_E_mean.csv",
+      "sha256": "016372dfa2f05f6fe6c55459aaefae9a6497b13c534b8da4cfa6623254d888b2",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "64",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "142",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "143",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "144",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "8",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "145",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "146",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "147",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "65",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p10/legal70_O_final.csv",
+      "sha256": "ef2d6db239ff47edb948cdcd426510fe31defaa669895be596bf1fcecbfd5eb3",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "64",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "142",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "143",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "144",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "8",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "145",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "146",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "147",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "65",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p10/platform50_E_mean.csv",
+      "sha256": "f21de82dae61cfdc38f606d40b306306db6067f73942d9c7078535148aa701d1",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "31",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "160",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "161",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "162",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "32",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "163",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "164",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "165",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "33",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p10/platform50_O_final.csv",
+      "sha256": "683f67ea9d79be2ee7d995c8a182f7bc467adf8a9889609848ca283d471bfcf7",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "31",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "160",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "161",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "162",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "32",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "163",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "164",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "165",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "33",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p10/platform75_E_mean.csv",
+      "sha256": "5683422539a19d0427202a277a7d66d8d0eeb72d3a380d3460b03efa599cccb7",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "34",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "166",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "167",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "168",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "35",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "169",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "170",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "171",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "36",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p10/platform75_O_final.csv",
+      "sha256": "6ed9763dbcdd773f958d597418aa29307924af5e0b42f41a83b42aa617838b2f",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "34",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "166",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "167",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "168",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "35",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "169",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "170",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "171",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "36",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p30/legal70_E_mean.csv",
+      "sha256": "5b3761f5d511124259ee651cb2fae6918728d1dc67813288da5778fd6598ccc7",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "66",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "148",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "149",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "150",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "17",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "151",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "152",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "153",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "67",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p30/legal70_O_final.csv",
+      "sha256": "e65100ab31c14fcfb5a05eea7c289258cc2e5a0f137b4b2ddf2344a026bcb345",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "66",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "148",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "149",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "150",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "17",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "151",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "152",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "153",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "67",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p30/platform50_E_mean.csv",
+      "sha256": "6735ca32a01dca489eb5d1c88c251b739609c2aecd7f19773a005aeeb02f8e04",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "40",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "172",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "173",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "174",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "41",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "175",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "176",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "177",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "42",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p30/platform50_O_final.csv",
+      "sha256": "445e7fc49bce4b6e8c056138ca9f6c48a9e7687dad625ee8c88c0477760963de",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "40",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "172",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "173",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "174",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "41",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "175",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "176",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "177",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "42",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p30/platform75_E_mean.csv",
+      "sha256": "fec9dd65db48105a26f7937aed5c6ad7e1d1b3b4dbf7a116dd7924baf80b09c3",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "43",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "178",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "179",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "180",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "44",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "181",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "182",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "183",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "45",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p30/platform75_O_final.csv",
+      "sha256": "1269e7ca77b3ec1410ca90d9f334eee39777162fcb2d36c2dcffae02fdb4d432",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "43",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "178",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "179",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "180",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "44",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "181",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "182",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "183",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "45",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p50/legal70_E_mean.csv",
+      "sha256": "149bd568b6afba5cb40c01e3e32084a8f79b8cfa76f523ac3d9360e1ca273e45",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "68",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "154",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "155",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "156",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "26",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "157",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "158",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "159",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "69",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p50/legal70_O_final.csv",
+      "sha256": "c00aa8ba0b26eb3d9e11897382742bb9e1d7d27b6763af65eddab37e0ae0885d",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "68",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "154",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "155",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "156",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "26",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "157",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "158",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "159",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "69",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p50/platform50_E_mean.csv",
+      "sha256": "d2abde4e9f7acc2de708cafa40cf57efb2eb36807652bbc053a1ab936664ae73",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "49",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "184",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "185",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "186",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "50",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "187",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "188",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "189",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "51",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p50/platform50_O_final.csv",
+      "sha256": "9f6745e2f3b1f9f8b0e179de9a9e2672cfd1dc8903d816a640115c7db06c733d",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "49",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "184",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "185",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "186",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "50",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "187",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "188",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "189",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "51",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p50/platform75_E_mean.csv",
+      "sha256": "c5fdad028f6c2387425808ee21f209f718bb0b3c05f54d8ec4c4446351e82e99",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "52",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "190",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "191",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "192",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "53",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "193",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "194",
+          "outcome": "E_mean",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "195",
+          "outcome": "E_mean",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "54",
+          "outcome": "E_mean",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/data/figS4_accuracy_p50/platform75_O_final.csv",
+      "sha256": "c57b019ae9b8e6ece8772e7df42e3c384533992458d1435b4a298430782edddd",
+      "rows": 9,
+      "status": "PASS",
+      "issues": [],
+      "row_checks": [
+        {
+          "row": 1,
+          "condition_id": "52",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 2,
+          "condition_id": "190",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 3,
+          "condition_id": "191",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 0,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 4,
+          "condition_id": "192",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 5,
+          "condition_id": "53",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 6,
+          "condition_id": "193",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 1,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 7,
+          "condition_id": "194",
+          "outcome": "O_final",
+          "plot_x": 0,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 8,
+          "condition_id": "195",
+          "outcome": "O_final",
+          "plot_x": 1,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        },
+        {
+          "row": 9,
+          "condition_id": "54",
+          "outcome": "O_final",
+          "plot_x": 2,
+          "plot_y": 2,
+          "scale": 1,
+          "status": "PASS",
+          "issues": []
+        }
+      ]
+    }
+  ],
+  "tex_files": [
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/figS1_workload.tex",
+      "sha256": "3dcd04381166a4542076d8bdfe70b5f4dd40464a5c3ce1365ccc4dbfa47a7761",
+      "status": "PASS",
+      "issues": [],
+      "panels": [
+        {
+          "panel": 1,
+          "file": "data/figS1_workload/E_mean_p10.csv",
+          "outcome": "E_mean",
+          "n_points": 4
+        },
+        {
+          "panel": 2,
+          "file": "data/figS1_workload/E_mean_p30.csv",
+          "outcome": "E_mean",
+          "n_points": 4
+        },
+        {
+          "panel": 3,
+          "file": "data/figS1_workload/E_mean_p50.csv",
+          "outcome": "E_mean",
+          "n_points": 4
+        },
+        {
+          "panel": 4,
+          "file": "data/figS1_workload/O_final_p10.csv",
+          "outcome": "O_final",
+          "n_points": 4
+        },
+        {
+          "panel": 5,
+          "file": "data/figS1_workload/O_final_p30.csv",
+          "outcome": "O_final",
+          "n_points": 4
+        },
+        {
+          "panel": 6,
+          "file": "data/figS1_workload/O_final_p50.csv",
+          "outcome": "O_final",
+          "n_points": 4
+        },
+        {
+          "panel": 7,
+          "file": "data/figS1_workload/PR_final_p10.csv",
+          "outcome": "PR_final",
+          "n_points": 4
+        },
+        {
+          "panel": 8,
+          "file": "data/figS1_workload/PR_final_p30.csv",
+          "outcome": "PR_final",
+          "n_points": 4
+        },
+        {
+          "panel": 9,
+          "file": "data/figS1_workload/PR_final_p50.csv",
+          "outcome": "PR_final",
+          "n_points": 4
+        },
+        {
+          "panel": 10,
+          "file": "data/figS1_workload/cumulative_reviews_p10.csv",
+          "outcome": "cumulative_reviews",
+          "n_points": 4
+        },
+        {
+          "panel": 11,
+          "file": "data/figS1_workload/cumulative_reviews_p30.csv",
+          "outcome": "cumulative_reviews",
+          "n_points": 4
+        },
+        {
+          "panel": 12,
+          "file": "data/figS1_workload/cumulative_reviews_p50.csv",
+          "outcome": "cumulative_reviews",
+          "n_points": 4
+        },
+        {
+          "panel": 13,
+          "file": "data/figS1_workload/clean_review_exposure_p10.csv",
+          "outcome": "clean_review_exposure",
+          "n_points": 4
+        },
+        {
+          "panel": 14,
+          "file": "data/figS1_workload/clean_review_exposure_p30.csv",
+          "outcome": "clean_review_exposure",
+          "n_points": 4
+        },
+        {
+          "panel": 15,
+          "file": "data/figS1_workload/clean_review_exposure_p50.csv",
+          "outcome": "clean_review_exposure",
+          "n_points": 4
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/figS4_accuracy_p10.tex",
+      "sha256": "6d14567f03bd1fa40291a3cc037c9d4fc7ec6ae483218e70c32ab498d010a559",
+      "status": "PASS",
+      "issues": [],
+      "panels": [
+        {
+          "panel": 1,
+          "file": "data/figS4_accuracy_p10/legal70_E_mean.csv",
+          "outcome": "E_mean",
+          "n_points": 9
+        },
+        {
+          "panel": 2,
+          "file": "data/figS4_accuracy_p10/legal70_O_final.csv",
+          "outcome": "O_final",
+          "n_points": 9
+        },
+        {
+          "panel": 3,
+          "file": "data/figS4_accuracy_p10/platform50_E_mean.csv",
+          "outcome": "E_mean",
+          "n_points": 9
+        },
+        {
+          "panel": 4,
+          "file": "data/figS4_accuracy_p10/platform50_O_final.csv",
+          "outcome": "O_final",
+          "n_points": 9
+        },
+        {
+          "panel": 5,
+          "file": "data/figS4_accuracy_p10/platform75_E_mean.csv",
+          "outcome": "E_mean",
+          "n_points": 9
+        },
+        {
+          "panel": 6,
+          "file": "data/figS4_accuracy_p10/platform75_O_final.csv",
+          "outcome": "O_final",
+          "n_points": 9
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/figS4_accuracy_p30.tex",
+      "sha256": "364e0556e46a60700dd31dfa6f4b8698e82f9b8016fbb3eb92b88027a381e42d",
+      "status": "PASS",
+      "issues": [],
+      "panels": [
+        {
+          "panel": 1,
+          "file": "data/figS4_accuracy_p30/legal70_E_mean.csv",
+          "outcome": "E_mean",
+          "n_points": 9
+        },
+        {
+          "panel": 2,
+          "file": "data/figS4_accuracy_p30/legal70_O_final.csv",
+          "outcome": "O_final",
+          "n_points": 9
+        },
+        {
+          "panel": 3,
+          "file": "data/figS4_accuracy_p30/platform50_E_mean.csv",
+          "outcome": "E_mean",
+          "n_points": 9
+        },
+        {
+          "panel": 4,
+          "file": "data/figS4_accuracy_p30/platform50_O_final.csv",
+          "outcome": "O_final",
+          "n_points": 9
+        },
+        {
+          "panel": 5,
+          "file": "data/figS4_accuracy_p30/platform75_E_mean.csv",
+          "outcome": "E_mean",
+          "n_points": 9
+        },
+        {
+          "panel": 6,
+          "file": "data/figS4_accuracy_p30/platform75_O_final.csv",
+          "outcome": "O_final",
+          "n_points": 9
+        }
+      ]
+    },
+    {
+      "file": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/source/supp_fig/figS4_accuracy_p50.tex",
+      "sha256": "f545572ea4319945c7fbb0fb8999462d56e19ba69994913358a7208f41ec912a",
+      "status": "PASS",
+      "issues": [],
+      "panels": [
+        {
+          "panel": 1,
+          "file": "data/figS4_accuracy_p50/legal70_E_mean.csv",
+          "outcome": "E_mean",
+          "n_points": 9
+        },
+        {
+          "panel": 2,
+          "file": "data/figS4_accuracy_p50/legal70_O_final.csv",
+          "outcome": "O_final",
+          "n_points": 9
+        },
+        {
+          "panel": 3,
+          "file": "data/figS4_accuracy_p50/platform50_E_mean.csv",
+          "outcome": "E_mean",
+          "n_points": 9
+        },
+        {
+          "panel": 4,
+          "file": "data/figS4_accuracy_p50/platform50_O_final.csv",
+          "outcome": "O_final",
+          "n_points": 9
+        },
+        {
+          "panel": 5,
+          "file": "data/figS4_accuracy_p50/platform75_E_mean.csv",
+          "outcome": "E_mean",
+          "n_points": 9
+        },
+        {
+          "panel": 6,
+          "file": "data/figS4_accuracy_p50/platform75_O_final.csv",
+          "outcome": "O_final",
+          "n_points": 9
+        }
+      ]
+    }
+  ],
+  "run_level_recheck": {
+    "status": "PASS",
+    "method": "Mean, sample SD (ddof=1), SE=SD/sqrt(n), CI=mean +/- t_(.975,n-1)*SE; intervals not clipped",
+    "comparison_tolerance": {
+      "absolute": 1e-09,
+      "relative": 1e-11,
+      "rationale": "Allows 12-significant-digit serialization in the official summary; far below displayed precision"
+    },
+    "counts": {
+      "attachment_files": 33,
+      "attachment_rows": 222,
+      "unique_displayed_condition_outcome_pairs": 216,
+      "unique_conditions": 90,
+      "unique_runs": 2700,
+      "recomputed_condition_outcome_pairs": 294,
+      "extra_PR_checks": 78,
+      "displayed_outcome_samples_not_unique_runs": 6480,
+      "global_unique_run_ids": 2700,
+      "global_unique_seeds": 2700
+    },
+    "PR_effective_n_counts": {
+      "30": 90
+    },
+    "max_absolute_recomputation_errors": {
+      "n": 0.0,
+      "n_total": 0.0,
+      "n_missing": 0.0,
+      "mean": 3.3334799809381366e-08,
+      "sd": 4.890807758783922e-10,
+      "se": 4.853575319430092e-10,
+      "ci_low": 4.6587956603616476e-08,
+      "ci_high": 4.527464625425637e-08
+    },
+    "semantic_checks": {
+      "counts": {
+        "O_final = 100 * distinct_wronged / num-nodes": 2700,
+        "cumulative_reviews = TP + FP + TN + FN": 2700,
+        "clean_review_exposure = FP + TN": 2700,
+        "PR_final = 100 * TP / (TP + FP)": 2700
+      },
+      "max_absolute_errors": {
+        "O_final = 100 * distinct_wronged / num-nodes": 1.4210854715202004e-14,
+        "cumulative_reviews = TP + FP + TN + FN": 0.0,
+        "clean_review_exposure = FP + TN": 0.0,
+        "PR_final = 100 * TP / (TP + FP)": 1.4210854715202004e-14
+      }
+    },
+    "issues": [],
+    "report_path": "/workspace/scratch/7bb7c0cf7233/tmp/supp_figures/audit/condition_runlevel_recheck.json"
+  }
+}

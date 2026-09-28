@@ -1,0 +1,109 @@
+% 修改点线/误差条：各 addplot 选项；数据读取路径位于每个 table 后。
+% 数据列 mean/ci_low/ci_high 保持未四舍五入；误差是原置信区间端点差。
+
+\documentclass[tikz,border=5pt]{standalone}
+\input{figure_style.tex}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[abm axis,width=4.65cm,height=3.4cm,
+ group style={group size=3 by 2,horizontal sep=1.5cm,vertical sep=1.85cm},
+ title style={font=\small,align=left},title style={at={(0,1.03)},anchor=south west},
+ xmin=0,xmax=50,ymin=-3,ymax=103,xtick={0,10,20,30,40,50},ytick={0,25,50,75,100},]
+ 
+% 面板 a：p0=10，E；修改 title/ylabel/xlabel。
+\nextgroupplot[title={(a) $p_0=10\%$},ylabel={Effectiveness $E(t)$ (\%)},xlabel={}]
+\addplot[draw=none,name path=E10nonelo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/E_p10_none.csv};
+\addplot[draw=none,name path=E10nonehi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/E_p10_none.csv};
+\addplot[fill=abmGray,fill opacity=.17,draw=none,forget plot] fill between[of=E10nonelo and E10nonehi];
+\addplot[color=abmGray,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/E_p10_none.csv};
+\addplot[draw=none,name path=E10legallo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/E_p10_legal.csv};
+\addplot[draw=none,name path=E10legalhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/E_p10_legal.csv};
+\addplot[fill=abmOrange,fill opacity=.17,draw=none,forget plot] fill between[of=E10legallo and E10legalhi];
+\addplot[color=abmOrange,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/E_p10_legal.csv};
+\addplot[draw=none,name path=E10platformlo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/E_p10_platform.csv};
+\addplot[draw=none,name path=E10platformhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/E_p10_platform.csv};
+\addplot[fill=abmBlue,fill opacity=.17,draw=none,forget plot] fill between[of=E10platformlo and E10platformhi];
+\addplot[color=abmBlue,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/E_p10_platform.csv};
+
+% 面板 b：p0=30，E；修改 title/ylabel/xlabel。
+\nextgroupplot[title={(b) $p_0=30\%$},ylabel={},xlabel={}]
+\addplot[draw=none,name path=E30nonelo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/E_p30_none.csv};
+\addplot[draw=none,name path=E30nonehi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/E_p30_none.csv};
+\addplot[fill=abmGray,fill opacity=.17,draw=none,forget plot] fill between[of=E30nonelo and E30nonehi];
+\addplot[color=abmGray,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/E_p30_none.csv};
+\addplot[draw=none,name path=E30legallo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/E_p30_legal.csv};
+\addplot[draw=none,name path=E30legalhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/E_p30_legal.csv};
+\addplot[fill=abmOrange,fill opacity=.17,draw=none,forget plot] fill between[of=E30legallo and E30legalhi];
+\addplot[color=abmOrange,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/E_p30_legal.csv};
+\addplot[draw=none,name path=E30platformlo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/E_p30_platform.csv};
+\addplot[draw=none,name path=E30platformhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/E_p30_platform.csv};
+\addplot[fill=abmBlue,fill opacity=.17,draw=none,forget plot] fill between[of=E30platformlo and E30platformhi];
+\addplot[color=abmBlue,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/E_p30_platform.csv};
+
+% 面板 c：p0=50，E；修改 title/ylabel/xlabel。
+\nextgroupplot[title={(c) $p_0=50\%$},ylabel={},xlabel={}]
+\addplot[draw=none,name path=E50nonelo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/E_p50_none.csv};
+\addplot[draw=none,name path=E50nonehi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/E_p50_none.csv};
+\addplot[fill=abmGray,fill opacity=.17,draw=none,forget plot] fill between[of=E50nonelo and E50nonehi];
+\addplot[color=abmGray,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/E_p50_none.csv};
+\addplot[draw=none,name path=E50legallo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/E_p50_legal.csv};
+\addplot[draw=none,name path=E50legalhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/E_p50_legal.csv};
+\addplot[fill=abmOrange,fill opacity=.17,draw=none,forget plot] fill between[of=E50legallo and E50legalhi];
+\addplot[color=abmOrange,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/E_p50_legal.csv};
+\addplot[draw=none,name path=E50platformlo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/E_p50_platform.csv};
+\addplot[draw=none,name path=E50platformhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/E_p50_platform.csv};
+\addplot[fill=abmBlue,fill opacity=.17,draw=none,forget plot] fill between[of=E50platformlo and E50platformhi];
+\addplot[color=abmBlue,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/E_p50_platform.csv};
+
+% 面板 d：p0=10，O；修改 title/ylabel/xlabel。
+\nextgroupplot[title={(d) $p_0=10\%$},ylabel={Collateral exposure $O(t)$ (\%)},xlabel={Tick}]
+\addplot[draw=none,name path=O10nonelo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/O_p10_none.csv};
+\addplot[draw=none,name path=O10nonehi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/O_p10_none.csv};
+\addplot[fill=abmGray,fill opacity=.17,draw=none,forget plot] fill between[of=O10nonelo and O10nonehi];
+\addplot[color=abmGray,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/O_p10_none.csv};
+\addplot[draw=none,name path=O10legallo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/O_p10_legal.csv};
+\addplot[draw=none,name path=O10legalhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/O_p10_legal.csv};
+\addplot[fill=abmOrange,fill opacity=.17,draw=none,forget plot] fill between[of=O10legallo and O10legalhi];
+\addplot[color=abmOrange,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/O_p10_legal.csv};
+\addplot[draw=none,name path=O10platformlo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/O_p10_platform.csv};
+\addplot[draw=none,name path=O10platformhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/O_p10_platform.csv};
+\addplot[fill=abmBlue,fill opacity=.17,draw=none,forget plot] fill between[of=O10platformlo and O10platformhi];
+\addplot[color=abmBlue,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/O_p10_platform.csv};
+
+% 面板 e：p0=30，O；修改 title/ylabel/xlabel。
+\nextgroupplot[title={(e) $p_0=30\%$},ylabel={},xlabel={Tick}]
+\addplot[draw=none,name path=O30nonelo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/O_p30_none.csv};
+\addplot[draw=none,name path=O30nonehi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/O_p30_none.csv};
+\addplot[fill=abmGray,fill opacity=.17,draw=none,forget plot] fill between[of=O30nonelo and O30nonehi];
+\addplot[color=abmGray,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/O_p30_none.csv};
+\addplot[draw=none,name path=O30legallo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/O_p30_legal.csv};
+\addplot[draw=none,name path=O30legalhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/O_p30_legal.csv};
+\addplot[fill=abmOrange,fill opacity=.17,draw=none,forget plot] fill between[of=O30legallo and O30legalhi];
+\addplot[color=abmOrange,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/O_p30_legal.csv};
+\addplot[draw=none,name path=O30platformlo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/O_p30_platform.csv};
+\addplot[draw=none,name path=O30platformhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/O_p30_platform.csv};
+\addplot[fill=abmBlue,fill opacity=.17,draw=none,forget plot] fill between[of=O30platformlo and O30platformhi];
+\addplot[color=abmBlue,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/O_p30_platform.csv};
+
+% 面板 f：p0=50，O；修改 title/ylabel/xlabel。
+\nextgroupplot[title={(f) $p_0=50\%$},ylabel={},xlabel={Tick}]
+\addplot[draw=none,name path=O50nonelo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/O_p50_none.csv};
+\addplot[draw=none,name path=O50nonehi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/O_p50_none.csv};
+\addplot[fill=abmGray,fill opacity=.17,draw=none,forget plot] fill between[of=O50nonelo and O50nonehi];
+\addplot[color=abmGray,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/O_p50_none.csv};
+\addplot[draw=none,name path=O50legallo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/O_p50_legal.csv};
+\addplot[draw=none,name path=O50legalhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/O_p50_legal.csv};
+\addplot[fill=abmOrange,fill opacity=.17,draw=none,forget plot] fill between[of=O50legallo and O50legalhi];
+\addplot[color=abmOrange,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/O_p50_legal.csv};
+\addplot[draw=none,name path=O50platformlo,forget plot] table[col sep=comma,x=step,y=ci_low] {data/fig2/O_p50_platform.csv};
+\addplot[draw=none,name path=O50platformhi,forget plot] table[col sep=comma,x=step,y=ci_high] {data/fig2/O_p50_platform.csv};
+\addplot[fill=abmBlue,fill opacity=.17,draw=none,forget plot] fill between[of=O50platformlo and O50platformhi];
+\addplot[color=abmBlue,line width=.95pt,no marks] table[col sep=comma,x=step,y=mean] {data/fig2/O_p50_platform.csv};
+\end{groupplot}
+
+\node[anchor=north,font=\small] at ([yshift=-1.25cm]group c2r2.south) {
+\textcolor{abmGray}{\rule{6mm}{.8pt}} No governance\qquad
+\textcolor{abmOrange}{\rule{6mm}{.8pt}} Legal\qquad
+\textcolor{abmBlue}{\rule{6mm}{.8pt}} Platform};
+\end{tikzpicture}
+\end{document}

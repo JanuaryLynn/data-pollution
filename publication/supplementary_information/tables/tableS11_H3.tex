@@ -1,0 +1,45 @@
+% Table S11. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 238mm+6\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}C{15mm}L{125mm}R{49mm}R{49mm}@{}}
+\caption{H3: effectiveness and wrongful-exposure changes}\label{tab:tableS11_H3}\\
+\toprule
+\multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Path and subtraction direction} & \multicolumn{1}{r}{$\Delta\bar E$ (pp)} & \multicolumn{1}{r}{$\Delta O(50)$ (pp)} \\
+\midrule
+\endfirsthead
+\caption[]{H3: effectiveness and wrongful-exposure changes (continued)}\\
+\toprule
+\multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Path and subtraction direction} & \multicolumn{1}{r}{$\Delta\bar E$ (pp)} & \multicolumn{1}{r}{$\Delta O(50)$ (pp)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{4}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Differences between independent condition means, with marginal 95\% Welch confidence intervals in brackets; 30 independent runs per condition and no multiplicity adjustment. All differences are in percentage points. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. Five paths are evaluated at each $p_0$ (15 comparisons). Subtraction follows the stated direction. Coverage and accuracy levels are percentages; response intervals are steps. Accuracy paths change TPR and TNR together; legal capacity paths hold both at 95\%. The separate outcome intervals do not form a joint 95\% confidence region. Unrounded results, comparison IDs, condition weights and sample sizes are in \texttt{tableS11\_H3\_source.csv}.}}\\
+\endlastfoot
+10 & Legal coverage: $L=90$ minus $50$ ($\tau_L=5$) & \ABMci{39.92}{38.95}{40.89} & \ABMci{21.03}{20.25}{21.81} \\*
+10 & Legal response interval: $\tau_L=1$ minus $10$ ($L=70$) & \ABMci{49.76}{49.13}{50.39} & \ABMci{72.36}{71.76}{72.96} \\*
+10 & Platform audit coverage: $n_p=100$ minus $50$ ($\alpha_P=80$) & \ABMci{10.33}{9.43}{11.23} & \ABMci{47.00}{45.63}{48.36} \\*
+10 & Legal accuracy: $\alpha_L=100$ minus $90$ ($L=70,\tau_L=5$) & \ABMci{10.98}{10.04}{11.91} & \ABMci{-30.04}{-30.65}{-29.43} \\*
+10 & Platform accuracy: $\alpha_P=90$ minus $70$ ($n_p=75$) & \ABMci{0.30}{0.24}{0.37} & \ABMci{-4.21}{-4.43}{-3.98} \\
+\midrule
+30 & Legal coverage: $L=90$ minus $50$ ($\tau_L=5$) & \ABMci{46.19}{45.50}{46.88} & \ABMci{20.52}{19.84}{21.20} \\*
+30 & Legal response interval: $\tau_L=1$ minus $10$ ($L=70$) & \ABMci{54.57}{54.23}{54.91} & \ABMci{73.25}{72.71}{73.79} \\*
+30 & Platform audit coverage: $n_p=100$ minus $50$ ($\alpha_P=80$) & \ABMci{22.03}{20.69}{23.37} & \ABMci{47.50}{46.47}{48.53} \\*
+30 & Legal accuracy: $\alpha_L=100$ minus $90$ ($L=70,\tau_L=5$) & \ABMci{11.15}{10.52}{11.78} & \ABMci{-26.44}{-27.00}{-25.88} \\*
+30 & Platform accuracy: $\alpha_P=90$ minus $70$ ($n_p=75$) & \ABMci{0.68}{0.63}{0.74} & \ABMci{-4.55}{-4.81}{-4.29} \\
+\midrule
+50 & Legal coverage: $L=90$ minus $50$ ($\tau_L=5$) & \ABMci{50.99}{50.42}{51.56} & \ABMci{20.31}{19.54}{21.08} \\*
+50 & Legal response interval: $\tau_L=1$ minus $10$ ($L=70$) & \ABMci{56.62}{56.31}{56.94} & \ABMci{74.17}{73.69}{74.64} \\*
+50 & Platform audit coverage: $n_p=100$ minus $50$ ($\alpha_P=80$) & \ABMci{31.24}{29.74}{32.75} & \ABMci{48.56}{47.84}{49.29} \\*
+50 & Legal accuracy: $\alpha_L=100$ minus $90$ ($L=70,\tau_L=5$) & \ABMci{10.53}{9.93}{11.14} & \ABMci{-24.30}{-24.96}{-23.65} \\*
+50 & Platform accuracy: $\alpha_P=90$ minus $70$ ($n_p=75$) & \ABMci{0.99}{0.92}{1.07} & \ABMci{-4.50}{-4.80}{-4.20} \\
+\end{longtable}
+\endgroup

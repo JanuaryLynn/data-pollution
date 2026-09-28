@@ -1,0 +1,39 @@
+% Table S16. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 238mm+12\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}L{24mm}C{13mm}L{33mm}R{42mm}R{42mm}R{42mm}R{42mm}@{}}
+\caption{Network-size differences: 5,000 minus 1,000 nodes}\label{tab:tableS16_scale_differences}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Difference} & \multicolumn{1}{r}{$\Delta\bar E$} & \multicolumn{1}{r}{$\Delta E(50)$} & \multicolumn{1}{r}{$\Delta O(50)$} & \multicolumn{1}{r}{$\Delta P_R(50)$} \\
+\midrule
+\endfirsthead
+\caption[]{Network-size differences: 5,000 minus 1,000 nodes (continued)}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Difference} & \multicolumn{1}{r}{$\Delta\bar E$} & \multicolumn{1}{r}{$\Delta E(50)$} & \multicolumn{1}{r}{$\Delta O(50)$} & \multicolumn{1}{r}{$\Delta P_R(50)$} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{7}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Differences between independent condition means, with marginal 95\% Welch confidence intervals in brackets; 30 independent runs per condition and no multiplicity adjustment. All differences are in percentage points. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. $E(50)$ is effectiveness at step 50; $P_R(50)$ averages defined run-level precision ratios. Precision is undefined without governance, so those differences are NA, not zero. Each contrast is $N=5000$ minus $N=1000$ on BA networks with attachment parameter $m=2$. Benchmark governance parameters, coverage percentages and response intervals remain fixed; selection is degree-targeted. Under governance, absolute review volumes therefore increase with $N$. Unrounded results, comparison IDs, condition weights and sample sizes are in \texttt{tableS16\_scale\_differences\_source.csv}.}}\\
+\endlastfoot
+No governance & 10 & $5000-1000$ & \ABMci{-0.12}{-0.34}{0.11} & \ABMci{-0.00}{-0.01}{0.01} & \ABMci{0.00}{0.00}{0.00} & NA \\
+Legal & 10 & $5000-1000$ & \ABMci{-1.10}{-1.64}{-0.56} & \ABMci{-1.64}{-2.83}{-0.45} & \ABMci{-0.45}{-0.95}{0.05} & \ABMci{0.42}{0.16}{0.68} \\
+Platform & 10 & $5000-1000$ & \ABMci{-0.01}{-0.03}{0.01} & \ABMci{0.00}{0.00}{0.00} & \ABMci{-0.03}{-0.11}{0.04} & \ABMci{0.12}{-0.02}{0.27} \\
+\midrule
+No governance & 30 & $5000-1000$ & \ABMci{-0.07}{-0.21}{0.07} & \ABMci{0.00}{0.00}{0.01} & \ABMci{0.00}{0.00}{0.00} & NA \\
+Legal & 30 & $5000-1000$ & \ABMci{-0.48}{-0.92}{-0.03} & \ABMci{-0.44}{-1.49}{0.61} & \ABMci{-0.34}{-0.73}{0.05} & \ABMci{0.19}{0.04}{0.34} \\
+Platform & 30 & $5000-1000$ & \ABMci{-0.01}{-0.05}{0.02} & \ABMci{0.00}{0.00}{0.00} & \ABMci{0.04}{-0.03}{0.11} & \ABMci{0.09}{-0.11}{0.29} \\
+\midrule
+No governance & 50 & $5000-1000$ & \ABMci{-0.06}{-0.14}{0.01} & \ABMci{0.00}{-0.00}{0.00} & \ABMci{0.00}{0.00}{0.00} & NA \\
+Legal & 50 & $5000-1000$ & \ABMci{-0.37}{-0.84}{0.10} & \ABMci{-1.22}{-2.32}{-0.13} & \ABMci{0.06}{-0.48}{0.60} & \ABMci{0.01}{-0.18}{0.20} \\
+Platform & 50 & $5000-1000$ & \ABMci{-0.02}{-0.05}{0.02} & \ABMci{0.00}{0.00}{0.00} & \ABMci{0.00}{-0.06}{0.07} & \ABMci{0.05}{-0.13}{0.23} \\
+\end{longtable}
+\endgroup

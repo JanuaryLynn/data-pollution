@@ -1,0 +1,36 @@
+% 所有图共用的样式。修改本文件可统一改变字体、线宽、配色。
+% 每张 fig*.tex 是可独立编译的入口；请从本目录运行编译器。
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots,fillbetween,colormaps}
+\usetikzlibrary{calc,positioning,plotmarks}
+\pgfplotsset{compat=1.18}
+
+% 修改 HTML 色号可统一改变三种治理方式的颜色。
+\definecolor{abmBlue}{HTML}{0072B2}
+\definecolor{abmOrange}{HTML}{D55E00}
+\definecolor{abmGray}{HTML}{676767}
+\definecolor{abmGreen}{HTML}{687F39}
+\definecolor{abmGrid}{HTML}{DDE3E7}
+
+\pgfplotsset{
+  abm axis/.style={
+    width=5.2cm,height=4.2cm,scale only axis,
+    font=\small,
+    label style={font=\small},
+    tick label style={font=\footnotesize},
+    title style={font=\small,align=left},
+    legend style={font=\footnotesize,draw=none,fill=none},
+    axis lines=left,
+    grid=major,grid style={draw=abmGrid,line width=0.25pt},
+    major tick length=2pt,
+    scaled ticks=false,
+    unbounded coords=jump,
+    every axis plot/.append style={line width=0.9pt},
+    colormap/viridis,
+  },
+  abm line/.style={no marks,line width=1pt},
+  abm point/.style={only marks,mark=*,mark size=1.8pt},
+}

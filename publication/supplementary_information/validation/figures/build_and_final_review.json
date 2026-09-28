@@ -1,0 +1,107 @@
+{
+  "standalone_figures": [
+    {
+      "figure": "S1",
+      "pdf": "figures/figS1_workload.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 155.38,
+      "height_mm": 177.97
+    },
+    {
+      "figure": "S2",
+      "pdf": "figures/figS4_accuracy_p10.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 161.42,
+      "height_mm": 187.85
+    },
+    {
+      "figure": "S3",
+      "pdf": "figures/figS4_accuracy_p30.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 161.42,
+      "height_mm": 187.85
+    },
+    {
+      "figure": "S4",
+      "pdf": "figures/figS4_accuracy_p50.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 161.42,
+      "height_mm": 187.85
+    },
+    {
+      "figure": "S5",
+      "pdf": "figures/figS2b_PRCC.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 152.72,
+      "height_mm": 162.24
+    },
+    {
+      "figure": "S6",
+      "pdf": "figures/figS2d_bins_E_mean.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 165.75,
+      "height_mm": 156.33
+    },
+    {
+      "figure": "S7",
+      "pdf": "figures/figS2d_bins_O_final.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 165.75,
+      "height_mm": 156.33
+    },
+    {
+      "figure": "S8",
+      "pdf": "figures/sensitivity_response_legal_E_mean.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 168.3,
+      "height_mm": 168.03
+    },
+    {
+      "figure": "S9",
+      "pdf": "figures/sensitivity_response_legal_O_final.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 167.87,
+      "height_mm": 168.03
+    },
+    {
+      "figure": "S10",
+      "pdf": "figures/sensitivity_response_platform_E_mean.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 168.34,
+      "height_mm": 116.03
+    },
+    {
+      "figure": "S11",
+      "pdf": "figures/sensitivity_response_platform_O_final.pdf",
+      "pages": 1,
+      "warnings": [],
+      "width_mm": 167.91,
+      "height_mm": 116.03
+    }
+  ],
+  "booklet": {
+    "pages": 12,
+    "a4": true,
+    "warnings": [],
+    "all_figure_captions_present": true,
+    "visual_review": "All 11 standalone figures and all 12 booklet pages visually inspected.",
+    "response_legends_confirmed_after_two_pass_build": true
+  },
+  "source_data_unchanged": true,
+  "additional_checks": {
+    "S1": "15 panels, source file references and CI mappings checked",
+    "S5": "30 estimates and 60 row-CI endpoints exactly match source.csv; 60 MC endpoints correctly rounded to 4 decimal places; all 30 actor/marker mappings correct",
+    "consolidated_diagnostics_csv": "Copied from formal sensitivity_diagnostics.csv, 270 records; resolves S6 caption file reference",
+    "consolidated_diagnostics_sha256": "21b6f8107fa92389c55b14336f161fb593d8f6eee2337db8cf1abf8743935b61"
+  }
+}

@@ -1,0 +1,96 @@
+------- 参数设置 -------
+network-type         = BA
+num-nodes N          = 100
+treatment            = legal
+targeting-mode       = targeted  (生效为: targeted)
+p0 (初始污染率)      = 30 %
+beta0 (基线传染率)   = 0.1
+amplification alpha  = 0.5  -> 超级传播者传染率 = 0.15000000000000002
+super-ratio          = 1 %
+legal-strength L     = 70 %  -> 每次法律干预审查 70 个候选节点
+legal-response-time  = 5
+legal-accuracy aL    = 95 %
+platform-accuracy a  = 80 %
+platform-speed       = 75 %  -> 每 tick 审核 75 个节点
+lambda-weight        = 1
+------------------------
+------- 参数设置 -------
+network-type         = BA
+num-nodes N          = 100
+treatment            = legal
+targeting-mode       = random  (生效为: random)
+p0 (初始污染率)      = 30 %
+beta0 (基线传染率)   = 0.1
+amplification alpha  = 0.5  -> 超级传播者传染率 = 0.15000000000000002
+super-ratio          = 1 %
+legal-strength L     = 70 %  -> 每次法律干预审查 70 个候选节点
+legal-response-time  = 5
+legal-accuracy aL    = 95 %
+platform-accuracy a  = 80 %
+platform-speed       = 75 %  -> 每 tick 审核 75 个节点
+lambda-weight        = 1
+------------------------
+------- 参数设置 -------
+network-type         = ER
+num-nodes N          = 100
+treatment            = platform
+targeting-mode       = targeted  (生效为: targeted)
+p0 (初始污染率)      = 30 %
+beta0 (基线传染率)   = 0.1
+amplification alpha  = 0.5  -> 超级传播者传染率 = 0.15000000000000002
+super-ratio          = 1 %
+legal-strength L     = 70 %  -> 每次法律干预审查 70 个候选节点
+legal-response-time  = 5
+legal-accuracy aL    = 95 %
+platform-accuracy a  = 80 %
+platform-speed       = 75 %  -> 每 tick 审核 75 个节点
+lambda-weight        = 1
+------------------------
+------- 参数设置 -------
+network-type         = ER
+num-nodes N          = 100
+treatment            = platform
+targeting-mode       = random  (生效为: random)
+p0 (初始污染率)      = 30 %
+beta0 (基线传染率)   = 0.1
+amplification alpha  = 0.5  -> 超级传播者传染率 = 0.15000000000000002
+super-ratio          = 1 %
+legal-strength L     = 70 %  -> 每次法律干预审查 70 个候选节点
+legal-response-time  = 5
+legal-accuracy aL    = 95 %
+platform-accuracy a  = 80 %
+platform-speed       = 75 %  -> 每 tick 审核 75 个节点
+lambda-weight        = 1
+------------------------
+------- 参数设置 -------
+network-type         = WS
+num-nodes N          = 100
+treatment            = none
+targeting-mode       = targeted  (生效为: targeted)
+p0 (初始污染率)      = 30 %
+beta0 (基线传染率)   = 0.1
+amplification alpha  = 0.5  -> 超级传播者传染率 = 0.15000000000000002
+super-ratio          = 1 %
+legal-strength L     = 70 %  -> 每次法律干预审查 70 个候选节点
+legal-response-time  = 5
+legal-accuracy aL    = 95 %
+platform-accuracy a  = 80 %
+platform-speed       = 75 %  -> 每 tick 审核 75 个节点
+lambda-weight        = 1
+------------------------
+------- 参数设置 -------
+network-type         = WS
+num-nodes N          = 100
+treatment            = legal
+targeting-mode       = random  (生效为: random)
+p0 (初始污染率)      = 30 %
+beta0 (基线传染率)   = 0.1
+amplification alpha  = 0.5  -> 超级传播者传染率 = 0.15000000000000002
+super-ratio          = 1 %
+legal-strength L     = 70 %  -> 每次法律干预审查 70 个候选节点
+legal-response-time  = 5
+legal-accuracy aL    = 95 %
+platform-accuracy a  = 80 %
+platform-speed       = 75 %  -> 每 tick 审核 75 个节点
+lambda-weight        = 1
+------------------------

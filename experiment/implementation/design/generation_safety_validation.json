@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "generator_sha256": "ef998e25f4e0343429ebfc2c317834616676b238c382c6e3dd66f73a7d11c16b",
+  "repeat_generation_byte_identical_files": [
+    "conditions.csv",
+    "run_manifest.csv",
+    "condition_groups.csv",
+    "comparisons.csv",
+    "sensitivity_comparisons.csv",
+    "lhs_legal.csv",
+    "lhs_platform.csv"
+  ],
+  "implicit_sampling_without_archive_rejected": true,
+  "completed_manifest_overwrite_rejected_and_preserved": true,
+  "partial_archive_resampling_rejected": true,
+  "inplace_new_design_rejected": true,
+  "changed_condition_identity_rejected_and_preserved": true,
+  "changed_seed_rejected": true,
+  "external_execution_binding_blocks_regeneration": true,
+  "interrupted_csv_generation_preserves_previous_file": true
+}

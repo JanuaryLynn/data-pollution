@@ -1,0 +1,873 @@
+;; =============================================================
+;; Data Pollution Governance ABM
+;; Version: v1.8-coverage-aligned
+;;
+;; 本版为正式跑数前冻结候选版。相对 v1.6 / v1.7 的关键修订:
+;;
+;;   V1.8-1  legal-strength 恢复为论文原始百分比定义：
+;;           L = 每次法律干预覆盖的全网账号比例 (%)
+;;           sweep = [50, 70, 90], baseline = 70。
+;;           因此 L 与 platform-speed 都是 percentage-based capacity，
+;;           跨规模实验中无需手工按 N 放大。
+;;
+;;   V1.8-2  treatment 与 targeting 真正正交：
+;;           legal / platform 使用相同 candidate universe（全网节点）
+;;           与相同 targeting operator：
+;;             random   = 从全网随机抽取；
+;;             targeted = 按 degree 从高到低优先选择。
+;;
+;;   V1.8-3  法律错误率采用与平台可比的二元判断结构：
+;;           polluted candidate:
+;;             alpha_L 概率正确处置，1-alpha_L 为 false negative；
+;;           clean candidate:
+;;             1-alpha_L 概率错误处置（false positive）。
+;;           制度含义上 alpha_L 表示法律判断/程序准确率，
+;;           不等同于平台分类器准确率。
+;;
+;;   V1.8-4  over-removal-rate:
+;;           O(t) = 累计至少遭遇一次错误治理的独立节点数 / N。
+;;           这是 population-level collateral governance cost，
+;;           严格有界于 [0,100]。
+;;
+;;   V1.8-5  基础扩散过程为 SI-type、无自发恢复；
+;;           legal / platform 治理可将 polluted 节点重置为 clean。
+;;
+;; 累计整合:
+;;   T1.1 符号修正 (p0 / beta0 / amplification)
+;;   T1.2 法律错误率 alpha_L
+;;   T1.3 Collateral damage 追踪
+;;   T1.4 超级传播者按 degree top-k 选取
+;;   T1.6 治理主体与 targeting 机制解耦
+;;   T1.8 网络拓扑可切换 (BA / ER / WS)
+;;   T1.9 platform-speed 改为覆盖率百分比
+;;   T1.10 legal-strength 改为覆盖率百分比
+;;
+;; 符号对照:
+;;   p0                初始污染率 (%)                  -> 论文 III.E
+;;   beta0             基线传染概率                    -> 论文公式(1)
+;;   amplification     超级传播者放大系数 alpha         -> 论文公式(1)
+;;   legal-strength    法律干预覆盖率 L (%)             -> 论文 III.E
+;;   legal-response-time 法律响应间隔 tau_L (ticks)
+;;   legal-accuracy    法律判断/程序准确率 alpha_L (%)
+;;   platform-accuracy 平台识别准确率 alpha (%)
+;;   platform-speed    平台审核覆盖率 n_p (% / tick)
+;;
+;; 重要: setup 不使用 clear-all，BehaviorSpace 每个 experiment
+;;       必须显式列出完整参数，避免跨实验参数残留。
+;; =============================================================
+
+extensions [nw]
+
+globals [
+  ;; ---------- 网络拓扑 ----------
+  network-type          ; "BA" / "ER" / "WS"        默认 "BA"
+  num-nodes             ; 节点数 N                   默认 1000
+  ba-m                  ; BA 的最小连边数 m          默认 2
+  ws-rewire-prob        ; WS 的重连概率              默认 0.1
+
+  ;; ---------- 传播参数 ----------
+  p0                    ; 初始污染率 (%)             扫参 [10, 30, 50]
+  beta0                 ; 基线传染概率               默认 0.10
+  amplification         ; 超级传播者放大系数 alpha    默认 0.5
+  super-ratio           ; 超级传播者比例 (%)         默认 1
+
+  ;; ---------- 治理参数 ----------
+  treatment             ; "none" / "legal" / "platform"
+  targeting-mode        ; "default" / "targeted" / "random"
+  legal-strength        ; 法律干预覆盖率 L (%)          扫参 [50, 70, 90]
+  legal-response-time   ; 法律响应间隔 (tick)         扫参 [1, 5, 10]
+  legal-accuracy        ; 法律准确率 alpha_L (%)      扫参 [90, 95, 100]
+  platform-accuracy     ; 平台准确率 alpha (%)        扫参 [70, 80, 90]
+  platform-speed        ; 平台审核覆盖率 (%)          扫参 [50, 75, 100]
+
+  ;; ---------- 评估参数 ----------
+  lambda-weight         ; 复合指标中误删的惩罚权重    默认 1.0
+  max-ticks             ; 单次运行时长                默认 50
+
+  ;; ---------- 统计量 ----------
+  pollution-count
+  initial-polluted-count
+  legal-deleted-count
+  platform-deleted-count
+  deleted-count
+  legal-false-deleted
+  platform-false-deleted
+  false-deleted
+  over-removal-count
+
+  ;; ---------- 运行控制 ----------
+  ticks-started?
+  params-initialized?
+]
+
+turtles-own [
+  polluted?
+  super-spreader?
+  wrongly-removed?
+]
+
+
+;; =============================================================
+;; 初始化
+;; =============================================================
+
+to setup
+  clear-turtles
+  clear-patches
+  clear-drawing
+  clear-all-plots
+  clear-output
+  set ticks-started? false
+
+  fill-missing-parameters
+  reset-counters
+  report-parameters
+
+  build-network
+  assign-super-spreaders
+  seed-initial-pollution
+
+  set pollution-count count turtles with [polluted?]
+  set initial-polluted-count pollution-count
+
+  layout-circle turtles 10
+
+  reset-ticks
+  set ticks-started? true
+end
+
+
+;; 交互式调试用: 强制清空所有参数后重填默认值。BehaviorSpace 请勿调用。
+to setup-fresh
+  set params-initialized? false
+  set network-type 0
+  set num-nodes 0
+  set ba-m 0
+  set ws-rewire-prob 0
+  set p0 0
+  set beta0 0
+  set amplification 0
+  set super-ratio 0
+  set treatment 0
+  set targeting-mode 0
+  set legal-strength 0
+  set legal-response-time 0
+  set legal-accuracy 0
+  set platform-accuracy 0
+  set platform-speed 0
+  set lambda-weight 0
+  set max-ticks 0
+  setup
+end
+
+
+to fill-missing-parameters
+  if num-nodes           = 0 [ set num-nodes           1000 ]
+  if ba-m                = 0 [ set ba-m                2    ]
+  if ws-rewire-prob      = 0 [ set ws-rewire-prob      0.1  ]
+  if super-ratio         = 0 [ set super-ratio         1    ]
+
+  if p0                  = 0 [ set p0                  50   ]
+  if beta0               = 0 [ set beta0               0.10 ]
+  if amplification       = 0 [ set amplification       0.5  ]
+
+  if legal-strength      = 0 [ set legal-strength      70   ]
+  if legal-response-time = 0 [ set legal-response-time 5    ]
+  if legal-accuracy      = 0 [ set legal-accuracy      95   ]
+  if platform-accuracy   = 0 [ set platform-accuracy   80   ]
+  if platform-speed      = 0 [ set platform-speed      75   ]
+
+  if lambda-weight       = 0 [ set lambda-weight       1.0  ]
+  if max-ticks           = 0 [ set max-ticks           50   ]
+
+  if treatment      = 0 or treatment      = "" [ set treatment      "none"    ]
+  if network-type   = 0 or network-type   = "" [ set network-type   "BA"      ]
+  if targeting-mode = 0 or targeting-mode = "" [ set targeting-mode "default" ]
+
+  set params-initialized? true
+end
+
+
+to reset-counters
+  set legal-deleted-count    0
+  set platform-deleted-count 0
+  set deleted-count          0
+  set legal-false-deleted    0
+  set platform-false-deleted 0
+  set false-deleted          0
+  set over-removal-count     0
+  set initial-polluted-count 0
+  set pollution-count        0
+end
+
+
+to report-parameters
+  print "------- 参数设置 -------"
+  print (word "network-type         = " network-type)
+  print (word "num-nodes N          = " num-nodes)
+  print (word "treatment            = " treatment)
+  print (word "targeting-mode       = " targeting-mode
+              "  (生效为: " effective-targeting ")")
+  print (word "p0 (初始污染率)      = " p0 " %")
+  print (word "beta0 (基线传染率)   = " beta0)
+  print (word "amplification alpha  = " amplification
+              "  -> 超级传播者传染率 = " (beta0 * (1 + amplification)))
+  print (word "super-ratio          = " super-ratio " %")
+  print (word "legal-strength L     = " legal-strength " %  -> 每次法律干预审查 "
+              (round (num-nodes * legal-strength / 100)) " 个候选节点")
+  print (word "legal-response-time  = " legal-response-time)
+  print (word "legal-accuracy aL    = " legal-accuracy " %")
+  print (word "platform-accuracy a  = " platform-accuracy " %")
+  print (word "platform-speed       = " platform-speed " %  -> 每 tick 审核 "
+              (round (num-nodes * platform-speed / 100)) " 个节点")
+  print (word "lambda-weight        = " lambda-weight)
+  print "------------------------"
+end
+
+
+;; =============================================================
+;; 网络生成 (BA / ER / WS), 均校准到相同平均度数 2 * ba-m
+;; =============================================================
+to build-network
+  if network-type = "BA" [ build-barabasi-albert ]
+  if network-type = "ER" [ build-erdos-renyi ]
+  if network-type = "WS" [ build-watts-strogatz ]
+
+  if not any? turtles [
+    error (word "未知的 network-type: " network-type " (应为 BA / ER / WS)")
+  ]
+
+  ask turtles [
+    set shape "person"
+    set color blue
+    set size 0.5
+    set polluted? false
+    set super-spreader? false
+    set wrongly-removed? false
+  ]
+end
+
+
+to build-barabasi-albert
+  nw:generate-preferential-attachment turtles links num-nodes ba-m
+end
+
+
+to build-erdos-renyi
+  let er-prob (2 * ba-m) / (num-nodes - 1)
+  nw:generate-random turtles links num-nodes er-prob
+end
+
+
+;; 手工实现 Watts-Strogatz: 环形晶格 + 随机重连
+;; 手工实现是为避免依赖特定版本 nw 扩展的 WS 生成原语。
+to build-watts-strogatz
+  create-turtles num-nodes
+  let ordered sort turtles
+
+  foreach (range num-nodes) [ i ->
+    let a item i ordered
+    foreach (range 1 (ba-m + 1)) [ j ->
+      let b item ((i + j) mod num-nodes) ordered
+      if a != b [
+        ask a [ if not link-neighbor? b [ create-link-with b ] ]
+      ]
+    ]
+  ]
+
+  let to-rewire []
+  ask links [
+    if random-float 1.0 < ws-rewire-prob [
+      set to-rewire lput (list end1 end2) to-rewire
+    ]
+  ]
+
+  foreach to-rewire [ pair ->
+    let a item 0 pair
+    let b item 1 pair
+    if a != nobody and b != nobody [
+      if [link-neighbor? b] of a [
+        let pool turtles with [self != a and not link-neighbor? a]
+        if any? pool [
+          let c one-of pool
+          ask a [
+            ask link-with b [ die ]
+            create-link-with c
+          ]
+        ]
+      ]
+    ]
+  ]
+end
+
+
+;; -------------------------------------------------------------
+;; Select top 1% nodes by degree centrality as superspreaders.
+;; 在 ER / WS 下度数分布近似泊松, "前 1%" 的度数优势远小于 BA,
+;; 这正是跨拓扑对比要观察的现象。
+;; -------------------------------------------------------------
+to assign-super-spreaders
+  let n-super max list 1 (round (count turtles * super-ratio / 100))
+  if n-super > count turtles [ set n-super count turtles ]
+
+  let ranked sort-on [(- count link-neighbors)] turtles
+
+  ask turtle-set (sublist ranked 0 n-super) [
+    set super-spreader? true
+    set size 1
+  ]
+end
+
+
+to seed-initial-pollution
+  let n-seed max list 1 (round (count turtles * p0 / 100))
+  if n-seed > count turtles [ set n-seed count turtles ]
+
+  ask n-of n-seed turtles [
+    set polluted? true
+    set color red
+  ]
+end
+
+
+;; =============================================================
+;; 干预机制解耦: targeting-mode 与 treatment 正交
+;; "default" 沿用论文原设定 (legal->targeted, platform->random)
+;; =============================================================
+to-report effective-targeting
+  if targeting-mode = "targeted" [ report "targeted" ]
+  if targeting-mode = "random"   [ report "random" ]
+  ifelse treatment = "legal" [ report "targeted" ][ report "random" ]
+end
+
+
+;; =============================================================
+;; 主循环
+;; =============================================================
+to go
+  if not ticks-started? [ setup ]
+  if ticks >= max-ticks [ stop ]
+
+  spread-pollution
+
+  if treatment = "legal"    [ do-legal-intervention ]
+  if treatment = "platform" [ do-platform-moderation ]
+
+  update-visuals
+
+  set pollution-count count turtles with [polluted?]
+  set deleted-count (legal-deleted-count + platform-deleted-count)
+  set false-deleted (legal-false-deleted + platform-false-deleted)
+
+  tick
+end
+
+
+to update-visuals
+  ask turtles [
+    ifelse polluted?
+    [ set color red ]
+    [ ifelse wrongly-removed?
+      [ set color gray ]
+      [ set color blue ] ]
+  ]
+end
+
+
+;; 论文 公式(1):  p_infect = beta0 * (1 + amplification * s_i) * z_it
+to spread-pollution
+  ask turtles with [polluted?] [
+    let spread-chance beta0
+    if super-spreader? [
+      set spread-chance beta0 * (1 + amplification)
+    ]
+
+    ask link-neighbors with [not polluted?] [
+      if random-float 1.0 < spread-chance [
+        set polluted? true
+      ]
+    ]
+  ]
+end
+
+
+;; -------------------------------------------------------------
+;; 法律干预 (每 legal-response-time 个 tick 一次)
+;;
+;; legal-strength = L (%):
+;;   每次法律干预从全网选择 L% 的候选账号进行审查/处置。
+;;   例如 N=1000, L=70 -> 每次审查 700 个候选账号；
+;;        N=5000, L=70 -> 每次审查 3500 个候选账号。
+;;
+;; 与 platform 使用相同 targeting 语义与相同 candidate universe：
+;;   random   : 从全网随机选择候选账号；
+;;   targeted : 按 degree 从高到低优先选择候选账号。
+;;
+;; 对每个候选账号：
+;;   polluted? = true:
+;;      legal-accuracy 概率正确处置 -> polluted? = false
+;;      1-legal-accuracy 概率 false negative -> 不处置
+;;   polluted? = false:
+;;      1-legal-accuracy 概率 false positive -> 计入 wrongful removal
+;;      legal-accuracy 概率正确不处置
+;; -------------------------------------------------------------
+to do-legal-intervention
+  if legal-response-time <= 0 [ stop ]
+  if ticks mod legal-response-time != 0 [ stop ]
+
+  let nodes-to-process min list
+      (round (count turtles * legal-strength / 100))
+      (count turtles)
+
+  if nodes-to-process <= 0 [ stop ]
+
+  let targets nobody
+  ifelse effective-targeting = "targeted" [
+    set targets max-n-of nodes-to-process turtles [count link-neighbors]
+  ]
+  [
+    set targets n-of nodes-to-process turtles
+  ]
+
+  ask targets [
+    ifelse polluted? [
+      ;; true positive / false negative
+      if random-float 100 < legal-accuracy [
+        set polluted? false
+        set legal-deleted-count legal-deleted-count + 1
+      ]
+    ]
+    [
+      ;; true negative / false positive
+      if random-float 100 < (100 - legal-accuracy) [
+        set legal-false-deleted legal-false-deleted + 1
+        mark-wrongly-removed
+      ]
+    ]
+  ]
+end
+
+
+;; -------------------------------------------------------------
+;; 平台自律审核
+;; platform-speed 是覆盖率百分比: 每 tick 审核全网的 platform-speed %。
+;; 该定义随 N 自动缩放, 因此跨规模实验无需手工调整。
+;; 与 legal 共用相同 candidate universe（全网节点）和 targeting 语义：
+;; random: 从全网随机抽样; targeted: 按 degree 从高到低优先审核。
+;; 注意: platform-speed = 100 时全量覆盖, 两种模式等价。
+;; -------------------------------------------------------------
+to do-platform-moderation
+  let sample-size min list (round (count turtles * platform-speed / 100))
+                           (count turtles)
+  if sample-size <= 0 [ stop ]
+
+  let audited nobody
+  ifelse effective-targeting = "targeted" [
+    set audited max-n-of sample-size turtles [count link-neighbors]
+  ]
+  [
+    set audited n-of sample-size turtles
+  ]
+
+  ask audited [
+    ifelse polluted? [
+      if random-float 100 < platform-accuracy [
+        set polluted? false
+        set platform-deleted-count platform-deleted-count + 1
+      ]
+    ]
+    [
+      if random-float 100 < (100 - platform-accuracy) [
+        set platform-false-deleted platform-false-deleted + 1
+        mark-wrongly-removed
+      ]
+    ]
+  ]
+end
+
+
+;; turtle 过程: 标记一个正常节点被误删 (去重计数)
+to mark-wrongly-removed
+  if not wrongly-removed? [
+    set wrongly-removed? true
+    set over-removal-count over-removal-count + 1
+  ]
+end
+
+
+;; =============================================================
+;; 报告器
+;; =============================================================
+
+;; 论文 公式(2): E(t) = 未污染节点比例 (%)
+to-report effectiveness
+  if not ticks-started? [ report 0 ]
+  ifelse count turtles > 0 [
+    report 100 - (pollution-count / count turtles) * 100
+  ][
+    report 0
+  ]
+end
+
+
+;; Collateral damage / 误删暴露率 O(t)
+;; = 累计至少遭遇一次错误治理的独立节点数 / 全体节点 N (%)
+;; population-level unique exposure，严格有界于 [0,100]。
+to-report over-removal-rate
+  if not ticks-started? [ report 0 ]
+  ifelse count turtles > 0 [
+    report (over-removal-count / count turtles) * 100
+  ][
+    report 0
+  ]
+end
+
+
+;; 复合指标: E_net = E - lambda * O
+to-report net-effectiveness
+  if not ticks-started? [ report 0 ]
+  report effectiveness - (lambda-weight * over-removal-rate)
+end
+
+
+;; 事件级处置精确率：正确处置事件 / (正确处置事件 + false-positive 事件)
+;; 与 over-removal-rate 的独立用户暴露比例不同。
+to-report removal-precision
+  if not ticks-started? [ report 0 ]
+  let total (deleted-count + false-deleted)
+  ifelse total > 0 [ report (deleted-count / total) * 100 ][ report 0 ]
+end
+
+
+to-report error-rate
+  if not ticks-started? [ report 0 ]
+  let total (deleted-count + false-deleted)
+  ifelse total > 0 [ report (false-deleted / total) * 100 ][ report 0 ]
+end
+
+
+to-report current-pollution-rate
+  if not ticks-started? [ report 0 ]
+  ifelse count turtles > 0 [
+    report (pollution-count / count turtles) * 100
+  ][
+    report 0
+  ]
+end
+
+
+to-report avg-response-time
+  if not ticks-started? [ report 0 ]
+  ifelse treatment = "legal" [
+    report legal-response-time
+  ][
+    ifelse treatment = "platform" [ report 1 ][ report 0 ]
+  ]
+end
+
+
+;; ---------- 诊断报告器 ----------
+
+to-report legal-load
+  report round (count turtles * legal-strength / 100)
+end
+
+to-report audit-load
+  report round (count turtles * platform-speed / 100)
+end
+
+to-report mean-degree
+  ifelse any? turtles [ report mean [count link-neighbors] of turtles ][ report 0 ]
+end
+
+to-report max-degree
+  ifelse any? turtles [ report max [count link-neighbors] of turtles ][ report 0 ]
+end
+
+to-report degree-sd
+  ifelse count turtles > 1 [
+    report standard-deviation [count link-neighbors] of turtles
+  ][ report 0 ]
+end
+
+to-report count-isolates
+  report count turtles with [not any? link-neighbors]
+end
+
+to-report mean-super-degree
+  ifelse any? turtles with [super-spreader?] [
+    report mean [count link-neighbors] of turtles with [super-spreader?]
+  ][ report 0 ]
+end
+
+to-report mean-ordinary-degree
+  ifelse any? turtles with [not super-spreader?] [
+    report mean [count link-neighbors] of turtles with [not super-spreader?]
+  ][ report 0 ]
+end
+
+to-report count-super-spreaders
+  report count turtles with [super-spreader?]
+end
+
+to-report count-wrongly-removed
+  report count turtles with [wrongly-removed?]
+end
+
+to-report effective-beta-super
+  report beta0 * (1 + amplification)
+end
+
+
+;; =============================================================
+;; BehaviorSpace 使用说明
+;; =============================================================
+;;
+;; [通用设置]
+;;   重复次数:        10
+;;   按顺序执行组合:  勾选
+;;   setup 命令:      setup
+;;   go 命令:         go
+;;   终止条件:        ticks >= 50
+;;   每一步运行指标:  勾选
+;;   更新视图 / 更新图表: 取消勾选（提速）
+;;   输出格式:        Table
+;;
+;; [通用 reporter]
+;;   effectiveness
+;;   over-removal-rate
+;;   net-effectiveness
+;;   removal-precision
+;;   error-rate
+;;   current-pollution-rate
+;;   count-wrongly-removed
+;;   deleted-count
+;;   false-deleted
+;;
+;; [跨拓扑 / 跨规模实验额外 reporter]
+;;   mean-degree
+;;   max-degree
+;;   degree-sd
+;;   count-isolates
+;;   mean-super-degree
+;;   legal-load
+;;   audit-load
+;;
+;; -------------------------------------------------------------
+;; 实验 1 — exp1_baseline                       3 x 10 = 30 runs
+;; -------------------------------------------------------------
+;; ["treatment" "none"]
+;; ["targeting-mode" "targeted"]
+;; ["network-type" "BA"]
+;; ["p0" 10 30 50]
+;; ["num-nodes" 1000]
+;; ["ba-m" 2]
+;; ["ws-rewire-prob" 0.1]
+;; ["beta0" 0.1]
+;; ["amplification" 0.5]
+;; ["super-ratio" 1]
+;; ["legal-strength" 70]
+;; ["legal-response-time" 5]
+;; ["legal-accuracy" 95]
+;; ["platform-accuracy" 80]
+;; ["platform-speed" 75]
+;; ["lambda-weight" 1]
+;; ["max-ticks" 50]
+;;
+;; -------------------------------------------------------------
+;; 实验 2 — exp2_legal_main                    27 x 10 = 270 runs
+;; -------------------------------------------------------------
+;; ["treatment" "legal"]
+;; ["targeting-mode" "targeted"]
+;; ["network-type" "BA"]
+;; ["p0" 10 30 50]
+;; ["legal-strength" 50 70 90]
+;; ["legal-response-time" 1 5 10]
+;; ["legal-accuracy" 95]
+;; ["platform-accuracy" 80]
+;; ["platform-speed" 75]
+;; ["num-nodes" 1000]
+;; ["ba-m" 2]
+;; ["ws-rewire-prob" 0.1]
+;; ["beta0" 0.1]
+;; ["amplification" 0.5]
+;; ["super-ratio" 1]
+;; ["lambda-weight" 1]
+;; ["max-ticks" 50]
+;;
+;; -------------------------------------------------------------
+;; 实验 3 — exp3_platform_main                 27 x 10 = 270 runs
+;; -------------------------------------------------------------
+;; ["treatment" "platform"]
+;; ["targeting-mode" "targeted"]
+;; ["network-type" "BA"]
+;; ["p0" 10 30 50]
+;; ["platform-accuracy" 70 80 90]
+;; ["platform-speed" 50 75 100]
+;; ["legal-strength" 70]
+;; ["legal-response-time" 5]
+;; ["legal-accuracy" 95]
+;; ["num-nodes" 1000]
+;; ["ba-m" 2]
+;; ["ws-rewire-prob" 0.1]
+;; ["beta0" 0.1]
+;; ["amplification" 0.5]
+;; ["super-ratio" 1]
+;; ["lambda-weight" 1]
+;; ["max-ticks" 50]
+;;
+;; -------------------------------------------------------------
+;; 实验 4 — exp4_2x2                         12 x 10 = 120 runs
+;; Reviewer 1-A 核心机制识别实验
+;; -------------------------------------------------------------
+;; ["treatment" "legal" "platform"]
+;; ["targeting-mode" "targeted" "random"]
+;; ["network-type" "BA"]
+;; ["p0" 10 30 50]
+;; ["legal-strength" 70]
+;; ["legal-response-time" 5]
+;; ["legal-accuracy" 95]
+;; ["platform-accuracy" 80]
+;; ["platform-speed" 75]
+;; ["num-nodes" 1000]
+;; ["ba-m" 2]
+;; ["ws-rewire-prob" 0.1]
+;; ["beta0" 0.1]
+;; ["amplification" 0.5]
+;; ["super-ratio" 1]
+;; ["lambda-weight" 1]
+;; ["max-ticks" 50]
+;;
+;; 注意: platform-speed 必须 < 100，否则 platform-targeted 与
+;;       platform-random 在全量审核下完全等价。
+;;
+;; -------------------------------------------------------------
+;; 实验 5 — exp5_legal_accuracy_sensitivity    9 x 10 = 90 runs
+;; -------------------------------------------------------------
+;; ["treatment" "legal"]
+;; ["targeting-mode" "targeted"]
+;; ["network-type" "BA"]
+;; ["p0" 10 30 50]
+;; ["legal-accuracy" 90 95 100]
+;; ["legal-strength" 70]
+;; ["legal-response-time" 5]
+;; ["platform-accuracy" 80]
+;; ["platform-speed" 75]
+;; ["num-nodes" 1000]
+;; ["ba-m" 2]
+;; ["ws-rewire-prob" 0.1]
+;; ["beta0" 0.1]
+;; ["amplification" 0.5]
+;; ["super-ratio" 1]
+;; ["lambda-weight" 1]
+;; ["max-ticks" 50]
+;;
+;; -------------------------------------------------------------
+;; 实验 6 — exp6_networktype                  27 x 10 = 270 runs
+;; -------------------------------------------------------------
+;; ["network-type" "BA" "ER" "WS"]
+;; ["treatment" "none" "legal" "platform"]
+;; ["targeting-mode" "targeted"]
+;; ["p0" 10 30 50]
+;; ["legal-strength" 70]
+;; ["legal-response-time" 5]
+;; ["legal-accuracy" 95]
+;; ["platform-accuracy" 80]
+;; ["platform-speed" 75]
+;; ["num-nodes" 1000]
+;; ["ba-m" 2]
+;; ["ws-rewire-prob" 0.1]
+;; ["beta0" 0.1]
+;; ["amplification" 0.5]
+;; ["super-ratio" 1]
+;; ["lambda-weight" 1]
+;; ["max-ticks" 50]
+;;
+;; -------------------------------------------------------------
+;; 实验 7 — scale check（拆成 7a / 7b）
+;; L 与 n_p 都是百分比，跨 N 自动缩放；除 N 外其余参数完全相同。
+;; -------------------------------------------------------------
+;; 7a — exp7a_scale_check_N1000                9 x 10 = 90 runs
+;; ["treatment" "none" "legal" "platform"]
+;; ["targeting-mode" "targeted"]
+;; ["network-type" "BA"]
+;; ["p0" 10 30 50]
+;; ["num-nodes" 1000]
+;; ["legal-strength" 70]
+;; ["legal-response-time" 5]
+;; ["legal-accuracy" 95]
+;; ["platform-accuracy" 80]
+;; ["platform-speed" 75]
+;; ["ba-m" 2]
+;; ["ws-rewire-prob" 0.1]
+;; ["beta0" 0.1]
+;; ["amplification" 0.5]
+;; ["super-ratio" 1]
+;; ["lambda-weight" 1]
+;; ["max-ticks" 50]
+;;
+;; 7b — exp7b_scale_check_N5000                9 x 10 = 90 runs
+;; 与 7a 完全相同，仅:
+;; ["num-nodes" 5000]
+;;
+;; 总计 = 30 + 270 + 270 + 120 + 90 + 270 + 90 + 90
+;;      = 1230 runs
+;;
+;; -------------------------------------------------------------
+;; [两个实验管理原则]
+;; 1. 不要把参数显式设为 0；fill-missing-parameters 会将 0 视作缺省。
+;; 2. 因 setup 不 clear-all，每个 experiment 都显式列出完整参数，
+;;    不依赖上一实验遗留的 global values。
+;;
+;; =============================================================
+;; 建模假设备忘（论文 III.C / III.D / III.E / Limitations）
+;; =============================================================
+;; 1. legal-strength = L (%)：
+;;    每次法律干预审查/处置全网 L% 的候选账号。
+;;    sweep = 50/70/90，baseline = 70。
+;;
+;; 2. platform-speed = n_p (%)：
+;;    每 tick 审核全网 n_p% 的账号。
+;;    sweep = 50/75/100，baseline = 75。
+;;
+;; 3. 两者均为 percentage-based capacity，但时间机制不同：
+;;    legal 每 tau_L ticks 执行一次；
+;;    platform 每 tick 执行一次。
+;;    因此不能把 L 与 n_p 解释为现实世界中完全相同的 throughput。
+;;
+;; 4. 基础传播过程为 SI-type diffusion：无自发恢复。
+;;    treatment="none" 时污染状态为吸收态；
+;;    legal/platform 可将 polluted 节点重置为 clean。
+;;
+;; 5. BA / ER / WS 均校准到近似相同平均度数 2*ba-m (=4)。
+;;    ER / WS 结构诊断使用 mean-degree、degree-sd、count-isolates 等 reporter。
+;;
+;; 6. superspreader = degree centrality 排名前 super-ratio% 的节点；
+;;    superspreader 身份只影响传播概率，不额外改变候选池。
+;;
+;; 7. targeting 与 treatment 严格正交：
+;;    legal/platform 均从全网节点这一相同 candidate universe 出发；
+;;    random = 随机抽取；
+;;    targeted = degree-based top-n。
+;;
+;; 8. legal-accuracy 与 platform-accuracy 使用可比的二元错误结构：
+;;    polluted candidate 错误 = false negative；
+;;    clean candidate 错误 = false positive。
+;;    但制度解释不同：
+;;    alpha_L = 法律判断/程序准确率；
+;;    alpha   = 平台识别准确率。
+;;
+;; 9. wrongly-removed? 记录用户是否至少经历过一次错误治理。
+;;    被误伤节点不从网络拓扑中移除；模型衡量的是治理误伤暴露，
+;;    而不是账号永久下线导致的拓扑变化。
+;;
+;; 10. over-removal-rate = unique wrongly affected users / N。
+;;     removal-precision 为事件级指标，两者不可混同。
+;;
+;; 11. net-effectiveness = E - lambda*O 仅作为辅助复合指标。
+;;     正文主分析优先分别报告 E 与 O。
+;;
+;; 12. 每个 run 输出 step 0-50 共 51 个 observation。
+;;     step 0 用于初始状态/轨迹；如计算 50-tick 期内平均治理表现，
+;;     建议主统计使用 step 1-50。
+;; =============================================================

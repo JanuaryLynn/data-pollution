@@ -1,0 +1,6 @@
+actor,p0,stratum,outcome,method,bins,aggregation,input,estimate,n_lhs,repeats,estimate_20,rank_30,rank_20,estimable,row_ci95_low,row_ci95_high,row_valid_resamples,mc_ci95_low,mc_ci95_high,mc_valid_resamples,plot_y
+legal,50,legal_p050,E_mean,PRCC,,rank_residual_correlation,legal-strength,0.95552470525,500,30,0.955507800861,,,True,0.942111332299,0.964465392223,1000,0.95524136229,0.955673491721,1000,4
+legal,50,legal_p050,E_mean,PRCC,,rank_residual_correlation,legal-response-time,-0.885734235559,500,30,-0.885627194828,,,True,-0.901511984161,-0.863727515184,1000,-0.886286811718,-0.885177579404,1000,3
+legal,50,legal_p050,E_mean,PRCC,,rank_residual_correlation,alpha_legal,0.300886904687,500,30,0.300048419214,,,True,0.21500932343,0.382886570885,1000,0.297844176212,0.303214714592,1000,2
+platform,50,platform_p050,E_mean,PRCC,,rank_residual_correlation,platform-speed,0.993313049566,500,30,0.993237917894,,,True,0.990203992519,0.994878579474,1000,0.993163459698,0.993374550373,1000,1
+platform,50,platform_p050,E_mean,PRCC,,rank_residual_correlation,alpha_platform,0.835993789727,500,30,0.8349892118,,,True,0.795837727886,0.85422211132,1000,0.833159013367,0.837256227031,1000,0

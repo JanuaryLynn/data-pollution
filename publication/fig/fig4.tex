@@ -1,0 +1,105 @@
+% 数据列 mean/ci_low/ci_high 保持未四舍五入；误差是原置信区间端点差。
+\documentclass[tikz,border=5pt]{standalone}
+\input{figure_style.tex}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[abm axis,width=4.65cm,height=3.4cm,
+ group style={group size=3 by 3,horizontal sep=1.5cm,vertical sep=1.85cm},
+ title style={font=\small,align=left},title style={at={(0,1.03)},anchor=south west},
+ xmin=-3,xmax=103,ymin=-3,ymax=103,ytick={0,25,50,75,100},]
+% 面板 a：横轴误伤、纵轴效果；每点一个参数组合，双向边际 CI。
+\nextgroupplot[title={(a) $p_0=10\%$: parameter grid},xlabel={$O(50)$ (\%)},ylabel={$\bar E$ (\%)},legend style={at={(.98,.02)},anchor=south east,font=\scriptsize,draw=none,fill=white}]
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,y dir=both,y explicit,error bar style={line width=.45pt}]
+ table[col sep=comma,x=x,y=y,x error minus=xerrminus,x error plus=xerrplus,y error minus=yerrminus,y error plus=yerrplus] {data/fig4/grid_p10_legal.csv};
+\addlegendentry{Legal}
+\addplot+[only marks,color=abmBlue,mark=square*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,y dir=both,y explicit,error bar style={line width=.45pt}]
+ table[col sep=comma,x=x,y=y,x error minus=xerrminus,x error plus=xerrplus,y error minus=yerrminus,y error plus=yerrplus] {data/fig4/grid_p10_platform.csv};
+\addlegendentry{Platform}
+% 面板 b：横轴误伤、纵轴效果；每点一个参数组合，双向边际 CI。
+\nextgroupplot[title={(b) $p_0=30\%$: parameter grid},xlabel={$O(50)$ (\%)},ylabel={$\bar E$ (\%)},legend style={at={(.98,.02)},anchor=south east,font=\scriptsize,draw=none,fill=white}]
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,y dir=both,y explicit,error bar style={line width=.45pt}]
+ table[col sep=comma,x=x,y=y,x error minus=xerrminus,x error plus=xerrplus,y error minus=yerrminus,y error plus=yerrplus] {data/fig4/grid_p30_legal.csv};
+\addlegendentry{Legal}
+\addplot+[only marks,color=abmBlue,mark=square*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,y dir=both,y explicit,error bar style={line width=.45pt}]
+ table[col sep=comma,x=x,y=y,x error minus=xerrminus,x error plus=xerrplus,y error minus=yerrminus,y error plus=yerrplus] {data/fig4/grid_p30_platform.csv};
+\addlegendentry{Platform}
+% 面板 c：横轴误伤、纵轴效果；每点一个参数组合，双向边际 CI。
+\nextgroupplot[title={(c) $p_0=50\%$: parameter grid},xlabel={$O(50)$ (\%)},ylabel={$\bar E$ (\%)},legend style={at={(.98,.02)},anchor=south east,font=\scriptsize,draw=none,fill=white}]
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,y dir=both,y explicit,error bar style={line width=.45pt}]
+ table[col sep=comma,x=x,y=y,x error minus=xerrminus,x error plus=xerrplus,y error minus=yerrminus,y error plus=yerrplus] {data/fig4/grid_p50_legal.csv};
+\addlegendentry{Legal}
+\addplot+[only marks,color=abmBlue,mark=square*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,y dir=both,y explicit,error bar style={line width=.45pt}]
+ table[col sep=comma,x=x,y=y,x error minus=xerrminus,x error plus=xerrplus,y error minus=yerrminus,y error plus=yerrplus] {data/fig4/grid_p50_platform.csv};
+\addlegendentry{Platform}
+% 面板 d：靶向/随机；x 只是分类位置，非连续变量。
+\nextgroupplot[title={(d) Benchmark targeting},xmin=-.5,xmax=3.5,
+ xtick={0,1,2,3},xticklabels={{Legal\\random},{Legal\\targeted},{Platform\\random},{Platform\\targeted}},
+ xticklabel style={align=center,font=\scriptsize},ylabel={Outcome (\%)},legend columns=2,
+ legend style={at={(.02,.02)},anchor=south west,font=\scriptsize,draw=none,fill=white}]
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/targeting_p10_E_mean.csv};
+\addplot+[only marks,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/targeting_p10_O_final.csv};
+% 面板 e：靶向/随机；x 只是分类位置，非连续变量。
+\nextgroupplot[title={(e) Benchmark targeting},xmin=-.5,xmax=3.5,
+ xtick={0,1,2,3},xticklabels={{Legal\\random},{Legal\\targeted},{Platform\\random},{Platform\\targeted}},
+ xticklabel style={align=center,font=\scriptsize},ylabel={Outcome (\%)},legend columns=2,
+ legend style={at={(.02,.02)},anchor=south west,font=\scriptsize,draw=none,fill=white}]
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/targeting_p30_E_mean.csv};
+\addplot+[only marks,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/targeting_p30_O_final.csv};
+% 面板 f：靶向/随机；x 只是分类位置，非连续变量。
+\nextgroupplot[title={(f) Benchmark targeting},xmin=-.5,xmax=3.5,
+ xtick={0,1,2,3},xticklabels={{Legal\\random},{Legal\\targeted},{Platform\\random},{Platform\\targeted}},
+ xticklabel style={align=center,font=\scriptsize},ylabel={Outcome (\%)},legend columns=2,
+ legend style={at={(.02,.02)},anchor=south west,font=\scriptsize,draw=none,fill=white}]
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/targeting_p50_E_mean.csv};
+\addplot+[only marks,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/targeting_p50_O_final.csv};
+% 面板 g：法定准确率；线段仅连接实测设置。
+\nextgroupplot[title={(g) Legal accuracy},xmin=89,xmax=101,xtick={90,95,100},xlabel={Legal accuracy $\alpha_L$ (\%)},ylabel={Outcome (\%)},legend columns=2,
+ legend style={at={(.02,.98)},anchor=north west,font=\scriptsize,draw=none,fill=white}]
+\addplot+[solid,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/accuracy_p10_E_mean.csv};
+\addplot+[dashed,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/accuracy_p10_O_final.csv};
+% 面板 h：法定准确率；线段仅连接实测设置。
+\nextgroupplot[title={(h) Legal accuracy},xmin=89,xmax=101,xtick={90,95,100},xlabel={Legal accuracy $\alpha_L$ (\%)},ylabel={Outcome (\%)},legend columns=2,
+ legend style={at={(.02,.98)},anchor=north west,font=\scriptsize,draw=none,fill=white}]
+\addplot+[solid,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/accuracy_p30_E_mean.csv};
+\addplot+[dashed,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/accuracy_p30_O_final.csv};
+% 面板 i：法定准确率；线段仅连接实测设置。
+\nextgroupplot[title={(i) Legal accuracy},xmin=89,xmax=101,xtick={90,95,100},xlabel={Legal accuracy $\alpha_L$ (\%)},ylabel={Outcome (\%)},legend columns=2,
+ legend style={at={(.02,.98)},anchor=north west,font=\scriptsize,draw=none,fill=white}]
+\addplot+[solid,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/accuracy_p50_E_mean.csv};
+\addplot+[dashed,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+  error bars/.cd,y dir=both,y explicit,error bar style={line width=.55pt},error mark options={rotate=90,mark size=2pt}]
+  table[col sep=comma,x=x,y=mean,y error minus=errminus,y error plus=errplus] {data/fig4/accuracy_p50_O_final.csv};
+\end{groupplot}
+\node[anchor=north,font=\small] at ([yshift=-1.4cm]group c2r3.south) {
+\textcolor{abmBlue}{$\bullet$ Mean effectiveness $\bar E$}\qquad
+\textcolor{abmOrange}{\rule{1.4mm}{1.4mm} Collateral exposure $O(50)$}};
+\end{tikzpicture}
+\end{document}

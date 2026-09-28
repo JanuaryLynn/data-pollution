@@ -1,0 +1,55 @@
+% Table S10. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 224mm+10\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}L{25mm}C{15mm}L{50mm}R{26mm}R{51mm}R{57mm}@{}}
+\caption{H2: PAWN index differences and wrongful-exposure comparisons}\label{tab:tableS10_H2}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Index difference} & \multicolumn{1}{r}{Estimate} & \multicolumn{1}{r}{Row-bootstrap 95\% interval} & \multicolumn{1}{r}{Within-point MC 95\% interval} \\
+\midrule
+\endfirsthead
+\caption[]{H2: PAWN index differences and wrongful-exposure comparisons (continued)}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Index difference} & \multicolumn{1}{r}{Estimate} & \multicolumn{1}{r}{Row-bootstrap 95\% interval} & \multicolumn{1}{r}{Within-point MC 95\% interval} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{6}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Entries are dimensionless differences in median PAWN indices across 10 fixed input bins, not percentage points or variance shares. The nine $\bar E$ comparisons test H2; the nine $O(50)$ comparisons are companion analyses. Each regime--$p_0$ stratum uses 500 Latin hypercube points and 30 independent runs per point, with symmetric accuracy ($\mathrm{TPR}=\mathrm{TNR}$). Both interval types are marginal 95\% intervals based on 1,000 resamples each. Row bootstrap measures approximate stability under design-point resampling, which does not preserve Latin hypercube stratification; within-point bootstrap measures Monte Carlo uncertainty at fixed parameter points. These separate intervals are not combined. Unrounded estimates, interval endpoints, input names, comparison IDs and valid resample counts are in \texttt{tableS10\_H2\_source.csv}.}}\\
+\endlastfoot
+\multicolumn{6}{@{}l@{}}{\bfseries A. Mean effectiveness $\bar E$: primary H2 comparisons}\\*
+\addlinespace[3pt]
+Legal & 10 & $L$ minus $\alpha_L$ & $0.318$ & $[0.237, 0.351]$ & $[0.315, 0.325]$ \\*
+Legal & 10 & $\tau_L$ minus $\alpha_L$ & $0.123$ & $[0.050, 0.184]$ & $[0.118, 0.132]$ \\*
+Platform & 10 & $n_p$ minus $\alpha_P$ & $0.442$ & $[0.373, 0.461]$ & $[0.439, 0.454]$ \\
+\addlinespace[2pt]
+Legal & 30 & $L$ minus $\alpha_L$ & $0.339$ & $[0.259, 0.369]$ & $[0.336, 0.344]$ \\*
+Legal & 30 & $\tau_L$ minus $\alpha_L$ & $0.114$ & $[0.040, 0.168]$ & $[0.110, 0.120]$ \\*
+Platform & 30 & $n_p$ minus $\alpha_P$ & $0.490$ & $[0.412, 0.504]$ & $[0.486, 0.495]$ \\
+\addlinespace[2pt]
+Legal & 50 & $L$ minus $\alpha_L$ & $0.360$ & $[0.276, 0.379]$ & $[0.355, 0.362]$ \\*
+Legal & 50 & $\tau_L$ minus $\alpha_L$ & $0.116$ & $[0.037, 0.161]$ & $[0.111, 0.120]$ \\*
+Platform & 50 & $n_p$ minus $\alpha_P$ & $0.503$ & $[0.429, 0.519]$ & $[0.498, 0.508]$ \\
+\midrule
+\multicolumn{6}{@{}l@{}}{\bfseries B. Wrongful exposure $O(50)$: companion comparisons}\\*
+\addlinespace[3pt]
+Legal & 10 & $L$ minus $\alpha_L$ & $0.077$ & $[0.007, 0.154]$ & $[0.066, 0.088]$ \\*
+Legal & 10 & $\tau_L$ minus $\alpha_L$ & $0.012$ & $[-0.050, 0.106]$ & $[0.001, 0.025]$ \\*
+Platform & 10 & $n_p$ minus $\alpha_P$ & $0.344$ & $[0.295, 0.413]$ & $[0.341, 0.353]$ \\
+\addlinespace[2pt]
+Legal & 30 & $L$ minus $\alpha_L$ & $0.108$ & $[0.017, 0.172]$ & $[0.098, 0.117]$ \\*
+Legal & 30 & $\tau_L$ minus $\alpha_L$ & $0.051$ & $[-0.021, 0.117]$ & $[0.042, 0.059]$ \\*
+Platform & 30 & $n_p$ minus $\alpha_P$ & $0.359$ & $[0.303, 0.418]$ & $[0.350, 0.370]$ \\
+\addlinespace[2pt]
+Legal & 50 & $L$ minus $\alpha_L$ & $0.121$ & $[0.042, 0.185]$ & $[0.110, 0.133]$ \\*
+Legal & 50 & $\tau_L$ minus $\alpha_L$ & $0.069$ & $[-0.004, 0.143]$ & $[0.057, 0.081]$ \\*
+Platform & 50 & $n_p$ minus $\alpha_P$ & $0.380$ & $[0.318, 0.419]$ & $[0.361, 0.380]$ \\
+\end{longtable}
+\endgroup

@@ -1,0 +1,123 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usetikzlibrary{calc,plotmarks}
+\pgfplotsset{compat=1.18}
+\definecolor{abmBlue}{HTML}{0072B2}
+\definecolor{abmOrange}{HTML}{D55E00}
+\definecolor{abmInk}{HTML}{303030}
+\definecolor{abmGrid}{HTML}{E5E5E5}
+\pgfplotstableread[col sep=comma]{data/figS5a_H1_plot.csv}\HoneData
+
+% Appearance controls: markers and confidence-column background.
+\def\PointSize{2.1pt}
+\colorlet{CIBackground}{black!5}
+\pgfplotsset{hone axis/.style={
+  width=2.55cm,height=3.70cm,scale only axis,
+  xmin=-38,xmax=2,ymin=-0.5,ymax=3.5,
+  xtick={-30,-20,-10,0},ytick=\empty,
+  axis x line*=bottom,axis y line=none,
+  axis line style={black!60,line width=0.45pt},
+  tick align=outside,tick style={black!55,line width=0.45pt},
+  tick label style={font=\fontsize{8.5}{10}\selectfont},
+  scaled ticks=false,clip=false
+}}
+
+% Arguments: y, color, marker, estimate, CI lower, CI upper.
+\newcommand{\DrawContrast}[6]{%
+  \addplot[only marks,mark=#3,mark size=\PointSize,
+    mark options={draw=#2,fill=#2,solid},forget plot]
+    coordinates {(#4,#1)};
+  \node[anchor=center,text=black,inner sep=0pt,
+    font=\fontsize{8.5}{10}\selectfont]
+    at ([xshift=1.15cm]axis cs:2,#1)
+    {$[\pgfmathprintnumber[fixed,fixed zerofill,precision=2]{#5},\,
+       \pgfmathprintnumber[fixed,fixed zerofill,precision=2]{#6}]$};
+}
+% Arguments: zero-based CSV row, y, color, marker.
+% Freeze numeric values before PGFPlots defers drawing.
+\newcommand{\ContrastRow}[4]{%
+  \pgfplotstablegetelem{#1}{estimate}\of{\HoneData}%
+  \edef\ThisEstimate{\pgfplotsretval}%
+  \pgfplotstablegetelem{#1}{ci_low}\of{\HoneData}%
+  \edef\ThisLow{\pgfplotsretval}%
+  \pgfplotstablegetelem{#1}{ci_high}\of{\HoneData}%
+  \edef\ThisHigh{\pgfplotsretval}%
+  \edef\DrawThis{\noexpand\DrawContrast{#2}{#3}{#4}{\ThisEstimate}{\ThisLow}{\ThisHigh}}%
+  \DrawThis
+}
+\newcommand{\PanelGuides}{%
+  \path[fill=CIBackground,draw=none]
+    (axis cs:2,-0.5) rectangle ([xshift=2.30cm]axis cs:2,3.5);
+  \draw[abmGrid,line width=0.35pt]
+    (axis cs:-30,-0.5) -- (axis cs:-30,3.5)
+    (axis cs:-20,-0.5) -- (axis cs:-20,3.5)
+    (axis cs:-10,-0.5) -- (axis cs:-10,3.5);
+  \draw[black!17,line width=0.4pt]
+    (axis cs:-38,1.5) -- ([xshift=2.30cm]axis cs:2,1.5);
+  \draw[black!60,densely dashed,line width=0.6pt]
+    (axis cs:0,-0.5) -- (axis cs:0,3.5);
+}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[hone axis,name=hone0,at={(0.00cm,0cm)},anchor=south west]
+\PanelGuides
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-38,3) {Legal coverage gain\\$D_L(1)-D_L(5)$};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-38,2) {Legal coverage gain\\$D_L(1)-D_L(10)$};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-38,1) {Platform accuracy gain\\$D_\alpha(100)-D_\alpha(50)$};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-38,0) {Platform accuracy gain\\$D_\alpha(100)-D_\alpha(75)$};
+\ContrastRow{0}{3}{abmOrange}{*}
+\ContrastRow{1}{2}{abmOrange}{*}
+\ContrastRow{2}{1}{abmBlue}{square*}
+\ContrastRow{3}{0}{abmBlue}{square*}
+\end{axis}
+\node[text=abmInk,font=\fontsize{9.5}{12}\selectfont] at (2.425,4.60) {(a) $p_0=10\%$};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (1.275,4.05) {Gain contrast (pp)};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (3.700,4.05) {95\% CI};
+\draw[black!22,line width=0.4pt] (0.00,3.85) -- (4.85,3.85);
+\begin{axis}[hone axis,name=hone1,at={(5.00cm,0cm)},anchor=south west]
+\PanelGuides
+\ContrastRow{4}{3}{abmOrange}{*}
+\ContrastRow{5}{2}{abmOrange}{*}
+\ContrastRow{6}{1}{abmBlue}{square*}
+\ContrastRow{7}{0}{abmBlue}{square*}
+\end{axis}
+\node[text=abmInk,font=\fontsize{9.5}{12}\selectfont] at (7.425,4.60) {(b) $p_0=30\%$};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (6.275,4.05) {Gain contrast (pp)};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (8.700,4.05) {95\% CI};
+\draw[black!22,line width=0.4pt] (5.00,3.85) -- (9.85,3.85);
+\begin{axis}[hone axis,name=hone2,at={(10.00cm,0cm)},anchor=south west]
+\PanelGuides
+\ContrastRow{8}{3}{abmOrange}{*}
+\ContrastRow{9}{2}{abmOrange}{*}
+\ContrastRow{10}{1}{abmBlue}{square*}
+\ContrastRow{11}{0}{abmBlue}{square*}
+\end{axis}
+\node[text=abmInk,font=\fontsize{9.5}{12}\selectfont] at (12.425,4.60) {(c) $p_0=50\%$};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (11.275,4.05) {Gain contrast (pp)};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (13.700,4.05) {95\% CI};
+\draw[black!22,line width=0.4pt] (10.00,3.85) -- (14.85,3.85);
+\node[anchor=east,text=abmInk,font=\fontsize{8.5}{11}\selectfont]
+  at (-0.25,4.05) {Prespecified contrast};
+\node[text=abmInk,font=\fontsize{11}{13}\selectfont]
+  at (7.425,5.25) {Mean effectiveness};
+\node[text=abmInk,font=\fontsize{9}{11}\selectfont]
+  at (7.425,-0.8) {Difference in gains (percentage points)};
+
+% Graphical legend: governance regimes, not outcome variables.
+\node[anchor=west,text=abmInk,font=\fontsize{9}{11}\selectfont]
+  (legLegal) at (4.20,-1.40) {Legal governance};
+\path[draw=abmOrange,fill=abmOrange]
+  plot[only marks,mark=*,mark size=\PointSize]
+  coordinates {([xshift=-0.20cm]legLegal.west)};
+\node[anchor=west,text=abmInk,font=\fontsize{9}{11}\selectfont]
+  (legPlatform) at (8.10,-1.40) {Platform governance};
+\path[draw=abmBlue,fill=abmBlue]
+  plot[only marks,mark=square*,mark size=\PointSize]
+  coordinates {([xshift=-0.20cm]legPlatform.west)};
+\end{tikzpicture}
+\end{document}

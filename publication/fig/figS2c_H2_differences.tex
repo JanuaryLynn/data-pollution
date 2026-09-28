@@ -1,0 +1,148 @@
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usetikzlibrary{calc,plotmarks}
+\pgfplotsset{compat=1.18}
+\definecolor{abmBlue}{HTML}{0072B2}
+\definecolor{abmOrange}{HTML}{D55E00}
+\definecolor{abmGray}{HTML}{787878}
+\definecolor{abmGrid}{HTML}{E7E9EC}
+\definecolor{abmShade}{HTML}{F7F8FA}
+\pgfplotstableread[col sep=comma]{data/figS2c_H2_differences.csv}\HtwoData
+
+\pgfplotsset{contrast axis/.style={
+  width=3.80cm,height=5.55cm,scale only axis,
+  xmin=-0.10,xmax=0.60,ymin=-0.6,ymax=10.8,
+  xtick={-0.1,0,0.2,0.4,0.6},xticklabels={$-0.1$,0,0.2,0.4,0.6},
+  ytick=\empty,axis x line*=bottom,axis y line=none,
+  axis line style={black!65,line width=0.45pt},
+  tick align=outside,tick style={black!65,line width=0.4pt},
+  tick label style={font=\fontsize{7.5}{9}\selectfont},
+  xmajorgrids=true,ymajorgrids=false,
+  grid style={abmGrid,line width=0.35pt},
+  xlabel={Difference in PAWN indices},
+  xlabel style={font=\fontsize{8}{10}\selectfont},clip=false
+}}
+\newcommand{\MCnumber}[1]{\pgfmathprintnumber[fixed,fixed zerofill,precision=3]{#1}}
+
+% Freeze numerical values before PGFPlots defers drawing to the end of the axis.
+% Arguments: y, color, marker, estimate, row low/high, MC low/high.
+\newcommand{\DrawContrast}[8]{%
+  \draw[abmGray,line width=0.75pt] (axis cs:#5,#1) -- (axis cs:#6,#1);%
+  \draw[abmGray,line width=0.5pt]
+    ([yshift=-1.2pt]axis cs:#5,#1) -- ([yshift=1.2pt]axis cs:#5,#1)
+    ([yshift=-1.2pt]axis cs:#6,#1) -- ([yshift=1.2pt]axis cs:#6,#1);%
+  \addplot[only marks,mark=#3,mark size=1.55pt,#2,forget plot]
+    coordinates {(#4,#1)};%
+  \node[font=\fontsize{8}{10}\selectfont,text=black!85]
+    at ([xshift=1.275cm]axis cs:0.6,#1)
+    {[\MCnumber{#7},\,\MCnumber{#8}]};%
+}
+
+% Arguments: CSV row (zero-based), vertical position, actor color, marker.
+\newcommand{\ContrastRow}[4]{%
+  \pgfplotstablegetelem{#1}{estimate}\of{\HtwoData}\edef\PointEstimate{\pgfplotsretval}%
+  \pgfplotstablegetelem{#1}{row_ci95_low}\of{\HtwoData}\edef\RowLow{\pgfplotsretval}%
+  \pgfplotstablegetelem{#1}{row_ci95_high}\of{\HtwoData}\edef\RowHigh{\pgfplotsretval}%
+  \pgfplotstablegetelem{#1}{mc_ci95_low}\of{\HtwoData}\edef\MCLow{\pgfplotsretval}%
+  \pgfplotstablegetelem{#1}{mc_ci95_high}\of{\HtwoData}\edef\MCHigh{\pgfplotsretval}%
+  \edef\DrawThisRow{\noexpand\DrawContrast{#2}{#3}{#4}{\PointEstimate}
+    {\RowLow}{\RowHigh}{\MCLow}{\MCHigh}}%
+  \DrawThisRow
+}
+\newcommand{\PanelGuides}{%
+  \path[fill=abmShade] ([xshift=0.25cm]axis cs:0.6,-0.6)
+    rectangle ([xshift=2.30cm]axis cs:0.6,10.8);%
+  \draw[abmGrid,line width=0.35pt] (axis cs:-0.1,6.8) -- (axis cs:0.6,6.8);
+  \draw[abmGrid,line width=0.35pt] (axis cs:-0.1,2.8) -- (axis cs:0.6,2.8);
+  \draw[abmGrid,line width=0.35pt] ([xshift=0.25cm]axis cs:0.6,6.8)
+    -- ([xshift=2.30cm]axis cs:0.6,6.8);
+  \draw[abmGrid,line width=0.35pt] ([xshift=0.25cm]axis cs:0.6,2.8)
+    -- ([xshift=2.30cm]axis cs:0.6,2.8);
+  \draw[black!60,densely dashed,line width=0.5pt]
+    (axis cs:0,-0.6) -- (axis cs:0,10.8);%
+  \node[font=\fontsize{8}{10}\selectfont]
+    at ([xshift=1.275cm]axis cs:0.6,11.3) {95\% MC interval};%
+}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[contrast axis,name=contrast0,at={(0.00cm,0cm)},anchor=south west]
+\PanelGuides
+\node[anchor=east,align=center,font=\fontsize{8}{10}\selectfont] at ([xshift=-0.85cm]axis cs:-0.1,9) {Legal\\$S_L-S_{\alpha_L}$};
+% H2_legal_legal_strength_minus_alpha_legal_p10
+\ContrastRow{0}{10}{abmBlue}{*}
+\node[anchor=east,font=\fontsize{7.5}{9}\selectfont] at ([xshift=-0.16cm]axis cs:-0.1,10) {10};
+% H2_legal_legal_strength_minus_alpha_legal_p30
+\ContrastRow{4}{9}{abmBlue}{*}
+\node[anchor=east,font=\fontsize{7.5}{9}\selectfont] at ([xshift=-0.16cm]axis cs:-0.1,9) {30};
+% H2_legal_legal_strength_minus_alpha_legal_p50
+\ContrastRow{8}{8}{abmBlue}{*}
+\node[anchor=east,font=\fontsize{7.5}{9}\selectfont] at ([xshift=-0.16cm]axis cs:-0.1,8) {50};
+\node[anchor=east,align=center,font=\fontsize{8}{10}\selectfont] at ([xshift=-0.85cm]axis cs:-0.1,5) {Legal\\$S_{\tau_L}-S_{\alpha_L}$};
+% H2_legal_legal_response_time_minus_alpha_legal_p10
+\ContrastRow{2}{6}{abmBlue}{*}
+\node[anchor=east,font=\fontsize{7.5}{9}\selectfont] at ([xshift=-0.16cm]axis cs:-0.1,6) {10};
+% H2_legal_legal_response_time_minus_alpha_legal_p30
+\ContrastRow{6}{5}{abmBlue}{*}
+\node[anchor=east,font=\fontsize{7.5}{9}\selectfont] at ([xshift=-0.16cm]axis cs:-0.1,5) {30};
+% H2_legal_legal_response_time_minus_alpha_legal_p50
+\ContrastRow{10}{4}{abmBlue}{*}
+\node[anchor=east,font=\fontsize{7.5}{9}\selectfont] at ([xshift=-0.16cm]axis cs:-0.1,4) {50};
+\node[anchor=east,align=center,font=\fontsize{8}{10}\selectfont] at ([xshift=-0.85cm]axis cs:-0.1,1) {Platform\\$S_{n_p}-S_{\alpha}$};
+% H2_platform_platform_speed_minus_alpha_platform_p10
+\ContrastRow{12}{2}{abmOrange}{square*}
+\node[anchor=east,font=\fontsize{7.5}{9}\selectfont] at ([xshift=-0.16cm]axis cs:-0.1,2) {10};
+% H2_platform_platform_speed_minus_alpha_platform_p30
+\ContrastRow{14}{1}{abmOrange}{square*}
+\node[anchor=east,font=\fontsize{7.5}{9}\selectfont] at ([xshift=-0.16cm]axis cs:-0.1,1) {30};
+% H2_platform_platform_speed_minus_alpha_platform_p50
+\ContrastRow{16}{0}{abmOrange}{square*}
+\node[anchor=east,font=\fontsize{7.5}{9}\selectfont] at ([xshift=-0.16cm]axis cs:-0.1,0) {50};
+\node[anchor=east,font=\fontsize{8}{10}\selectfont] at ([xshift=-0.85cm]axis cs:-0.1,11.3) {Index contrast};
+\node[anchor=center,font=\fontsize{8}{10}\selectfont] at ([xshift=-0.30cm]axis cs:-0.1,11.3) {$p_0$ (\%)};
+\end{axis}
+\begin{axis}[contrast axis,name=contrast1,at={(6.60cm,0cm)},anchor=south west]
+\PanelGuides
+% O_companion_legal_legal_strength_minus_alpha_legal_p10
+\ContrastRow{1}{10}{abmBlue}{*}
+% O_companion_legal_legal_strength_minus_alpha_legal_p30
+\ContrastRow{5}{9}{abmBlue}{*}
+% O_companion_legal_legal_strength_minus_alpha_legal_p50
+\ContrastRow{9}{8}{abmBlue}{*}
+% O_companion_legal_legal_response_time_minus_alpha_legal_p10
+\ContrastRow{3}{6}{abmBlue}{*}
+% O_companion_legal_legal_response_time_minus_alpha_legal_p30
+\ContrastRow{7}{5}{abmBlue}{*}
+% O_companion_legal_legal_response_time_minus_alpha_legal_p50
+\ContrastRow{11}{4}{abmBlue}{*}
+% O_companion_platform_platform_speed_minus_alpha_platform_p10
+\ContrastRow{13}{2}{abmOrange}{square*}
+% O_companion_platform_platform_speed_minus_alpha_platform_p30
+\ContrastRow{15}{1}{abmOrange}{square*}
+% O_companion_platform_platform_speed_minus_alpha_platform_p50
+\ContrastRow{17}{0}{abmOrange}{square*}
+\end{axis}
+
+\node[align=center,font=\fontsize{9}{11}\selectfont] at (3.05,6.45)
+  {(a) Mean effectiveness $\bar E$\\[2pt]{\fontsize{8}{10}\selectfont H2 comparisons}};
+\node[align=center,font=\fontsize{9}{11}\selectfont] at (9.65,6.45)
+  {(b) Final wrongful exposure $O(50)$\\[2pt]{\fontsize{8}{10}\selectfont Companion analysis}};
+
+% Shared graphical legend; numerical MC intervals are labeled at their columns.
+\begin{scope}[shift={(5.2,-1.4)}]
+  \fill[abmBlue] (-2.6,0) circle[radius=1.55pt];
+  \node[anchor=west,font=\fontsize{8}{10}\selectfont] at (-2.45,0) {Legal estimate};
+  \fill[abmOrange] (0,-0.055) rectangle (0.110,0.055);
+  \node[anchor=west,font=\fontsize{8}{10}\selectfont] at (0.23,0) {Platform estimate};
+  \draw[abmGray,line width=0.75pt] (-2.6,-0.45) -- (-2.05,-0.45);
+  \draw[abmGray,line width=0.5pt]
+    (-2.6,-0.492) -- (-2.6,-0.408) (-2.05,-0.492) -- (-2.05,-0.408);
+  \node[anchor=west,font=\fontsize{8}{10}\selectfont] at (-1.90,-0.45)
+    {95\% row-bootstrap stability interval};
+\end{scope}
+\end{tikzpicture}
+\end{document}

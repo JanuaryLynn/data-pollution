@@ -1,0 +1,11 @@
+{
+  "attempt": "grid_004_20260922T092022904643Z",
+  "valid_runs": 1350,
+  "expected_runs": 1350,
+  "invalid_runs": 0,
+  "file_issues": [],
+  "runtime_error_in_log": false,
+  "returncode": 0,
+  "checked_at_utc": "2026-09-22T10:21:06+00:00",
+  "run_issues": {}
+}

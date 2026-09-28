@@ -1,0 +1,195 @@
+{
+  "schema": "ABM-model-diagnostic-validation-v1",
+  "status": "passed",
+  "model_sha256": "67398c3efcadbff75aeeb2aaddefa8398c47ad015503168f181942fba04ce702",
+  "model_wrapper_sha256": "75a71177b31ff2bf8ee04ea04ef1ea08ddc301ee2a8a956070867a4f7f3454b8",
+  "validation_script_sha256": "1dd64d0cb308dfab6c0c36f107bec69b89fef4fb5d27b54a4645178cc5d093aa",
+  "legacy_fixture_sha256": "9cec63f1cd67d53b4d733fe3fc8864e415df7db818e3eb4c64c8a2c802cabb46",
+  "formal_runs_executed": 0,
+  "runtime_launcher": "/workspace/scratch/7bb7c0cf7233/revision_review/audit/runtime/netlogo-headless.sh",
+  "runtime_launcher_sha256": "6f4c9e283543085ab0c745ee317a35da70a944ade8a3840f3fdc14f6d4f47303",
+  "valid_diagnostic_runs": 38,
+  "invalid_input_checks": 5,
+  "full_trajectory_runs": 35,
+  "end_only_runs": 3,
+  "main_cases": [
+    {
+      "case_id": 1,
+      "name": "legacy_BA_legal_targeted",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 2,
+      "name": "legacy_BA_legal_random",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 3,
+      "name": "legacy_ER_platform_targeted",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 4,
+      "name": "legacy_ER_platform_random",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 5,
+      "name": "legacy_WS_none",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 6,
+      "name": "legacy_WS_legal_random",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 7,
+      "name": "all_allowed_zero_inputs",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 8,
+      "name": "legal_all_clean_TNR0",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 9,
+      "name": "legal_all_polluted_TPR0",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 10,
+      "name": "legal_perfect_clearance_continues",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 11,
+      "name": "platform_all_clean_TNR0",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 12,
+      "name": "platform_all_polluted_TPR0",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 13,
+      "name": "platform_perfect_clearance_continues",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 14,
+      "name": "no_positive_decisions_precision_NA",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 15,
+      "name": "legal_zero_coverage_tau20",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 16,
+      "name": "platform_zero_coverage",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 17,
+      "name": "state_responsive_kappa1",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 18,
+      "name": "state_responsive_kappa2",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 19,
+      "name": "state_responsive_kappa5",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 20,
+      "name": "state_responsive_zero_pollution",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 21,
+      "name": "state_responsive_post_spread_count",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 22,
+      "name": "state_responsive_zero_kappa",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 23,
+      "name": "all_super_spreaders",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 24,
+      "name": "WS_rewire1_low_coverage",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 25,
+      "name": "legal_low_coverage_every_step",
+      "status": "passed",
+      "steps": 50
+    },
+    {
+      "case_id": 26,
+      "name": "exact_seed_repeat",
+      "status": "passed",
+      "steps": 50
+    }
+  ],
+  "same_seed_repeat": "passed",
+  "additional_reporters_rng_neutrality": {
+    "status": "passed",
+    "runs": 3
+  },
+  "end_only_rng_neutrality": {
+    "status": "passed",
+    "runs": 3
+  },
+  "legacy_stepwise_compatibility": {
+    "status": "passed",
+    "runs": 6,
+    "comparison": "51 states, full account states, network edges and shared outputs per run",
+    "intentional_difference": "undefined precision is NA in v2.0 versus 0 in v1.8"
+  },
+  "formal_results_claimed": false,
+  "limitations": [
+    "Small deterministic diagnostics are not substantive experimental findings.",
+    "Legacy comparisons use newly simulated seeds; historical seeds are not reconstructed.",
+    "No full 95,850-run experiment is started by this validation script."
+  ],
+  "elapsed_seconds": 20.206
+}

@@ -1,0 +1,57 @@
+% Table S13. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 202mm+10\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}L{23mm}C{14mm}C{22mm}L{29mm}R{57mm}R{57mm}@{}}
+\caption{Outcome differences: degree-targeted minus random selection}\label{tab:tableS13_P5_differences}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{Coverage (\%)} & \multicolumn{1}{l}{Role} & \multicolumn{1}{r}{$\Delta\bar E$ (pp)} & \multicolumn{1}{r}{$\Delta O(50)$ (pp)} \\
+\midrule
+\endfirsthead
+\caption[]{Outcome differences: degree-targeted minus random selection (continued)}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{Coverage (\%)} & \multicolumn{1}{l}{Role} & \multicolumn{1}{r}{$\Delta\bar E$ (pp)} & \multicolumn{1}{r}{$\Delta O(50)$ (pp)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{6}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Differences between independent condition means, with marginal 95\% Welch confidence intervals in brackets; 30 independent runs per condition and no multiplicity adjustment. All differences are in percentage points. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. Coverage is $L$ for legal governance and per-step $n_p$ for platform governance. Legal settings are $\tau_L=5$ and $\mathrm{TPR}=\mathrm{TNR}=95\%$; platform workload is fixed with $\mathrm{TPR}=\mathrm{TNR}=80\%$. The table retains 18 low-coverage comparisons and six benchmark references. Equal coverage percentages do not imply equal cumulative review budgets; intervals crossing zero do not establish equivalence. Unrounded results, comparison IDs, condition weights and sample sizes are in \texttt{tableS13\_P5\_differences\_source.csv}.}}\\
+\endlastfoot
+Legal & 10 & 5 & Low coverage & \ABMci{0.14}{-0.17}{0.46} & \ABMci{-0.23}{-0.32}{-0.14} \\*
+Legal & 10 & 10 & Low coverage & \ABMci{-0.19}{-0.64}{0.25} & \ABMci{-0.42}{-0.57}{-0.26} \\*
+Legal & 10 & 20 & Low coverage & \ABMci{0.36}{-0.10}{0.82} & \ABMci{-0.31}{-0.51}{-0.10} \\*
+Legal & 10 & 70 & Benchmark & \ABMci{10.63}{10.00}{11.27} & \ABMci{2.95}{2.32}{3.59} \\
+\addlinespace[2pt]
+Platform & 10 & 5 & Low coverage & \ABMci{3.44}{2.84}{4.03} & \ABMci{-5.77}{-6.20}{-5.33} \\*
+Platform & 10 & 10 & Low coverage & \ABMci{3.52}{2.75}{4.30} & \ABMci{-16.04}{-16.56}{-15.51} \\*
+Platform & 10 & 20 & Low coverage & \ABMci{4.22}{3.36}{5.09} & \ABMci{-39.83}{-40.50}{-39.15} \\*
+Platform & 10 & 75 & Benchmark & \ABMci{0.10}{0.06}{0.14} & \ABMci{-0.20}{-0.28}{-0.12} \\
+\midrule
+Legal & 30 & 5 & Low coverage & \ABMci{-0.93}{-1.10}{-0.76} & \ABMci{-0.15}{-0.23}{-0.07} \\*
+Legal & 30 & 10 & Low coverage & \ABMci{-1.93}{-2.14}{-1.72} & \ABMci{-0.32}{-0.43}{-0.21} \\*
+Legal & 30 & 20 & Low coverage & \ABMci{-2.81}{-3.07}{-2.56} & \ABMci{-0.57}{-0.73}{-0.41} \\*
+Legal & 30 & 70 & Benchmark & \ABMci{9.07}{8.59}{9.55} & \ABMci{2.55}{2.07}{3.03} \\
+\addlinespace[2pt]
+Platform & 30 & 5 & Low coverage & \ABMci{-3.70}{-4.00}{-3.40} & \ABMci{-3.58}{-3.86}{-3.29} \\*
+Platform & 30 & 10 & Low coverage & \ABMci{-7.10}{-7.51}{-6.70} & \ABMci{-12.32}{-12.78}{-11.87} \\*
+Platform & 30 & 20 & Low coverage & \ABMci{-12.08}{-12.76}{-11.41} & \ABMci{-36.98}{-37.60}{-36.36} \\*
+Platform & 30 & 75 & Benchmark & \ABMci{0.12}{0.04}{0.19} & \ABMci{-0.30}{-0.37}{-0.23} \\
+\midrule
+Legal & 50 & 5 & Low coverage & \ABMci{-1.44}{-1.60}{-1.29} & \ABMci{-0.14}{-0.20}{-0.08} \\*
+Legal & 50 & 10 & Low coverage & \ABMci{-3.02}{-3.15}{-2.89} & \ABMci{-0.24}{-0.33}{-0.14} \\*
+Legal & 50 & 20 & Low coverage & \ABMci{-4.48}{-4.68}{-4.28} & \ABMci{-0.27}{-0.43}{-0.11} \\*
+Legal & 50 & 70 & Benchmark & \ABMci{8.30}{7.80}{8.80} & \ABMci{2.41}{1.78}{3.04} \\
+\addlinespace[2pt]
+Platform & 50 & 5 & Low coverage & \ABMci{-6.83}{-7.07}{-6.60} & \ABMci{-2.69}{-2.98}{-2.40} \\*
+Platform & 50 & 10 & Low coverage & \ABMci{-12.20}{-12.47}{-11.94} & \ABMci{-11.27}{-11.76}{-10.78} \\*
+Platform & 50 & 20 & Low coverage & \ABMci{-20.84}{-21.25}{-20.43} & \ABMci{-34.74}{-35.20}{-34.28} \\*
+Platform & 50 & 75 & Benchmark & \ABMci{0.05}{-0.02}{0.11} & \ABMci{-0.26}{-0.32}{-0.20} \\
+\end{longtable}
+\endgroup

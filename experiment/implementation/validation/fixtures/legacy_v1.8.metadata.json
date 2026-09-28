@@ -1,0 +1,9 @@
+{
+  "source_filename": "exp_code(v1.8).nls",
+  "source_library_id": "libfile_4c00b3b1d40081919348f3a317ea9fe9",
+  "sha256": "9cec63f1cd67d53b4d733fe3fc8864e415df7db818e3eb4c64c8a2c802cabb46",
+  "fixture_unmodified": true,
+  "purpose": "Independent newly seeded stepwise regression comparison of six strictly positive symmetric-accuracy configurations. Not historical experiment replay.",
+  "wrapper_instrumentation": "Generated only in validation/work: add two identity globals (validation-case-id, validation-seed), seed before original setup; original executable statements unchanged.",
+  "formal_data": false
+}

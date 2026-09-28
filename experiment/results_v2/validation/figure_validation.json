@@ -1,0 +1,96 @@
+{
+  "status": "passed",
+  "figure_count": 11,
+  "checks": [
+    {
+      "figure": "fig2",
+      "plotted_rows": 918,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 34774,
+      "pdf_text_chars": 261
+    },
+    {
+      "figure": "fig3",
+      "plotted_rows": 54,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 24044,
+      "pdf_text_chars": 802
+    },
+    {
+      "figure": "fig4",
+      "plotted_rows": 150,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 40697,
+      "pdf_text_chars": 954
+    },
+    {
+      "figure": "fig5",
+      "plotted_rows": 54,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 31785,
+      "pdf_text_chars": 1044
+    },
+    {
+      "figure": "figS1_workload",
+      "plotted_rows": 60,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 30348,
+      "pdf_text_chars": 851
+    },
+    {
+      "figure": "figS3_low_coverage_targeting",
+      "plotted_rows": 48,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 24893,
+      "pdf_text_chars": 569
+    },
+    {
+      "figure": "figS4_accuracy_p10",
+      "plotted_rows": 54,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 23251,
+      "pdf_text_chars": 924
+    },
+    {
+      "figure": "figS4_accuracy_p30",
+      "plotted_rows": 54,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 23316,
+      "pdf_text_chars": 924
+    },
+    {
+      "figure": "figS4_accuracy_p50",
+      "plotted_rows": 54,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 23296,
+      "pdf_text_chars": 924
+    },
+    {
+      "figure": "figS5a_H1",
+      "plotted_rows": 12,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 18541,
+      "pdf_text_chars": 339
+    },
+    {
+      "figure": "figS5b_H3",
+      "plotted_rows": 30,
+      "mean_ci_match_unrounded_source": true,
+      "pdf_pages": 1,
+      "pdf_bytes": 22322,
+      "pdf_text_chars": 604
+    }
+  ],
+  "visual_inspection": "Contact sheet inspected for all 11 figures; full-size Fig4, Fig5, P3 and H3 inspected. No label overlap or clipped intervals observed.",
+  "interval_policy": "All numerical confidence intervals are preserved; natural percentage bounds are not used to clip them."
+}

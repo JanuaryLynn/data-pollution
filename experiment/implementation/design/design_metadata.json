@@ -1,0 +1,157 @@
+{
+  "schema": "ABM-executable-design-manifest",
+  "generator_version": "1.0.0",
+  "protocol_version": "design-v1.0",
+  "protocol_sha256": "4289c5dcbef64a16ac0a17dc0dca1774fdceb9754e77f38a748098c982306bb3",
+  "model_version": "v2.0-design-v1.0",
+  "model_source_sha256": "67398c3efcadbff75aeeb2aaddefa8398c47ad015503168f181942fba04ce702",
+  "model_hash_status": "resolved",
+  "simulation_status": "no_runs_executed_by_generator",
+  "condition_count": 3195,
+  "run_count": 95850,
+  "replicates_per_condition": 30,
+  "parameter_count": 21,
+  "parameter_columns": [
+    "network-type",
+    "num-nodes",
+    "ba-m",
+    "ws-rewire-prob",
+    "p0",
+    "beta0",
+    "amplification",
+    "super-ratio",
+    "treatment",
+    "targeting-mode",
+    "legal-strength",
+    "legal-response-time",
+    "legal-tpr",
+    "legal-tnr",
+    "platform-speed",
+    "platform-tpr",
+    "platform-tnr",
+    "platform-workload-mode",
+    "demand-kappa",
+    "lambda-weight",
+    "max-ticks"
+  ],
+  "group_membership_count": 3264,
+  "module_counts_before_extra_control_memberships": [
+    {
+      "module": "baseline_none",
+      "new_conditions": 3,
+      "members": 3
+    },
+    {
+      "module": "core_legal",
+      "new_conditions": 27,
+      "members": 27
+    },
+    {
+      "module": "core_platform",
+      "new_conditions": 27,
+      "members": 27
+    },
+    {
+      "module": "targeting",
+      "new_conditions": 6,
+      "members": 12
+    },
+    {
+      "module": "legal_accuracy",
+      "new_conditions": 6,
+      "members": 9
+    },
+    {
+      "module": "P1_topology",
+      "new_conditions": 18,
+      "members": 27
+    },
+    {
+      "module": "scale",
+      "new_conditions": 9,
+      "members": 18
+    },
+    {
+      "module": "P3",
+      "new_conditions": 9,
+      "members": 9
+    },
+    {
+      "module": "P5",
+      "new_conditions": 36,
+      "members": 36
+    },
+    {
+      "module": "P6_legal",
+      "new_conditions": 18,
+      "members": 27
+    },
+    {
+      "module": "P6_platform",
+      "new_conditions": 36,
+      "members": 54
+    },
+    {
+      "module": "P4_legal",
+      "new_conditions": 1500,
+      "members": 1500
+    },
+    {
+      "module": "P4_platform",
+      "new_conditions": 1500,
+      "members": 1500
+    }
+  ],
+  "comparison_counts": {
+    "H1": 12,
+    "H3": 15,
+    "P3": 9,
+    "P5": 18,
+    "P5_high_coverage_reference": 6,
+    "P6_legal": 18,
+    "P6_platform": 36,
+    "scale": 9,
+    "topology": 18
+  },
+  "linear_comparison_outcomes": 405,
+  "linear_comparison_term_rows": 834,
+  "H2_index_difference_count": 9,
+  "output_rows": {
+    "trajectory": 298350,
+    "final": 90000
+  },
+  "seed_min": 20261923,
+  "seed_max": 23455952,
+  "seed_formula": "20260922 + 1000 * condition_id + replicate_id",
+  "condition_order": "grid block order; p0 outermost, actor next, axes in JSON insertion order; then legal P4 and platform P4, p0 outermost and lhs_point_id increasing",
+  "manifest_binding": "Join run_manifest.condition_id to conditions.condition_id and verify configuration_hash; 21 parameters are bound as one row, never expanded as a Cartesian product",
+  "manifest_raw_output_path": "Initially empty: no simulation output exists. The immutable planned manifest is not a live status log; outputs/run_status.csv stores actual source_csv and behavior_run. Resolve batch membership through jobs/job_index.csv. No per-run output file is promised.",
+  "comparisons_format": "long format: sum(weight * condition mean) grouped by comparison_id and outcome; H3 shares comparison_id across E/O; same replicate_id is not a paired network",
+  "PR_null_policy": "If cumulative TP+FP is zero, PR_final is missing; exclude invalid ratios and report n_valid; comparison CI NA for insufficient valid runs",
+  "H2_separate_file_reason": "Differences of sensitivity indices are not linear contrasts of condition means",
+  "P5_reference_note": "High-coverage targeted-minus-random comparisons are descriptive references; low-coverage comparisons remain the P5 test",
+  "sampling_environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "rng_argument": "rng=numpy.random.default_rng(seed)"
+  },
+  "generation_environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "source_files": {
+    "scripts/generate_design.py": "ef998e25f4e0343429ebfc2c317834616676b238c382c6e3dd66f73a7d11c16b"
+  },
+  "files": {
+    "conditions.csv": "dbb17ea14b2f7f89f315c95b50970de36129a8b78a442d5beef628f0e471b469",
+    "condition_groups.csv": "246dfc2ab2d97e07a615beaf4d9e00409a5d3a8099d9bfcc26acd7844dd78598",
+    "run_manifest.csv": "ac4c3c89df2de11194b7d7195ab4e1a53a21cee6b2247a44896df696399b6a2f",
+    "comparisons.csv": "87e758ad0a13aa1e3ecb450d324a3f982c372c4db5b3426dcfc1db3cb83490d9",
+    "sensitivity_comparisons.csv": "49149b8660c194c05e3123b54e1164968fc84c6f233fad54953dcfbd69c5c5b3",
+    "lhs_legal.csv": "a9088d69685fe66d7d418a55a933e6120576f1ef91c7dda809858b36858a41e7",
+    "lhs_platform.csv": "e3ffa32d202eeb6715d18d9a3db5761e8294f643d5a99e240248421c8eedb13d",
+    "lhs_metadata.json": "dc15bbad28f0fedfba883b5d50874b73dba95c378f09ccce30b3caadcb2d85eb"
+  }
+}

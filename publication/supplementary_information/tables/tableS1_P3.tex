@@ -1,0 +1,42 @@
+% Table S2. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 210mm+14\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}C{11mm}C{13mm}L{27mm}C{12mm}R{44mm}R{44mm}R{44mm}C{15mm}@{}}
+\caption{Outcomes under fixed and state-responsive platform moderation}\label{tab:tableS1_P3}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Workload} & \multicolumn{1}{c}{$\kappa$} & \multicolumn{1}{r}{$\bar E$} & \multicolumn{1}{r}{$O(50)$} & \multicolumn{1}{r}{$P_R(50)$} & \multicolumn{1}{c}{$n_{\mathrm{PR}}$} \\
+\midrule
+\endfirsthead
+\caption[]{Outcomes under fixed and state-responsive platform moderation (continued)}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Workload} & \multicolumn{1}{c}{$\kappa$} & \multicolumn{1}{r}{$\bar E$} & \multicolumn{1}{r}{$O(50)$} & \multicolumn{1}{r}{$P_R(50)$} & \multicolumn{1}{c}{$n_{\mathrm{PR}}$} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{8}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Means with pointwise 95\% Student-$t$ confidence intervals in brackets; 30 independent runs per condition. Intervals are not clipped. $p_0$ and outcomes are percentages. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. $P_R(50)$ averages defined run-level precision ratios; $n_{\mathrm{PR}}$ is their number (30 throughout). Fixed coverage is 75\% per step, also the responsive ceiling; $\mathrm{TPR}=\mathrm{TNR}=80\%$. Both modes use degree targeting; $\kappa$ is inactive in fixed mode. All networks are BA with $N=1000$. Unrounded results, condition IDs and sample sizes are in \texttt{tableS1\_P3.csv}.}}\\
+\endlastfoot
+35 & 10 & Fixed & 1 & \ABMci{99.73}{99.71}{99.75} & \ABMci{99.74}{99.67}{99.82} & \ABMci{2.44}{2.32}{2.56} & 30 \\
+97 & 10 & Responsive & 1 & \ABMci{75.00}{74.75}{75.25} & \ABMci{39.83}{39.06}{40.60} & \ABMci{46.78}{46.51}{47.04} & 30 \\
+98 & 10 & Responsive & 2 & \ABMci{84.09}{83.81}{84.38} & \ABMci{49.92}{49.53}{50.31} & \ABMci{32.21}{31.93}{32.49} & 30 \\
+99 & 10 & Responsive & 5 & \ABMci{92.58}{92.47}{92.68} & \ABMci{59.75}{58.97}{60.53} & \ABMci{17.89}{17.65}{18.13} & 30 \\
+\midrule
+44 & 30 & Fixed & 1 & \ABMci{99.26}{99.23}{99.30} & \ABMci{99.65}{99.59}{99.72} & \ABMci{6.39}{6.21}{6.57} & 30 \\
+100 & 30 & Responsive & 1 & \ABMci{69.41}{69.19}{69.63} & \ABMci{47.79}{47.41}{48.16} & \ABMci{49.24}{48.98}{49.50} & 30 \\
+101 & 30 & Responsive & 2 & \ABMci{81.59}{81.39}{81.79} & \ABMci{54.68}{54.31}{55.06} & \ABMci{34.22}{33.98}{34.46} & 30 \\
+102 & 30 & Responsive & 5 & \ABMci{91.95}{91.87}{92.03} & \ABMci{65.63}{64.84}{66.43} & \ABMci{21.59}{21.30}{21.88} & 30 \\
+\midrule
+53 & 50 & Fixed & 1 & \ABMci{98.84}{98.81}{98.88} & \ABMci{99.68}{99.63}{99.74} & \ABMci{9.52}{9.37}{9.68} & 30 \\
+103 & 50 & Responsive & 1 & \ABMci{66.52}{66.27}{66.78} & \ABMci{50.19}{49.78}{50.60} & \ABMci{50.59}{50.35}{50.84} & 30 \\
+104 & 50 & Responsive & 2 & \ABMci{79.84}{79.69}{80.00} & \ABMci{55.79}{55.30}{56.28} & \ABMci{36.49}{36.30}{36.68} & 30 \\
+105 & 50 & Responsive & 5 & \ABMci{91.71}{91.64}{91.79} & \ABMci{66.81}{65.96}{67.66} & \ABMci{24.73}{24.47}{24.99} & 30 \\
+\end{longtable}
+\endgroup

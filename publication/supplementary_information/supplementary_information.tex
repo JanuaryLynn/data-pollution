@@ -1,0 +1,97 @@
+\documentclass[10pt]{article}
+
+% One shared preamble: portrait front matter/figures; landscape tables.
+\usepackage[a4paper,margin=20mm]{geometry}
+\input{table_style.tex}
+\usepackage{graphicx,pdflscape,eso-pic}
+\input{metadata.tex}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\captionsetup[figure]{font=small,labelfont=bf,labelsep=colon,
+  justification=justified,singlelinecheck=false,skip=8pt}
+\hypersetup{pdftitle={Supplementary Information},bookmarksnumbered=true,pdfview=Fit,pdfstartview=Fit}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{1}
+\makeatletter
+% Wide enough for both "Table S17" and "Fig. S11" in the unified contents.
+\renewcommand{\l@subsection}{\@dottedtocline{2}{1.5em}{5.5em}}
+\makeatother
+
+% Each table is a longtable, so its TOC anchor is placed on its first page.
+\newcommand{\ABMInputTable}[3]{%
+  \clearpage
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\protect\numberline{Table~#2}#3}%
+  \input{#1}%
+}
+
+% Keep the folio horizontal and centred at the bottom of landscape pages.
+\newif\ifABMLandscapePage
+\AddToShipoutPictureFG{%
+  \ifABMLandscapePage
+    \AtPageLowerLeft{%
+      \put(\LenToUnit{\dimexpr\paperwidth-8mm\relax},\LenToUnit{0.5\paperheight}){%
+        \rotatebox{90}{\makebox[0pt]{\normalfont\normalsize\thepage}}}%
+    }%
+  \fi
+}
+
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Supplementary Information}\\[5pt]
+{\large Tables S1--S17 and Figures S1--S11}
+\end{center}
+\ifx\ABMArticleTitle\ABMEmpty\else
+\begin{center}
+  \begin{minipage}{0.90\textwidth}
+    \centering
+    \fontsize{13}{17}\selectfont
+    \bfseries
+    \ABMArticleTitle\par
+  \end{minipage}
+\end{center}
+\vspace{3pt}
+\fi
+\ifx\ABMJournal\ABMEmpty\else\textbf{Journal:} \ABMJournal\par\fi
+\ifx\ABMAuthors\ABMEmpty\else\textbf{Authors:} \ABMAuthors\par\fi
+\ifx\ABMCorrespondingAffiliation\ABMEmpty\else\textbf{Corresponding author affiliation:} \ABMCorrespondingAffiliation\par\fi
+\ifx\ABMCorrespondingEmail\ABMEmpty\else\textbf{Correspondence:} \ABMCorrespondingEmail\par\fi
+\begingroup
+\small
+\setlength{\parskip}{0pt}
+\tableofcontents
+\endgroup
+\clearpage
+
+\section{Supplementary tables}\label{sec:supp-tables}
+\subsection*{Reading the tables}
+
+Tables S1--S8 report condition summaries; Tables S9--S17 report prespecified comparisons. Estimates and their 95\% intervals appear together, except in Table S10, which uses separate interval columns. Each condition uses 30 independent runs; repeated appearances of an identical condition reuse the same runs.
+
+Condition summaries use Student-$t$ confidence intervals. Comparisons use marginal, unadjusted Welch intervals, except for Table S10: its dimensionless PAWN-index differences have separate row-bootstrap stability and within-point Monte Carlo intervals, based on 500 LHS points per regime and initial pollution level, with 30 runs per point. These two interval types are not combined.
+
+Outcome levels are percentages and their differences are percentage points unless stated otherwise. Network diagnostics and review burdens are counts; review totals include repeated reviews. Table notes specify subtraction order, units, valid sample sizes and exceptions. Unrounded values and identifiers are retained in the accompanying CSV files.
+
+\clearpage
+\newgeometry{margin=15mm}
+\ABMLandscapePagetrue\pagestyle{empty}
+\begin{landscape}
+\input{table_pages.tex}
+\end{landscape}
+\ABMLandscapePagefalse\pagestyle{plain}
+\restoregeometry
+\clearpage
+
+\section{Supplementary figures}\label{sec:supp-figures}
+\subsection*{Reading the figures}
+
+Mean effectiveness $\bar E$ averages steps 1--50 within each run. Wrongful exposure $O(50)$ is the percentage of distinct accounts ever wronged by step 50; removal precision $P_R(50)$ averages defined run-level ratios. Review totals count events, including repeated reviews of the same account. Figure S1 expresses review totals in thousands.
+
+Figures S1--S4 summarise 30 independent runs per condition. Figures S5--S11 use 500 Latin hypercube sampling (LHS) points per governance regime and initial pollution level, with 30 runs per point. The same responses are reused across diagnostics and input--response panels.
+
+Displayed 95\% intervals are marginal, unadjusted and not clipped. Row-bootstrap intervals describe stability under design-point resampling; within-point Monte Carlo intervals describe simulation uncertainty at fixed parameter points. These separate bootstrap intervals are not combined and need not contain the point estimate.
+
+Input--response lines connect descriptive bin means. Continuous inputs use fixed empirical-quantile bins from the full LHS design; legal response intervals use the pairs 1--2, 3--4, \ldots, 19--20 steps. Full values and identifiers remain in the CSV files.
+
+\clearpage
+\input{figure_pages.tex}
+\end{document}

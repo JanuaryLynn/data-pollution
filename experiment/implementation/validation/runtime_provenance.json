@@ -1,0 +1,122 @@
+{
+  "netlogo_version": "6.4.0",
+  "netlogo_artifact_source": "https://dl.cloudsmith.io/public/netlogo/netlogo/maven/org/nlogo/netlogo/6.4.0/netlogo-6.4.0.jar",
+  "netlogo_sha256": "151f9c31059a9efc18c2a7e2733c1c5659853e6aacf708e14809de5d10dd1d49",
+  "nw_version": "4.0.0",
+  "nw_artifact_source": "https://raw.githubusercontent.com/NetLogo/NetLogo-Libraries/6.1/extensions/nw-4.0.0.zip",
+  "nw_zip_sha256": "fc4d88036b036e58441372a5bcfb5ad7293991a9409018b78bb50bb27a728f34",
+  "netlogo_640_nw_source_commit": "18fdfa897c2709c5b126aa33519117ab63cb03de",
+  "java": "OpenJDK 17.0.20",
+  "dtd_matches_official_source": true,
+  "runtime_scope": "Temporary headless validation only; not a redistributed standalone NetLogo distribution",
+  "dependencies": [
+    {
+      "file": "asm-9.4.jar",
+      "sha256": "39d0e2b3dc45af65a09b097945750a94a126e052e124f93468443a1d0e15f381"
+    },
+    {
+      "file": "asm-analysis-9.4.jar",
+      "sha256": "7b5f8c5e3bf341b5bb570d26f379e3fdebdc32732187159c42479164053f373d"
+    },
+    {
+      "file": "asm-commons-9.4.jar",
+      "sha256": "0c128a9ec3f33c98959272f6d16cf14247b508f58951574bcdbd2b56d6326364"
+    },
+    {
+      "file": "asm-tree-9.4.jar",
+      "sha256": "c42d479cf24566a21eb20af7eeaeef4e86bdb4a886306cf72f483b65e75b2acf"
+    },
+    {
+      "file": "asm-util-9.4.jar",
+      "sha256": "3d7932b93ff55056641e7cfb601f96bcd5cd071e1b0503c78a5014232297a23e"
+    },
+    {
+      "file": "autolink-0.6.0.jar",
+      "sha256": "a80be030f6386f18111cad9161c0b6983157352a1b59a59e6002172f0d321c04"
+    },
+    {
+      "file": "commons-codec-1.15.jar",
+      "sha256": "b3e9f6d63a790109bf0d056611fbed1cf69055826defeb9894a71369d246ed63"
+    },
+    {
+      "file": "commons-logging-1.1.1.jar",
+      "sha256": "ce6f913cad1f0db3aad70186d65c5bc7ffcc9a99e3fe8e0b137312819f7c362f"
+    },
+    {
+      "file": "config-1.4.2.jar",
+      "sha256": "0076c249b4387d8369146528fd5dacb3efba098dc02ecf9ac81debdfc2e12fd5"
+    },
+    {
+      "file": "flexmark-0.20.0.jar",
+      "sha256": "6c65430df5d1df4438e858661d57486ff3fed1a644fcaefe16b84664e9ee9b9e"
+    },
+    {
+      "file": "flexmark-ext-autolink-0.20.0.jar",
+      "sha256": "7b0d395e1e5f98bd3f163877ffcbea5537b8b8c0e09f782ce35bb8a6f230d5e7"
+    },
+    {
+      "file": "flexmark-ext-escaped-character-0.20.0.jar",
+      "sha256": "d47a3f5434d39693df585eb4e9809b52a270d92bfff50282796c74597c66f96f"
+    },
+    {
+      "file": "flexmark-ext-typographic-0.20.0.jar",
+      "sha256": "9fbbd8e8aeaa1ac8838e7a13764ffb82e7e5263af134770521939e3e625a61b4"
+    },
+    {
+      "file": "flexmark-util-0.20.0.jar",
+      "sha256": "fb4eb38370b2e0c9f7d856bf48d16205334c4c49dc4edcfcfe7f0f829c6e40a5"
+    },
+    {
+      "file": "httpclient-4.2.jar",
+      "sha256": "7a1791f3ef17acfb75d4c6a3e124b9a96946e02e2381e3f59f5bc500a7607208"
+    },
+    {
+      "file": "httpcore-4.2.jar",
+      "sha256": "2a33431a8a0dd1948077975f95f27bf978de45b725ce7dc9e431b533d1ea49e3"
+    },
+    {
+      "file": "httpmime-4.2.jar",
+      "sha256": "a9f76c4c56f0addc9634c94edf0ef7eb1fb0a5e0dcc0c7b7c3f3e664e65d0eee"
+    },
+    {
+      "file": "jmf-2.1.1e.jar",
+      "sha256": "4ab8cf5157d6714d44e30cc848eea8949d51e4777a9412c94c94a0d64274af90"
+    },
+    {
+      "file": "json-simple-1.1.1.jar",
+      "sha256": "4e69696892b88b41c55d49ab2fdcc21eead92bf54acc588c0050596c3b75199c"
+    },
+    {
+      "file": "netlogo-6.4.0.jar",
+      "sha256": "151f9c31059a9efc18c2a7e2733c1c5659853e6aacf708e14809de5d10dd1d49"
+    },
+    {
+      "file": "parboiled_2.12-2.4.1.jar",
+      "sha256": "ba95f4ac343962caddcdee623f9666d1ba353121f5547663ebf7042f5b123379"
+    },
+    {
+      "file": "picocontainer-2.15.jar",
+      "sha256": "b7d85de14e544d627bffe20438a3071500fba191004f894a944b92489f7f0ddc"
+    },
+    {
+      "file": "rsyntaxtextarea-3.3.0.jar",
+      "sha256": "f0515ee36698a1a78a63dc89670d09f006a148a66b38a6ec3b10572241b2a89f"
+    },
+    {
+      "file": "scala-library-2.12.18.jar",
+      "sha256": "e51e6636c003359e106bea4ad99def70e613c290190c8c84f10f9560dd5b00ae"
+    },
+    {
+      "file": "scala-parser-combinators_2.12-2.1.1.jar",
+      "sha256": "7a5186fc9fc93cb03ae1dd96d9be22257421a5e0389c81cae45cdce8ba88a9b0"
+    },
+    {
+      "file": "scala-reflect-2.12.18.jar",
+      "sha256": "d6a24e175246541ffcbc965a231aa1d3bb01d61def196f91495690fabf9783bc"
+    },
+    {
+      "file": "zip4j-2.9.1.jar",
+      "sha256": "0d08dae4e2e9c585ac47cca0d6e23d457e0fe465c308ec24521080f685085d2e"
+    }
+  ]
+}

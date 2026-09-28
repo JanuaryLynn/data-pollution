@@ -1,0 +1,54 @@
+% Table S15. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 237mm+12\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}L{24mm}C{13mm}L{28mm}R{43mm}R{43mm}R{43mm}R{43mm}@{}}
+\caption{Network-topology differences relative to BA}\label{tab:tableS15_topology_differences}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Difference} & \multicolumn{1}{r}{$\Delta\bar E$} & \multicolumn{1}{r}{$\Delta E(50)$} & \multicolumn{1}{r}{$\Delta O(50)$} & \multicolumn{1}{r}{$\Delta P_R(50)$} \\
+\midrule
+\endfirsthead
+\caption[]{Network-topology differences relative to BA (continued)}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Difference} & \multicolumn{1}{r}{$\Delta\bar E$} & \multicolumn{1}{r}{$\Delta E(50)$} & \multicolumn{1}{r}{$\Delta O(50)$} & \multicolumn{1}{r}{$\Delta P_R(50)$} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{7}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{7}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Differences between independent condition means, with marginal 95\% Welch confidence intervals in brackets; 30 independent runs per condition and no multiplicity adjustment. All differences are in percentage points. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. $E(50)$ is effectiveness at step 50; $P_R(50)$ averages defined run-level precision ratios. Precision is undefined without governance, so those differences are NA, not zero. Contrasts are ER minus BA and WS minus BA at $N=1000$, with approximately matched mean degree near four. Networks retain isolates and disconnected realizations; other structural differences remain. Governance uses benchmark parameters and degree targeting. Unrounded results, comparison IDs, condition weights and sample sizes are in \texttt{tableS15\_topology\_differences\_source.csv}.}}\\
+\endlastfoot
+No governance & 10 & ER minus BA & \ABMci{4.44}{4.09}{4.80} & \ABMci{1.81}{1.65}{1.97} & \ABMci{0.00}{0.00}{0.00} & NA \\*
+No governance & 10 & WS minus BA & \ABMci{6.86}{6.48}{7.24} & \ABMci{0.02}{-0.00}{0.04} & \ABMci{0.00}{0.00}{0.00} & NA \\
+\addlinespace[2pt]
+Legal & 10 & ER minus BA & \ABMci{13.82}{13.17}{14.48} & \ABMci{25.98}{24.48}{27.49} & \ABMci{7.34}{6.64}{8.03} & \ABMci{-21.19}{-22.47}{-19.91} \\*
+Legal & 10 & WS minus BA & \ABMci{10.50}{9.73}{11.28} & \ABMci{20.16}{18.53}{21.80} & \ABMci{7.03}{6.37}{7.69} & \ABMci{-15.74}{-16.92}{-14.57} \\
+\addlinespace[2pt]
+Platform & 10 & ER minus BA & \ABMci{-2.76}{-3.00}{-2.52} & \ABMci{-3.02}{-3.32}{-2.72} & \ABMci{-21.59}{-22.51}{-20.68} & \ABMci{1.78}{1.52}{2.05} \\*
+Platform & 10 & WS minus BA & \ABMci{-2.97}{-3.20}{-2.73} & \ABMci{-3.48}{-3.79}{-3.17} & \ABMci{-15.41}{-15.78}{-15.03} & \ABMci{3.89}{3.61}{4.17} \\
+\midrule
+No governance & 30 & ER minus BA & \ABMci{1.79}{1.52}{2.07} & \ABMci{1.42}{1.25}{1.59} & \ABMci{0.00}{0.00}{0.00} & NA \\*
+No governance & 30 & WS minus BA & \ABMci{0.53}{0.31}{0.74} & \ABMci{0.00}{0.00}{0.00} & \ABMci{0.00}{0.00}{0.00} & NA \\
+\addlinespace[2pt]
+Legal & 30 & ER minus BA & \ABMci{6.12}{5.46}{6.77} & \ABMci{10.63}{9.20}{12.06} & \ABMci{5.24}{4.53}{5.94} & \ABMci{-6.46}{-7.04}{-5.88} \\*
+Legal & 30 & WS minus BA & \ABMci{2.59}{1.81}{3.37} & \ABMci{5.43}{3.82}{7.05} & \ABMci{4.50}{3.86}{5.14} & \ABMci{-4.73}{-5.20}{-4.25} \\
+\addlinespace[2pt]
+Platform & 30 & ER minus BA & \ABMci{-7.86}{-8.36}{-7.35} & \ABMci{-8.39}{-9.11}{-7.66} & \ABMci{-22.05}{-22.88}{-21.22} & \ABMci{4.81}{4.29}{5.32} \\*
+Platform & 30 & WS minus BA & \ABMci{-7.74}{-8.10}{-7.38} & \ABMci{-8.81}{-9.17}{-8.45} & \ABMci{-15.44}{-15.90}{-14.98} & \ABMci{9.12}{8.64}{9.60} \\
+\midrule
+No governance & 50 & ER minus BA & \ABMci{0.82}{0.63}{1.01} & \ABMci{0.97}{0.86}{1.08} & \ABMci{0.00}{0.00}{0.00} & NA \\*
+No governance & 50 & WS minus BA & \ABMci{-0.58}{-0.68}{-0.48} & \ABMci{0.00}{0.00}{0.00} & \ABMci{0.00}{0.00}{0.00} & NA \\
+\addlinespace[2pt]
+Legal & 50 & ER minus BA & \ABMci{1.26}{0.69}{1.82} & \ABMci{3.09}{1.89}{4.30} & \ABMci{4.50}{3.84}{5.16} & \ABMci{-3.80}{-4.10}{-3.50} \\*
+Legal & 50 & WS minus BA & \ABMci{-1.33}{-2.01}{-0.66} & \ABMci{0.64}{-0.79}{2.06} & \ABMci{3.20}{2.54}{3.87} & \ABMci{-2.40}{-2.69}{-2.11} \\
+\addlinespace[2pt]
+Platform & 50 & ER minus BA & \ABMci{-11.63}{-12.55}{-10.72} & \ABMci{-12.21}{-13.55}{-10.87} & \ABMci{-21.93}{-22.80}{-21.06} & \ABMci{6.65}{5.94}{7.36} \\*
+Platform & 50 & WS minus BA & \ABMci{-10.95}{-11.38}{-10.52} & \ABMci{-12.23}{-12.70}{-11.75} & \ABMci{-15.37}{-15.72}{-15.02} & \ABMci{12.29}{11.77}{12.81} \\
+\end{longtable}
+\endgroup

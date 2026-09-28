@@ -1,0 +1,11 @@
+actor,p0,stratum,input,outcome,bin,n_lhs,x_mean,response_mean,response_min,response_max
+platform,10,platform_p010,platform-speed,O_final,1,50,5.93857251259,5.54346666667,0.606666666667,10.9666666667
+platform,10,platform_p010,platform-speed,O_final,2,50,15.8438356598,16.6562666667,6.56333333333,21.6966666667
+platform,10,platform_p010,platform-speed,O_final,3,50,25.7351066177,27.4868,14.27,33.45
+platform,10,platform_p010,platform-speed,O_final,4,50,35.6515893761,41.596,14.98,50.5066666667
+platform,10,platform_p010,platform-speed,O_final,5,50,45.5514962153,49.0378666667,30.7466666667,54.93
+platform,10,platform_p010,platform-speed,O_final,6,50,55.4470086002,75.333,36.1933333333,98.0266666667
+platform,10,platform_p010,platform-speed,O_final,7,50,65.3354964994,91.0699333333,38.89,99.9633333333
+platform,10,platform_p010,platform-speed,O_final,8,50,75.2477645715,93.1062666667,34.07,100
+platform,10,platform_p010,platform-speed,O_final,9,50,85.1469142679,96.1391333333,36.3133333333,100
+platform,10,platform_p010,platform-speed,O_final,10,50,95.0507141294,95.9068,51.1433333333,100

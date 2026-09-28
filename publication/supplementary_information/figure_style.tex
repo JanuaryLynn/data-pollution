@@ -1,0 +1,29 @@
+% Shared visual style. All charts remain editable vector LaTeX figures.
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,pgfplots}
+\usepgfplotslibrary{groupplots,fillbetween,colormaps}
+\usetikzlibrary{calc,positioning,plotmarks,backgrounds}
+\pgfplotsset{compat=1.18}
+\definecolor{abmBlue}{HTML}{0072B2}
+\definecolor{abmOrange}{HTML}{D55E00}
+\definecolor{abmGreen}{HTML}{009E73}
+\definecolor{abmGray}{HTML}{666666}
+\definecolor{abmGrid}{HTML}{E5E5E5}
+\definecolor{abmLight}{HTML}{F3F3F3}
+\pgfplotsset{
+ abm axis/.style={
+  scale only axis,font=\fontsize{9}{11}\selectfont,
+  label style={font=\fontsize{9}{11}\selectfont},
+  tick label style={font=\fontsize{8}{10}\selectfont},
+  title style={font=\fontsize{9}{11}\selectfont,align=center},
+  legend style={font=\fontsize{8}{10}\selectfont,draw=none,fill=none,cells={anchor=west}},
+  axis lines=left,axis line style={black!65,line width=0.45pt},
+  tick style={black!60,line width=0.4pt},major tick length=2pt,
+  grid=major,grid style={draw=abmGrid,line width=0.25pt},
+  scaled ticks=false,unbounded coords=jump,
+  every axis plot/.append style={line width=0.8pt},
+  colormap/viridis,
+ },
+ abm line/.style={no marks,line width=0.9pt},
+ abm point/.style={only marks,mark=*,mark size=1.9pt},
+}

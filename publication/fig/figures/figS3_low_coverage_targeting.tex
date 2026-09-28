@@ -1,0 +1,60 @@
+% 可编辑绘图源文件：标题、坐标轴、颜色和图例均在本文件中。
+% 数据来自已审核的汇总 CSV；均值和置信区间不在此重新估计。
+% 在本目录编译：pdflatex -interaction=nonstopmode 此文件名.tex
+\documentclass[tikz,border=5pt]{standalone}
+\input{figure_style.tex}
+\begin{document}
+\begin{tikzpicture}
+% 横坐标为离散覆盖率；最后一项是高覆盖参考值，并非连续比例轴。
+% 差值为 degree-targeted minus random，单位：百分点；保留95% Welch区间。
+\begin{groupplot}[group style={group size=3 by 2,horizontal sep=1.1cm,vertical sep=1.8cm},
+ abm axis,width=4.5cm,height=4.1cm,xmin=-0.5,xmax=3.5,ymin=-45,ymax=15,
+ xtick={0,1,2,3},xlabel={Coverage (\%)},scaled ticks=false,title style={font=\small}]
+\nextgroupplot[title={(a) Legal, $p_0=10\%$},xticklabels={5,10,20,{70 (ref.)}},ylabel={Targeted $-$ random (pp)}]
+\addplot[abmGray,dashed,forget plot] coordinates {(-0.5,0) (3.5,0)};
+\addplot[abmGray,densely dotted,forget plot] coordinates {(2.5,-45) (2.5,15)};
+\addplot+[only marks,mark=*,mark size=2pt,color=abmBlue,mark options={draw=abmBlue,fill=abmBlue},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/legal_E_mean_p10.csv};
+\addplot+[only marks,mark=square*,mark size=2pt,color=abmOrange,mark options={draw=abmOrange,fill=abmOrange},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/legal_O_final_p10.csv};
+\nextgroupplot[title={(b) Legal, $p_0=30\%$},xticklabels={5,10,20,{70 (ref.)}}]
+\addplot[abmGray,dashed,forget plot] coordinates {(-0.5,0) (3.5,0)};
+\addplot[abmGray,densely dotted,forget plot] coordinates {(2.5,-45) (2.5,15)};
+\addplot+[only marks,mark=*,mark size=2pt,color=abmBlue,mark options={draw=abmBlue,fill=abmBlue},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/legal_E_mean_p30.csv};
+\addplot+[only marks,mark=square*,mark size=2pt,color=abmOrange,mark options={draw=abmOrange,fill=abmOrange},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/legal_O_final_p30.csv};
+\nextgroupplot[title={(c) Legal, $p_0=50\%$},xticklabels={5,10,20,{70 (ref.)}}]
+\addplot[abmGray,dashed,forget plot] coordinates {(-0.5,0) (3.5,0)};
+\addplot[abmGray,densely dotted,forget plot] coordinates {(2.5,-45) (2.5,15)};
+\addplot+[only marks,mark=*,mark size=2pt,color=abmBlue,mark options={draw=abmBlue,fill=abmBlue},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/legal_E_mean_p50.csv};
+\addplot+[only marks,mark=square*,mark size=2pt,color=abmOrange,mark options={draw=abmOrange,fill=abmOrange},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/legal_O_final_p50.csv};
+\nextgroupplot[title={(d) Platform, $p_0=10\%$},xticklabels={5,10,20,{75 (ref.)}},ylabel={Targeted $-$ random (pp)}]
+\addplot[abmGray,dashed,forget plot] coordinates {(-0.5,0) (3.5,0)};
+\addplot[abmGray,densely dotted,forget plot] coordinates {(2.5,-45) (2.5,15)};
+\addplot+[only marks,mark=*,mark size=2pt,color=abmBlue,mark options={draw=abmBlue,fill=abmBlue},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/platform_E_mean_p10.csv};
+\addplot+[only marks,mark=square*,mark size=2pt,color=abmOrange,mark options={draw=abmOrange,fill=abmOrange},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/platform_O_final_p10.csv};
+\nextgroupplot[title={(e) Platform, $p_0=30\%$},xticklabels={5,10,20,{75 (ref.)}}]
+\addplot[abmGray,dashed,forget plot] coordinates {(-0.5,0) (3.5,0)};
+\addplot[abmGray,densely dotted,forget plot] coordinates {(2.5,-45) (2.5,15)};
+\addplot+[only marks,mark=*,mark size=2pt,color=abmBlue,mark options={draw=abmBlue,fill=abmBlue},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/platform_E_mean_p30.csv};
+\addplot+[only marks,mark=square*,mark size=2pt,color=abmOrange,mark options={draw=abmOrange,fill=abmOrange},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/platform_O_final_p30.csv};
+\nextgroupplot[title={(f) Platform, $p_0=50\%$},xticklabels={5,10,20,{75 (ref.)}}]
+\addplot[abmGray,dashed,forget plot] coordinates {(-0.5,0) (3.5,0)};
+\addplot[abmGray,densely dotted,forget plot] coordinates {(2.5,-45) (2.5,15)};
+\addplot+[only marks,mark=*,mark size=2pt,color=abmBlue,mark options={draw=abmBlue,fill=abmBlue},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/platform_E_mean_p50.csv};
+\addplot+[only marks,mark=square*,mark size=2pt,color=abmOrange,mark options={draw=abmOrange,fill=abmOrange},line width=0.8pt,error bars/.cd,y dir=both,y explicit,error bar style={line width=0.7pt},error mark options={rotate=90,mark size=2pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS3_low_coverage_targeting/platform_O_final_p50.csv};
+\end{groupplot}
+\node[anchor=north,yshift=-1.25cm,font=\small] at (group c2r2.south) {
+\textcolor{abmBlue}{$\bullet$} $\Delta\bar E$ \qquad
+\textcolor{abmOrange}{\rule{0.7ex}{0.7ex}} $\Delta O(50)$};
+\end{tikzpicture}
+\end{document}

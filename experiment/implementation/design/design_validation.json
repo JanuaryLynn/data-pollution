@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "scope": "configuration and scheduling validation; no simulation results",
+  "all_21_parameter_rows_valid": true,
+  "deduplication_uses_complete_parameters": true,
+  "condition_ids_contiguous_and_stable": true,
+  "module_new_counts_match_protocol": true,
+  "grid_conditions": 195,
+  "P4_conditions": 3000,
+  "total_conditions": 3195,
+  "grid_runs": 5850,
+  "P4_runs": 90000,
+  "total_runs": 95850,
+  "all_runs_planned": true,
+  "all_seeds_unique": true,
+  "seed_min": 20261923,
+  "seed_max": 23455952,
+  "all_comparison_conditions_resolve": true,
+  "contrast_weights_sum_to_zero": true,
+  "same_replicate_id_not_treated_as_paired": true,
+  "H1_contrasts": 12,
+  "H3_joint_comparisons": 15,
+  "H2_index_differences": 9,
+  "group_memberships_unique": true,
+  "lhs_checks": {
+    "legal": {
+      "points": 500,
+      "every_unit_column_has_one_point_per_stratum": true,
+      "actual_values_match_unit_mapping": true,
+      "archive_hash_verified": true,
+      "tau_counts": {
+        "1": 25,
+        "2": 25,
+        "3": 25,
+        "4": 25,
+        "5": 25,
+        "6": 25,
+        "7": 25,
+        "8": 25,
+        "9": 25,
+        "10": 25,
+        "11": 25,
+        "12": 25,
+        "13": 25,
+        "14": 25,
+        "15": 25,
+        "16": 25,
+        "17": 25,
+        "18": 25,
+        "19": 25,
+        "20": 25
+      }
+    },
+    "platform": {
+      "points": 500,
+      "every_unit_column_has_one_point_per_stratum": true,
+      "actual_values_match_unit_mapping": true,
+      "archive_hash_verified": true
+    }
+  },
+  "expected_output_rows": {
+    "trajectory": 298350,
+    "final": 90000
+  },
+  "model_source_hash_present": true
+}

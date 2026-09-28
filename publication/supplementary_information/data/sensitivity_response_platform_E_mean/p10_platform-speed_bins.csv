@@ -1,0 +1,11 @@
+actor,p0,stratum,input,outcome,bin,n_lhs,x_mean,response_mean,response_min,response_max
+platform,10,platform_p010,platform-speed,E_mean,1,50,5.93857251259,31.0357346667,15.8786666667,56.6404
+platform,10,platform_p010,platform-speed,E_mean,2,50,15.8438356598,53.337544,33.4533333333,77.3432
+platform,10,platform_p010,platform-speed,E_mean,3,50,25.7351066177,74.7127146667,51.7004666667,86.4632666667
+platform,10,platform_p010,platform-speed,E_mean,4,50,35.6515893761,84.824072,64.6873333333,93.4365333333
+platform,10,platform_p010,platform-speed,E_mean,5,50,45.5514962153,85.70378,73.9962666667,93.901
+platform,10,platform_p010,platform-speed,E_mean,6,50,55.4470086002,95.4189866667,79.6582,99.4134
+platform,10,platform_p010,platform-speed,E_mean,7,50,65.3354964994,99.203936,96.4910666667,99.8033333333
+platform,10,platform_p010,platform-speed,E_mean,8,50,75.2477645715,99.617996,98.8522,99.9029333333
+platform,10,platform_p010,platform-speed,E_mean,9,50,85.1469142679,99.786412,99.3114666667,99.9494666667
+platform,10,platform_p010,platform-speed,E_mean,10,50,95.0507141294,99.8476546667,99.5723333333,99.9904

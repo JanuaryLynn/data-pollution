@@ -1,0 +1,81 @@
+% Table S1. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9}{10.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.0}
+\setlength{\aboverulesep}{1.2pt}\setlength{\belowrulesep}{1.5pt}
+\setlength{\ABMtablewidth}{\dimexpr 209mm+14\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}C{10mm}C{13mm}L{24mm}C{17mm}C{15mm}R{42mm}R{46mm}R{42mm}@{}}
+\caption{Realized network diagnostics}\label{tab:tableS_network}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{Network} & \multicolumn{1}{c}{$N$} & \multicolumn{1}{r}{Mean degree} & \multicolumn{1}{r}{Maximum degree} & \multicolumn{1}{r}{Isolates} \\
+\midrule
+\endfirsthead
+\caption[]{Realized network diagnostics (continued)}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{Network} & \multicolumn{1}{c}{$N$} & \multicolumn{1}{r}{Mean degree} & \multicolumn{1}{r}{Maximum degree} & \multicolumn{1}{r}{Isolates} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{8}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Means with pointwise 95\% Student-$t$ confidence intervals in brackets, from 30 independent network realizations per condition; intervals are not clipped. $p_0$ is a percentage and $N$ is the number of nodes. Degree counts incident links; isolates are nodes of degree zero. These diagnostics are counts, not percentages. BA, ER and WS denote Barab\'{a}si--Albert, Erd\H{o}s--R\'{e}nyi and Watts--Strogatz networks. Unrounded results, condition IDs and sample sizes are in \texttt{tableS\_network.csv}. Additional diagnostics are in \texttt{network\_summary.csv}.}}\\
+\endlastfoot
+1 & 10 & No governance & BA & 1000 & \ABMci{3.99}{3.99}{3.99} & \ABMci{84.13}{77.50}{90.77} & \ABMci{0.00}{0.00}{0.00} \\*
+70 & 10 & No governance & ER & 1000 & \ABMci{3.98}{3.95}{4.01} & \ABMci{11.97}{11.58}{12.35} & \ABMci{18.13}{16.61}{19.65} \\*
+71 & 10 & No governance & WS & 1000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{6.63}{6.40}{6.86} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+8 & 10 & Legal & BA & 1000 & \ABMci{3.99}{3.99}{3.99} & \ABMci{80.10}{73.28}{86.92} & \ABMci{0.00}{0.00}{0.00} \\*
+72 & 10 & Legal & ER & 1000 & \ABMci{4.00}{3.96}{4.04} & \ABMci{11.73}{11.34}{12.12} & \ABMci{17.30}{15.86}{18.74} \\*
+73 & 10 & Legal & WS & 1000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{6.70}{6.50}{6.90} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+35 & 10 & Platform & BA & 1000 & \ABMci{3.99}{3.99}{3.99} & \ABMci{84.03}{77.15}{90.91} & \ABMci{0.00}{0.00}{0.00} \\*
+74 & 10 & Platform & ER & 1000 & \ABMci{4.01}{3.98}{4.04} & \ABMci{11.70}{11.28}{12.12} & \ABMci{17.87}{16.64}{19.09} \\*
+75 & 10 & Platform & WS & 1000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{6.67}{6.44}{6.89} & \ABMci{0.00}{0.00}{0.00} \\
+\midrule
+2 & 30 & No governance & BA & 1000 & \ABMci{3.99}{3.99}{3.99} & \ABMci{86.87}{80.68}{93.06} & \ABMci{0.00}{0.00}{0.00} \\*
+76 & 30 & No governance & ER & 1000 & \ABMci{4.01}{3.96}{4.05} & \ABMci{11.80}{11.38}{12.22} & \ABMci{18.57}{16.69}{20.44} \\*
+77 & 30 & No governance & WS & 1000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{6.77}{6.51}{7.02} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+17 & 30 & Legal & BA & 1000 & \ABMci{3.99}{3.99}{3.99} & \ABMci{83.57}{77.66}{89.47} & \ABMci{0.00}{0.00}{0.00} \\*
+78 & 30 & Legal & ER & 1000 & \ABMci{3.99}{3.95}{4.03} & \ABMci{11.83}{11.49}{12.17} & \ABMci{18.50}{16.69}{20.31} \\*
+79 & 30 & Legal & WS & 1000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{6.70}{6.48}{6.92} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+44 & 30 & Platform & BA & 1000 & \ABMci{3.99}{3.99}{3.99} & \ABMci{86.50}{79.78}{93.22} & \ABMci{0.00}{0.00}{0.00} \\*
+80 & 30 & Platform & ER & 1000 & \ABMci{4.03}{4.00}{4.06} & \ABMci{11.97}{11.55}{12.39} & \ABMci{18.27}{16.29}{20.24} \\*
+81 & 30 & Platform & WS & 1000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{6.70}{6.48}{6.92} & \ABMci{0.03}{-0.03}{0.10} \\
+\midrule
+3 & 50 & No governance & BA & 1000 & \ABMci{3.99}{3.99}{3.99} & \ABMci{78.13}{73.34}{82.92} & \ABMci{0.00}{0.00}{0.00} \\*
+82 & 50 & No governance & ER & 1000 & \ABMci{3.98}{3.94}{4.03} & \ABMci{11.73}{11.37}{12.10} & \ABMci{17.60}{16.32}{18.88} \\*
+83 & 50 & No governance & WS & 1000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{6.53}{6.34}{6.72} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+26 & 50 & Legal & BA & 1000 & \ABMci{3.99}{3.99}{3.99} & \ABMci{79.13}{72.81}{85.46} & \ABMci{0.00}{0.00}{0.00} \\*
+84 & 50 & Legal & ER & 1000 & \ABMci{3.98}{3.94}{4.01} & \ABMci{11.57}{11.17}{11.97} & \ABMci{18.23}{16.45}{20.02} \\*
+85 & 50 & Legal & WS & 1000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{6.60}{6.33}{6.87} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+53 & 50 & Platform & BA & 1000 & \ABMci{3.99}{3.99}{3.99} & \ABMci{85.53}{79.98}{91.08} & \ABMci{0.00}{0.00}{0.00} \\*
+86 & 50 & Platform & ER & 1000 & \ABMci{3.98}{3.95}{4.02} & \ABMci{11.90}{11.46}{12.34} & \ABMci{17.80}{15.76}{19.84} \\*
+87 & 50 & Platform & WS & 1000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{6.57}{6.33}{6.80} & \ABMci{0.00}{0.00}{0.00} \\
+\midrule
+88 & 10 & No governance & BA & 5000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{187.70}{169.85}{205.55} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+89 & 10 & Legal & BA & 5000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{187.07}{172.98}{201.15} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+90 & 10 & Platform & BA & 5000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{188.97}{171.64}{206.30} & \ABMci{0.00}{0.00}{0.00} \\
+\midrule
+91 & 30 & No governance & BA & 5000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{188.20}{173.55}{202.85} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+92 & 30 & Legal & BA & 5000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{174.70}{158.83}{190.57} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+93 & 30 & Platform & BA & 5000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{175.77}{163.88}{187.65} & \ABMci{0.00}{0.00}{0.00} \\
+\midrule
+94 & 50 & No governance & BA & 5000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{182.83}{168.10}{197.57} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+95 & 50 & Legal & BA & 5000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{177.57}{161.82}{193.31} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[0.5pt]
+96 & 50 & Platform & BA & 5000 & \ABMci{4.00}{4.00}{4.00} & \ABMci{173.97}{163.18}{184.75} & \ABMci{0.00}{0.00}{0.00} \\
+\end{longtable}
+\endgroup

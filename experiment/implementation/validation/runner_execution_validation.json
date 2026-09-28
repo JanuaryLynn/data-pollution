@@ -1,0 +1,218 @@
+{
+  "schema": "ABM-runner-execution-validation-v1",
+  "status": "passed",
+  "scope": "Isolated audit fixture only; formal experiment outputs have not been created.",
+  "netlogo_version": "6.4.0",
+  "model_version": "v2.0-design-v1.0",
+  "model_source_sha256": "67398c3efcadbff75aeeb2aaddefa8398c47ad015503168f181942fba04ce702",
+  "source_scripts_sha256": {
+    "build_jobs.py": "8517128b04847834323ca735ff841ea34f6e1175cf7b456c2a5561cc38559e1f",
+    "run_experiments.py": "566a7757abc91fe6077b262e96d9e09259ba3690c8c65676a277406de311feca"
+  },
+  "jobs": {
+    "official_DTD_validated": 64,
+    "grid": 4,
+    "p4": 60,
+    "conditions": 3195,
+    "runs": 95850,
+    "expected_data_rows": 388350
+  },
+  "actual_table_parser_checks": {
+    "accepted": 5,
+    "condition_ids": [
+      1,
+      4,
+      31,
+      97,
+      196
+    ],
+    "coverage": [
+      "none",
+      "legal",
+      "platform",
+      "state-responsive platform",
+      "P4 final-only"
+    ]
+  },
+  "parser_corruption_checks": {
+    "passed": 12,
+    "total": 12,
+    "details": {
+      "valid_control": {
+        "passed": true,
+        "valid_runs": 1,
+        "run_issues": {},
+        "file_issues": []
+      },
+      "missing_step": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {
+          "c0004_r01": [
+            "Incomplete steps: expected 51, found 50"
+          ]
+        },
+        "file_issues": []
+      },
+      "duplicate_step": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {
+          "c0004_r01": [
+            "Line 59: Duplicate step 50"
+          ]
+        },
+        "file_issues": []
+      },
+      "wrong_seed": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {
+          "c0004_r01": [
+            "Line 58: run-seed differs from frozen manifest",
+            "Incomplete steps: expected 51, found 50"
+          ]
+        },
+        "file_issues": []
+      },
+      "wrong_parameter": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {
+          "c0004_r01": [
+            "Line 58: Parameter mismatch: legal-tpr",
+            "Incomplete steps: expected 51, found 50"
+          ]
+        },
+        "file_issues": []
+      },
+      "wrong_cumulative_count": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {
+          "c0004_r01": [
+            "Line 58: cumulative confusion totals do not equal reviews",
+            "Incomplete steps: expected 51, found 50"
+          ]
+        },
+        "file_issues": []
+      },
+      "wrong_average": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {
+          "c0004_r01": [
+            "Running mean mismatch at 50"
+          ]
+        },
+        "file_issues": []
+      },
+      "wrong_version": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {
+          "c0004_r01": [
+            "Line 58: model-version differs from frozen manifest",
+            "Incomplete steps: expected 51, found 50"
+          ]
+        },
+        "file_issues": []
+      },
+      "unknown_identity": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {
+          "c0004_r01": [
+            "Incomplete steps: expected 51, found 50"
+          ]
+        },
+        "file_issues": [
+          "Unexpected condition/replicate (999, 1) near line 58"
+        ]
+      },
+      "duplicate_behavior_identity": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {
+          "c0004_r01": [
+            "Line 58: One identity maps to multiple BehaviorSpace run numbers",
+            "Incomplete steps: expected 51, found 50"
+          ]
+        },
+        "file_issues": []
+      },
+      "damaged_header": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {},
+        "file_issues": [
+          "Duplicate or missing columns: ['condition-id']"
+        ]
+      },
+      "wrong_runtime": {
+        "passed": true,
+        "valid_runs": 0,
+        "run_issues": {},
+        "file_issues": [
+          "Output is not a NetLogo 6.4.0 BehaviorSpace table"
+        ]
+      }
+    }
+  },
+  "cli_execute": {
+    "fixture": "audit/runner_e2e_fixture",
+    "actual_runs": 30,
+    "data_rows": 1530,
+    "threads": 2,
+    "valid_runs": 30,
+    "exit_code": 0,
+    "second_dry_run_pending": 0,
+    "validate_only_exit_code": 0,
+    "raw_attempts_after_repeat_validation": 1,
+    "run_status_rows": 95850,
+    "run_status_complete": 30,
+    "run_status_pending": 95820
+  },
+  "partial_resume": {
+    "fixture": "audit/runner_e2e_fixture/outputs_partial",
+    "construction": "Synthetic interrupted batch retains unchanged rows for 29 runs from the real first attempt; original evidence is preserved.",
+    "retained_complete_runs": 29,
+    "actual_additional_runs": 1,
+    "retried_run_id": "c0001_r30",
+    "retried_seed": 20261952,
+    "final_complete_runs": 30,
+    "retry_result_identical_to_original": true
+  },
+  "resume_and_integrity_checks": {
+    "changed_runner_rejected": {
+      "passed": true,
+      "stderr": "ERROR: Model/configuration/runner/runtime changed; use a NEW output directory. Existing raw results are preserved and will not be mixed."
+    },
+    "modified_raw_rejected": {
+      "passed": true,
+      "stderr": "ERROR: Previously recorded immutable raw CSV changed: /workspace/scratch/7bb7c0cf7233/revision_review/audit/runner_e2e_fixture/outputs/attempts/grid_001_20260922T070701440984Z/raw.csv"
+    },
+    "only_missing_identity_retried": {
+      "passed": true,
+      "attempt_run_ids": [
+        "c0001_r30"
+      ]
+    },
+    "retry_exact_same_seed_and_result": {
+      "passed": true,
+      "seed": "20261952"
+    },
+    "resume_no_duplicates": {
+      "passed": true,
+      "complete_count": 30
+    },
+    "manifest_immutable": {
+      "passed": true
+    }
+  },
+  "formal_outputs_created": false,
+  "limitations": [
+    "Runtime behavior has been exercised on Linux with NetLogo 6.4.0 and the NW 4.0.0 bundle; macOS launcher invocation follows the same documented CLI but was not executed on macOS.",
+    "P4 final-only mean accumulators are cross-checked against trajectories by the separate model validation suite; a final-only raw table cannot itself reconstruct every intermediate state."
+  ]
+}

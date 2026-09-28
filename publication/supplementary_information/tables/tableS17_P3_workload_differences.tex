@@ -1,0 +1,39 @@
+% Table S17. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 211mm+6\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}C{18mm}C{17mm}R{88mm}R{88mm}@{}}
+\caption{Review-burden differences: state-responsive minus fixed moderation}\label{tab:tableS17_P3_workload_differences}\\
+\toprule
+\multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{$\kappa$} & \multicolumn{1}{r}{$\Delta$ Reviews} & \multicolumn{1}{r}{$\Delta$ Clean reviews} \\
+\midrule
+\endfirsthead
+\caption[]{Review-burden differences: state-responsive minus fixed moderation (continued)}\\
+\toprule
+\multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{$\kappa$} & \multicolumn{1}{r}{$\Delta$ Reviews} & \multicolumn{1}{r}{$\Delta$ Clean reviews} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{4}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Differences between independent condition means, with marginal 95\% Welch confidence intervals in brackets; 30 independent runs per condition and no multiplicity adjustment. Both differences are cumulative review-event counts over steps 1--50, including repeated reviews of an account. The Clean reviews column counts events involving accounts that were clean when reviewed (TN+FP). Neither outcome is a percentage or a count of distinct accounts. Subtraction is responsive moderation at the stated $\kappa$ minus fixed moderation. Fixed per-step coverage is 75\%, also the responsive ceiling; both modes use degree targeting, $\mathrm{TPR}=\mathrm{TNR}=80\%$, and the whole network as the candidate pool. Unrounded results, comparison IDs, condition weights and sample sizes are in \texttt{tableS17\_P3\_workload\_differences\_source.csv}.}}\\
+\endlastfoot
+10 & 1 & \ABMci{-22893.27}{-23051.67}{-22734.86} & \ABMci{-25300.17}{-25410.96}{-25189.37} \\
+10 & 2 & \ABMci{-18350.40}{-18701.30}{-17999.50} & \ABMci{-20140.27}{-20445.70}{-19834.84} \\
+10 & 5 & \ABMci{-14110.17}{-14456.17}{-13764.17} & \ABMci{-15085.13}{-15407.18}{-14763.08} \\
+\midrule
+30 & 1 & \ABMci{-19382.97}{-19514.87}{-19251.06} & \ABMci{-22289.30}{-22392.31}{-22186.29} \\
+30 & 2 & \ABMci{-14938.40}{-15188.78}{-14688.02} & \ABMci{-16912.73}{-17132.48}{-16692.98} \\
+30 & 5 & \ABMci{-12228.67}{-12445.28}{-12012.05} & \ABMci{-13236.13}{-13443.50}{-13028.77} \\
+\midrule
+50 & 1 & \ABMci{-17504.47}{-17655.66}{-17353.27} & \ABMci{-20613.87}{-20736.97}{-20490.77} \\
+50 & 2 & \ABMci{-12822.80}{-13022.94}{-12622.66} & \ABMci{-14948.17}{-15118.29}{-14778.04} \\
+50 & 5 & \ABMci{-11969.83}{-12195.81}{-11743.85} & \ABMci{-12937.70}{-13142.15}{-12733.25} \\
+\end{longtable}
+\endgroup

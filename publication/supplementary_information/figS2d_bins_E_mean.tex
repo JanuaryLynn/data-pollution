@@ -1,0 +1,93 @@
+% Editable PAWN diagnostics: source CSV estimates are read without recalculation.
+% Colour and marker encode the input; line pattern encodes aggregation.
+\documentclass[tikz,border=3pt]{standalone}
+\input{figure_style.tex}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[
+ abm axis,
+ group style={group size=3 by 2,horizontal sep=0.72cm,vertical sep=2.05cm},
+ width=4.55cm,height=4.45cm,
+ xmin=3.7,xmax=21.3,xtick={5,10,20},
+ ymin=0,ymax=1,ytick={0,0.25,0.5,0.75,1},
+ yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=2},
+ xmajorgrids=false,grid=major,
+ title style={font=\fontsize{9}{11}\selectfont,yshift=2pt},
+]
+\nextgroupplot[title={(a) $p_0=10\%$},ylabel={PAWN index}]
+\addplot[abmBlue,solid,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p10_legal-strength_median.csv};
+\addplot[abmBlue,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p10_legal-strength_mean.csv};
+\addplot[abmBlue,densely dotted,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p10_legal-strength_maximum.csv};
+\addplot[abmOrange,solid,line width=0.85pt,mark=square*,mark size=1.9pt,mark options={solid,fill=abmOrange,draw=abmOrange},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p10_legal-response-time_median.csv};
+\addplot[abmOrange,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=square*,mark size=1.9pt,mark options={solid,fill=abmOrange,draw=abmOrange},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p10_legal-response-time_mean.csv};
+\addplot[abmOrange,densely dotted,line width=0.85pt,mark=square*,mark size=1.9pt,mark options={solid,fill=abmOrange,draw=abmOrange},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p10_legal-response-time_maximum.csv};
+\addplot[abmGreen,solid,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p10_alpha_legal_median.csv};
+\addplot[abmGreen,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p10_alpha_legal_mean.csv};
+\addplot[abmGreen,densely dotted,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p10_alpha_legal_maximum.csv};
+\nextgroupplot[title={(b) $p_0=30\%$},yticklabels={,,,,}]
+\addplot[abmBlue,solid,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p30_legal-strength_median.csv};
+\addplot[abmBlue,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p30_legal-strength_mean.csv};
+\addplot[abmBlue,densely dotted,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p30_legal-strength_maximum.csv};
+\addplot[abmOrange,solid,line width=0.85pt,mark=square*,mark size=1.9pt,mark options={solid,fill=abmOrange,draw=abmOrange},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p30_legal-response-time_median.csv};
+\addplot[abmOrange,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=square*,mark size=1.9pt,mark options={solid,fill=abmOrange,draw=abmOrange},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p30_legal-response-time_mean.csv};
+\addplot[abmOrange,densely dotted,line width=0.85pt,mark=square*,mark size=1.9pt,mark options={solid,fill=abmOrange,draw=abmOrange},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p30_legal-response-time_maximum.csv};
+\addplot[abmGreen,solid,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p30_alpha_legal_median.csv};
+\addplot[abmGreen,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p30_alpha_legal_mean.csv};
+\addplot[abmGreen,densely dotted,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p30_alpha_legal_maximum.csv};
+\nextgroupplot[title={(c) $p_0=50\%$},yticklabels={,,,,}]
+\addplot[abmBlue,solid,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p50_legal-strength_median.csv};
+\addplot[abmBlue,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p50_legal-strength_mean.csv};
+\addplot[abmBlue,densely dotted,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p50_legal-strength_maximum.csv};
+\addplot[abmOrange,solid,line width=0.85pt,mark=square*,mark size=1.9pt,mark options={solid,fill=abmOrange,draw=abmOrange},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p50_legal-response-time_median.csv};
+\addplot[abmOrange,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=square*,mark size=1.9pt,mark options={solid,fill=abmOrange,draw=abmOrange},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p50_legal-response-time_mean.csv};
+\addplot[abmOrange,densely dotted,line width=0.85pt,mark=square*,mark size=1.9pt,mark options={solid,fill=abmOrange,draw=abmOrange},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p50_legal-response-time_maximum.csv};
+\addplot[abmGreen,solid,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p50_alpha_legal_median.csv};
+\addplot[abmGreen,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p50_alpha_legal_mean.csv};
+\addplot[abmGreen,densely dotted,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/legal_p50_alpha_legal_maximum.csv};
+\nextgroupplot[title={(d) $p_0=10\%$},ylabel={PAWN index}]
+\addplot[abmBlue,solid,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p10_platform-speed_median.csv};
+\addplot[abmBlue,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p10_platform-speed_mean.csv};
+\addplot[abmBlue,densely dotted,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p10_platform-speed_maximum.csv};
+\addplot[abmGreen,solid,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p10_alpha_platform_median.csv};
+\addplot[abmGreen,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p10_alpha_platform_mean.csv};
+\addplot[abmGreen,densely dotted,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p10_alpha_platform_maximum.csv};
+\nextgroupplot[title={(e) $p_0=30\%$},yticklabels={,,,,}]
+\addplot[abmBlue,solid,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p30_platform-speed_median.csv};
+\addplot[abmBlue,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p30_platform-speed_mean.csv};
+\addplot[abmBlue,densely dotted,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p30_platform-speed_maximum.csv};
+\addplot[abmGreen,solid,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p30_alpha_platform_median.csv};
+\addplot[abmGreen,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p30_alpha_platform_mean.csv};
+\addplot[abmGreen,densely dotted,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p30_alpha_platform_maximum.csv};
+\nextgroupplot[title={(f) $p_0=50\%$},yticklabels={,,,,}]
+\addplot[abmBlue,solid,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p50_platform-speed_median.csv};
+\addplot[abmBlue,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p50_platform-speed_mean.csv};
+\addplot[abmBlue,densely dotted,line width=0.85pt,mark=*,mark size=1.9pt,mark options={solid,fill=abmBlue,draw=abmBlue},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p50_platform-speed_maximum.csv};
+\addplot[abmGreen,solid,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p50_alpha_platform_median.csv};
+\addplot[abmGreen,dash pattern=on 3pt off 2pt,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p50_alpha_platform_mean.csv};
+\addplot[abmGreen,densely dotted,line width=0.85pt,mark=triangle*,mark size=1.9pt,mark options={solid,fill=abmGreen,draw=abmGreen},forget plot] table[col sep=comma,x=bins,y=estimate] {data/figS2d_bins_E_mean/platform_p50_alpha_platform_maximum.csv};
+\end{groupplot}
+% Headings and legends are outside the data panels.
+\node[font=\fontsize{10}{12}\selectfont,anchor=south]
+ at ([yshift=10mm]group c2r1.north) {Legal governance};
+\node[font=\fontsize{10}{12}\selectfont,anchor=south]
+ at ([yshift=10mm]group c2r2.north) {Platform governance};
+\node[font=\fontsize{9}{11}\selectfont,anchor=north]
+ at ([yshift=-8mm]group c2r2.south) {Number of fixed input bins};
+\coordinate (legendorigin) at ([xshift=0mm,yshift=-21mm]group c1r2.south west);
+\begin{scope}[shift={(legendorigin)},font=\fontsize{8.5}{10}\selectfont]
+ % Parameter key: no line so that it is distinct from the aggregation key.
+ \draw[abmBlue,only marks,mark=*,mark size=1.9pt] plot coordinates {(0.15,0)};
+ \node[anchor=west] at (0.43,0) {Coverage ($L$, $n_p$)};
+ \draw[abmOrange,only marks,mark=square*,mark size=1.9pt] plot coordinates {(5.35,0)};
+ \node[anchor=west] at (5.63,0) {Legal interval ($\tau_L$)};
+ \draw[abmGreen,only marks,mark=triangle*,mark size=1.9pt] plot coordinates {(10.95,0)};
+ \node[anchor=west] at (11.23,0) {Accuracy ($\alpha_L$, $\alpha_P$)};
+ \draw[black!75,line width=0.85pt] (0,-0.60)--(0.90,-0.60);
+ \node[anchor=west] at (1.05,-0.60) {Median};
+ \draw[black!75,line width=0.85pt,dash pattern=on 3pt off 2pt] (5.2,-0.60)--(6.1,-0.60);
+ \node[anchor=west] at (6.25,-0.60) {Mean};
+ \draw[black!75,line width=0.85pt,densely dotted] (10.8,-0.60)--(11.7,-0.60);
+ \node[anchor=west] at (11.85,-0.60) {Maximum};
+\end{scope}
+\end{tikzpicture}
+\end{document}

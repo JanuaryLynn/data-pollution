@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+<experiments>
+  <experiment name="invalid_inputs" repetitions="1" runMetricsEveryStep="false">
+    <setup>let case-id replicate-id
+set-defaults
+set replicate-id case-id
+set num-nodes 80
+if case-id = 1 [set legal-response-time 0]
+if case-id = 2 [set platform-speed 101]
+if case-id = 3 [set targeting-mode "default"]
+if case-id = 4 [set demand-kappa -1]
+if case-id = 5 [set legal-tpr 101]
+let rejected? false
+carefully [setup] [set rejected? true set network-type error-message]
+if not rejected? [error "Invalid input was unexpectedly accepted."]
+reset-ticks</setup>
+    <go>tick</go>
+    <timeLimit steps="1" />
+    <metric>network-type</metric>
+    <enumeratedValueSet variable="replicate-id">
+      <value value="1" />
+      <value value="2" />
+      <value value="3" />
+      <value value="4" />
+      <value value="5" />
+    </enumeratedValueSet>
+  </experiment>
+</experiments>

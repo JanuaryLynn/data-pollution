@@ -1,0 +1,976 @@
+{
+  "schema": "ABM-revision-design-specification",
+  "version": "design-v1.0",
+  "date": "2026-09-22",
+  "status": "frozen_design_for_implementation; no_new_model_or_simulation_results",
+  "data_informed": true,
+  "preregistered": false,
+  "authority_note": "细化整体方案；按当前已提供意见执行，缺失意见需在最终验收前核对。",
+  "companion_document": "ABM_step1_design_freeze.md",
+  "hypotheses_fragment": "ABM_step1_hypotheses.tex",
+  "scope": {
+    "network_static_within_run": true,
+    "new_network_each_run": true,
+    "false_positive_state_feedback": false,
+    "spontaneous_recovery": false,
+    "external_pollution_input": false,
+    "P3_true_pre_review_pollution_observed": true,
+    "P3_P5_P6_fully_crossed": false,
+    "unresolved_review_items": [
+      "S8",
+      "S11",
+      "S14",
+      "S15"
+    ],
+    "S2": "retain no-feedback boundary; explain limitation; amend if full comments require otherwise"
+  },
+  "model_parameters": [
+    {
+      "name": "network-type",
+      "default": "BA",
+      "type": "enum",
+      "values": [
+        "BA",
+        "ER",
+        "WS"
+      ]
+    },
+    {
+      "name": "num-nodes",
+      "default": 1000,
+      "type": "integer",
+      "minimum": 3
+    },
+    {
+      "name": "ba-m",
+      "default": 2,
+      "type": "integer",
+      "minimum": 1
+    },
+    {
+      "name": "ws-rewire-prob",
+      "default": 0.1,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "name": "p0",
+      "default": 50,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "percent"
+    },
+    {
+      "name": "beta0",
+      "default": 0.1,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "name": "amplification",
+      "default": 0.5,
+      "type": "number",
+      "minimum": 0
+    },
+    {
+      "name": "super-ratio",
+      "default": 1,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "percent"
+    },
+    {
+      "name": "treatment",
+      "default": "none",
+      "type": "enum",
+      "values": [
+        "none",
+        "legal",
+        "platform"
+      ]
+    },
+    {
+      "name": "targeting-mode",
+      "default": "targeted",
+      "type": "enum",
+      "values": [
+        "targeted",
+        "random"
+      ]
+    },
+    {
+      "name": "legal-strength",
+      "default": 70,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "percent"
+    },
+    {
+      "name": "legal-response-time",
+      "default": 5,
+      "type": "integer",
+      "minimum": 1,
+      "unit": "ticks"
+    },
+    {
+      "name": "legal-tpr",
+      "default": 95,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "percent"
+    },
+    {
+      "name": "legal-tnr",
+      "default": 95,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "percent"
+    },
+    {
+      "name": "platform-speed",
+      "default": 75,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "percent"
+    },
+    {
+      "name": "platform-tpr",
+      "default": 80,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "percent"
+    },
+    {
+      "name": "platform-tnr",
+      "default": 80,
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "unit": "percent"
+    },
+    {
+      "name": "platform-workload-mode",
+      "default": "fixed",
+      "type": "enum",
+      "values": [
+        "fixed",
+        "state-responsive"
+      ]
+    },
+    {
+      "name": "demand-kappa",
+      "default": 1,
+      "type": "number",
+      "minimum": 0
+    },
+    {
+      "name": "lambda-weight",
+      "default": 1,
+      "type": "number",
+      "minimum": 0
+    },
+    {
+      "name": "max-ticks",
+      "default": 50,
+      "type": "integer",
+      "minimum": 1,
+      "unit": "ticks"
+    }
+  ],
+  "validation": {
+    "all_numeric_finite": true,
+    "joint_constraints": [
+      "2 * ba-m < num-nodes",
+      "beta0 * (1 + amplification) <= 1"
+    ],
+    "no_zero_as_missing": true,
+    "reject_invalid_instead_of_silent_clipping": true,
+    "nonnegative_count_rounding": "floor(x + 0.5)",
+    "fixed_mode_kappa_canonical_value": 1,
+    "inactive_parameters": "retain specified defaults; no default targeting alias"
+  },
+  "mechanics": {
+    "step_order": [
+      "reset_step_counters",
+      "spread_from_start_of_step_polluted_sources",
+      "count_polluted_pre_review",
+      "govern_if_scheduled",
+      "update_counters_and_accumulators",
+      "advance_tick_and_record"
+    ],
+    "legal_output_steps": "1 + j * legal-response-time, j >= 0, step <= max-ticks",
+    "legal_scheduled_opportunities": "1 + floor((max-ticks - 1) / legal-response-time)",
+    "early_stop_at_zero_pollution": false,
+    "review_candidate_universe": "all_nodes",
+    "selection_within_step": "without_replacement",
+    "targeted_ties": "random each review; superspreader ties random once during setup",
+    "fixed_platform_review_count": "min(N, floor(N * platform-speed / 100 + 0.5))",
+    "responsive_platform_review_count": "min(N, floor(N * platform-speed / 100 + 0.5), floor(demand-kappa * polluted_pre_review + 0.5))",
+    "error_definition": "TP purifies polluted; FN leaves polluted; FP marks clean as ever wronged; TN leaves clean",
+    "step_invariant": "reviews = TP + FP + TN + FN",
+    "output_mode_rng_neutrality_required": true
+  },
+  "design": {
+    "common_p0": [
+      10,
+      30,
+      50
+    ],
+    "replicates": 30,
+    "grid_blocks": [
+      {
+        "module": "baseline_none",
+        "treatment": "none",
+        "axes": {},
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {},
+        "new_conditions_after_prior_deduplication": 3
+      },
+      {
+        "module": "core_legal",
+        "treatment": "legal",
+        "axes": {
+          "legal-strength": [
+            50,
+            70,
+            90
+          ],
+          "legal-response-time": [
+            1,
+            5,
+            10
+          ]
+        },
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {},
+        "new_conditions_after_prior_deduplication": 27
+      },
+      {
+        "module": "core_platform",
+        "treatment": "platform",
+        "axes": {
+          "platform-speed": [
+            50,
+            75,
+            100
+          ]
+        },
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {
+          "platform": [
+            70,
+            80,
+            90
+          ]
+        },
+        "new_conditions_after_prior_deduplication": 27
+      },
+      {
+        "module": "targeting",
+        "treatment": "legal_and_platform",
+        "axes": {
+          "targeting-mode": [
+            "targeted",
+            "random"
+          ]
+        },
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {},
+        "new_conditions_after_prior_deduplication": 6
+      },
+      {
+        "module": "legal_accuracy",
+        "treatment": "legal",
+        "axes": {},
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {
+          "legal": [
+            90,
+            95,
+            100
+          ]
+        },
+        "new_conditions_after_prior_deduplication": 6
+      },
+      {
+        "module": "P1_topology",
+        "treatment": "none_legal_platform",
+        "axes": {
+          "network-type": [
+            "BA",
+            "ER",
+            "WS"
+          ]
+        },
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {},
+        "new_conditions_after_prior_deduplication": 18
+      },
+      {
+        "module": "scale",
+        "treatment": "none_legal_platform",
+        "axes": {
+          "num-nodes": [
+            1000,
+            5000
+          ]
+        },
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {},
+        "new_conditions_after_prior_deduplication": 9
+      },
+      {
+        "module": "P3",
+        "treatment": "platform",
+        "axes": {
+          "demand-kappa": [
+            1,
+            2,
+            5
+          ]
+        },
+        "fixed_overrides": {
+          "platform-workload-mode": "state-responsive"
+        },
+        "symmetric_accuracy_axes": {},
+        "new_conditions_after_prior_deduplication": 9
+      },
+      {
+        "module": "P5",
+        "treatment": "legal_and_platform",
+        "axes": {
+          "targeting-mode": [
+            "targeted",
+            "random"
+          ],
+          "active_actor_coverage": [
+            5,
+            10,
+            20
+          ]
+        },
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {},
+        "new_conditions_after_prior_deduplication": 36
+      },
+      {
+        "module": "P6_legal",
+        "treatment": "legal",
+        "axes": {
+          "legal-tpr": [
+            90,
+            95,
+            100
+          ],
+          "legal-tnr": [
+            90,
+            95,
+            100
+          ]
+        },
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {},
+        "new_conditions_after_prior_deduplication": 18
+      },
+      {
+        "module": "P6_platform",
+        "treatment": "platform",
+        "axes": {
+          "platform-speed": [
+            50,
+            75
+          ],
+          "platform-tpr": [
+            70,
+            80,
+            90
+          ],
+          "platform-tnr": [
+            70,
+            80,
+            90
+          ]
+        },
+        "fixed_overrides": {},
+        "symmetric_accuracy_axes": {},
+        "new_conditions_after_prior_deduplication": 36
+      }
+    ],
+    "block_expansion": "Start from all 21 defaults; set actor and p0; apply overrides/axes. Symmetric accuracy axis binds both TPR and TNR. active_actor_coverage binds legal-strength or platform-speed. Deduplicate complete rows, preserve every group membership.",
+    "core_conditions": 96,
+    "grid_conditions": 195,
+    "grid_runs": 5850,
+    "grid_trajectory_steps": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "grid_output_rows": 298350,
+    "P4_conditions": 3000,
+    "P4_runs": 90000,
+    "total_conditions": 3195,
+    "total_runs": 95850,
+    "historical_runs_pooled": false,
+    "P4": {
+      "sampler": "randomized_LHS",
+      "strength": 1,
+      "optimization": null,
+      "points_per_actor": 500,
+      "legal": {
+        "seed": 740401,
+        "column_order": [
+          "legal-strength",
+          "legal-response-time",
+          "alpha_legal"
+        ],
+        "bounds": [
+          [
+            5,
+            100
+          ],
+          [
+            1,
+            20
+          ],
+          [
+            80,
+            100
+          ]
+        ],
+        "tau_mapping": "1 + floor(20 * u)",
+        "tau_counts_each": 25
+      },
+      "platform": {
+        "seed": 740402,
+        "column_order": [
+          "platform-speed",
+          "alpha_platform"
+        ],
+        "bounds": [
+          [
+            1,
+            100
+          ],
+          [
+            60,
+            99
+          ]
+        ]
+      },
+      "continuous_distribution": "independent_uniform",
+      "tau_distribution": "discrete_uniform",
+      "reuse_vectors_across_p0": true,
+      "separate_simulation_seeds_across_p0": true,
+      "accuracy_mapping": "TPR = TNR = alpha; alpha is one sensitivity input",
+      "platform_workload_mode": "fixed",
+      "keep_coverage_full_precision": true,
+      "archive_actual_sampling_matrix_and_versions": true
+    }
+  },
+  "running": {
+    "condition_order": "first appearance in the grid block order, then P4 legal, then P4 platform; freeze generated IDs before execution",
+    "seed_formula": "20260922 + 1000 * condition_id + replicate_id",
+    "condition_id_range": [
+      1,
+      3195
+    ],
+    "replicate_id_range": [
+      1,
+      30
+    ],
+    "max_seed": 23455952,
+    "same_replicate_id_is_paired": false,
+    "seed_before_network_generation": true,
+    "bind_full_configuration_rows": true,
+    "behaviorspace_repetitions_with_explicit_replicate_ids": 1,
+    "persist_actual_versions_and_hashes": true,
+    "failed_runs": "retry original identity; never reject a valid run based on its outcome"
+  },
+  "metrics": {
+    "primary": [
+      "E_mean",
+      "O_final"
+    ],
+    "secondary": [
+      "E_final",
+      "PR_final",
+      "net_E_mean",
+      "net_E_final",
+      "cumulative_reviews"
+    ],
+    "time_mean_steps": [
+      1,
+      50
+    ],
+    "step0_included_in_mean": false,
+    "percentage_scale": [
+      0,
+      100
+    ],
+    "contrast_unit": "percentage_points",
+    "O_final": "100 * distinct_nodes_ever_false_positive / N",
+    "PR_final": "100 * cumulative_TP / (cumulative_TP + cumulative_FP)",
+    "PR_zero_denominator": null,
+    "PR_aggregation": "mean of valid run ratios; report n_valid; CI NA if n_valid < 2",
+    "clean_review_exposure": "cumulative_TN + cumulative_FP",
+    "net_E": "E - lambda-weight * O"
+  },
+  "comparisons": {
+    "repeat_each_template_for_p0": [
+      10,
+      30,
+      50
+    ],
+    "cell_resolution": "all defaults + actor as treatment + p0 + cell overrides; configuration must occur in the frozen design",
+    "H1": {
+      "outcome": "E_mean",
+      "templates": [
+        {
+          "id": "H1_legal_tau1_minus_tau5",
+          "actor": "legal",
+          "expected_sign": "negative",
+          "cells": [
+            {
+              "weight": 1,
+              "overrides": {
+                "legal-strength": 90,
+                "legal-response-time": 1
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "legal-strength": 50,
+                "legal-response-time": 1
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "legal-strength": 90,
+                "legal-response-time": 5
+              }
+            },
+            {
+              "weight": 1,
+              "overrides": {
+                "legal-strength": 50,
+                "legal-response-time": 5
+              }
+            }
+          ]
+        },
+        {
+          "id": "H1_legal_tau1_minus_tau10",
+          "actor": "legal",
+          "expected_sign": "negative",
+          "cells": [
+            {
+              "weight": 1,
+              "overrides": {
+                "legal-strength": 90,
+                "legal-response-time": 1
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "legal-strength": 50,
+                "legal-response-time": 1
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "legal-strength": 90,
+                "legal-response-time": 10
+              }
+            },
+            {
+              "weight": 1,
+              "overrides": {
+                "legal-strength": 50,
+                "legal-response-time": 10
+              }
+            }
+          ]
+        },
+        {
+          "id": "H1_platform_coverage100_minus_50",
+          "actor": "platform",
+          "expected_sign": "negative",
+          "cells": [
+            {
+              "weight": 1,
+              "overrides": {
+                "platform-speed": 100,
+                "platform-tpr": 90,
+                "platform-tnr": 90
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "platform-speed": 100,
+                "platform-tpr": 70,
+                "platform-tnr": 70
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "platform-speed": 50,
+                "platform-tpr": 90,
+                "platform-tnr": 90
+              }
+            },
+            {
+              "weight": 1,
+              "overrides": {
+                "platform-speed": 50,
+                "platform-tpr": 70,
+                "platform-tnr": 70
+              }
+            }
+          ]
+        },
+        {
+          "id": "H1_platform_coverage100_minus_75",
+          "actor": "platform",
+          "expected_sign": "negative",
+          "cells": [
+            {
+              "weight": 1,
+              "overrides": {
+                "platform-speed": 100,
+                "platform-tpr": 90,
+                "platform-tnr": 90
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "platform-speed": 100,
+                "platform-tpr": 70,
+                "platform-tnr": 70
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "platform-speed": 75,
+                "platform-tpr": 90,
+                "platform-tnr": 90
+              }
+            },
+            {
+              "weight": 1,
+              "overrides": {
+                "platform-speed": 75,
+                "platform-tpr": 70,
+                "platform-tnr": 70
+              }
+            }
+          ]
+        }
+      ],
+      "total_contrasts": 12
+    },
+    "H2": {
+      "primary_outcome": "E_mean",
+      "primary_index": "PAWN_median_10_bins",
+      "index_differences": [
+        [
+          "legal",
+          "legal-strength",
+          "alpha_legal"
+        ],
+        [
+          "legal",
+          "legal-response-time",
+          "alpha_legal"
+        ],
+        [
+          "platform",
+          "platform-speed",
+          "alpha_platform"
+        ]
+      ],
+      "expected_sign": "positive",
+      "total_index_differences": 9,
+      "O_final": "required companion sensitivity analysis; not the H2 target",
+      "PRCC": "supplementary direction and monotonic association; do not switch primary index after seeing outcomes"
+    },
+    "H3": {
+      "outcomes": [
+        "E_mean",
+        "O_final"
+      ],
+      "templates": [
+        {
+          "id": "H3_legal_coverage",
+          "actor": "legal",
+          "path": "capacity",
+          "cells": [
+            {
+              "weight": 1,
+              "overrides": {
+                "legal-strength": 90
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "legal-strength": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "H3_legal_frequency",
+          "actor": "legal",
+          "path": "capacity",
+          "cells": [
+            {
+              "weight": 1,
+              "overrides": {
+                "legal-response-time": 1
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "legal-response-time": 10
+              }
+            }
+          ]
+        },
+        {
+          "id": "H3_platform_coverage",
+          "actor": "platform",
+          "path": "capacity",
+          "cells": [
+            {
+              "weight": 1,
+              "overrides": {
+                "platform-speed": 100
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "platform-speed": 50
+              }
+            }
+          ]
+        },
+        {
+          "id": "H3_legal_accuracy",
+          "actor": "legal",
+          "path": "accuracy",
+          "cells": [
+            {
+              "weight": 1,
+              "overrides": {
+                "legal-tpr": 100,
+                "legal-tnr": 100
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "legal-tpr": 90,
+                "legal-tnr": 90
+              }
+            }
+          ]
+        },
+        {
+          "id": "H3_platform_accuracy",
+          "actor": "platform",
+          "path": "accuracy",
+          "cells": [
+            {
+              "weight": 1,
+              "overrides": {
+                "platform-tpr": 90,
+                "platform-tnr": 90
+              }
+            },
+            {
+              "weight": -1,
+              "overrides": {
+                "platform-tpr": 70,
+                "platform-tnr": 70
+              }
+            }
+          ]
+        }
+      ],
+      "total_joint_comparisons": 15,
+      "capacity_expectation": "effectiveness gain with possible increased wrongful exposure",
+      "accuracy_expectation": "may ease trade-off; no predefined equivalence margin or guarantee of joint improvement"
+    },
+    "P3": "state-responsive minus fixed for each kappa and p0; E/O/PR/workload",
+    "P5": "targeted minus random within each actor, coverage, p0; E/O",
+    "P6": "complete TPR-by-TNR surfaces; high minus low TPR at each fixed TNR, and high minus low TNR at each fixed TPR; each p0 and platform coverage",
+    "topology": "ER minus BA; WS minus BA; each treatment and p0",
+    "scale": "N5000 minus N1000; each treatment and p0"
+  },
+  "statistics": {
+    "condition_summary": [
+      "n",
+      "mean",
+      "sd",
+      "se",
+      "t_ci95_low",
+      "t_ci95_high"
+    ],
+    "contrast_interval": "combine weights for each unique condition; variance sum(w^2 * s^2/n); Welch-Satterthwaite df",
+    "joint_comparisons": "retain shared-control covariance; resample a shared condition once per joint bootstrap; keep E/O paired within runs",
+    "significance_stars": false,
+    "intervals_are_simultaneous": false,
+    "null_difference_is_equivalence": false,
+    "unclipped_intervals_preserved": true,
+    "figure2_band": "pointwise 95 percent",
+    "sensitivity": {
+      "unit": "500 design rows, each response is mean over 30 runs",
+      "strata": [
+        "legal_p010",
+        "legal_p030",
+        "legal_p050",
+        "platform_p010",
+        "platform_p030",
+        "platform_p050"
+      ],
+      "PAWN": {
+        "primary_bins": 10,
+        "primary_aggregation": "median",
+        "diagnostic_bins": [
+          5,
+          20
+        ],
+        "diagnostic_aggregations": [
+          "mean",
+          "maximum"
+        ],
+        "KS": "conditional empirical CDF versus unconditional empirical CDF",
+        "continuous_edges": "original full-design empirical quantiles",
+        "tau_groups": "consecutive integer blocks: 2 integers per primary bin",
+        "edge_closure": "left closed, right open; final bin includes maximum",
+        "bootstrap_edges": "fixed at original design",
+        "ties": "never split identical tau values across bins",
+        "empty_bins": "flag and no interpretable ranking"
+      },
+      "PRCC": {
+        "rank_ties": "average",
+        "method": "Pearson correlation of rank residuals after linear adjustment for other ranked inputs and intercept",
+        "nonmonotonicity": "inspect response plots; low PRCC does not imply unimportance"
+      },
+      "row_bootstrap": {
+        "resamples": 1000,
+        "interval_percentiles": [
+          2.5,
+          97.5
+        ],
+        "seeds": [
+          750101,
+          750102,
+          750103,
+          750201,
+          750202,
+          750203
+        ],
+        "caveat": "ordinary bootstrap does not preserve LHS stratification; approximate stability intervals"
+      },
+      "within_point_bootstrap": {
+        "resamples": 1000,
+        "seeds": [
+          751101,
+          751102,
+          751103,
+          751201,
+          751202,
+          751203
+        ],
+        "purpose": "separate Monte Carlo noise diagnostic; do not add interval widths"
+      },
+      "stability_replicate_counts": [
+        20,
+        30
+      ],
+      "degenerate_response_or_residual": "flag as not estimable/rankable; preserve valid-resample counts",
+      "augmentation": "only on documented precision or stability grounds; version the change",
+      "append_grid_rows_to_LHS": false
+    }
+  },
+  "implementation_status": {
+    "model_changed": false,
+    "simulation_run": false,
+    "actual_conditions_csv_generated": false,
+    "analysis_pipeline_implemented": false,
+    "tex_fragment_integrated_into_manuscript": false
+  },
+  "source_hashes": {
+    "revision_review/deliverables/ABM_overall_revision_plan.md": "da1f788138a9988925004e303ea19d8a73b686ff91bce687e8a283aa703a70a6",
+    "revision_review/DPABM_revised/sn-article.tex": "d8e7a7412887a2f3670cd143430424f23ac309e43fb34dd717922b7327ad5c63",
+    "upload/exp_code(v1.8).nls": "9cec63f1cd67d53b4d733fe3fc8864e415df7db818e3eb4c64c8a2c802cabb46"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schema": "ABM-v2-formal-output-offline-audit-v1",
+  "status": "passed",
+  "checked_at_utc": "2026-09-22T10:46:09+00:00",
+  "protocol_version": "design-v1.0",
+  "model_version": "v2.0-design-v1.0",
+  "conditions": 3195,
+  "replicates_per_condition": 30,
+  "validated_runs": 95850,
+  "batches": 64,
+  "runs_by_phase": {
+    "grid": 5850,
+    "p4": 90000
+  },
+  "data_rows_by_phase": {
+    "grid": 298350,
+    "p4": 90000
+  },
+  "total_data_rows": 388350,
+  "duplicate_run_ids": 0,
+  "missing_run_ids": 0,
+  "invalid_runs": 0,
+  "invalid_files": 0,
+  "unique_seeds": 95850,
+  "undefined_final_outcomes": {
+    "PR_final": 360
+  },
+  "protected_file_checks": [
+    {
+      "file": "protocol/ABM_step1_protocol.json",
+      "expected_sha256": "4289c5dcbef64a16ac0a17dc0dca1774fdceb9754e77f38a748098c982306bb3",
+      "actual_sha256": "4289c5dcbef64a16ac0a17dc0dca1774fdceb9754e77f38a748098c982306bb3",
+      "matches": true
+    },
+    {
+      "file": "design/conditions.csv",
+      "expected_sha256": "dbb17ea14b2f7f89f315c95b50970de36129a8b78a442d5beef628f0e471b469",
+      "actual_sha256": "dbb17ea14b2f7f89f315c95b50970de36129a8b78a442d5beef628f0e471b469",
+      "matches": true
+    },
+    {
+      "file": "design/run_manifest.csv",
+      "expected_sha256": "ac4c3c89df2de11194b7d7195ab4e1a53a21cee6b2247a44896df696399b6a2f",
+      "actual_sha256": "ac4c3c89df2de11194b7d7195ab4e1a53a21cee6b2247a44896df696399b6a2f",
+      "matches": true
+    },
+    {
+      "file": "jobs/job_index.csv",
+      "expected_sha256": "642916d58aa26254a663872ec8089eb8e90fd8a22c112a4c90592c03ce3ad20a",
+      "actual_sha256": "642916d58aa26254a663872ec8089eb8e90fd8a22c112a4c90592c03ce3ad20a",
+      "matches": true
+    },
+    {
+      "file": "model/exp_code_v2.0.nls",
+      "expected_sha256": "67398c3efcadbff75aeeb2aaddefa8398c47ad015503168f181942fba04ce702",
+      "actual_sha256": "67398c3efcadbff75aeeb2aaddefa8398c47ad015503168f181942fba04ce702",
+      "matches": true
+    },
+    {
+      "file": "model/ABM_revision_v2.0.nlogo",
+      "expected_sha256": "75a71177b31ff2bf8ee04ea04ef1ea08ddc301ee2a8a956070867a4f7f3454b8",
+      "actual_sha256": "75a71177b31ff2bf8ee04ea04ef1ea08ddc301ee2a8a956070867a4f7f3454b8",
+      "matches": true
+    },
+    {
+      "file": "scripts/build_jobs.py",
+      "expected_sha256": "8517128b04847834323ca735ff841ea34f6e1175cf7b456c2a5561cc38559e1f",
+      "actual_sha256": "8517128b04847834323ca735ff841ea34f6e1175cf7b456c2a5561cc38559e1f",
+      "matches": true
+    },
+    {
+      "file": "scripts/run_experiments.py",
+      "expected_sha256": "1184ec681f5e20287db694feb2383a6f26c7a85b79bcd89fe9af16cdd8be22af",
+      "actual_sha256": "1184ec681f5e20287db694feb2383a6f26c7a85b79bcd89fe9af16cdd8be22af",
+      "matches": true
+    }
+  ],
+  "frozen_job_xml_hashes_checked": 64,
+  "source_files": 324,
+  "original_source_files_unchanged": true,
+  "runtime_environment_recorded": {
+    "launcher": "/Applications/NetLogo 6.4.0/NetLogo 6.4.0.app/Contents/MacOS/NetLogo 6.4.0",
+    "launcher_invocation": "/Applications/NetLogo 6.4.0/NetLogo_Console",
+    "python": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "java_candidates": [],
+    "runtime_file_count": 248
+  },
+  "runtime_inventory_files": 248,
+  "runtime_binaries_independently_available": false,
+  "outputs": {
+    "processed/run_metrics.csv": {
+      "rows": 95850,
+      "sha256": "56aa809179a2516c915512b5e2a52a45aefef7ffedc88113ca8cc75fa60f2ee1"
+    },
+    "processed/grid_trajectories.csv.gz": {
+      "rows": 298350,
+      "sha256": "b6abf635b7f060ae9f6c9347c439b8e27b8c7589529a3825e42a01d9dfc9f24b"
+    }
+  },
+  "limitations": [
+    "Runtime binary hashes are recorded in the supplied Mac metadata and consistent across all attempts; the remote Mac installation itself was not independently rehashed.",
+    "P4 stores only step-50 output. Its E_mean and net_E_mean are the model's running means over steps 1–50; their full trajectories cannot be reconstructed from this archive. Grid means were independently recomputed from 50 observations.",
+    "Digest agreement establishes internal provenance consistency, not a cryptographic proof that the simulation was executed on the reported physical device.",
+    "Thirty independent seeds are used per condition. Replicate labels across different conditions do not identify paired runs.",
+    "No old v1.8 data are pooled. Distinct ever-wronged accounts are distinct from repeated false-positive events."
+  ],
+  "elapsed_seconds": 46.639,
+  "analysis_script_sha256": "2b3084a1508b34a0901500609310ca1877583a4f68c4f9c64d9d57d290d28c58",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "input_archive": {
+    "filename": "outputs.zip",
+    "bytes": 32340100,
+    "sha256": "ebafd05b201014dcc4b12e6a69b74549fe6a75b73ef404054fb5a88d45434319"
+  }
+}

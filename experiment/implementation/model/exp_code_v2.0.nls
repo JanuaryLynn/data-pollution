@@ -1,0 +1,555 @@
+;; Data Pollution Governance ABM -- v2.0-design-v1.0
+;; NetLogo 6.4.0, NW extension. Frozen protocol: ABM_step1_protocol.json.
+;; Percent inputs/outputs use 0..100; probabilities beta0 and WS rewiring use 0..1.
+;; Formal jobs set every parameter and all run identity fields before setup.
+;; setup never treats zero as missing. setup-fresh is for interactive defaults.
+;; Diagnostics and output reporters read cached/scalar state without consuming RNG.
+
+extensions [nw]
+
+globals [
+  ;; The 21 model parameters (run identity is separate).
+  network-type num-nodes ba-m ws-rewire-prob
+  p0 beta0 amplification super-ratio
+  treatment targeting-mode
+  legal-strength legal-response-time legal-tpr legal-tnr
+  platform-speed platform-tpr platform-tnr platform-workload-mode demand-kappa
+  lambda-weight max-ticks
+
+  ;; Run identity: 0/0 is reserved for interactive or diagnostic runs.
+  condition-id replicate-id run-seed
+  ticks-started? params-initialized?
+
+  ;; Current state and cumulative distinct wrongful exposure.
+  pollution-count initial-polluted-count polluted-pre-review over-removal-count
+  step-reviews step-tp step-fp step-tn step-fn
+  cumulative-reviews cumulative-tp cumulative-fp cumulative-tn cumulative-fn
+  legal-action-opportunities active-review-steps
+  sum-effectiveness sum-net-effectiveness observation-count
+
+  ;; Historical GUI aliases: cumulative events, never separate inputs.
+  legal-deleted-count platform-deleted-count deleted-count
+  legal-false-deleted platform-false-deleted false-deleted
+
+  ;; Topology is static. Populate caches using deterministic agent-list traversal.
+  network-node-count network-edge-count
+  cached-mean-degree cached-max-degree cached-degree-sd cached-isolates
+  cached-super-count cached-mean-super-degree cached-mean-ordinary-degree
+]
+
+turtles-own [polluted? super-spreader? wrongly-removed?]
+
+to-report model-version
+  report "v2.0-design-v1.0"
+end
+
+;; This command deliberately does not call clear-all: BehaviorSpace has already
+;; assigned the complete configuration. Network and counters are rebuilt each run.
+to setup
+  validate-parameters
+  set ticks-started? false
+  clear-turtles
+  clear-patches
+  clear-drawing
+  clear-all-plots
+  clear-output
+  reset-counters
+  random-seed run-seed
+  build-network
+  assign-super-spreaders
+  seed-initial-pollution
+  cache-network-diagnostics
+  set pollution-count count turtles with [polluted?]
+  set initial-polluted-count pollution-count
+  set polluted-pre-review pollution-count
+  ;; Preserve the original visualization command and its RNG behavior.
+  layout-circle turtles 10
+  set params-initialized? true
+  set ticks-started? true
+  reset-ticks
+end
+
+to set-defaults
+  set network-type "BA"
+  set num-nodes 1000
+  set ba-m 2
+  set ws-rewire-prob 0.1
+  set p0 50
+  set beta0 0.1
+  set amplification 0.5
+  set super-ratio 1
+  set treatment "none"
+  set targeting-mode "targeted"
+  set legal-strength 70
+  set legal-response-time 5
+  set legal-tpr 95
+  set legal-tnr 95
+  set platform-speed 75
+  set platform-tpr 80
+  set platform-tnr 80
+  set platform-workload-mode "fixed"
+  set demand-kappa 1
+  set lambda-weight 1
+  set max-ticks 50
+  set condition-id 0
+  set replicate-id 0
+  set run-seed 20260922
+  set params-initialized? true
+  set ticks-started? false
+end
+
+to setup-fresh
+  set-defaults
+  setup
+end
+
+;; Validation changes no parameters and silently clips nothing.
+to validate-parameters
+  check-enum "network-type" network-type ["BA" "ER" "WS"]
+  check-enum "treatment" treatment ["none" "legal" "platform"]
+  check-enum "targeting-mode" targeting-mode ["targeted" "random"]
+  check-enum "platform-workload-mode" platform-workload-mode ["fixed" "state-responsive"]
+  check-integer "num-nodes" num-nodes 3 2147483647
+  check-integer "ba-m" ba-m 1 2147483647
+  if 2 * ba-m >= num-nodes [error "Require 2 * ba-m < num-nodes."]
+  check-number "ws-rewire-prob" ws-rewire-prob 0 1
+  check-number "p0" p0 0 100
+  check-number "beta0" beta0 0 1
+  check-number "amplification" amplification 0 1.7976931348623157E308
+  if beta0 * (1 + amplification) > 1 [error "Require beta0 * (1 + amplification) <= 1."]
+  check-number "super-ratio" super-ratio 0 100
+  check-number "legal-strength" legal-strength 0 100
+  check-integer "legal-response-time" legal-response-time 1 2147483647
+  check-number "legal-tpr" legal-tpr 0 100
+  check-number "legal-tnr" legal-tnr 0 100
+  check-number "platform-speed" platform-speed 0 100
+  check-number "platform-tpr" platform-tpr 0 100
+  check-number "platform-tnr" platform-tnr 0 100
+  check-number "demand-kappa" demand-kappa 0 1.7976931348623157E308
+  if platform-workload-mode = "fixed" and demand-kappa != 1 [
+    error "Fixed workload configurations must use canonical demand-kappa = 1."
+  ]
+  check-number "lambda-weight" lambda-weight 0 1.7976931348623157E308
+  check-integer "max-ticks" max-ticks 1 2147483647
+  check-integer "condition-id" condition-id 0 2147483647
+  check-integer "replicate-id" replicate-id 0 2147483647
+  check-integer "run-seed" run-seed -2147483648 2147483647
+end
+
+to check-enum [parameter-name parameter-value allowed-values]
+  if not is-string? parameter-value [error (word parameter-name " must be a string.")]
+  if not member? parameter-value allowed-values [
+    error (word parameter-name " must be one of " allowed-values "; got " parameter-value)
+  ]
+end
+
+to check-number [parameter-name parameter-value lower-bound upper-bound]
+  if not is-number? parameter-value [error (word parameter-name " must be numeric.")]
+  if not (abs parameter-value <= 1.7976931348623157E308) [
+    error (word parameter-name " must be finite.")
+  ]
+  if not (parameter-value >= lower-bound and parameter-value <= upper-bound) [
+    error (word parameter-name " must be in [" lower-bound ", " upper-bound "]; got " parameter-value)
+  ]
+end
+
+to check-integer [parameter-name parameter-value lower-bound upper-bound]
+  check-number parameter-name parameter-value lower-bound upper-bound
+  if parameter-value != floor parameter-value [error (word parameter-name " must be an integer.")]
+end
+
+to reset-step-counters
+  set step-reviews 0
+  set step-tp 0
+  set step-fp 0
+  set step-tn 0
+  set step-fn 0
+end
+
+to reset-counters
+  reset-step-counters
+  set cumulative-reviews 0
+  set cumulative-tp 0
+  set cumulative-fp 0
+  set cumulative-tn 0
+  set cumulative-fn 0
+  set legal-action-opportunities 0
+  set active-review-steps 0
+  set legal-deleted-count 0
+  set platform-deleted-count 0
+  set deleted-count 0
+  set legal-false-deleted 0
+  set platform-false-deleted 0
+  set false-deleted 0
+  set over-removal-count 0
+  set initial-polluted-count 0
+  set pollution-count 0
+  set polluted-pre-review 0
+  set sum-effectiveness 0
+  set sum-net-effectiveness 0
+  set observation-count 0
+  set network-node-count 0
+  set network-edge-count 0
+  set cached-mean-degree 0
+  set cached-max-degree 0
+  set cached-degree-sd 0
+  set cached-isolates 0
+  set cached-super-count 0
+  set cached-mean-super-degree 0
+  set cached-mean-ordinary-degree 0
+end
+
+;; BA uses NW preferential attachment. ER matches expected mean degree 2m.
+;; The WS-type algorithm is the original manual ring + endpoint rewiring code.
+;; Graphs are not conditioned on connectedness or absence of isolates.
+to build-network
+  if network-type = "BA" [build-barabasi-albert]
+  if network-type = "ER" [build-erdos-renyi]
+  if network-type = "WS" [build-watts-strogatz]
+  if count turtles != num-nodes [error "Network generator returned an incorrect node count."]
+  ask turtles [
+    set shape "person"
+    set color blue
+    set size 0.5
+    set polluted? false
+    set super-spreader? false
+    set wrongly-removed? false
+  ]
+end
+
+to build-barabasi-albert
+  nw:generate-preferential-attachment turtles links num-nodes ba-m
+end
+
+to build-erdos-renyi
+  let er-prob (2 * ba-m) / (num-nodes - 1)
+  nw:generate-random turtles links num-nodes er-prob
+end
+
+to build-watts-strogatz
+  create-turtles num-nodes
+  let ordered sort turtles
+  foreach (range num-nodes) [i ->
+    let a item i ordered
+    foreach (range 1 (ba-m + 1)) [j ->
+      let b item ((i + j) mod num-nodes) ordered
+      if a != b [ask a [if not link-neighbor? b [create-link-with b]]]
+    ]
+  ]
+  let to-rewire []
+  ask links [
+    if random-float 1.0 < ws-rewire-prob [
+      set to-rewire lput (list end1 end2) to-rewire
+    ]
+  ]
+  foreach to-rewire [pair ->
+    let a item 0 pair
+    let b item 1 pair
+    if a != nobody and b != nobody [
+      if [link-neighbor? b] of a [
+        let pool turtles with [self != a and not link-neighbor? a]
+        if any? pool [
+          let c one-of pool
+          ask a [ask link-with b [die] create-link-with c]
+        ]
+      ]
+    ]
+  ]
+end
+
+to assign-super-spreaders
+  let n-super round (count turtles * super-ratio / 100)
+  ;; sort-on randomizes degree ties once at setup, as in v1.8.
+  let ranked sort-on [(- count link-neighbors)] turtles
+  ask turtle-set (sublist ranked 0 n-super) [
+    set super-spreader? true
+    set size 1
+  ]
+end
+
+to seed-initial-pollution
+  let n-seed round (count turtles * p0 / 100)
+  ask n-of n-seed turtles [set polluted? true set color red]
+end
+
+to cache-network-diagnostics
+  ;; Do not use [reporter] of agentsets here: iteration order may consume RNG.
+  let degrees []
+  let super-degrees []
+  let ordinary-degrees []
+  foreach sort turtles [node ->
+    let degree-value [count link-neighbors] of node
+    set degrees lput degree-value degrees
+    ifelse [super-spreader?] of node
+      [set super-degrees lput degree-value super-degrees]
+      [set ordinary-degrees lput degree-value ordinary-degrees]
+  ]
+  set network-node-count count turtles
+  set network-edge-count count links
+  set cached-mean-degree mean degrees
+  set cached-max-degree max degrees
+  set cached-degree-sd standard-deviation degrees
+  set cached-isolates length filter [degree-value -> degree-value = 0] degrees
+  set cached-super-count length super-degrees
+  if not empty? super-degrees [set cached-mean-super-degree mean super-degrees]
+  if not empty? ordinary-degrees [set cached-mean-ordinary-degree mean ordinary-degrees]
+end
+
+to-report effective-targeting
+  report targeting-mode
+end
+
+to go
+  if ticks-started? != true [error "Call setup (or setup-fresh) before go."]
+  if ticks >= max-ticks [stop]
+  reset-step-counters
+  spread-pollution
+  ;; P3 must read the post-diffusion state, not the preceding tick's cache.
+  set polluted-pre-review count turtles with [polluted?]
+  if treatment = "legal" [do-legal-intervention]
+  if treatment = "platform" [do-platform-moderation]
+  ;; Retain this random-order ask from v1.8; do not optimize it away depending
+  ;; on GUI/headless or export mode, since doing so changes the model RNG stream.
+  update-visuals
+  set pollution-count count turtles with [polluted?]
+  accumulate-step
+  tick
+end
+
+to spread-pollution
+  ;; ask snapshots the sources. Newly infected nodes are not sources this step.
+  ask turtles with [polluted?] [
+    let spread-chance beta0
+    if super-spreader? [set spread-chance beta0 * (1 + amplification)]
+    ask link-neighbors with [not polluted?] [
+      if random-float 1.0 < spread-chance [set polluted? true]
+    ]
+  ]
+end
+
+to do-legal-intervention
+  ;; The first action precedes recorded step 1; subsequent actions 1 + j*tau.
+  if ticks mod legal-response-time != 0 [stop]
+  set legal-action-opportunities legal-action-opportunities + 1
+  let nodes-to-process legal-load
+  if nodes-to-process <= 0 [stop]
+  let targets nobody
+  ifelse effective-targeting = "targeted"
+    [set targets max-n-of nodes-to-process turtles [count link-neighbors]]
+    [set targets n-of nodes-to-process turtles]
+  review-candidates targets legal-tpr legal-tnr
+end
+
+to do-platform-moderation
+  let sample-size audit-load
+  if platform-workload-mode = "state-responsive" [
+    ;; Clamp before multiplying when demand is above the entire network.
+    ;; This is algebraically min(N, cap, round(kappa * polluted_pre_review)).
+    let demand-count 0
+    if polluted-pre-review > 0 [
+      ifelse demand-kappa >= num-nodes / polluted-pre-review
+        [set demand-count num-nodes]
+        [set demand-count round (demand-kappa * polluted-pre-review)]
+    ]
+    set sample-size min list sample-size demand-count
+  ]
+  if sample-size <= 0 [stop]
+  let audited nobody
+  ifelse effective-targeting = "targeted"
+    [set audited max-n-of sample-size turtles [count link-neighbors]]
+    [set audited n-of sample-size turtles]
+  review-candidates audited platform-tpr platform-tnr
+end
+
+to review-candidates [candidates true-positive-rate true-negative-rate]
+  set step-reviews count candidates
+  ask candidates [
+    ifelse polluted? [
+      ifelse random-float 100 < true-positive-rate [
+        set polluted? false
+        set step-tp step-tp + 1
+      ][set step-fn step-fn + 1]
+    ][
+      ;; Preserve the v1.8 false-positive draw direction on clean candidates.
+      ifelse random-float 100 < (100 - true-negative-rate) [
+        set step-fp step-fp + 1
+        mark-wrongly-removed
+      ][set step-tn step-tn + 1]
+    ]
+  ]
+end
+
+to mark-wrongly-removed
+  ;; A false positive has no effect on pollution, links or future eligibility.
+  if not wrongly-removed? [
+    set wrongly-removed? true
+    set over-removal-count over-removal-count + 1
+  ]
+end
+
+to accumulate-step
+  if step-reviews != step-tp + step-fp + step-tn + step-fn [
+    error "Review count invariant failed."
+  ]
+  set cumulative-reviews cumulative-reviews + step-reviews
+  set cumulative-tp cumulative-tp + step-tp
+  set cumulative-fp cumulative-fp + step-fp
+  set cumulative-tn cumulative-tn + step-tn
+  set cumulative-fn cumulative-fn + step-fn
+  if step-reviews > 0 [set active-review-steps active-review-steps + 1]
+  if treatment = "legal" [
+    set legal-deleted-count cumulative-tp
+    set legal-false-deleted cumulative-fp
+  ]
+  if treatment = "platform" [
+    set platform-deleted-count cumulative-tp
+    set platform-false-deleted cumulative-fp
+  ]
+  set deleted-count cumulative-tp
+  set false-deleted cumulative-fp
+  ;; Only completed updates enter the time mean. setup's step 0 is excluded.
+  set sum-effectiveness sum-effectiveness + effectiveness
+  set sum-net-effectiveness sum-net-effectiveness + net-effectiveness
+  set observation-count observation-count + 1
+end
+
+to update-visuals
+  ask turtles [
+    ifelse polluted? [set color red]
+      [ifelse wrongly-removed? [set color gray] [set color blue]]
+  ]
+end
+
+;; All experiment reporters below are RNG-neutral and have no side effects.
+to-report effectiveness
+  if ticks-started? != true [report 0]
+  report 100 - (pollution-count / network-node-count) * 100
+end
+
+to-report over-removal-rate
+  if ticks-started? != true [report 0]
+  report (over-removal-count / network-node-count) * 100
+end
+
+to-report net-effectiveness
+  report effectiveness - lambda-weight * over-removal-rate
+end
+
+to-report mean-effectiveness
+  if observation-count = 0 [report "NA"]
+  report sum-effectiveness / observation-count
+end
+
+to-report mean-net-effectiveness
+  if observation-count = 0 [report "NA"]
+  report sum-net-effectiveness / observation-count
+end
+
+to-report precision-defined?
+  report cumulative-tp + cumulative-fp > 0
+end
+
+to-report removal-precision
+  if not precision-defined? [report "NA"]
+  report (cumulative-tp / (cumulative-tp + cumulative-fp)) * 100
+end
+
+to-report error-rate
+  if not precision-defined? [report "NA"]
+  report (cumulative-fp / (cumulative-tp + cumulative-fp)) * 100
+end
+
+to-report current-pollution-rate
+  if ticks-started? != true [report 0]
+  report (pollution-count / network-node-count) * 100
+end
+
+to-report avg-response-time
+  if treatment = "legal" [report legal-response-time]
+  if treatment = "platform" [report 1]
+  report 0
+end
+
+to-report legal-load
+  report min list num-nodes (round (num-nodes * legal-strength / 100))
+end
+
+to-report audit-load
+  ;; Nominal fixed capacity, not P3's actual post-diffusion review workload.
+  report min list num-nodes (round (num-nodes * platform-speed / 100))
+end
+
+to-report step-clean-reviews
+  report step-tn + step-fp
+end
+
+to-report cumulative-clean-reviews
+  report cumulative-tn + cumulative-fp
+end
+
+to-report actual-review-coverage
+  if ticks-started? != true [report 0]
+  report 100 * step-reviews / network-node-count
+end
+
+to-report mean-degree
+  report cached-mean-degree
+end
+
+to-report max-degree
+  report cached-max-degree
+end
+
+to-report degree-sd
+  report cached-degree-sd
+end
+
+to-report count-isolates
+  report cached-isolates
+end
+
+to-report mean-super-degree
+  report cached-mean-super-degree
+end
+
+to-report mean-ordinary-degree
+  report cached-mean-ordinary-degree
+end
+
+to-report count-super-spreaders
+  report cached-super-count
+end
+
+to-report count-wrongly-removed
+  report over-removal-count
+end
+
+to-report effective-beta-super
+  report beta0 * (1 + amplification)
+end
+
+;; Read-only legacy labels; unequal TPR/TNR has no single symmetric accuracy.
+to-report legal-accuracy
+  if legal-tpr != legal-tnr [report "NA"]
+  report legal-tpr
+end
+
+to-report platform-accuracy
+  if platform-tpr != platform-tnr [report "NA"]
+  report platform-tpr
+end
+
+to report-parameters
+  print (word "model=" model-version " condition=" condition-id
+    " replicate=" replicate-id " seed=" run-seed)
+  print (word "network=" network-type " N=" num-nodes " m=" ba-m
+    " WS-rewire=" ws-rewire-prob)
+  print (word "p0=" p0 " beta0=" beta0 " amplification=" amplification
+    " super-ratio=" super-ratio)
+  print (word "treatment=" treatment " targeting=" targeting-mode)
+  print (word "legal: coverage=" legal-strength " tau=" legal-response-time
+    " TPR=" legal-tpr " TNR=" legal-tnr)
+  print (word "platform: coverage-cap=" platform-speed " TPR=" platform-tpr
+    " TNR=" platform-tnr " workload=" platform-workload-mode " kappa=" demand-kappa)
+  print (word "lambda=" lambda-weight " max-ticks=" max-ticks)
+end

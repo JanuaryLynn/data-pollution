@@ -1,0 +1,50 @@
+% Editable vector figure. Points and bin means are read unchanged from the supplied CSVs.
+% Columns: initial pollution; rows: inputs. Lines are descriptive, not confidence intervals.
+\documentclass[tikz,border=4pt]{standalone}
+\input{figure_style.tex}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[abm axis,
+group style={group size=3 by 3,horizontal sep=0.68cm,vertical sep=1.70cm},
+width=4.55cm,height=3.50cm,
+ymin=-2,ymax=102,ytick={0,25,50,75,100},
+grid=major,clip marker paths=false,axis line style={black!65,line width=0.45pt,-},
+xlabel style={yshift=0pt},ylabel style={yshift=-1pt},
+title style={font=\fontsize{9}{11}\selectfont,yshift=3pt},
+legend columns=2,legend cell align=left,legend style={font=\fontsize{9}{11}\selectfont,draw=none,fill=none,
+/tikz/every even column/.append style={column sep=14pt}}]
+\nextgroupplot[legend to name=sensitivity_response_legal_O_final_legend,xmin=3,xmax=102,xtick={5,25,50,75,100},xlabel={Legal coverage $L$ (\%)},title={(a) $p_0=10\%$},ylabel={$O(50)$ (\%)}]
+\addplot[only marks,color=abmBlue,mark=*,mark size=0.80pt,opacity=0.32,mark options={draw=none,fill=abmBlue},forget plot] table[col sep=comma,x=x,y=y] {data/sensitivity_response_legal_O_final/p10_legal-strength_points.csv};
+\addplot[color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt},forget plot] table[col sep=comma,x=x_mean,y=response_mean] {data/sensitivity_response_legal_O_final/p10_legal-strength_bins.csv};
+\addlegendimage{only marks,color=abmBlue,mark=*,mark size=1.5pt,opacity=0.45,mark options={draw=none,fill=abmBlue}}
+\addlegendentry{LHS response (30-run mean)}
+\addlegendimage{color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt}}
+\addlegendentry{Mean within input bin}
+\nextgroupplot[xmin=3,xmax=102,xtick={5,25,50,75,100},xlabel={Legal coverage $L$ (\%)},title={(b) $p_0=30\%$},yticklabels={}]
+\addplot[only marks,color=abmBlue,mark=*,mark size=0.80pt,opacity=0.32,mark options={draw=none,fill=abmBlue},forget plot] table[col sep=comma,x=x,y=y] {data/sensitivity_response_legal_O_final/p30_legal-strength_points.csv};
+\addplot[color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt},forget plot] table[col sep=comma,x=x_mean,y=response_mean] {data/sensitivity_response_legal_O_final/p30_legal-strength_bins.csv};
+\nextgroupplot[xmin=3,xmax=102,xtick={5,25,50,75,100},xlabel={Legal coverage $L$ (\%)},title={(c) $p_0=50\%$},yticklabels={}]
+\addplot[only marks,color=abmBlue,mark=*,mark size=0.80pt,opacity=0.32,mark options={draw=none,fill=abmBlue},forget plot] table[col sep=comma,x=x,y=y] {data/sensitivity_response_legal_O_final/p50_legal-strength_points.csv};
+\addplot[color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt},forget plot] table[col sep=comma,x=x_mean,y=response_mean] {data/sensitivity_response_legal_O_final/p50_legal-strength_bins.csv};
+\nextgroupplot[xmin=0.5,xmax=20.5,xtick={1,5,10,15,20},xlabel={Response interval $\tau_L$ (steps)},title={(d) $p_0=10\%$},ylabel={$O(50)$ (\%)}]
+\addplot[only marks,color=abmBlue,mark=*,mark size=0.80pt,opacity=0.32,mark options={draw=none,fill=abmBlue},forget plot] table[col sep=comma,x=x,y=y] {data/sensitivity_response_legal_O_final/p10_legal-response-time_points.csv};
+\addplot[color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt},forget plot] table[col sep=comma,x=x_mean,y=response_mean] {data/sensitivity_response_legal_O_final/p10_legal-response-time_bins.csv};
+\nextgroupplot[xmin=0.5,xmax=20.5,xtick={1,5,10,15,20},xlabel={Response interval $\tau_L$ (steps)},title={(e) $p_0=30\%$},yticklabels={}]
+\addplot[only marks,color=abmBlue,mark=*,mark size=0.80pt,opacity=0.32,mark options={draw=none,fill=abmBlue},forget plot] table[col sep=comma,x=x,y=y] {data/sensitivity_response_legal_O_final/p30_legal-response-time_points.csv};
+\addplot[color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt},forget plot] table[col sep=comma,x=x_mean,y=response_mean] {data/sensitivity_response_legal_O_final/p30_legal-response-time_bins.csv};
+\nextgroupplot[xmin=0.5,xmax=20.5,xtick={1,5,10,15,20},xlabel={Response interval $\tau_L$ (steps)},title={(f) $p_0=50\%$},yticklabels={}]
+\addplot[only marks,color=abmBlue,mark=*,mark size=0.80pt,opacity=0.32,mark options={draw=none,fill=abmBlue},forget plot] table[col sep=comma,x=x,y=y] {data/sensitivity_response_legal_O_final/p50_legal-response-time_points.csv};
+\addplot[color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt},forget plot] table[col sep=comma,x=x_mean,y=response_mean] {data/sensitivity_response_legal_O_final/p50_legal-response-time_bins.csv};
+\nextgroupplot[xmin=79.5,xmax=100.5,xtick={80,85,90,95,100},xlabel={Legal accuracy $\alpha_L$ (\%)},title={(g) $p_0=10\%$},ylabel={$O(50)$ (\%)}]
+\addplot[only marks,color=abmBlue,mark=*,mark size=0.80pt,opacity=0.32,mark options={draw=none,fill=abmBlue},forget plot] table[col sep=comma,x=x,y=y] {data/sensitivity_response_legal_O_final/p10_alpha_legal_points.csv};
+\addplot[color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt},forget plot] table[col sep=comma,x=x_mean,y=response_mean] {data/sensitivity_response_legal_O_final/p10_alpha_legal_bins.csv};
+\nextgroupplot[xmin=79.5,xmax=100.5,xtick={80,85,90,95,100},xlabel={Legal accuracy $\alpha_L$ (\%)},title={(h) $p_0=30\%$},yticklabels={}]
+\addplot[only marks,color=abmBlue,mark=*,mark size=0.80pt,opacity=0.32,mark options={draw=none,fill=abmBlue},forget plot] table[col sep=comma,x=x,y=y] {data/sensitivity_response_legal_O_final/p30_alpha_legal_points.csv};
+\addplot[color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt},forget plot] table[col sep=comma,x=x_mean,y=response_mean] {data/sensitivity_response_legal_O_final/p30_alpha_legal_bins.csv};
+\nextgroupplot[xmin=79.5,xmax=100.5,xtick={80,85,90,95,100},xlabel={Legal accuracy $\alpha_L$ (\%)},title={(i) $p_0=50\%$},yticklabels={}]
+\addplot[only marks,color=abmBlue,mark=*,mark size=0.80pt,opacity=0.32,mark options={draw=none,fill=abmBlue},forget plot] table[col sep=comma,x=x,y=y] {data/sensitivity_response_legal_O_final/p50_alpha_legal_points.csv};
+\addplot[color=abmBlue!40!black,line width=0.95pt,mark=diamond*,mark size=2.1pt,mark options={fill=white,draw=abmBlue!40!black,line width=0.65pt},forget plot] table[col sep=comma,x=x_mean,y=response_mean] {data/sensitivity_response_legal_O_final/p50_alpha_legal_bins.csv};
+\end{groupplot}
+\node[anchor=north,inner sep=0pt] at ([yshift=-1.17cm]$(group c1r3.south west)!0.5!(group c3r3.south east)$) {\pgfplotslegendfromname{sensitivity_response_legal_O_final_legend}};
+\end{tikzpicture}
+\end{document}

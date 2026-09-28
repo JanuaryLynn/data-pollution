@@ -1,0 +1,165 @@
+% Compile with pdflatex; put figS5b_H3_plot.csv beside this file.
+% Original CSV SHA256: 0922b36f543e10febed87f46645cd69e6e2b8e5ecc373b104dd7551a6fa75e18
+% Estimates use full source precision. Only displayed CI endpoints are rounded.
+% Outcomes are separated by row. All six axes share the same x scale.
+% No uncertainty intervals are drawn over the point symbols.
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usetikzlibrary{calc,plotmarks}
+\pgfplotsset{compat=1.18}
+\definecolor{abmBlue}{HTML}{0072B2}
+\definecolor{abmOrange}{HTML}{D55E00}
+\definecolor{abmInk}{HTML}{303030}
+\definecolor{abmGrid}{HTML}{E5E5E5}
+\pgfplotstableread[col sep=comma]{data/figS5b_H3_plot.csv}\HthreeData
+
+\def\PointSize{2.1pt}
+\pgfplotsset{hthree axis/.style={
+  width=2.55cm,height=4.4cm,scale only axis,
+  xmin=-40,xmax=80,ymin=-0.5,ymax=4.5,
+  xtick={-40,0,40,80},ytick=\empty,
+  axis x line*=bottom,axis y line=none,
+  axis line style={black!60,line width=0.45pt},
+  tick align=outside,tick style={black!55,line width=0.45pt},
+  tick label style={font=\fontsize{8.5}{10}\selectfont},
+  scaled ticks=false,clip=false
+}}
+
+% Freeze values before PGFPlots defers drawing.
+% Arguments: y, color, marker shape, estimate, CI lower, CI upper.
+\newcommand{\DrawOutcome}[6]{%
+  \addplot[only marks,mark=#3,mark size=\PointSize,
+    mark options={draw=#2,fill=#2,solid},forget plot]
+    coordinates {(#4,#1)};
+  % All intervals sit in a fixed column, separate from the plot area.
+  \node[anchor=center,text=black,inner sep=0pt,
+    font=\fontsize{8.5}{10}\selectfont]
+    at ([xshift=1.15cm]axis cs:80,#1)
+    {$[\pgfmathprintnumber[fixed,fixed zerofill,precision=2]{#5},\,
+       \pgfmathprintnumber[fixed,fixed zerofill,precision=2]{#6}]$};
+}
+% Arguments: zero-based CSV row, y, color, marker shape.
+\newcommand{\OutcomeRow}[4]{%
+  \pgfplotstablegetelem{#1}{estimate}\of{\HthreeData}%
+  \edef\ThisEstimate{\pgfplotsretval}%
+  \pgfplotstablegetelem{#1}{ci_low}\of{\HthreeData}%
+  \edef\ThisLow{\pgfplotsretval}%
+  \pgfplotstablegetelem{#1}{ci_high}\of{\HthreeData}%
+  \edef\ThisHigh{\pgfplotsretval}%
+  \edef\DrawThis{\noexpand\DrawOutcome{#2}{#3}{#4}{\ThisEstimate}{\ThisLow}{\ThisHigh}}%
+  \DrawThis
+}
+
+\newcommand{\PanelGuides}{%
+  \path[fill=black!4,draw=none]
+    (axis cs:80,-0.5)
+    rectangle ([xshift=2.30cm]axis cs:80,4.5);
+  \draw[abmGrid,line width=0.35pt]
+    (axis cs:-40,-0.5) -- (axis cs:-40,4.5)
+    (axis cs:40,-0.5) -- (axis cs:40,4.5)
+    (axis cs:80,-0.5) -- (axis cs:80,4.5);
+  \draw[black!17,line width=0.4pt]
+    (axis cs:-40,1.5) -- ([xshift=2.30cm]axis cs:80,1.5);
+  \draw[black!60,densely dashed,line width=0.6pt]
+    (axis cs:0,-0.5) -- (axis cs:0,4.5);
+}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[hthree axis,name=hthree00,at={(0.00cm,7.15cm)},anchor=south west]
+\PanelGuides
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,4) {Legal coverage\\$50\%\to90\%$};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,3) {Legal response interval\\$10\to1$ ticks};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,2) {Platform audit coverage\\$50\%\to100\%$};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,1) {Legal accuracy\\$90\%\to100\%$};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,0) {Platform accuracy\\$70\%\to90\%$};
+\OutcomeRow{0}{4}{abmBlue}{*}
+\OutcomeRow{2}{3}{abmBlue}{*}
+\OutcomeRow{4}{2}{abmBlue}{*}
+\OutcomeRow{6}{1}{abmBlue}{*}
+\OutcomeRow{8}{0}{abmBlue}{*}
+\end{axis}
+\node[text=abmInk,font=\fontsize{9.5}{12}\selectfont] at (2.35,12.45) {(a) $p_0=10\%$};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (1.275,11.90) {$\Delta\bar E$ (pp)};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (3.70,11.90) {95\% CI};
+\draw[black!22,line width=0.4pt] (0.00,11.70) -- (4.85,11.70);
+\begin{axis}[hthree axis,name=hthree01,at={(5.00cm,7.15cm)},anchor=south west]
+\PanelGuides
+\OutcomeRow{10}{4}{abmBlue}{*}
+\OutcomeRow{12}{3}{abmBlue}{*}
+\OutcomeRow{14}{2}{abmBlue}{*}
+\OutcomeRow{16}{1}{abmBlue}{*}
+\OutcomeRow{18}{0}{abmBlue}{*}
+\end{axis}
+\node[text=abmInk,font=\fontsize{9.5}{12}\selectfont] at (7.35,12.45) {(b) $p_0=30\%$};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (6.275,11.90) {$\Delta\bar E$ (pp)};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (8.70,11.90) {95\% CI};
+\draw[black!22,line width=0.4pt] (5.00,11.70) -- (9.85,11.70);
+\begin{axis}[hthree axis,name=hthree02,at={(10.00cm,7.15cm)},anchor=south west]
+\PanelGuides
+\OutcomeRow{20}{4}{abmBlue}{*}
+\OutcomeRow{22}{3}{abmBlue}{*}
+\OutcomeRow{24}{2}{abmBlue}{*}
+\OutcomeRow{26}{1}{abmBlue}{*}
+\OutcomeRow{28}{0}{abmBlue}{*}
+\end{axis}
+\node[text=abmInk,font=\fontsize{9.5}{12}\selectfont] at (12.35,12.45) {(c) $p_0=50\%$};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (11.275,11.90) {$\Delta\bar E$ (pp)};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (13.70,11.90) {95\% CI};
+\draw[black!22,line width=0.4pt] (10.00,11.70) -- (14.85,11.70);
+\node[anchor=east,text=abmInk,font=\fontsize{8.5}{11}\selectfont] at (-0.25,11.90) {Parameter change};
+\node[text=abmInk,font=\fontsize{11}{13}\selectfont] (rowtitle0) at (7.35,13.05) {Mean effectiveness};
+\path[draw=abmBlue,fill=abmBlue] plot[only marks,mark=*,mark size=\PointSize] coordinates {([xshift=-0.22cm]rowtitle0.west)};
+\begin{axis}[hthree axis,name=hthree10,at={(0.00cm,0.00cm)},anchor=south west]
+\PanelGuides
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,4) {Legal coverage\\$50\%\to90\%$};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,3) {Legal response interval\\$10\to1$ ticks};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,2) {Platform audit coverage\\$50\%\to100\%$};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,1) {Legal accuracy\\$90\%\to100\%$};
+\node[anchor=east,align=right,inner sep=1pt,text=abmInk,font=\fontsize{8.5}{10.5}\selectfont] at ([xshift=-0.25cm]axis cs:-40,0) {Platform accuracy\\$70\%\to90\%$};
+\OutcomeRow{1}{4}{abmOrange}{square*}
+\OutcomeRow{3}{3}{abmOrange}{square*}
+\OutcomeRow{5}{2}{abmOrange}{square*}
+\OutcomeRow{7}{1}{abmOrange}{square*}
+\OutcomeRow{9}{0}{abmOrange}{square*}
+\end{axis}
+\node[text=abmInk,font=\fontsize{9.5}{12}\selectfont] at (2.35,5.30) {(d) $p_0=10\%$};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (1.275,4.75) {$\Delta O(50)$ (pp)};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (3.70,4.75) {95\% CI};
+\draw[black!22,line width=0.4pt] (0.00,4.55) -- (4.85,4.55);
+\begin{axis}[hthree axis,name=hthree11,at={(5.00cm,0.00cm)},anchor=south west]
+\PanelGuides
+\OutcomeRow{11}{4}{abmOrange}{square*}
+\OutcomeRow{13}{3}{abmOrange}{square*}
+\OutcomeRow{15}{2}{abmOrange}{square*}
+\OutcomeRow{17}{1}{abmOrange}{square*}
+\OutcomeRow{19}{0}{abmOrange}{square*}
+\end{axis}
+\node[text=abmInk,font=\fontsize{9.5}{12}\selectfont] at (7.35,5.30) {(e) $p_0=30\%$};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (6.275,4.75) {$\Delta O(50)$ (pp)};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (8.70,4.75) {95\% CI};
+\draw[black!22,line width=0.4pt] (5.00,4.55) -- (9.85,4.55);
+\begin{axis}[hthree axis,name=hthree12,at={(10.00cm,0.00cm)},anchor=south west]
+\PanelGuides
+\OutcomeRow{21}{4}{abmOrange}{square*}
+\OutcomeRow{23}{3}{abmOrange}{square*}
+\OutcomeRow{25}{2}{abmOrange}{square*}
+\OutcomeRow{27}{1}{abmOrange}{square*}
+\OutcomeRow{29}{0}{abmOrange}{square*}
+\end{axis}
+\node[text=abmInk,font=\fontsize{9.5}{12}\selectfont] at (12.35,5.30) {(f) $p_0=50\%$};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (11.275,4.75) {$\Delta O(50)$ (pp)};
+\node[text=abmInk,font=\fontsize{8.5}{10}\selectfont] at (13.70,4.75) {95\% CI};
+\draw[black!22,line width=0.4pt] (10.00,4.55) -- (14.85,4.55);
+\node[anchor=east,text=abmInk,font=\fontsize{8.5}{11}\selectfont] at (-0.25,4.75) {Parameter change};
+\node[text=abmInk,font=\fontsize{11}{13}\selectfont] (rowtitle1) at (7.35,5.90) {Wrongful exposure};
+\path[draw=abmOrange,fill=abmOrange] plot[only marks,mark=square*,mark size=\PointSize] coordinates {([xshift=-0.22cm]rowtitle1.west)};
+
+\node[text=abmInk,font=\fontsize{9}{11}\selectfont]
+  at (7.35,-1) {Change from initial setting (percentage points)};
+\end{tikzpicture}
+\end{document}

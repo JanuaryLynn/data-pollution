@@ -1,0 +1,226 @@
+% 数据列 mean/ci_low/ci_high 保持未四舍五入；误差是原置信区间端点差。
+\documentclass[tikz,border=5pt]{standalone}
+\input{figure_style.tex}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[abm axis,width=4.65cm,height=3.4cm,
+ group style={group size=3 by 4,horizontal sep=1.5cm,vertical sep=1.85cm},
+ title style={font=\small,align=left},title style={at={(0,1.03)},anchor=south west},
+ height=2.9cm,ymin=-.5,ymax=2.5,y dir=reverse,ytick={0,1,2},]
+% 面板 a：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(a) Topology, $p_0=10\%$},xmin=-14.707793797528002,xmax=16.639293480328,
+ yticklabels={No governance,Legal,Platform},xlabel={$\Delta\bar E$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p10_none_ER.csv};
+\addplot+[only marks,color=abmGray,mark=square*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p10_none_WS.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p10_legal_ER.csv};
+\addplot+[only marks,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p10_legal_WS.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p10_platform_ER.csv};
+\addplot+[only marks,color=abmBlue,mark=square*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p10_platform_WS.csv};
+% 面板 b：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(b) Topology, $p_0=30\%$},xmin=-14.707793797528002,xmax=16.639293480328,
+ yticklabels={,,},xlabel={$\Delta\bar E$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p30_none_ER.csv};
+\addplot+[only marks,color=abmGray,mark=square*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p30_none_WS.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p30_legal_ER.csv};
+\addplot+[only marks,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p30_legal_WS.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p30_platform_ER.csv};
+\addplot+[only marks,color=abmBlue,mark=square*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p30_platform_WS.csv};
+% 面板 c：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(c) Topology, $p_0=50\%$},xmin=-14.707793797528002,xmax=16.639293480328,
+ yticklabels={,,},xlabel={$\Delta\bar E$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p50_none_ER.csv};
+\addplot+[only marks,color=abmGray,mark=square*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p50_none_WS.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p50_legal_ER.csv};
+\addplot+[only marks,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p50_legal_WS.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p50_platform_ER.csv};
+\addplot+[only marks,color=abmBlue,mark=square*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_E_mean_p50_platform_WS.csv};
+% 面板 d：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(d) Topology, $p_0=10\%$},xmin=-25.347437589354399,xmax=10.502374146284401,
+ yticklabels={No governance,Legal,Platform},xlabel={$\Delta O(50)$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p10_none_ER.csv};
+\addplot+[only marks,color=abmGray,mark=square*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p10_none_WS.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p10_legal_ER.csv};
+\addplot+[only marks,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p10_legal_WS.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p10_platform_ER.csv};
+\addplot+[only marks,color=abmBlue,mark=square*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p10_platform_WS.csv};
+% 面板 e：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(e) Topology, $p_0=30\%$},xmin=-25.347437589354399,xmax=10.502374146284401,
+ yticklabels={,,},xlabel={$\Delta O(50)$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p30_none_ER.csv};
+\addplot+[only marks,color=abmGray,mark=square*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p30_none_WS.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p30_legal_ER.csv};
+\addplot+[only marks,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p30_legal_WS.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p30_platform_ER.csv};
+\addplot+[only marks,color=abmBlue,mark=square*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p30_platform_WS.csv};
+% 面板 f：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(f) Topology, $p_0=50\%$},xmin=-25.347437589354399,xmax=10.502374146284401,
+ yticklabels={,,},xlabel={$\Delta O(50)$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p50_none_ER.csv};
+\addplot+[only marks,color=abmGray,mark=square*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p50_none_WS.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p50_legal_ER.csv};
+\addplot+[only marks,color=abmOrange,mark=square*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p50_legal_WS.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p50_platform_ER.csv};
+\addplot+[only marks,color=abmBlue,mark=square*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/topology_O_final_p50_platform_WS.csv};
+% 面板 g：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(g) Size, $p_0=10\%$},xmin=-2.6395891594799998,xmax=1.10943459548,
+ yticklabels={No governance,Legal,Platform},xlabel={$\Delta\bar E$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_E_mean_p10_none_size.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_E_mean_p10_legal_size.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_E_mean_p10_platform_size.csv};
+% 面板 h：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(h) Size, $p_0=30\%$},xmin=-2.6395891594799998,xmax=1.10943459548,
+ yticklabels={,,},xlabel={$\Delta\bar E$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_E_mean_p30_none_size.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_E_mean_p30_legal_size.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_E_mean_p30_platform_size.csv};
+% 面板 i：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(i) Size, $p_0=50\%$},xmin=-2.6395891594799998,xmax=1.10943459548,
+ yticklabels={,,},xlabel={$\Delta\bar E$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_E_mean_p50_none_size.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_E_mean_p50_legal_size.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_E_mean_p50_platform_size.csv};
+% 面板 j：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(j) Size, $p_0=10\%$},xmin=-1.950052074936,xmax=1.5993246362710001,
+ yticklabels={No governance,Legal,Platform},xlabel={$\Delta O(50)$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_O_final_p10_none_size.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_O_final_p10_legal_size.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_O_final_p10_platform_size.csv};
+% 面板 k：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(k) Size, $p_0=30\%$},xmin=-1.950052074936,xmax=1.5993246362710001,
+ yticklabels={,,},xlabel={$\Delta O(50)$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_O_final_p30_none_size.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_O_final_p30_legal_size.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_O_final_p30_platform_size.csv};
+% 面板 l：Welch 差值区间；按行共用范围，零线不表示等效边界。
+\nextgroupplot[title={(l) Size, $p_0=50\%$},xmin=-1.950052074936,xmax=1.5993246362710001,
+ yticklabels={,,},xlabel={$\Delta O(50)$ (percentage points)}]
+\draw[abmGray,dashed,line width=.5pt] (axis cs:0,-.5)--(axis cs:0,2.5);
+\addplot+[only marks,color=abmGray,mark=*,mark size=2pt,mark options={solid,fill=abmGray,draw=abmGray},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_O_final_p50_none_size.csv};
+\addplot+[only marks,color=abmOrange,mark=*,mark size=2pt,mark options={solid,fill=abmOrange,draw=abmOrange},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_O_final_p50_legal_size.csv};
+\addplot+[only marks,color=abmBlue,mark=*,mark size=2pt,mark options={solid,fill=abmBlue,draw=abmBlue},
+ error bars/.cd,x dir=both,x explicit,error bar style={line width=.55pt}]
+ table[col sep=comma,x=mean,y=y,x error minus=errminus,x error plus=errplus] {data/fig5/scale_O_final_p50_platform_size.csv};
+\end{groupplot}
+\node[anchor=north,font=\small,align=center] at ([yshift=-1.35cm]group c2r4.south) {
+Topology: $\bullet$ ER $-$ BA\quad \rule{1.4mm}{1.4mm} WS $-$ BA\qquad
+Size: $\bullet$ $N=5{,}000$ $-$ $N=1{,}000$\\[3pt]
+\textcolor{abmGray}{No governance}\qquad\textcolor{abmOrange}{Legal}\qquad\textcolor{abmBlue}{Platform}};
+\end{tikzpicture}
+\end{document}

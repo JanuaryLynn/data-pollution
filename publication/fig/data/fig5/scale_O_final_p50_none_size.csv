@@ -1,0 +1,2 @@
+comparison_id,outcome,family,actor,p0,expected_sign,path,primary_hypothesis,contrast_unit,interval_method,paired_runs,unique_conditions,n_min,combined_weights,estimate,se,df,ci_low,ci_high,ci_status,interval_direction,mean,y,errminus,errplus
+scale_none_N5000_minus_N1000_p50,O_final,scale,none,50,unspecified,,False,percentage_points,independent_condition_weighted_Welch,False,2,30,"{""3"":-1.0,""94"":1.0}",0,0,inf,0,0,zero_sample_variance,includes_zero,0,0,0,0

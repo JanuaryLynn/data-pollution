@@ -1,0 +1,63 @@
+% Table S5. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 184mm+10\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}C{13mm}C{16mm}L{30mm}C{19mm}R{53mm}R{53mm}@{}}
+\caption{Platform outcomes under random and degree-targeted selection}\label{tab:tableS3_P5_platform}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Selection} & \multicolumn{1}{c}{$n_p$ (\%)} & \multicolumn{1}{r}{$\bar E$} & \multicolumn{1}{r}{$O(50)$} \\
+\midrule
+\endfirsthead
+\caption[]{Platform outcomes under random and degree-targeted selection (continued)}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Selection} & \multicolumn{1}{c}{$n_p$ (\%)} & \multicolumn{1}{r}{$\bar E$} & \multicolumn{1}{r}{$O(50)$} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{6}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Means with pointwise 95\% Student-$t$ confidence intervals in brackets; 30 independent runs per condition. Intervals are not clipped. $p_0$, per-step coverage $n_p$ and outcomes are percentages. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. Targeted selection prioritizes accounts by degree. Workload is fixed and $\mathrm{TPR}=\mathrm{TNR}=80\%$; 75\% is the benchmark coverage. All networks are BA with $N=1000$. Repeated condition IDs denote the same runs. Unrounded results, condition IDs and sample sizes are in \texttt{tableS3\_P5\_platform.csv}.}}\\
+\endlastfoot
+115 & 10 & Random & 5 & \ABMci{25.48}{25.29}{25.68} & \ABMci{10.47}{10.05}{10.89} \\*
+112 & 10 & Targeted & 5 & \ABMci{28.92}{28.35}{29.49} & \ABMci{4.70}{4.61}{4.80} \\
+\addlinespace[2pt]
+116 & 10 & Random & 10 & \ABMci{37.41}{37.12}{37.71} & \ABMci{26.52}{26.02}{27.02} \\*
+113 & 10 & Targeted & 10 & \ABMci{40.94}{40.21}{41.66} & \ABMci{10.49}{10.31}{10.66} \\
+\addlinespace[2pt]
+117 & 10 & Random & 20 & \ABMci{58.26}{57.95}{58.57} & \ABMci{60.97}{60.43}{61.51} \\*
+114 & 10 & Targeted & 20 & \ABMci{62.48}{61.66}{63.30} & \ABMci{21.14}{20.72}{21.57} \\
+\addlinespace[2pt]
+59 & 10 & Random & 75 & \ABMci{99.63}{99.59}{99.67} & \ABMci{99.94}{99.91}{99.97} \\*
+35 & 10 & Targeted & 75 & \ABMci{99.73}{99.71}{99.75} & \ABMci{99.74}{99.67}{99.82} \\
+\midrule
+127 & 30 & Random & 5 & \ABMci{20.22}{20.05}{20.38} & \ABMci{7.85}{7.58}{8.12} \\*
+124 & 30 & Targeted & 5 & \ABMci{16.52}{16.26}{16.77} & \ABMci{4.28}{4.17}{4.38} \\
+\addlinespace[2pt]
+128 & 30 & Random & 10 & \ABMci{32.92}{32.69}{33.15} & \ABMci{22.34}{21.90}{22.78} \\*
+125 & 30 & Targeted & 10 & \ABMci{25.81}{25.47}{26.16} & \ABMci{10.01}{9.88}{10.15} \\
+\addlinespace[2pt]
+129 & 30 & Random & 20 & \ABMci{54.83}{54.57}{55.10} & \ABMci{57.35}{56.79}{57.91} \\*
+126 & 30 & Targeted & 20 & \ABMci{42.75}{42.12}{43.38} & \ABMci{20.37}{20.08}{20.66} \\
+\addlinespace[2pt]
+61 & 30 & Random & 75 & \ABMci{99.15}{99.08}{99.22} & \ABMci{99.96}{99.93}{99.98} \\*
+44 & 30 & Targeted & 75 & \ABMci{99.26}{99.23}{99.30} & \ABMci{99.65}{99.59}{99.72} \\
+\midrule
+139 & 50 & Random & 5 & \ABMci{17.79}{17.62}{17.96} & \ABMci{6.70}{6.44}{6.96} \\*
+136 & 50 & Targeted & 5 & \ABMci{10.96}{10.78}{11.13} & \ABMci{4.01}{3.88}{4.13} \\
+\addlinespace[2pt]
+140 & 50 & Random & 10 & \ABMci{30.46}{30.31}{30.60} & \ABMci{20.94}{20.47}{21.41} \\*
+137 & 50 & Targeted & 10 & \ABMci{18.25}{18.03}{18.47} & \ABMci{9.67}{9.53}{9.81} \\
+\addlinespace[2pt]
+141 & 50 & Random & 20 & \ABMci{52.71}{52.51}{52.92} & \ABMci{54.81}{54.41}{55.22} \\*
+138 & 50 & Targeted & 20 & \ABMci{31.88}{31.52}{32.23} & \ABMci{20.07}{19.83}{20.31} \\
+\addlinespace[2pt]
+63 & 50 & Random & 75 & \ABMci{98.80}{98.74}{98.85} & \ABMci{99.95}{99.92}{99.97} \\*
+53 & 50 & Targeted & 75 & \ABMci{98.84}{98.81}{98.88} & \ABMci{99.68}{99.63}{99.74} \\
+\end{longtable}
+\endgroup

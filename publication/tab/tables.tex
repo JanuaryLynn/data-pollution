@@ -1,0 +1,949 @@
+\documentclass[pdflatex,sn-basic,Numbered]{sn-jnl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+
+\begin{document}
+
+
+\begin{table}[!htbp]
+	\caption{Core grid settings for initial pollution and governance parameters}
+	\label{tab:model-parameters}
+	\renewcommand{\arraystretch}{1.12}
+	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}
+			>{\raggedright\arraybackslash}p{0.14\linewidth}
+			>{\raggedright\arraybackslash}p{\dimexpr0.51\linewidth-6\tabcolsep\relax}
+			>{\centering\arraybackslash}p{0.16\linewidth}
+			>{\centering\arraybackslash}p{0.19\linewidth}@{}}
+		\toprule
+		Parameter & Definition & Benchmark & Core values \\
+		\midrule
+		$p_0$ & Initial polluted accounts (\%) & -- & 10, 30, 50 \\
+		$L$ & Legal review coverage per round (\%) & 70 & 50, 70, 90 \\
+		$\tau_L$ & Legal intervention interval (steps) & 5 & 1, 5, 10 \\
+		$\alpha_L$ & Symmetric legal TPR and TNR (\%) & 95 & 90, 95, 100 \\
+		$\alpha$ & Symmetric platform TPR and TNR (\%) & 80 & 70, 80, 90 \\
+		$n_p$ & Platform review capacity per step (\%) & 75 & 50, 75, 100 \\
+		\botrule
+	\end{tabular*}
+	\footnotetext{Note: All three $p_0$ levels are used in the benchmark. Legal parameter values are not fully crossed; the tested combinations and additional designs are specified in the text.}
+\end{table}
+
+
+\begin{table}[!htbp]
+	\caption{Benchmark governance outcomes}
+	\label{tab:benchmark-outcomes}%
+	
+	\begingroup
+	\fontsize{8bp}{10bp}\selectfont
+	\setlength{\tabcolsep}{1.5pt}
+	\renewcommand{\arraystretch}{1.15}
+	
+	% Arguments: mean, lower bound, upper bound
+	\newcommand{\ABMinline}[3]{%
+		#1\,{\fontsize{6bp}{8bp}\selectfont[#2,\,#3]}%
+	}
+	
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}clcccc@{}}
+		\toprule
+		$p_0$ (\%) & Regime & $\bar E$ & $E(50)$ & $O(50)$ & $P_R(50)$ \\
+		\midrule
+		10 & No governance
+		& \ABMinline{12.30}{12.10}{12.51}
+		& \ABMinline{0.00}{-0.00}{0.01}
+		& \ABMinline{0.00}{0.00}{0.00}
+		& NA \\
+		& Legal
+		& \ABMinline{77.86}{77.39}{78.34}
+		& \ABMinline{58.35}{57.29}{59.41}
+		& \ABMinline{18.39}{17.98}{18.81}
+		& \ABMinline{92.94}{92.72}{93.15} \\
+		& Platform
+		& \ABMinline{99.73}{99.71}{99.75}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.74}{99.67}{99.82}
+		& \ABMinline{2.44}{2.32}{2.56} \\
+		\midrule
+		30 & No governance
+		& \ABMinline{6.87}{6.74}{7.00}
+		& \ABMinline{0.00}{0.00}{0.00}
+		& \ABMinline{0.00}{0.00}{0.00}
+		& NA \\
+		& Legal
+		& \ABMinline{73.59}{73.19}{74.00}
+		& \ABMinline{57.27}{56.32}{58.22}
+		& \ABMinline{16.18}{15.83}{16.53}
+		& \ABMinline{94.74}{94.61}{94.87} \\
+		& Platform
+		& \ABMinline{99.26}{99.23}{99.30}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.65}{99.59}{99.72}
+		& \ABMinline{6.39}{6.21}{6.57} \\
+		\midrule
+		50 & No governance
+		& \ABMinline{4.08}{4.01}{4.15}
+		& \ABMinline{0.00}{0.00}{0.00}
+		& \ABMinline{0.00}{0.00}{0.00}
+		& NA \\
+		& Legal
+		& \ABMinline{71.26}{70.81}{71.70}
+		& \ABMinline{57.87}{56.85}{58.88}
+		& \ABMinline{14.54}{14.03}{15.05}
+		& \ABMinline{95.67}{95.49}{95.86} \\
+		& Platform
+		& \ABMinline{98.84}{98.81}{98.88}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.68}{99.63}{99.74}
+		& \ABMinline{9.52}{9.37}{9.68} \\
+		\bottomrule
+	\end{tabular*}
+	\footnotetext{Note: Means with 95\% CIs in brackets.
+		NA denotes undefined precision.}
+	\endgroup
+\end{table}
+
+
+\begin{table}[!htbp]
+	\caption{Legal parameter sweep}
+	\label{tab:s1a-legal}%
+	
+	\begingroup
+	\fontsize{8bp}{10bp}\selectfont
+	\setlength{\tabcolsep}{1.5pt}
+	\renewcommand{\arraystretch}{1.15}
+	
+	\newcommand{\ABMinline}[3]{%
+		#1\,{\fontsize{6bp}{8bp}\selectfont[#2,\,#3]}%
+	}
+	
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccccc@{}}
+		\toprule
+		$p_0$ (\%) & $L$ (\%) & $\tau_L$
+		& $\bar E$ & $E(50)$ & $O(50)$ & $P_R(50)$ \\
+		\midrule
+		10 & 50 & 1
+		& \ABMinline{94.04}{93.52}{94.56}
+		& \ABMinline{93.89}{92.98}{94.80}
+		& \ABMinline{46.63}{46.20}{47.06}
+		& \ABMinline{35.27}{33.73}{36.80} \\
+		& & 5
+		& \ABMinline{52.94}{52.25}{53.62}
+		& \ABMinline{21.37}{20.71}{22.03}
+		& \ABMinline{9.56}{9.21}{9.90}
+		& \ABMinline{96.25}{96.08}{96.41} \\
+		& & 10
+		& \ABMinline{34.20}{33.73}{34.67}
+		& \ABMinline{3.72}{3.49}{3.96}
+		& \ABMinline{3.02}{2.82}{3.22}
+		& \ABMinline{98.28}{98.17}{98.39} \\
+		\addlinespace[2pt]
+		& 70 & 1
+		& \ABMinline{99.79}{99.78}{99.81}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{77.90}{77.37}{78.43}
+		& \ABMinline{8.48}{8.26}{8.69} \\
+		& & 5
+		& \ABMinline{77.86}{77.39}{78.34}
+		& \ABMinline{58.35}{57.29}{59.41}
+		& \ABMinline{18.39}{17.98}{18.81}
+		& \ABMinline{92.94}{92.72}{93.15} \\
+		& & 10
+		& \ABMinline{50.03}{49.40}{50.66}
+		& \ABMinline{14.33}{13.85}{14.82}
+		& \ABMinline{5.54}{5.24}{5.83}
+		& \ABMinline{97.57}{97.42}{97.71} \\
+		\addlinespace[2pt]
+		& 90 & 1
+		& \ABMinline{99.95}{99.95}{99.96}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{89.98}{89.57}{90.39}
+		& \ABMinline{6.01}{5.88}{6.14} \\
+		& & 5
+		& \ABMinline{92.86}{92.15}{93.56}
+		& \ABMinline{83.74}{81.14}{86.33}
+		& \ABMinline{30.59}{29.87}{31.30}
+		& \ABMinline{82.16}{80.28}{84.03} \\
+		& & 10
+		& \ABMinline{66.60}{65.93}{67.26}
+		& \ABMinline{28.39}{27.44}{29.35}
+		& \ABMinline{9.10}{8.77}{9.44}
+		& \ABMinline{96.36}{96.19}{96.52} \\
+		\midrule
+		30 & 50 & 1
+		& \ABMinline{83.25}{82.18}{84.32}
+		& \ABMinline{83.54}{81.66}{85.42}
+		& \ABMinline{45.64}{45.26}{46.01}
+		& \ABMinline{60.79}{59.58}{62.01} \\
+		& & 5
+		& \ABMinline{44.77}{44.45}{45.10}
+		& \ABMinline{19.51}{18.92}{20.11}
+		& \ABMinline{7.80}{7.49}{8.11}
+		& \ABMinline{97.38}{97.26}{97.49} \\
+		& & 10
+		& \ABMinline{28.29}{28.03}{28.54}
+		& \ABMinline{3.67}{3.44}{3.90}
+		& \ABMinline{2.13}{1.96}{2.31}
+		& \ABMinline{98.91}{98.82}{99.00} \\
+		\addlinespace[2pt]
+		& 70 & 1
+		& \ABMinline{99.40}{99.38}{99.42}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{77.27}{76.80}{77.74}
+		& \ABMinline{20.61}{20.34}{20.88} \\
+		& & 5
+		& \ABMinline{73.59}{73.19}{74.00}
+		& \ABMinline{57.27}{56.32}{58.22}
+		& \ABMinline{16.18}{15.83}{16.53}
+		& \ABMinline{94.74}{94.61}{94.87} \\
+		& & 10
+		& \ABMinline{44.83}{44.49}{45.17}
+		& \ABMinline{14.28}{13.76}{14.80}
+		& \ABMinline{4.02}{3.73}{4.31}
+		& \ABMinline{98.43}{98.31}{98.55} \\
+		\addlinespace[2pt]
+		& 90 & 1
+		& \ABMinline{99.86}{99.86}{99.87}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{89.62}{89.29}{89.96}
+		& \ABMinline{15.32}{15.11}{15.52} \\
+		& & 5
+		& \ABMinline{90.97}{90.35}{91.59}
+		& \ABMinline{83.51}{81.68}{85.35}
+		& \ABMinline{28.32}{27.71}{28.94}
+		& \ABMinline{87.36}{86.67}{88.05} \\
+		& & 10
+		& \ABMinline{63.85}{63.24}{64.46}
+		& \ABMinline{29.15}{28.26}{30.04}
+		& \ABMinline{7.07}{6.71}{7.43}
+		& \ABMinline{97.52}{97.38}{97.66} \\
+		\midrule
+		50 & 50 & 1
+		& \ABMinline{74.51}{72.54}{76.47}
+		& \ABMinline{75.55}{72.35}{78.75}
+		& \ABMinline{45.09}{44.70}{45.49}
+		& \ABMinline{70.23}{68.93}{71.54} \\
+		& & 5
+		& \ABMinline{39.61}{39.31}{39.91}
+		& \ABMinline{18.13}{17.64}{18.63}
+		& \ABMinline{6.64}{6.34}{6.95}
+		& \ABMinline{97.91}{97.81}{98.01} \\
+		& & 10
+		& \ABMinline{24.62}{24.35}{24.89}
+		& \ABMinline{3.18}{3.04}{3.32}
+		& \ABMinline{1.58}{1.46}{1.70}
+		& \ABMinline{99.25}{99.19}{99.30} \\
+		\addlinespace[2pt]
+		& 70 & 1
+		& \ABMinline{99.05}{99.02}{99.07}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{77.02}{76.59}{77.45}
+		& \ABMinline{28.54}{28.28}{28.79} \\
+		& & 5
+		& \ABMinline{71.26}{70.81}{71.70}
+		& \ABMinline{57.87}{56.85}{58.88}
+		& \ABMinline{14.54}{14.03}{15.05}
+		& \ABMinline{95.67}{95.49}{95.86} \\
+		& & 10
+		& \ABMinline{42.42}{42.11}{42.74}
+		& \ABMinline{14.11}{13.69}{14.54}
+		& \ABMinline{2.85}{2.63}{3.07}
+		& \ABMinline{98.96}{98.88}{99.04} \\
+		\addlinespace[2pt]
+		& 90 & 1
+		& \ABMinline{99.78}{99.77}{99.79}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{89.61}{89.18}{90.04}
+		& \ABMinline{21.70}{21.51}{21.89} \\
+		& & 5
+		& \ABMinline{90.60}{90.11}{91.10}
+		& \ABMinline{83.91}{81.89}{85.92}
+		& \ABMinline{26.96}{26.24}{27.67}
+		& \ABMinline{88.81}{88.22}{89.40} \\
+		& & 10
+		& \ABMinline{61.63}{61.22}{62.03}
+		& \ABMinline{28.60}{27.61}{29.59}
+		& \ABMinline{6.12}{5.85}{6.39}
+		& \ABMinline{98.03}{97.94}{98.13} \\
+		\bottomrule
+	\end{tabular*}
+	
+	\footnotetext{Note: Means with 95\% CIs in brackets.
+		Legal accuracy is fixed at $\mathrm{TPR}=\mathrm{TNR}=95\%$;
+		other settings remain at benchmark values.}
+	
+	\endgroup
+\end{table}
+
+\begin{table}[!htbp]
+	\caption{Targeting and legal-accuracy effects}
+	\label{tab:mechanism-summary}%
+	
+	\begingroup
+	\fontsize{8bp}{10bp}\selectfont
+	\setlength{\tabcolsep}{4pt}
+	\renewcommand{\arraystretch}{1.15}
+	
+	\newcommand{\ABMinline}[3]{%
+		#1\,{\fontsize{6bp}{8bp}\selectfont[#2,\,#3]}%
+	}
+	
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc@{}}
+		\toprule
+		Comparison & $p_0$ (\%) & $\Delta\bar E$ & $\Delta O(50)$ \\
+		\midrule
+		% Source comparison: legal_accuracy_p10
+		Legal accuracy & 10
+		& \ABMinline{10.98}{10.04}{11.91}
+		& \ABMinline{-30.04}{-30.65}{-29.43} \\
+		% Source comparison: legal_accuracy_p30
+		& 30
+		& \ABMinline{11.15}{10.52}{11.78}
+		& \ABMinline{-26.44}{-27.00}{-25.88} \\
+		% Source comparison: legal_accuracy_p50
+		& 50
+		& \ABMinline{10.53}{9.93}{11.14}
+		& \ABMinline{-24.30}{-24.96}{-23.65} \\
+		\midrule
+		% Source comparison: legal_coverage70_targeting_p10
+		Legal targeting & 10
+		& \ABMinline{10.63}{10.00}{11.27}
+		& \ABMinline{2.95}{2.32}{3.59} \\
+		% Source comparison: legal_coverage70_targeting_p30
+		& 30
+		& \ABMinline{9.07}{8.59}{9.55}
+		& \ABMinline{2.55}{2.07}{3.03} \\
+		% Source comparison: legal_coverage70_targeting_p50
+		& 50
+		& \ABMinline{8.30}{7.80}{8.80}
+		& \ABMinline{2.41}{1.78}{3.04} \\
+		\midrule
+		% Source comparison: platform_coverage75_targeting_p10
+		Platform targeting & 10
+		& \ABMinline{0.10}{0.06}{0.14}
+		& \ABMinline{-0.20}{-0.28}{-0.12} \\
+		% Source comparison: platform_coverage75_targeting_p30
+		& 30
+		& \ABMinline{0.12}{0.04}{0.19}
+		& \ABMinline{-0.30}{-0.37}{-0.23} \\
+		% Source comparison: platform_coverage75_targeting_p50
+		& 50
+		& \ABMinline{0.05}{-0.02}{0.11}
+		& \ABMinline{-0.26}{-0.32}{-0.20} \\
+		\bottomrule
+	\end{tabular*}
+	
+	\footnotetext{Note: Mean differences with 95\% CIs in brackets.
+		Legal-accuracy contrasts are $\alpha_L=100\%$ minus $90\%$
+		at $L=70\%$ and $\tau_L=5$.
+		Targeting contrasts are degree-targeted minus random selection
+		at benchmark settings.}
+	
+	\endgroup
+\end{table}
+
+\begin{table}[!htbp]
+	\caption{Platform parameter sweep}
+	\label{tab:s1b-platform}%
+	
+	\begingroup
+	\fontsize{8bp}{10bp}\selectfont
+	\setlength{\tabcolsep}{0.9pt}
+	\renewcommand{\arraystretch}{1.15}
+	
+	\newcommand{\ABMinline}[3]{%
+		#1\,{\fontsize{6bp}{8bp}\selectfont[#2,\,#3]}%
+	}
+	
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccccc@{}}
+		\toprule
+		$p_0$ (\%) & $n_p$ (\%) & $\alpha$ (\%)
+		& $\bar E$ & $E(50)$ & $O(50)$ & $P_R(50)$ \\
+		\midrule
+		10 & 50 & 70
+		& \ABMinline{84.56}{83.82}{85.30}
+		& \ABMinline{77.18}{75.79}{78.57}
+		& \ABMinline{53.99}{52.48}{55.49}
+		& \ABMinline{20.12}{19.55}{20.68} \\
+		& & 80
+		& \ABMinline{89.59}{88.69}{90.49}
+		& \ABMinline{85.91}{84.28}{87.54}
+		& \ABMinline{53.00}{51.64}{54.37}
+		& \ABMinline{19.65}{18.44}{20.86} \\
+		& & 90
+		& \ABMinline{93.32}{92.65}{93.99}
+		& \ABMinline{92.71}{91.45}{93.96}
+		& \ABMinline{52.11}{51.44}{52.77}
+		& \ABMinline{24.15}{22.83}{25.47} \\
+		\addlinespace[2pt]
+		& 75 & 70
+		& \ABMinline{99.52}{99.46}{99.59}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.97}{99.95}{100.00}
+		& \ABMinline{2.18}{1.91}{2.45} \\
+		& & 80
+		& \ABMinline{99.73}{99.71}{99.75}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.74}{99.67}{99.82}
+		& \ABMinline{2.44}{2.32}{2.56} \\
+		& & 90
+		& \ABMinline{99.83}{99.82}{99.84}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{95.77}{95.54}{95.99}
+		& \ABMinline{4.19}{4.05}{4.34} \\
+		\addlinespace[2pt]
+		& 100 & 70
+		& \ABMinline{99.83}{99.81}{99.85}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{1.31}{1.19}{1.43} \\
+		& & 80
+		& \ABMinline{99.92}{99.91}{99.92}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{1.58}{1.53}{1.64} \\
+		& & 90
+		& \ABMinline{99.97}{99.97}{99.97}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.43}{99.33}{99.53}
+		& \ABMinline{2.84}{2.76}{2.92} \\
+		\midrule
+		30 & 50 & 70
+		& \ABMinline{72.12}{70.96}{73.29}
+		& \ABMinline{66.61}{64.58}{68.63}
+		& \ABMinline{52.56}{51.25}{53.86}
+		& \ABMinline{31.35}{30.75}{31.96} \\
+		& & 80
+		& \ABMinline{77.76}{76.42}{79.10}
+		& \ABMinline{74.49}{72.04}{76.93}
+		& \ABMinline{52.50}{51.47}{53.53}
+		& \ABMinline{35.04}{34.05}{36.03} \\
+		& & 90
+		& \ABMinline{81.24}{80.18}{82.29}
+		& \ABMinline{80.23}{78.40}{82.07}
+		& \ABMinline{50.64}{50.05}{51.23}
+		& \ABMinline{46.58}{45.41}{47.75} \\
+		\addlinespace[2pt]
+		& 75 & 70
+		& \ABMinline{98.82}{98.76}{98.87}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.97}{99.95}{99.99}
+		& \ABMinline{5.22}{5.06}{5.38} \\
+		& & 80
+		& \ABMinline{99.26}{99.23}{99.30}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.65}{99.59}{99.72}
+		& \ABMinline{6.39}{6.21}{6.57} \\
+		& & 90
+		& \ABMinline{99.50}{99.48}{99.52}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{95.42}{95.16}{95.68}
+		& \ABMinline{10.76}{10.58}{10.94} \\
+		\addlinespace[2pt]
+		& 100 & 70
+		& \ABMinline{99.56}{99.53}{99.59}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{3.37}{3.21}{3.53} \\
+		& & 80
+		& \ABMinline{99.79}{99.78}{99.80}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{4.17}{4.09}{4.25} \\
+		& & 90
+		& \ABMinline{99.91}{99.90}{99.92}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.44}{99.33}{99.54}
+		& \ABMinline{7.50}{7.41}{7.59} \\
+		\midrule
+		50 & 50 & 70
+		& \ABMinline{62.93}{62.06}{63.80}
+		& \ABMinline{58.83}{57.41}{60.26}
+		& \ABMinline{51.31}{50.79}{51.83}
+		& \ABMinline{37.84}{37.47}{38.20} \\
+		& & 80
+		& \ABMinline{68.42}{66.92}{69.92}
+		& \ABMinline{66.74}{64.18}{69.29}
+		& \ABMinline{51.44}{50.71}{52.16}
+		& \ABMinline{43.29}{42.40}{44.18} \\
+		& & 90
+		& \ABMinline{72.03}{70.39}{73.68}
+		& \ABMinline{72.37}{69.65}{75.09}
+		& \ABMinline{50.03}{49.61}{50.44}
+		& \ABMinline{56.68}{55.58}{57.79} \\
+		\addlinespace[2pt]
+		& 75 & 70
+		& \ABMinline{98.23}{98.15}{98.30}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.99}{99.97}{100.00}
+		& \ABMinline{7.68}{7.41}{7.95} \\
+		& & 80
+		& \ABMinline{98.84}{98.81}{98.88}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.68}{99.63}{99.74}
+		& \ABMinline{9.52}{9.37}{9.68} \\
+		& & 90
+		& \ABMinline{99.22}{99.19}{99.24}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{95.49}{95.19}{95.79}
+		& \ABMinline{15.73}{15.59}{15.87} \\
+		\addlinespace[2pt]
+		& 100 & 70
+		& \ABMinline{99.35}{99.32}{99.38}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{4.82}{4.70}{4.93} \\
+		& & 80
+		& \ABMinline{99.66}{99.65}{99.68}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{6.36}{6.28}{6.45} \\
+		& & 90
+		& \ABMinline{99.86}{99.85}{99.87}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.47}{99.39}{99.55}
+		& \ABMinline{11.15}{11.06}{11.25} \\
+		\bottomrule
+	\end{tabular*}
+	
+	\footnotetext{Note: Means with 95\% CIs in brackets.
+		Accuracy varies symmetrically; other settings remain at benchmark values.}
+	
+	\endgroup
+\end{table}
+
+\begin{table}[!htbp]
+	\caption{Benchmark outcomes under random and degree-targeted selection}
+	\label{tab:s2a-targeting}%
+	
+	\begingroup
+	\fontsize{8bp}{10bp}\selectfont
+	\setlength{\tabcolsep}{2.5pt}
+	\renewcommand{\arraystretch}{1.15}
+	
+	\newcommand{\ABMinline}[3]{%
+		#1\,{\fontsize{7bp}{8bp}\selectfont[#2,\,#3]}%
+	}
+	
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}clcccc@{}}
+		\toprule
+		$p_0$ (\%) & Selection
+		& $\bar E$ & $E(50)$ & $O(50)$ & $P_R(50)$ \\
+		\midrule
+		\multicolumn{6}{@{}l}{\textit{Legal governance}} \\
+		\addlinespace[2pt]
+		% Condition ID: 58
+		10 & Random
+		& \ABMinline{67.23}{66.79}{67.67}
+		& \ABMinline{45.27}{44.36}{46.19}
+		& \ABMinline{15.44}{14.94}{15.94}
+		& \ABMinline{95.35}{95.19}{95.52} \\
+		% Condition ID: 8
+		& Targeted
+		& \ABMinline{77.86}{77.39}{78.34}
+		& \ABMinline{58.35}{57.29}{59.41}
+		& \ABMinline{18.39}{17.98}{18.81}
+		& \ABMinline{92.94}{92.72}{93.15} \\
+		\addlinespace[2pt]
+		% Condition ID: 60
+		30 & Random
+		& \ABMinline{64.52}{64.24}{64.80}
+		& \ABMinline{45.43}{44.59}{46.28}
+		& \ABMinline{13.64}{13.30}{13.98}
+		& \ABMinline{96.30}{96.21}{96.40} \\
+		% Condition ID: 17
+		& Targeted
+		& \ABMinline{73.59}{73.19}{74.00}
+		& \ABMinline{57.27}{56.32}{58.22}
+		& \ABMinline{16.18}{15.83}{16.53}
+		& \ABMinline{94.74}{94.61}{94.87} \\
+		\addlinespace[2pt]
+		% Condition ID: 62
+		50 & Random
+		& \ABMinline{62.96}{62.71}{63.21}
+		& \ABMinline{45.16}{44.31}{46.01}
+		& \ABMinline{12.13}{11.74}{12.53}
+		& \ABMinline{96.92}{96.82}{97.03} \\
+		% Condition ID: 26
+		& Targeted
+		& \ABMinline{71.26}{70.81}{71.70}
+		& \ABMinline{57.87}{56.85}{58.88}
+		& \ABMinline{14.54}{14.03}{15.05}
+		& \ABMinline{95.67}{95.49}{95.86} \\
+		\midrule
+		\multicolumn{6}{@{}l}{\textit{Platform governance}} \\
+		\addlinespace[2pt]
+		% Condition ID: 59
+		10 & Random
+		& \ABMinline{99.63}{99.59}{99.67}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.94}{99.91}{99.97}
+		& \ABMinline{3.56}{3.27}{3.86} \\
+		% Condition ID: 35
+		& Targeted
+		& \ABMinline{99.73}{99.71}{99.75}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.74}{99.67}{99.82}
+		& \ABMinline{2.44}{2.32}{2.56} \\
+		\addlinespace[2pt]
+		% Condition ID: 61
+		30 & Random
+		& \ABMinline{99.15}{99.08}{99.22}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.96}{99.93}{99.98}
+		& \ABMinline{7.99}{7.45}{8.52} \\
+		% Condition ID: 44
+		& Targeted
+		& \ABMinline{99.26}{99.23}{99.30}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.65}{99.59}{99.72}
+		& \ABMinline{6.39}{6.21}{6.57} \\
+		\addlinespace[2pt]
+		% Condition ID: 63
+		50 & Random
+		& \ABMinline{98.80}{98.74}{98.85}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.95}{99.92}{99.97}
+		& \ABMinline{11.14}{10.76}{11.52} \\
+		% Condition ID: 53
+		& Targeted
+		& \ABMinline{98.84}{98.81}{98.88}
+		& \ABMinline{100.00}{100.00}{100.00}
+		& \ABMinline{99.68}{99.63}{99.74}
+		& \ABMinline{9.52}{9.37}{9.68} \\
+		\bottomrule
+	\end{tabular*}
+	
+	\footnotetext{Note: Means with 95\% CIs in brackets.
+		Governance parameters remain at benchmark values.
+		Targeted selection prioritizes accounts by degree.}
+	
+	\endgroup
+\end{table}
+
+%=============sec4.5的新表：状态响应审核量P3
+
+\begin{table}[!htbp]
+	\caption{State-responsive platform moderation relative to fixed audit coverage}
+	\label{tab:p3-workload-contrasts}%
+	\newcommand{\ABMci}[1]{{\fontsize{6bp}{8bp}\selectfont[#1]}}
+	
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccc@{}}
+		\toprule
+		$p_0$ (\%) & $\kappa$ & $\Delta\bar E$ & $\Delta O(50)$ & $\Delta$ Reviews \\
+		\midrule
+		% Source comparison: P3_kappa1_minus_fixed_p10
+		10 & 1
+		& -24.73\,\ABMci{-24.98, -24.47}
+		& -59.92\,\ABMci{-60.69, -59.14}
+		& -22893.27\,\ABMci{-23051.67, -22734.86} \\[3pt]
+		% Source comparison: P3_kappa2_minus_fixed_p10
+		& 2
+		& -15.63\,\ABMci{-15.92, -15.35}
+		& -49.82\,\ABMci{-50.22, -49.43}
+		& -18350.40\,\ABMci{-18701.30, -17999.50} \\[3pt]
+		% Source comparison: P3_kappa5_minus_fixed_p10
+		& 5
+		& -7.15\,\ABMci{-7.26, -7.04}
+		& -39.99\,\ABMci{-40.77, -39.21}
+		& -14110.17\,\ABMci{-14456.17, -13764.17} \\
+		\midrule
+		% Source comparison: P3_kappa1_minus_fixed_p30
+		30 & 1
+		& -29.85\,\ABMci{-30.07, -29.63}
+		& -51.87\,\ABMci{-52.25, -51.48}
+		& -19382.97\,\ABMci{-19514.87, -19251.06} \\[3pt]
+		% Source comparison: P3_kappa2_minus_fixed_p30
+		& 2
+		& -17.67\,\ABMci{-17.88, -17.47}
+		& -44.97\,\ABMci{-45.35, -44.59}
+		& -14938.40\,\ABMci{-15188.78, -14688.02} \\[3pt]
+		% Source comparison: P3_kappa5_minus_fixed_p30
+		& 5
+		& -7.31\,\ABMci{-7.40, -7.23}
+		& -34.02\,\ABMci{-34.82, -33.22}
+		& -12228.67\,\ABMci{-12445.28, -12012.05} \\
+		\midrule
+		% Source comparison: P3_kappa1_minus_fixed_p50
+		50 & 1
+		& -32.32\,\ABMci{-32.58, -32.07}
+		& -49.49\,\ABMci{-49.90, -49.08}
+		& -17504.47\,\ABMci{-17655.66, -17353.27} \\[3pt]
+		% Source comparison: P3_kappa2_minus_fixed_p50
+		& 2
+		& -19.00\,\ABMci{-19.16, -18.84}
+		& -43.89\,\ABMci{-44.38, -43.40}
+		& -12822.80\,\ABMci{-13022.94, -12622.66} \\[3pt]
+		% Source comparison: P3_kappa5_minus_fixed_p50
+		& 5
+		& -7.13\,\ABMci{-7.21, -7.05}
+		& -32.87\,\ABMci{-33.73, -32.02}
+		& -11969.83\,\ABMci{-12195.81, -11743.85} \\
+		\bottomrule
+	\end{tabular*}
+	
+	\footnotetext{Note: Mean differences with 95\% CIs in brackets, calculated as responsive minus fixed moderation.
+		Fixed coverage is 75\% per step, also the responsive ceiling.
+		Reviews count cumulative review events over steps 1--50, including repeated reviews.}
+\end{table}
+%=============sec4.5的新表：TPR/TNR拆分P6
+
+\begin{table}[!htbp]
+	\caption{Effects of separately varying true-positive and true-negative rates}
+	\label{tab:p6-accuracy-contrasts}%
+	\newcommand{\ABMci}[1]{{\fontsize{6bp}{8bp}\selectfont[#1]}}
+	
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccc@{}}
+		\toprule
+		Regime and coverage & $p_0$ (\%) & Varied rate & $\Delta\bar E$ & $\Delta O(50)$ \\
+		\midrule
+		% Source comparison: P6_legal_coverage70_tpr_high_minus_low_at_tnr95_p10
+		Legal, 70\% & 10 & TPR
+		& 10.81\,\ABMci{10.09, 11.53}
+		& 3.77\,\ABMci{3.17, 4.36} \\
+		% Source comparison: P6_legal_coverage70_tnr_high_minus_low_at_tpr95_p10
+		& & TNR
+		& 0.17\,\ABMci{-0.68, 1.02}
+		& -33.41\,\ABMci{-34.02, -32.81} \\
+		\addlinespace[2pt]
+		% Source comparison: P6_legal_coverage70_tpr_high_minus_low_at_tnr95_p30
+		& 30 & TPR
+		& 10.40\,\ABMci{9.65, 11.15}
+		& 3.49\,\ABMci{2.91, 4.07} \\
+		% Source comparison: P6_legal_coverage70_tnr_high_minus_low_at_tpr95_p30
+		& & TNR
+		& 0.06\,\ABMci{-0.69, 0.81}
+		& -29.42\,\ABMci{-30.12, -28.71} \\
+		\addlinespace[2pt]
+		% Source comparison: P6_legal_coverage70_tpr_high_minus_low_at_tnr95_p50
+		& 50 & TPR
+		& 10.71\,\ABMci{10.08, 11.33}
+		& 3.22\,\ABMci{2.71, 3.73} \\
+		% Source comparison: P6_legal_coverage70_tnr_high_minus_low_at_tpr95_p50
+		& & TNR
+		& -0.67\,\ABMci{-1.41, 0.07}
+		& -27.49\,\ABMci{-28.10, -26.89} \\
+		\midrule
+		% Source comparison: P6_platform_coverage50_tpr_high_minus_low_at_tnr80_p10
+		Platform, 50\% & 10 & TPR
+		& 7.47\,\ABMci{6.40, 8.53}
+		& -1.85\,\ABMci{-3.61, -0.09} \\
+		% Source comparison: P6_platform_coverage50_tnr_high_minus_low_at_tpr80_p10
+		& & TNR
+		& -0.75\,\ABMci{-1.81, 0.31}
+		& -4.50\,\ABMci{-6.95, -2.04} \\
+		\addlinespace[2pt]
+		% Source comparison: P6_platform_coverage50_tpr_high_minus_low_at_tnr80_p30
+		& 30 & TPR
+		& 8.12\,\ABMci{6.75, 9.49}
+		& -0.42\,\ABMci{-1.43, 0.59} \\
+		% Source comparison: P6_platform_coverage50_tnr_high_minus_low_at_tpr80_p30
+		& & TNR
+		& 0.23\,\ABMci{-1.54, 2.00}
+		& -2.27\,\ABMci{-3.98, -0.56} \\
+		\addlinespace[2pt]
+		% Source comparison: P6_platform_coverage50_tpr_high_minus_low_at_tnr80_p50
+		& 50 & TPR
+		& 8.79\,\ABMci{6.54, 11.03}
+		& 0.80\,\ABMci{-0.38, 1.98} \\
+		% Source comparison: P6_platform_coverage50_tnr_high_minus_low_at_tpr80_p50
+		& & TNR
+		& 1.54\,\ABMci{-0.93, 4.00}
+		& -2.40\,\ABMci{-3.79, -1.01} \\
+		\midrule
+		% Source comparison: P6_platform_coverage75_tpr_high_minus_low_at_tnr80_p10
+		Platform, 75\% & 10 & TPR
+		& 0.31\,\ABMci{0.27, 0.35}
+		& 0.02\,\ABMci{-0.07, 0.11} \\
+		% Source comparison: P6_platform_coverage75_tnr_high_minus_low_at_tpr80_p10
+		& & TNR
+		& -0.01\,\ABMci{-0.03, 0.02}
+		& -4.22\,\ABMci{-4.45, -3.99} \\
+		\addlinespace[2pt]
+		% Source comparison: P6_platform_coverage75_tpr_high_minus_low_at_tnr80_p30
+		& 30 & TPR
+		& 0.64\,\ABMci{0.57, 0.70}
+		& 0.06\,\ABMci{-0.04, 0.15} \\
+		% Source comparison: P6_platform_coverage75_tnr_high_minus_low_at_tpr80_p30
+		& & TNR
+		& -0.01\,\ABMci{-0.05, 0.03}
+		& -4.39\,\ABMci{-4.61, -4.18} \\
+		\addlinespace[2pt]
+		% Source comparison: P6_platform_coverage75_tpr_high_minus_low_at_tnr80_p50
+		& 50 & TPR
+		& 0.93\,\ABMci{0.87, 1.00}
+		& 0.01\,\ABMci{-0.09, 0.12} \\
+		% Source comparison: P6_platform_coverage75_tnr_high_minus_low_at_tpr80_p50
+		& & TNR
+		& -0.00\,\ABMci{-0.06, 0.05}
+		& -4.42\,\ABMci{-4.69, -4.15} \\
+		\bottomrule
+	\end{tabular*}
+	
+	\footnotetext{Note: Mean differences with 95\% CIs in brackets.
+		Legal contrasts are $100\%-90\%$, with the other rate fixed at 95\%;
+		platform contrasts are $90\%-70\%$, with the other rate fixed at 80\%.
+		Other settings remain at benchmark values except the displayed coverage.
+		Supplementary Table~S14 (Supplementary Information) reports the full contrast set.}
+\end{table}
+
+\begin{table}[!htbp]
+	\caption{Network topology comparison}
+	\label{tab:s2b-topology}%
+	\newcommand{\ABMci}[1]{{\fontsize{6bp}{8bp}\selectfont[#1]}}
+	\setlength{\tabcolsep}{4pt}%
+	
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}clccccc@{}}
+		\toprule
+		$p_0$ (\%) & Regime & Network & $\bar E$ & $E(50)$ & $O(50)$ & $P_R(50)$ \\
+		\midrule
+		10 & No governance & BA & 12.30 & 0.00 & 0.00 & NA \\[-3pt]
+		&  &  & \ABMci{12.10, 12.51} & \ABMci{-0.00, 0.01} & \ABMci{0.00, 0.00} &  \\[-0.5pt]
+		&  & ER & 16.75 & 1.81 & 0.00 & NA \\[-3pt]
+		&  &  & \ABMci{16.45, 17.04} & \ABMci{1.65, 1.97} & \ABMci{0.00, 0.00} &  \\[-0.5pt]
+		&  & WS & 19.16 & 0.02 & 0.00 & NA \\[-3pt]
+		&  &  & \ABMci{18.83, 19.50} & \ABMci{0.00, 0.04} & \ABMci{0.00, 0.00} &  \\[-0.5pt]
+		\addlinespace[1.5pt]
+		& Legal & BA & 77.86 & 58.35 & 18.39 & 92.94 \\[-3pt]
+		&  &  & \ABMci{77.39, 78.34} & \ABMci{57.29, 59.41} & \ABMci{17.98, 18.81} & \ABMci{92.72, 93.15} \\[-0.5pt]
+		&  & ER & 91.69 & 84.33 & 25.73 & 71.74 \\[-3pt]
+		&  &  & \ABMci{91.22, 92.15} & \ABMci{83.22, 85.45} & \ABMci{25.16, 26.30} & \ABMci{70.48, 73.01} \\[-0.5pt]
+		&  & WS & 88.36 & 78.51 & 25.42 & 77.19 \\[-3pt]
+		&  &  & \ABMci{87.73, 89.00} & \ABMci{77.22, 79.80} & \ABMci{24.89, 25.95} & \ABMci{76.03, 78.35} \\[-0.5pt]
+		\addlinespace[1.5pt]
+		& Platform & BA & 99.73 & 100.00 & 99.74 & 2.44 \\[-3pt]
+		&  &  & \ABMci{99.71, 99.75} & \ABMci{100.00, 100.00} & \ABMci{99.67, 99.82} & \ABMci{2.32, 2.56} \\[-0.5pt]
+		&  & ER & 96.97 & 96.98 & 78.15 & 4.22 \\[-3pt]
+		&  &  & \ABMci{96.73, 97.21} & \ABMci{96.68, 97.28} & \ABMci{77.24, 79.06} & \ABMci{3.98, 4.47} \\[-0.5pt]
+		&  & WS & 96.76 & 96.52 & 84.34 & 6.33 \\[-3pt]
+		&  &  & \ABMci{96.53, 96.99} & \ABMci{96.21, 96.83} & \ABMci{83.97, 84.70} & \ABMci{6.07, 6.59} \\[-0.5pt]
+		\midrule
+		30 & No governance & BA & 6.87 & 0.00 & 0.00 & NA \\[-3pt]
+		&  &  & \ABMci{6.74, 7.00} & \ABMci{0.00, 0.00} & \ABMci{0.00, 0.00} &  \\[-0.5pt]
+		&  & ER & 8.66 & 1.42 & 0.00 & NA \\[-3pt]
+		&  &  & \ABMci{8.42, 8.91} & \ABMci{1.25, 1.59} & \ABMci{0.00, 0.00} &  \\[-0.5pt]
+		&  & WS & 7.40 & 0.00 & 0.00 & NA \\[-3pt]
+		&  &  & \ABMci{7.22, 7.58} & \ABMci{0.00, 0.00} & \ABMci{0.00, 0.00} &  \\[-0.5pt]
+		\addlinespace[1.5pt]
+		& Legal & BA & 73.59 & 57.27 & 16.18 & 94.74 \\[-3pt]
+		&  &  & \ABMci{73.19, 74.00} & \ABMci{56.32, 58.22} & \ABMci{15.83, 16.53} & \ABMci{94.61, 94.87} \\[-0.5pt]
+		&  & ER & 79.71 & 67.91 & 21.42 & 88.28 \\[-3pt]
+		&  &  & \ABMci{79.18, 80.24} & \ABMci{66.80, 69.02} & \ABMci{20.79, 22.05} & \ABMci{87.71, 88.85} \\[-0.5pt]
+		&  & WS & 76.18 & 62.71 & 20.68 & 90.01 \\[-3pt]
+		&  &  & \ABMci{75.50, 76.87} & \ABMci{61.36, 64.05} & \ABMci{20.13, 21.23} & \ABMci{89.55, 90.47} \\[-0.5pt]
+		\addlinespace[1.5pt]
+		& Platform & BA & 99.26 & 100.00 & 99.65 & 6.39 \\[-3pt]
+		&  &  & \ABMci{99.23, 99.30} & \ABMci{100.00, 100.00} & \ABMci{99.59, 99.72} & \ABMci{6.21, 6.57} \\[-0.5pt]
+		&  & ER & 91.41 & 91.61 & 77.60 & 11.20 \\[-3pt]
+		&  &  & \ABMci{90.90, 91.91} & \ABMci{90.89, 92.34} & \ABMci{76.78, 78.43} & \ABMci{10.71, 11.69} \\[-0.5pt]
+		&  & WS & 91.52 & 91.19 & 84.21 & 15.51 \\[-3pt]
+		&  &  & \ABMci{91.16, 91.88} & \ABMci{90.83, 91.55} & \ABMci{83.75, 84.67} & \ABMci{15.06, 15.97} \\[-0.5pt]
+		\midrule
+		50 & No governance & BA & 4.08 & 0.00 & 0.00 & NA \\[-3pt]
+		&  &  & \ABMci{4.01, 4.15} & \ABMci{0.00, 0.00} & \ABMci{0.00, 0.00} &  \\[-0.5pt]
+		&  & ER & 4.89 & 0.97 & 0.00 & NA \\[-3pt]
+		&  &  & \ABMci{4.72, 5.07} & \ABMci{0.86, 1.08} & \ABMci{0.00, 0.00} &  \\[-0.5pt]
+		&  & WS & 3.50 & 0.00 & 0.00 & NA \\[-3pt]
+		&  &  & \ABMci{3.43, 3.57} & \ABMci{0.00, 0.00} & \ABMci{0.00, 0.00} &  \\[-0.5pt]
+		\addlinespace[1.5pt]
+		& Legal & BA & 71.26 & 57.87 & 14.54 & 95.67 \\[-3pt]
+		&  &  & \ABMci{70.81, 71.70} & \ABMci{56.85, 58.88} & \ABMci{14.03, 15.05} & \ABMci{95.49, 95.86} \\[-0.5pt]
+		&  & ER & 72.51 & 60.96 & 19.04 & 91.87 \\[-3pt]
+		&  &  & \ABMci{72.15, 72.88} & \ABMci{60.27, 61.65} & \ABMci{18.60, 19.48} & \ABMci{91.63, 92.12} \\[-0.5pt]
+		&  & WS & 69.92 & 58.50 & 17.74 & 93.28 \\[-3pt]
+		&  &  & \ABMci{69.40, 70.45} & \ABMci{57.46, 59.55} & \ABMci{17.29, 18.20} & \ABMci{93.05, 93.51} \\[-0.5pt]
+		\addlinespace[1.5pt]
+		& Platform & BA & 98.84 & 100.00 & 99.68 & 9.52 \\[-3pt]
+		&  &  & \ABMci{98.81, 98.88} & \ABMci{100.00, 100.00} & \ABMci{99.63, 99.74} & \ABMci{9.37, 9.68} \\[-0.5pt]
+		&  & ER & 87.21 & 87.79 & 77.75 & 16.17 \\[-3pt]
+		&  &  & \ABMci{86.30, 88.12} & \ABMci{86.45, 89.13} & \ABMci{76.88, 78.62} & \ABMci{15.48, 16.87} \\[-0.5pt]
+		&  & WS & 87.89 & 87.77 & 84.31 & 21.81 \\[-3pt]
+		&  &  & \ABMci{87.46, 88.32} & \ABMci{87.30, 88.25} & \ABMci{83.96, 84.66} & \ABMci{21.31, 22.31} \\[-0.5pt]
+		\bottomrule
+	\end{tabular*}
+	
+	\footnotetext{Note: Means with 95\% CIs below; NA denotes undefined precision.
+		All networks have $N=1000$ and approximately matched mean degree near four. Governance uses benchmark parameters and degree targeting.
+		Network diagnostics are reported in Table~S1 (Supplementary Information).}
+\end{table}
+
+
+\begin{table}[!htbp]
+	\caption{Network size comparison}
+	\label{tab:s2c-scale}%
+	\newcommand{\ABMci}[1]{{\fontsize{6bp}{8bp}\selectfont[#1]}}
+	
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}clccccc@{}}
+		\toprule
+		$p_0$ (\%) & Regime & $N$ & $\bar E$ & $E(50)$ & $O(50)$ & $P_R(50)$ \\
+		\midrule
+		% Condition ID: 1
+		10 & No governance & 1000 & 12.30 & 0.00 & 0.00 & NA \\[-2pt]
+		&  &  & \ABMci{12.10, 12.51} & \ABMci{-0.00, 0.01} & \ABMci{0.00, 0.00} &  \\[1pt]
+		% Condition ID: 88
+		&  & 5000 & 12.19 & 0.00 & 0.00 & NA \\[-2pt]
+		&  &  & \ABMci{12.10, 12.28} & \ABMci{0.00, 0.01} & \ABMci{0.00, 0.00} &  \\[1pt]
+		\addlinespace[2pt]
+		% Condition ID: 8
+		& Legal & 1000 & 77.86 & 58.35 & 18.39 & 92.94 \\[-2pt]
+		&  &  & \ABMci{77.39, 78.34} & \ABMci{57.29, 59.41} & \ABMci{17.98, 18.81} & \ABMci{92.72, 93.15} \\[1pt]
+		% Condition ID: 89
+		&  & 5000 & 76.76 & 56.71 & 17.95 & 93.36 \\[-2pt]
+		&  &  & \ABMci{76.49, 77.03} & \ABMci{56.13, 57.28} & \ABMci{17.65, 18.24} & \ABMci{93.20, 93.51} \\[1pt]
+		\addlinespace[2pt]
+		% Condition ID: 35
+		& Platform & 1000 & 99.73 & 100.00 & 99.74 & 2.44 \\[-2pt]
+		&  &  & \ABMci{99.71, 99.75} & \ABMci{100.00, 100.00} & \ABMci{99.67, 99.82} & \ABMci{2.32, 2.56} \\[1pt]
+		% Condition ID: 90
+		&  & 5000 & 99.72 & 100.00 & 99.71 & 2.57 \\[-2pt]
+		&  &  & \ABMci{99.71, 99.73} & \ABMci{100.00, 100.00} & \ABMci{99.69, 99.73} & \ABMci{2.48, 2.65} \\[1pt]
+		\midrule
+		% Condition ID: 2
+		30 & No governance & 1000 & 6.87 & 0.00 & 0.00 & NA \\[-2pt]
+		&  &  & \ABMci{6.74, 7.00} & \ABMci{0.00, 0.00} & \ABMci{0.00, 0.00} &  \\[1pt]
+		% Condition ID: 91
+		&  & 5000 & 6.80 & 0.00 & 0.00 & NA \\[-2pt]
+		&  &  & \ABMci{6.74, 6.85} & \ABMci{0.00, 0.01} & \ABMci{0.00, 0.00} &  \\[1pt]
+		\addlinespace[2pt]
+		% Condition ID: 17
+		& Legal & 1000 & 73.59 & 57.27 & 16.18 & 94.74 \\[-2pt]
+		&  &  & \ABMci{73.19, 74.00} & \ABMci{56.32, 58.22} & \ABMci{15.83, 16.53} & \ABMci{94.61, 94.87} \\[1pt]
+		% Condition ID: 92
+		&  & 5000 & 73.12 & 56.83 & 15.84 & 94.93 \\[-2pt]
+		&  &  & \ABMci{72.91, 73.32} & \ABMci{56.36, 57.31} & \ABMci{15.66, 16.02} & \ABMci{94.86, 95.00} \\[1pt]
+		\addlinespace[2pt]
+		% Condition ID: 44
+		& Platform & 1000 & 99.26 & 100.00 & 99.65 & 6.39 \\[-2pt]
+		&  &  & \ABMci{99.23, 99.30} & \ABMci{100.00, 100.00} & \ABMci{99.59, 99.72} & \ABMci{6.21, 6.57} \\[1pt]
+		% Condition ID: 93
+		&  & 5000 & 99.25 & 100.00 & 99.69 & 6.49 \\[-2pt]
+		&  &  & \ABMci{99.23, 99.27} & \ABMci{100.00, 100.00} & \ABMci{99.67, 99.72} & \ABMci{6.39, 6.58} \\[1pt]
+		\midrule
+		% Condition ID: 3
+		50 & No governance & 1000 & 4.08 & 0.00 & 0.00 & NA \\[-2pt]
+		&  &  & \ABMci{4.01, 4.15} & \ABMci{0.00, 0.00} & \ABMci{0.00, 0.00} &  \\[1pt]
+		% Condition ID: 94
+		&  & 5000 & 4.01 & 0.00 & 0.00 & NA \\[-2pt]
+		&  &  & \ABMci{3.99, 4.04} & \ABMci{-0.00, 0.00} & \ABMci{0.00, 0.00} &  \\[1pt]
+		\addlinespace[2pt]
+		% Condition ID: 26
+		& Legal & 1000 & 71.26 & 57.87 & 14.54 & 95.67 \\[-2pt]
+		&  &  & \ABMci{70.81, 71.70} & \ABMci{56.85, 58.88} & \ABMci{14.03, 15.05} & \ABMci{95.49, 95.86} \\[1pt]
+		% Condition ID: 95
+		&  & 5000 & 70.89 & 56.64 & 14.60 & 95.69 \\[-2pt]
+		&  &  & \ABMci{70.71, 71.06} & \ABMci{56.20, 57.08} & \ABMci{14.41, 14.79} & \ABMci{95.63, 95.74} \\[1pt]
+		\addlinespace[2pt]
+		% Condition ID: 53
+		& Platform & 1000 & 98.84 & 100.00 & 99.68 & 9.52 \\[-2pt]
+		&  &  & \ABMci{98.81, 98.88} & \ABMci{100.00, 100.00} & \ABMci{99.63, 99.74} & \ABMci{9.37, 9.68} \\[1pt]
+		% Condition ID: 96
+		&  & 5000 & 98.83 & 100.00 & 99.69 & 9.57 \\[-2pt]
+		&  &  & \ABMci{98.81, 98.85} & \ABMci{100.00, 100.00} & \ABMci{99.65, 99.72} & \ABMci{9.48, 9.66} \\
+		\bottomrule
+	\end{tabular*}
+	
+	\footnotetext{Note: Means with 95\% CIs below; NA denotes undefined precision.
+		Both sizes use BA networks with benchmark governance parameters and fixed percentage coverage.}
+\end{table}
+
+\end{document}

@@ -1,0 +1,70 @@
+% Supplementary accuracy response grids. Compile from this directory.
+% Every cell and label reads its value directly from the unmodified plot CSV.
+\documentclass[tikz,border=5pt]{standalone}
+\input{figure_style.tex}
+\pgfplotsset{
+ heatmap text/.code={%
+  \pgfmathparse{#1 < 450}%
+  \ifnum\pgfmathresult=1\relax
+   \pgfkeysalso{/tikz/text=white}%
+  \else
+   \pgfkeysalso{/tikz/text=black}%
+  \fi
+ },
+ accuracy grid/.style={%
+  matrix plot*,mesh/cols=3,point meta=explicit,draw=white,line width=0.4pt,
+  nodes near coords={\pgfmathprintnumber[fixed,precision=1,fixed zerofill]{\pgfplotspointmeta}},
+  every node near coord/.append style={anchor=center,font=\fontsize{9}{11}\selectfont,
+    /pgfplots/heatmap text/.expanded={\pgfplotspointmetatransformed}},
+ },
+}
+\begin{document}
+\begin{tikzpicture}
+\begin{groupplot}[
+ abm axis,
+ group style={group size=2 by 3,horizontal sep=1.2cm,vertical sep=1.55cm},
+ width=4.55cm,height=3.85cm,
+ xmin=-0.5,xmax=2.5,ymin=-0.5,ymax=2.5,
+ xtick={0,1,2},ytick={0,1,2},
+ grid=none,axis lines=box,axis on top,
+ axis line style={draw=black!40,line width=0.35pt},
+ tick style={draw=black!50},major tick length=1.7pt,
+ point meta min=0,point meta max=100,colormap/viridis,
+ title style={at={(0,1.03)},anchor=south west,font=\fontsize{9}{11}\selectfont},
+ ylabel={},xlabel={},
+]
+\nextgroupplot[title={(a)},xticklabels={90,95,100},yticklabels={90,95,100},ylabel={TPR (\%)}]
+\addplot[accuracy grid] table[col sep=comma,x=plot_x,y=plot_y,meta=value] {data/figS4_accuracy_p10/legal70_E_mean.csv};
+\nextgroupplot[title={(b)},xticklabels={90,95,100},yticklabels={90,95,100}]
+\addplot[accuracy grid] table[col sep=comma,x=plot_x,y=plot_y,meta=value] {data/figS4_accuracy_p10/legal70_O_final.csv};
+\nextgroupplot[title={(c)},xticklabels={70,80,90},yticklabels={70,80,90},ylabel={TPR (\%)}]
+\addplot[accuracy grid] table[col sep=comma,x=plot_x,y=plot_y,meta=value] {data/figS4_accuracy_p10/platform50_E_mean.csv};
+\nextgroupplot[title={(d)},xticklabels={70,80,90},yticklabels={70,80,90},colorbar,
+ colorbar style={
+ at={(1.17,0.5)},anchor=west,width=0.32cm,height=8.5cm,
+ ylabel={Outcome (\%)},ylabel style={font=\fontsize{9}{11}\selectfont},
+ ytick={0,20,40,60,80,100},yticklabel pos=right,
+ tick label style={font=\fontsize{8}{10}\selectfont},
+ axis line style={black!45,line width=0.35pt},
+ }]
+\addplot[accuracy grid] table[col sep=comma,x=plot_x,y=plot_y,meta=value] {data/figS4_accuracy_p10/platform50_O_final.csv};
+\nextgroupplot[title={(e)},xticklabels={70,80,90},yticklabels={70,80,90},ylabel={TPR (\%)},xlabel={TNR (\%)}]
+\addplot[accuracy grid] table[col sep=comma,x=plot_x,y=plot_y,meta=value] {data/figS4_accuracy_p10/platform75_E_mean.csv};
+\nextgroupplot[title={(f)},xticklabels={70,80,90},yticklabels={70,80,90},xlabel={TNR (\%)}]
+\addplot[accuracy grid] table[col sep=comma,x=plot_x,y=plot_y,meta=value] {data/figS4_accuracy_p10/platform75_O_final.csv};
+\end{groupplot}
+% Shared headings and row labels sit outside the data area.
+\node[anchor=south,font=\fontsize{10}{12}\selectfont] at
+ ([yshift=12mm]group c1r1.north) {Mean effectiveness $\bar E$};
+\node[anchor=south,font=\fontsize{10}{12}\selectfont] at
+ ([yshift=12mm]group c2r1.north) {Wrongful exposure $O(50)$};
+\node[anchor=south,font=\fontsize{10}{12}\selectfont] at
+ ($ (group c1r1.north west)!0.5!(group c2r1.north east) + (0,22mm) $) {$p_0=10\%$};
+\node[anchor=east,align=center,font=\fontsize{9}{11}\selectfont] at
+ ([xshift=-15mm]group c1r1.west) {Legal\\$L=70\%$\\$\tau_L=5$};
+\node[anchor=east,align=center,font=\fontsize{9}{11}\selectfont] at
+ ([xshift=-15mm]group c1r2.west) {Platform\\$n_p=50\%$};
+\node[anchor=east,align=center,font=\fontsize{9}{11}\selectfont] at
+ ([xshift=-15mm]group c1r3.west) {Platform\\$n_p=75\%$};
+\end{tikzpicture}
+\end{document}

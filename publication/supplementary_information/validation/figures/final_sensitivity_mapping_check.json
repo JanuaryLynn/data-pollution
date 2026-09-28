@@ -1,0 +1,2593 @@
+{
+  "status": "PASS",
+  "scope": "Final read-only integrity and plot mapping check; no repeated full statistical audit; excludes revised PRCC display under active editing.",
+  "original_csv_count": 222,
+  "all_original_csv_byte_identical": true,
+  "plot_mapping_count": 150,
+  "figure_reference_coverage": [
+    {
+      "figure": "figS2d_bins_E_mean",
+      "unique_reference_count": 45,
+      "reference_count": 45,
+      "full_unique_coverage": true,
+      "tex_sha256": "7b1f48fb3fba5fc1f5293ab9dcff04af4b8c7f77169c136c4ed997165a4663b6"
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "unique_reference_count": 45,
+      "reference_count": 45,
+      "full_unique_coverage": true,
+      "tex_sha256": "519d6040dd83342ba705fbe7bd69031e38e51ceade6048d8db5c5037602ad1df"
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "unique_reference_count": 18,
+      "reference_count": 18,
+      "full_unique_coverage": true,
+      "tex_sha256": "09b8a24d14805873fa6b95b4ee7c8cead83ba1a9066fb65cb95e99c2f028a8be"
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "unique_reference_count": 18,
+      "reference_count": 18,
+      "full_unique_coverage": true,
+      "tex_sha256": "d00b24ff9e82bad34fa6597aa6ddc6dd60f94bbe7d9a0331af66db07d2a8a021"
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "unique_reference_count": 12,
+      "reference_count": 12,
+      "full_unique_coverage": true,
+      "tex_sha256": "358b33243754fdbf8c609e303cd71e8c384ae06440f6a7c100d66cf4d6b25c03"
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "unique_reference_count": 12,
+      "reference_count": 12,
+      "full_unique_coverage": true,
+      "tex_sha256": "81c1b618fe9fb946f3b283bfa37155609a8dd93a2fcd9522b8a0debbfcfa2bb3"
+    }
+  ],
+  "plot_mappings": [
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 1,
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-strength_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 1,
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-strength_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 1,
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-strength_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 1,
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-response-time_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 1,
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-response-time_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 1,
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-response-time_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 1,
+      "path": "data/figS2d_bins_E_mean/legal_p10_alpha_legal_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 1,
+      "path": "data/figS2d_bins_E_mean/legal_p10_alpha_legal_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 1,
+      "path": "data/figS2d_bins_E_mean/legal_p10_alpha_legal_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 2,
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-strength_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 2,
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-strength_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 2,
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-strength_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 2,
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-response-time_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 2,
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-response-time_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 2,
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-response-time_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 2,
+      "path": "data/figS2d_bins_E_mean/legal_p30_alpha_legal_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 2,
+      "path": "data/figS2d_bins_E_mean/legal_p30_alpha_legal_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 2,
+      "path": "data/figS2d_bins_E_mean/legal_p30_alpha_legal_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 3,
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-strength_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 3,
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-strength_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 3,
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-strength_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 3,
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-response-time_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 3,
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-response-time_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 3,
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-response-time_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 3,
+      "path": "data/figS2d_bins_E_mean/legal_p50_alpha_legal_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 3,
+      "path": "data/figS2d_bins_E_mean/legal_p50_alpha_legal_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 3,
+      "path": "data/figS2d_bins_E_mean/legal_p50_alpha_legal_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 4,
+      "path": "data/figS2d_bins_E_mean/platform_p10_platform-speed_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 4,
+      "path": "data/figS2d_bins_E_mean/platform_p10_platform-speed_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 4,
+      "path": "data/figS2d_bins_E_mean/platform_p10_platform-speed_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 4,
+      "path": "data/figS2d_bins_E_mean/platform_p10_alpha_platform_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 4,
+      "path": "data/figS2d_bins_E_mean/platform_p10_alpha_platform_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 4,
+      "path": "data/figS2d_bins_E_mean/platform_p10_alpha_platform_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 5,
+      "path": "data/figS2d_bins_E_mean/platform_p30_platform-speed_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 5,
+      "path": "data/figS2d_bins_E_mean/platform_p30_platform-speed_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 5,
+      "path": "data/figS2d_bins_E_mean/platform_p30_platform-speed_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 5,
+      "path": "data/figS2d_bins_E_mean/platform_p30_alpha_platform_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 5,
+      "path": "data/figS2d_bins_E_mean/platform_p30_alpha_platform_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 5,
+      "path": "data/figS2d_bins_E_mean/platform_p30_alpha_platform_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 6,
+      "path": "data/figS2d_bins_E_mean/platform_p50_platform-speed_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 6,
+      "path": "data/figS2d_bins_E_mean/platform_p50_platform-speed_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 6,
+      "path": "data/figS2d_bins_E_mean/platform_p50_platform-speed_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 6,
+      "path": "data/figS2d_bins_E_mean/platform_p50_alpha_platform_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 6,
+      "path": "data/figS2d_bins_E_mean/platform_p50_alpha_platform_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_E_mean",
+      "panel": 6,
+      "path": "data/figS2d_bins_E_mean/platform_p50_alpha_platform_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 1,
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-strength_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 1,
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-strength_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 1,
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-strength_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 1,
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-response-time_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 1,
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-response-time_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 1,
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-response-time_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 1,
+      "path": "data/figS2d_bins_O_final/legal_p10_alpha_legal_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 1,
+      "path": "data/figS2d_bins_O_final/legal_p10_alpha_legal_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 1,
+      "path": "data/figS2d_bins_O_final/legal_p10_alpha_legal_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 2,
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-strength_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 2,
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-strength_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 2,
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-strength_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 2,
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-response-time_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 2,
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-response-time_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 2,
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-response-time_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 2,
+      "path": "data/figS2d_bins_O_final/legal_p30_alpha_legal_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 2,
+      "path": "data/figS2d_bins_O_final/legal_p30_alpha_legal_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 2,
+      "path": "data/figS2d_bins_O_final/legal_p30_alpha_legal_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 3,
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-strength_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 3,
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-strength_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 3,
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-strength_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 3,
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-response-time_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 3,
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-response-time_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 3,
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-response-time_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 3,
+      "path": "data/figS2d_bins_O_final/legal_p50_alpha_legal_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 3,
+      "path": "data/figS2d_bins_O_final/legal_p50_alpha_legal_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 3,
+      "path": "data/figS2d_bins_O_final/legal_p50_alpha_legal_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 4,
+      "path": "data/figS2d_bins_O_final/platform_p10_platform-speed_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 4,
+      "path": "data/figS2d_bins_O_final/platform_p10_platform-speed_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 4,
+      "path": "data/figS2d_bins_O_final/platform_p10_platform-speed_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 4,
+      "path": "data/figS2d_bins_O_final/platform_p10_alpha_platform_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 4,
+      "path": "data/figS2d_bins_O_final/platform_p10_alpha_platform_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 4,
+      "path": "data/figS2d_bins_O_final/platform_p10_alpha_platform_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 5,
+      "path": "data/figS2d_bins_O_final/platform_p30_platform-speed_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 5,
+      "path": "data/figS2d_bins_O_final/platform_p30_platform-speed_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 5,
+      "path": "data/figS2d_bins_O_final/platform_p30_platform-speed_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 5,
+      "path": "data/figS2d_bins_O_final/platform_p30_alpha_platform_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 5,
+      "path": "data/figS2d_bins_O_final/platform_p30_alpha_platform_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 5,
+      "path": "data/figS2d_bins_O_final/platform_p30_alpha_platform_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 6,
+      "path": "data/figS2d_bins_O_final/platform_p50_platform-speed_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 6,
+      "path": "data/figS2d_bins_O_final/platform_p50_platform-speed_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 6,
+      "path": "data/figS2d_bins_O_final/platform_p50_platform-speed_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 6,
+      "path": "data/figS2d_bins_O_final/platform_p50_alpha_platform_median.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 6,
+      "path": "data/figS2d_bins_O_final/platform_p50_alpha_platform_mean.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "figS2d_bins_O_final",
+      "panel": 6,
+      "path": "data/figS2d_bins_O_final/platform_p50_alpha_platform_maximum.csv",
+      "x_column": "bins",
+      "y_column": "estimate",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 1,
+      "path": "data/sensitivity_response_legal_E_mean/p10_legal-strength_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 1,
+      "path": "data/sensitivity_response_legal_E_mean/p10_legal-strength_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 2,
+      "path": "data/sensitivity_response_legal_E_mean/p30_legal-strength_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 2,
+      "path": "data/sensitivity_response_legal_E_mean/p30_legal-strength_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 3,
+      "path": "data/sensitivity_response_legal_E_mean/p50_legal-strength_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 3,
+      "path": "data/sensitivity_response_legal_E_mean/p50_legal-strength_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 4,
+      "path": "data/sensitivity_response_legal_E_mean/p10_legal-response-time_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 4,
+      "path": "data/sensitivity_response_legal_E_mean/p10_legal-response-time_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 5,
+      "path": "data/sensitivity_response_legal_E_mean/p30_legal-response-time_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 5,
+      "path": "data/sensitivity_response_legal_E_mean/p30_legal-response-time_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 6,
+      "path": "data/sensitivity_response_legal_E_mean/p50_legal-response-time_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 6,
+      "path": "data/sensitivity_response_legal_E_mean/p50_legal-response-time_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 7,
+      "path": "data/sensitivity_response_legal_E_mean/p10_alpha_legal_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 7,
+      "path": "data/sensitivity_response_legal_E_mean/p10_alpha_legal_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 8,
+      "path": "data/sensitivity_response_legal_E_mean/p30_alpha_legal_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 8,
+      "path": "data/sensitivity_response_legal_E_mean/p30_alpha_legal_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 9,
+      "path": "data/sensitivity_response_legal_E_mean/p50_alpha_legal_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_E_mean",
+      "panel": 9,
+      "path": "data/sensitivity_response_legal_E_mean/p50_alpha_legal_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 1,
+      "path": "data/sensitivity_response_legal_O_final/p10_legal-strength_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 1,
+      "path": "data/sensitivity_response_legal_O_final/p10_legal-strength_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 2,
+      "path": "data/sensitivity_response_legal_O_final/p30_legal-strength_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 2,
+      "path": "data/sensitivity_response_legal_O_final/p30_legal-strength_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 3,
+      "path": "data/sensitivity_response_legal_O_final/p50_legal-strength_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 3,
+      "path": "data/sensitivity_response_legal_O_final/p50_legal-strength_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 4,
+      "path": "data/sensitivity_response_legal_O_final/p10_legal-response-time_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 4,
+      "path": "data/sensitivity_response_legal_O_final/p10_legal-response-time_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 5,
+      "path": "data/sensitivity_response_legal_O_final/p30_legal-response-time_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 5,
+      "path": "data/sensitivity_response_legal_O_final/p30_legal-response-time_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 6,
+      "path": "data/sensitivity_response_legal_O_final/p50_legal-response-time_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 6,
+      "path": "data/sensitivity_response_legal_O_final/p50_legal-response-time_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 7,
+      "path": "data/sensitivity_response_legal_O_final/p10_alpha_legal_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 7,
+      "path": "data/sensitivity_response_legal_O_final/p10_alpha_legal_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 8,
+      "path": "data/sensitivity_response_legal_O_final/p30_alpha_legal_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 8,
+      "path": "data/sensitivity_response_legal_O_final/p30_alpha_legal_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 9,
+      "path": "data/sensitivity_response_legal_O_final/p50_alpha_legal_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_legal_O_final",
+      "panel": 9,
+      "path": "data/sensitivity_response_legal_O_final/p50_alpha_legal_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 1,
+      "path": "data/sensitivity_response_platform_E_mean/p10_platform-speed_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 1,
+      "path": "data/sensitivity_response_platform_E_mean/p10_platform-speed_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 2,
+      "path": "data/sensitivity_response_platform_E_mean/p30_platform-speed_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 2,
+      "path": "data/sensitivity_response_platform_E_mean/p30_platform-speed_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 3,
+      "path": "data/sensitivity_response_platform_E_mean/p50_platform-speed_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 3,
+      "path": "data/sensitivity_response_platform_E_mean/p50_platform-speed_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 4,
+      "path": "data/sensitivity_response_platform_E_mean/p10_alpha_platform_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 4,
+      "path": "data/sensitivity_response_platform_E_mean/p10_alpha_platform_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 5,
+      "path": "data/sensitivity_response_platform_E_mean/p30_alpha_platform_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 5,
+      "path": "data/sensitivity_response_platform_E_mean/p30_alpha_platform_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 6,
+      "path": "data/sensitivity_response_platform_E_mean/p50_alpha_platform_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_E_mean",
+      "panel": 6,
+      "path": "data/sensitivity_response_platform_E_mean/p50_alpha_platform_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 1,
+      "path": "data/sensitivity_response_platform_O_final/p10_platform-speed_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 1,
+      "path": "data/sensitivity_response_platform_O_final/p10_platform-speed_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 2,
+      "path": "data/sensitivity_response_platform_O_final/p30_platform-speed_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 2,
+      "path": "data/sensitivity_response_platform_O_final/p30_platform-speed_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 3,
+      "path": "data/sensitivity_response_platform_O_final/p50_platform-speed_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 3,
+      "path": "data/sensitivity_response_platform_O_final/p50_platform-speed_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 4,
+      "path": "data/sensitivity_response_platform_O_final/p10_alpha_platform_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 4,
+      "path": "data/sensitivity_response_platform_O_final/p10_alpha_platform_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 5,
+      "path": "data/sensitivity_response_platform_O_final/p30_alpha_platform_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 5,
+      "path": "data/sensitivity_response_platform_O_final/p30_alpha_platform_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 6,
+      "path": "data/sensitivity_response_platform_O_final/p50_alpha_platform_points.csv",
+      "x_column": "x",
+      "y_column": "y",
+      "passed": true
+    },
+    {
+      "figure": "sensitivity_response_platform_O_final",
+      "panel": 6,
+      "path": "data/sensitivity_response_platform_O_final/p50_alpha_platform_bins.csv",
+      "x_column": "x_mean",
+      "y_column": "response_mean",
+      "passed": true
+    }
+  ],
+  "original_csv_integrity": [
+    {
+      "path": "data/figS1_workload/E_mean_p10.csv",
+      "source_sha256": "ef7b9dfe59467f5cfd96ca2b2c0a0f37a43927d728d8da7f4555326565f42015",
+      "output_sha256": "ef7b9dfe59467f5cfd96ca2b2c0a0f37a43927d728d8da7f4555326565f42015",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/E_mean_p30.csv",
+      "source_sha256": "1fea4d49e2ad26060f5fbcc07198a6d4537692bbf1f753ed806216399285d501",
+      "output_sha256": "1fea4d49e2ad26060f5fbcc07198a6d4537692bbf1f753ed806216399285d501",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/E_mean_p50.csv",
+      "source_sha256": "cfcccf759be59a1f99a2e2cd87aca0a6a49514a33f236cbae7a5d678bf0d800c",
+      "output_sha256": "cfcccf759be59a1f99a2e2cd87aca0a6a49514a33f236cbae7a5d678bf0d800c",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/O_final_p10.csv",
+      "source_sha256": "c2be3d98894ece9f734a254f6947cf339fda8110941a638d3ec51b737c2779fd",
+      "output_sha256": "c2be3d98894ece9f734a254f6947cf339fda8110941a638d3ec51b737c2779fd",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/O_final_p30.csv",
+      "source_sha256": "8420d2babfcdddc5051369c896a7368bdf0a2d457a0f457321e20e3a7b7a41d7",
+      "output_sha256": "8420d2babfcdddc5051369c896a7368bdf0a2d457a0f457321e20e3a7b7a41d7",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/O_final_p50.csv",
+      "source_sha256": "a189b2917e3d76b2cc05216c3b8218e730a616bf5b80d23aefe1ce74d5ad9fd7",
+      "output_sha256": "a189b2917e3d76b2cc05216c3b8218e730a616bf5b80d23aefe1ce74d5ad9fd7",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/PR_final_p10.csv",
+      "source_sha256": "c97e293ac1e2d5326d370ece2686ceae5a64baa42496977ad14af1679985deb2",
+      "output_sha256": "c97e293ac1e2d5326d370ece2686ceae5a64baa42496977ad14af1679985deb2",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/PR_final_p30.csv",
+      "source_sha256": "8c907134ae825e5aa30db248c91ffdb1db81e3d208951b096faaf794a101ad63",
+      "output_sha256": "8c907134ae825e5aa30db248c91ffdb1db81e3d208951b096faaf794a101ad63",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/PR_final_p50.csv",
+      "source_sha256": "62197ca5f295eac4821b6a9a6a8f0c8e44840b30ece2e74a2fc38397be53e6b5",
+      "output_sha256": "62197ca5f295eac4821b6a9a6a8f0c8e44840b30ece2e74a2fc38397be53e6b5",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/clean_review_exposure_p10.csv",
+      "source_sha256": "f3e301d45878e419b1f466f192d22f4afe1cb2f2d7cda6c11195c2d618688e81",
+      "output_sha256": "f3e301d45878e419b1f466f192d22f4afe1cb2f2d7cda6c11195c2d618688e81",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/clean_review_exposure_p30.csv",
+      "source_sha256": "e88b87d4d78ff45174a03f7cfe4ae3b8cfc15566eb607e5de83e38934f2bd6a0",
+      "output_sha256": "e88b87d4d78ff45174a03f7cfe4ae3b8cfc15566eb607e5de83e38934f2bd6a0",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/clean_review_exposure_p50.csv",
+      "source_sha256": "46fbcad18837af4765bc092f6adc3e683877b3318f76a7b6ebbd19f3e0099a57",
+      "output_sha256": "46fbcad18837af4765bc092f6adc3e683877b3318f76a7b6ebbd19f3e0099a57",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/cumulative_reviews_p10.csv",
+      "source_sha256": "e485cbf97c3b55dab61fddbb41d4fa652f7d0f3160f27e1adc6a100de55634a9",
+      "output_sha256": "e485cbf97c3b55dab61fddbb41d4fa652f7d0f3160f27e1adc6a100de55634a9",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/cumulative_reviews_p30.csv",
+      "source_sha256": "9b63c5c55c62ace6772a664b78d59b38bfd74d09a795cf5aef4988e1df33addf",
+      "output_sha256": "9b63c5c55c62ace6772a664b78d59b38bfd74d09a795cf5aef4988e1df33addf",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS1_workload/cumulative_reviews_p50.csv",
+      "source_sha256": "b25e5598021193a735f8021463121ad6f1bcf5c33f0efa944a64109a6d7b75c8",
+      "output_sha256": "b25e5598021193a735f8021463121ad6f1bcf5c33f0efa944a64109a6d7b75c8",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p10_legal_mc_ci.csv",
+      "source_sha256": "2d8bce566b55befb4153ff6f7b08f43a45fe09b1eb2701de751a4316cffe2e35",
+      "output_sha256": "2d8bce566b55befb4153ff6f7b08f43a45fe09b1eb2701de751a4316cffe2e35",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p10_legal_points.csv",
+      "source_sha256": "c89ac50df0ae4fa4ef82dabc86cd610a6f45821e2eba5e2e430f83228f80cfd1",
+      "output_sha256": "c89ac50df0ae4fa4ef82dabc86cd610a6f45821e2eba5e2e430f83228f80cfd1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p10_legal_row_ci.csv",
+      "source_sha256": "d38275b1dc5cbfd3fc134a4ccdac8a1e04c553a955273349172fc8824bc616cd",
+      "output_sha256": "d38275b1dc5cbfd3fc134a4ccdac8a1e04c553a955273349172fc8824bc616cd",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p10_platform_mc_ci.csv",
+      "source_sha256": "7ed5c55dc9f5471d500526b86622f2221129164e2d4d4219596f5bc387e89657",
+      "output_sha256": "7ed5c55dc9f5471d500526b86622f2221129164e2d4d4219596f5bc387e89657",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p10_platform_points.csv",
+      "source_sha256": "fbbe8d7986cb11d05256a0a6e1211011203869d2a354be258f75f77212e2c702",
+      "output_sha256": "fbbe8d7986cb11d05256a0a6e1211011203869d2a354be258f75f77212e2c702",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p10_platform_row_ci.csv",
+      "source_sha256": "6c238b4fbd784928da4a7fd6adf28240b6081ec2acf66d07625b64878be483f1",
+      "output_sha256": "6c238b4fbd784928da4a7fd6adf28240b6081ec2acf66d07625b64878be483f1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p30_legal_mc_ci.csv",
+      "source_sha256": "9aa2b53312c753cb22b1a54f7ebe4f30e6d7e02d3158e44e4189163478c7c9e4",
+      "output_sha256": "9aa2b53312c753cb22b1a54f7ebe4f30e6d7e02d3158e44e4189163478c7c9e4",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p30_legal_points.csv",
+      "source_sha256": "edc97054de99a07bb64576104d180b287f8cd31ee0a49801e83732727d1c769f",
+      "output_sha256": "edc97054de99a07bb64576104d180b287f8cd31ee0a49801e83732727d1c769f",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p30_legal_row_ci.csv",
+      "source_sha256": "9a9e2f5dfd1eb3bbe52265add894798b6e3b8a33443350ca02ecbee79e6b4235",
+      "output_sha256": "9a9e2f5dfd1eb3bbe52265add894798b6e3b8a33443350ca02ecbee79e6b4235",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p30_platform_mc_ci.csv",
+      "source_sha256": "375cba9e1f82f63011d14fed555ee4d2f49efc13d5a6f75def980dc2163fbd02",
+      "output_sha256": "375cba9e1f82f63011d14fed555ee4d2f49efc13d5a6f75def980dc2163fbd02",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p30_platform_points.csv",
+      "source_sha256": "0a95aa456a6a798eeccebad4e86f414d0a4df8503f2928efe90148bae57010a6",
+      "output_sha256": "0a95aa456a6a798eeccebad4e86f414d0a4df8503f2928efe90148bae57010a6",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p30_platform_row_ci.csv",
+      "source_sha256": "58b8dba3ffe8baff4a06b6166cad7632be74e2cdd99bef7af428a62bcf49fc55",
+      "output_sha256": "58b8dba3ffe8baff4a06b6166cad7632be74e2cdd99bef7af428a62bcf49fc55",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p50_legal_mc_ci.csv",
+      "source_sha256": "d9c7bdd5bce007c5edbcf76238e5f6347ddef754bb526142e50e045a63cda04b",
+      "output_sha256": "d9c7bdd5bce007c5edbcf76238e5f6347ddef754bb526142e50e045a63cda04b",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p50_legal_points.csv",
+      "source_sha256": "fe329a68c9ab4b794cc103cb5888c22a0408e6d5adc478b7462756ce81831eea",
+      "output_sha256": "fe329a68c9ab4b794cc103cb5888c22a0408e6d5adc478b7462756ce81831eea",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p50_legal_row_ci.csv",
+      "source_sha256": "91bf164771ab9573fcc0ce20a9a0d44a34c680c29a5bdbd284d75308208df430",
+      "output_sha256": "91bf164771ab9573fcc0ce20a9a0d44a34c680c29a5bdbd284d75308208df430",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p50_platform_mc_ci.csv",
+      "source_sha256": "727c7b1444db287dbdbb55b39c5a3715181b77c5f6dbc304b14077d7fa5bfcc6",
+      "output_sha256": "727c7b1444db287dbdbb55b39c5a3715181b77c5f6dbc304b14077d7fa5bfcc6",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p50_platform_points.csv",
+      "source_sha256": "107812f116dbe599cf29685a2a93dd845ea2786c336a32bf95a3751bf0f70c0a",
+      "output_sha256": "107812f116dbe599cf29685a2a93dd845ea2786c336a32bf95a3751bf0f70c0a",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/E_mean_p50_platform_row_ci.csv",
+      "source_sha256": "92597fdf97c5475f0c880777c108f800f54ac916c6190dedd04bf6efa8de93f3",
+      "output_sha256": "92597fdf97c5475f0c880777c108f800f54ac916c6190dedd04bf6efa8de93f3",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p10_legal_mc_ci.csv",
+      "source_sha256": "d5e60d0fe2514bce9d684dd75c37f9d2a75c1c5c36eab9a0062efd37efe8053c",
+      "output_sha256": "d5e60d0fe2514bce9d684dd75c37f9d2a75c1c5c36eab9a0062efd37efe8053c",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p10_legal_points.csv",
+      "source_sha256": "d8f05d54ebb9a491724129f1181fd977260e6f5ca08d0761167cd13a4cdd87f1",
+      "output_sha256": "d8f05d54ebb9a491724129f1181fd977260e6f5ca08d0761167cd13a4cdd87f1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p10_legal_row_ci.csv",
+      "source_sha256": "b28defbb873cb9a0a64320ba34c9ecd7c722e5a2f95aa32ebe63d50fbe47aa99",
+      "output_sha256": "b28defbb873cb9a0a64320ba34c9ecd7c722e5a2f95aa32ebe63d50fbe47aa99",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p10_platform_mc_ci.csv",
+      "source_sha256": "2681ff293f539c59b6a7de8bb26e49c440505cd0724c82e84db40cdde352a31b",
+      "output_sha256": "2681ff293f539c59b6a7de8bb26e49c440505cd0724c82e84db40cdde352a31b",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p10_platform_points.csv",
+      "source_sha256": "42771e7216244aaf9ff51b8269ee003283bfadaef9a825b5ecdab699d21ec861",
+      "output_sha256": "42771e7216244aaf9ff51b8269ee003283bfadaef9a825b5ecdab699d21ec861",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p10_platform_row_ci.csv",
+      "source_sha256": "f066e96553b7947d5662027ebfca909afdca00e698490bca5029f21c6d90c856",
+      "output_sha256": "f066e96553b7947d5662027ebfca909afdca00e698490bca5029f21c6d90c856",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p30_legal_mc_ci.csv",
+      "source_sha256": "2a98fa5a5df5631c18027197bf4a4aae1dd3193b55f9a11cd2c83ec2d176dc99",
+      "output_sha256": "2a98fa5a5df5631c18027197bf4a4aae1dd3193b55f9a11cd2c83ec2d176dc99",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p30_legal_points.csv",
+      "source_sha256": "be320daf478b37e39d495570ea6d69626afee0d5d48f1629a2ab963efbd6e8be",
+      "output_sha256": "be320daf478b37e39d495570ea6d69626afee0d5d48f1629a2ab963efbd6e8be",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p30_legal_row_ci.csv",
+      "source_sha256": "9194d4c40f15f41d3aa48a542a85f0b20cf07c7c4b414ccf4b519b2f1993908f",
+      "output_sha256": "9194d4c40f15f41d3aa48a542a85f0b20cf07c7c4b414ccf4b519b2f1993908f",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p30_platform_mc_ci.csv",
+      "source_sha256": "88423308948754670742c3e9cd817f7d5830ff58c1dd9fbc710b5280cde4b058",
+      "output_sha256": "88423308948754670742c3e9cd817f7d5830ff58c1dd9fbc710b5280cde4b058",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p30_platform_points.csv",
+      "source_sha256": "bac430fbafb79de4a7945743b1502fb8e0bd0ca834cc38735cf06e6041212210",
+      "output_sha256": "bac430fbafb79de4a7945743b1502fb8e0bd0ca834cc38735cf06e6041212210",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p30_platform_row_ci.csv",
+      "source_sha256": "dac1b2aa82332bb3831aade74ec350db079483b1d6b9f3aa042e6f9d4a96abd8",
+      "output_sha256": "dac1b2aa82332bb3831aade74ec350db079483b1d6b9f3aa042e6f9d4a96abd8",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p50_legal_mc_ci.csv",
+      "source_sha256": "6ee8037ad21a2e074ce7655fccc81a99232edb7ccfa6671afea15544e56e710c",
+      "output_sha256": "6ee8037ad21a2e074ce7655fccc81a99232edb7ccfa6671afea15544e56e710c",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p50_legal_points.csv",
+      "source_sha256": "d0bff84d511feac40d38dc24c863674fa9ae6044f90327645164b7f6d4a1bcb3",
+      "output_sha256": "d0bff84d511feac40d38dc24c863674fa9ae6044f90327645164b7f6d4a1bcb3",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p50_legal_row_ci.csv",
+      "source_sha256": "de544172f070ce992181cdae1ca6f6b6ef621ff72c6783beaec43894aeefee2d",
+      "output_sha256": "de544172f070ce992181cdae1ca6f6b6ef621ff72c6783beaec43894aeefee2d",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p50_platform_mc_ci.csv",
+      "source_sha256": "40c3ffa41b8d0ade1327c327017405774c24e9e013e5df1b45d0bf57f63883d7",
+      "output_sha256": "40c3ffa41b8d0ade1327c327017405774c24e9e013e5df1b45d0bf57f63883d7",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p50_platform_points.csv",
+      "source_sha256": "7e7b549c852ed500a8db518a5bc308e06430736404dfff0acf97493455275fea",
+      "output_sha256": "7e7b549c852ed500a8db518a5bc308e06430736404dfff0acf97493455275fea",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/O_final_p50_platform_row_ci.csv",
+      "source_sha256": "2a866f8f32243bb50f745a606d1dba9bc91f6b464568afb4f1c2204bd606d6cf",
+      "output_sha256": "2a866f8f32243bb50f745a606d1dba9bc91f6b464568afb4f1c2204bd606d6cf",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2b_PRCC/source.csv",
+      "source_sha256": "32fa575ca3a6a9cc1b817cb31d938a6c1e046cbbe7158cde518d5ab53e866b45",
+      "output_sha256": "32fa575ca3a6a9cc1b817cb31d938a6c1e046cbbe7158cde518d5ab53e866b45",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p10_alpha_legal_maximum.csv",
+      "source_sha256": "ce01ca158b689bcac403accf64fb3bf67c1325578396f7fc367cdf466c349300",
+      "output_sha256": "ce01ca158b689bcac403accf64fb3bf67c1325578396f7fc367cdf466c349300",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p10_alpha_legal_mean.csv",
+      "source_sha256": "d303763820c6d15c6647857a04468e57260a8060399280185fc91be58044f0c8",
+      "output_sha256": "d303763820c6d15c6647857a04468e57260a8060399280185fc91be58044f0c8",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p10_alpha_legal_median.csv",
+      "source_sha256": "024b2ec893f0d66fd62778e181479e9f2fc915cd8383e84eb3ddcc356da9c8c2",
+      "output_sha256": "024b2ec893f0d66fd62778e181479e9f2fc915cd8383e84eb3ddcc356da9c8c2",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-response-time_maximum.csv",
+      "source_sha256": "ff4b82f88c76cb9cbde46156d35fcbb459cfb99f38df4742049311beee51175b",
+      "output_sha256": "ff4b82f88c76cb9cbde46156d35fcbb459cfb99f38df4742049311beee51175b",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-response-time_mean.csv",
+      "source_sha256": "19fcd905ea78e23479feec5acd6a32f913ab40aa9e984618d3b1138558f928c1",
+      "output_sha256": "19fcd905ea78e23479feec5acd6a32f913ab40aa9e984618d3b1138558f928c1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-response-time_median.csv",
+      "source_sha256": "33839fd0d81e29cc617b9dbb9b995ce025a8c07a2f6a92ce12c939301460c49d",
+      "output_sha256": "33839fd0d81e29cc617b9dbb9b995ce025a8c07a2f6a92ce12c939301460c49d",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-strength_maximum.csv",
+      "source_sha256": "7d60572de17b3dadb9dbdcfccea07000eb9f1fae651e412655960ee6f646062a",
+      "output_sha256": "7d60572de17b3dadb9dbdcfccea07000eb9f1fae651e412655960ee6f646062a",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-strength_mean.csv",
+      "source_sha256": "1e8a77989afd805c6020b8ce613ea167edf476af3fe5773800c6538a382158e8",
+      "output_sha256": "1e8a77989afd805c6020b8ce613ea167edf476af3fe5773800c6538a382158e8",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p10_legal-strength_median.csv",
+      "source_sha256": "038f440835cdfdae2155d72fd89dd484ebd3a14a2409a84229c447262ab7c474",
+      "output_sha256": "038f440835cdfdae2155d72fd89dd484ebd3a14a2409a84229c447262ab7c474",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p30_alpha_legal_maximum.csv",
+      "source_sha256": "d74c48c8dbc5a74b3062cff44b4c0479f4408a515c3fd3e6af478732aa5f2f5a",
+      "output_sha256": "d74c48c8dbc5a74b3062cff44b4c0479f4408a515c3fd3e6af478732aa5f2f5a",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p30_alpha_legal_mean.csv",
+      "source_sha256": "ff1083537ecbba9232710b41e7043c345aea077d60a8e8af5ee261e23cca9c64",
+      "output_sha256": "ff1083537ecbba9232710b41e7043c345aea077d60a8e8af5ee261e23cca9c64",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p30_alpha_legal_median.csv",
+      "source_sha256": "b7c0162bf44543e9bde2e9417d862bb949cc860f31daf9918453dbffe42064ac",
+      "output_sha256": "b7c0162bf44543e9bde2e9417d862bb949cc860f31daf9918453dbffe42064ac",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-response-time_maximum.csv",
+      "source_sha256": "f5258259b847d4a6cfaa7d7fac67a5e219f772801611ca572872fc3d0e68ef54",
+      "output_sha256": "f5258259b847d4a6cfaa7d7fac67a5e219f772801611ca572872fc3d0e68ef54",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-response-time_mean.csv",
+      "source_sha256": "8852d138924e7d83d0921a5d92f1c11b01aee04bdf7998767eef7dfc4b0ccdf2",
+      "output_sha256": "8852d138924e7d83d0921a5d92f1c11b01aee04bdf7998767eef7dfc4b0ccdf2",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-response-time_median.csv",
+      "source_sha256": "9dd0fb573217d2dab1f17a9a81c2a904b867cf0dcf47a0948c0f4053949adeb9",
+      "output_sha256": "9dd0fb573217d2dab1f17a9a81c2a904b867cf0dcf47a0948c0f4053949adeb9",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-strength_maximum.csv",
+      "source_sha256": "33cf985b2f3cd6edbd7ca2575a77aa47a0ca37d6d9b19c452eb14d46e7bcacbd",
+      "output_sha256": "33cf985b2f3cd6edbd7ca2575a77aa47a0ca37d6d9b19c452eb14d46e7bcacbd",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-strength_mean.csv",
+      "source_sha256": "d2334a39006d7786a3688877dae5f6541a2a0d8cc56405b4b979795308a79617",
+      "output_sha256": "d2334a39006d7786a3688877dae5f6541a2a0d8cc56405b4b979795308a79617",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p30_legal-strength_median.csv",
+      "source_sha256": "0f6a4c11bedbaebbf9c560b0c19ebdc9441ad0f9c1747125a579d96173584db2",
+      "output_sha256": "0f6a4c11bedbaebbf9c560b0c19ebdc9441ad0f9c1747125a579d96173584db2",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p50_alpha_legal_maximum.csv",
+      "source_sha256": "b59c799a8bf9c7bfbaaaf83a5a7c3ea9b9d5a49b975ddf7e9b8d62827a604284",
+      "output_sha256": "b59c799a8bf9c7bfbaaaf83a5a7c3ea9b9d5a49b975ddf7e9b8d62827a604284",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p50_alpha_legal_mean.csv",
+      "source_sha256": "2ba83a2d3dbede688a8806bc622be36c269b2fc693ce64e33d785bfa607795e9",
+      "output_sha256": "2ba83a2d3dbede688a8806bc622be36c269b2fc693ce64e33d785bfa607795e9",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p50_alpha_legal_median.csv",
+      "source_sha256": "09dd8b35f98c7d60aaba5a58dfff219c1d084785d6be7abcedf017ca1d331828",
+      "output_sha256": "09dd8b35f98c7d60aaba5a58dfff219c1d084785d6be7abcedf017ca1d331828",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-response-time_maximum.csv",
+      "source_sha256": "8295c35e218ee04f80a72514cef41a197f9df1de65ca5b0816bc28629fd40489",
+      "output_sha256": "8295c35e218ee04f80a72514cef41a197f9df1de65ca5b0816bc28629fd40489",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-response-time_mean.csv",
+      "source_sha256": "0a74e610c33e3145c595743558ee7ea9fd6854f7c290bd478e3b704dfb944516",
+      "output_sha256": "0a74e610c33e3145c595743558ee7ea9fd6854f7c290bd478e3b704dfb944516",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-response-time_median.csv",
+      "source_sha256": "f63cb8b7476c5c91822e7adcef3eb72b5677a18196cade61a8d36dd542f14c57",
+      "output_sha256": "f63cb8b7476c5c91822e7adcef3eb72b5677a18196cade61a8d36dd542f14c57",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-strength_maximum.csv",
+      "source_sha256": "892bce4db265716237885bc415e876f3f9fe9b9e12805d2c6698ba6b1d49e7b0",
+      "output_sha256": "892bce4db265716237885bc415e876f3f9fe9b9e12805d2c6698ba6b1d49e7b0",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-strength_mean.csv",
+      "source_sha256": "4e94c6eca55a08f151a87283735ad262fda5f81838236c7e787e017396a25dfc",
+      "output_sha256": "4e94c6eca55a08f151a87283735ad262fda5f81838236c7e787e017396a25dfc",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/legal_p50_legal-strength_median.csv",
+      "source_sha256": "7b746f25f067bdff43ae0dd998c425ceec8f26c736fcd156a614a5306908af0d",
+      "output_sha256": "7b746f25f067bdff43ae0dd998c425ceec8f26c736fcd156a614a5306908af0d",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p10_alpha_platform_maximum.csv",
+      "source_sha256": "1b90832622cbb9051e7fbfc4c94e4a2544bd53b5b904f3d2c2951fb0b2746715",
+      "output_sha256": "1b90832622cbb9051e7fbfc4c94e4a2544bd53b5b904f3d2c2951fb0b2746715",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p10_alpha_platform_mean.csv",
+      "source_sha256": "71e2dd0b4ca4994ec3d8e7ef4bfbdf28b9088489ea9d5ccb0eb166708e687889",
+      "output_sha256": "71e2dd0b4ca4994ec3d8e7ef4bfbdf28b9088489ea9d5ccb0eb166708e687889",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p10_alpha_platform_median.csv",
+      "source_sha256": "c66cb44b8143ae437a0b5b2ecadd3578c5bd316c6fb047f666d453898e3633ff",
+      "output_sha256": "c66cb44b8143ae437a0b5b2ecadd3578c5bd316c6fb047f666d453898e3633ff",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p10_platform-speed_maximum.csv",
+      "source_sha256": "b6468fc5da7ece0bb46089b3fc9843e81871414a7f75dcd38173f9fe2b36a3a3",
+      "output_sha256": "b6468fc5da7ece0bb46089b3fc9843e81871414a7f75dcd38173f9fe2b36a3a3",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p10_platform-speed_mean.csv",
+      "source_sha256": "84f3a5ab1e485e41488bdf34e86210032c4112e6ed0aa3b1cad77bc17a98f39a",
+      "output_sha256": "84f3a5ab1e485e41488bdf34e86210032c4112e6ed0aa3b1cad77bc17a98f39a",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p10_platform-speed_median.csv",
+      "source_sha256": "0714561857bd6da59b1da70f9d0acee6867fcdb8916833f9d85257de809ab940",
+      "output_sha256": "0714561857bd6da59b1da70f9d0acee6867fcdb8916833f9d85257de809ab940",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p30_alpha_platform_maximum.csv",
+      "source_sha256": "1625fc5cf358d8681ac8467371c6818d93b8bd2a8cff8e0999e26c9027bc2ce8",
+      "output_sha256": "1625fc5cf358d8681ac8467371c6818d93b8bd2a8cff8e0999e26c9027bc2ce8",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p30_alpha_platform_mean.csv",
+      "source_sha256": "928b4cef9d280650149d6c5af2ca4c11908f8b479562ed79ab181341750e0364",
+      "output_sha256": "928b4cef9d280650149d6c5af2ca4c11908f8b479562ed79ab181341750e0364",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p30_alpha_platform_median.csv",
+      "source_sha256": "c64d6511a93285028030d55ef592601d16db523ff9dde57764dbb2729c3e3906",
+      "output_sha256": "c64d6511a93285028030d55ef592601d16db523ff9dde57764dbb2729c3e3906",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p30_platform-speed_maximum.csv",
+      "source_sha256": "eae51deb5ab42e0ec985d913b09e362494dadeba21b270a40d325ff90363423e",
+      "output_sha256": "eae51deb5ab42e0ec985d913b09e362494dadeba21b270a40d325ff90363423e",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p30_platform-speed_mean.csv",
+      "source_sha256": "07fd5f41625fddda7e629aac88c5952a1c1e9c95abe694601333b4f18f7bceee",
+      "output_sha256": "07fd5f41625fddda7e629aac88c5952a1c1e9c95abe694601333b4f18f7bceee",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p30_platform-speed_median.csv",
+      "source_sha256": "747751768d4eba24349966b0ca44c16ae2923757c4b026b490c5afe1217968d3",
+      "output_sha256": "747751768d4eba24349966b0ca44c16ae2923757c4b026b490c5afe1217968d3",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p50_alpha_platform_maximum.csv",
+      "source_sha256": "a259694a895e83341bdb14d14f40c284a3915831aca03b44b32386bfea9f2aca",
+      "output_sha256": "a259694a895e83341bdb14d14f40c284a3915831aca03b44b32386bfea9f2aca",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p50_alpha_platform_mean.csv",
+      "source_sha256": "9be7cc6bd1ce7c002d8db2ff705a9b32487d276752b935ecb25d811871fc2649",
+      "output_sha256": "9be7cc6bd1ce7c002d8db2ff705a9b32487d276752b935ecb25d811871fc2649",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p50_alpha_platform_median.csv",
+      "source_sha256": "aa763b37ed270065df0cd1f33df686babe2688a85cacb0f47d49ea3dcab1e419",
+      "output_sha256": "aa763b37ed270065df0cd1f33df686babe2688a85cacb0f47d49ea3dcab1e419",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p50_platform-speed_maximum.csv",
+      "source_sha256": "40c5cd13531f20e6cffaab6d21bfff8df9c3c4427d2b6d1843e93d58887349d4",
+      "output_sha256": "40c5cd13531f20e6cffaab6d21bfff8df9c3c4427d2b6d1843e93d58887349d4",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p50_platform-speed_mean.csv",
+      "source_sha256": "e37555aad26817148d8a394da221409499d6ec560b295d5b3b1dbe3614722115",
+      "output_sha256": "e37555aad26817148d8a394da221409499d6ec560b295d5b3b1dbe3614722115",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/platform_p50_platform-speed_median.csv",
+      "source_sha256": "05ce486360e84f98a8a52deb017ce5f2ef19e61ac88a31e5e1857f41a5d222d8",
+      "output_sha256": "05ce486360e84f98a8a52deb017ce5f2ef19e61ac88a31e5e1857f41a5d222d8",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_E_mean/source.csv",
+      "source_sha256": "ed3d753ce20d3727a8e5e40f98661dfdf5b2ff3e97917367a28c3624dc23a401",
+      "output_sha256": "ed3d753ce20d3727a8e5e40f98661dfdf5b2ff3e97917367a28c3624dc23a401",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p10_alpha_legal_maximum.csv",
+      "source_sha256": "9f6533f074102fa784b0019dc120a2bd67173fb181c4d9157d5a4e8d19633b0e",
+      "output_sha256": "9f6533f074102fa784b0019dc120a2bd67173fb181c4d9157d5a4e8d19633b0e",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p10_alpha_legal_mean.csv",
+      "source_sha256": "8f3e242938f569bca413a2fdf2325d9202ad547d104f930fa8164e57c7304d7d",
+      "output_sha256": "8f3e242938f569bca413a2fdf2325d9202ad547d104f930fa8164e57c7304d7d",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p10_alpha_legal_median.csv",
+      "source_sha256": "1b8d5641165b1cfe21462e658502511d3f7efbccacc4cc85d7aa1c20cf1da7c1",
+      "output_sha256": "1b8d5641165b1cfe21462e658502511d3f7efbccacc4cc85d7aa1c20cf1da7c1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-response-time_maximum.csv",
+      "source_sha256": "5987c87dc5fbce031b01029bca3a15c113d99d56d1afd6c70d904c2eb7b74edb",
+      "output_sha256": "5987c87dc5fbce031b01029bca3a15c113d99d56d1afd6c70d904c2eb7b74edb",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-response-time_mean.csv",
+      "source_sha256": "26325fa1a6f1b321375f6066412871819abd75c197ef4ce37429b9ff97c0aaed",
+      "output_sha256": "26325fa1a6f1b321375f6066412871819abd75c197ef4ce37429b9ff97c0aaed",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-response-time_median.csv",
+      "source_sha256": "7b280006cc0386ff219e3ec67285c6c47ecea17685bf9083e8caecb7f51b04e0",
+      "output_sha256": "7b280006cc0386ff219e3ec67285c6c47ecea17685bf9083e8caecb7f51b04e0",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-strength_maximum.csv",
+      "source_sha256": "7ac6e531735ff2d43430e9d343b599fd3c431eb0f374aba6778c8dbbc1a0a0a7",
+      "output_sha256": "7ac6e531735ff2d43430e9d343b599fd3c431eb0f374aba6778c8dbbc1a0a0a7",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-strength_mean.csv",
+      "source_sha256": "45b9344422a1ecb66278b8d1fc4ffe198dbce5b4af81ace360e910f949a56eb4",
+      "output_sha256": "45b9344422a1ecb66278b8d1fc4ffe198dbce5b4af81ace360e910f949a56eb4",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p10_legal-strength_median.csv",
+      "source_sha256": "91441895b9eba6e33d2140ba5c2429777f58f3bbde6ea6bd5e02c7711bd5b8ab",
+      "output_sha256": "91441895b9eba6e33d2140ba5c2429777f58f3bbde6ea6bd5e02c7711bd5b8ab",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p30_alpha_legal_maximum.csv",
+      "source_sha256": "fe378b9fc6d6151724c521343a7c454f67e2c70ce947d90607c3095649c1c3f9",
+      "output_sha256": "fe378b9fc6d6151724c521343a7c454f67e2c70ce947d90607c3095649c1c3f9",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p30_alpha_legal_mean.csv",
+      "source_sha256": "23123bfc72212d0591c76279a8658850f15655b013a8ffeff3577845e5672392",
+      "output_sha256": "23123bfc72212d0591c76279a8658850f15655b013a8ffeff3577845e5672392",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p30_alpha_legal_median.csv",
+      "source_sha256": "0d690ceca9195b2f145a9e8bbabe21036e6f8f3efb2f391feb3539bede31a7e1",
+      "output_sha256": "0d690ceca9195b2f145a9e8bbabe21036e6f8f3efb2f391feb3539bede31a7e1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-response-time_maximum.csv",
+      "source_sha256": "d52b3874899744e3b6b38c411bc9bb797d3eceb20c636bb89f979916f906158d",
+      "output_sha256": "d52b3874899744e3b6b38c411bc9bb797d3eceb20c636bb89f979916f906158d",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-response-time_mean.csv",
+      "source_sha256": "4358e182ccf330b11a6b97f685495d734e725a11aa1b42899f33b1fe14bc908a",
+      "output_sha256": "4358e182ccf330b11a6b97f685495d734e725a11aa1b42899f33b1fe14bc908a",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-response-time_median.csv",
+      "source_sha256": "73186ee65f01458a03e3f55c0261f9930c108318df02130fd4a793a153f5a1a6",
+      "output_sha256": "73186ee65f01458a03e3f55c0261f9930c108318df02130fd4a793a153f5a1a6",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-strength_maximum.csv",
+      "source_sha256": "4f7d4d2b9e3abc90507f8d56be78957987444a6f722794dfd61e74a3c392a61d",
+      "output_sha256": "4f7d4d2b9e3abc90507f8d56be78957987444a6f722794dfd61e74a3c392a61d",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-strength_mean.csv",
+      "source_sha256": "d7c25779dcdf526510ef754100fad86d460ec31a8e2f10cdfc5436a188c621f6",
+      "output_sha256": "d7c25779dcdf526510ef754100fad86d460ec31a8e2f10cdfc5436a188c621f6",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p30_legal-strength_median.csv",
+      "source_sha256": "d18f48d454e32d8e4d842494c37c4088448b8043eac5ea3084145e0504359588",
+      "output_sha256": "d18f48d454e32d8e4d842494c37c4088448b8043eac5ea3084145e0504359588",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p50_alpha_legal_maximum.csv",
+      "source_sha256": "2f8e8174d4e74d709d73efa1356933fa6fbc59c1ae1653ea2048ca81a7013905",
+      "output_sha256": "2f8e8174d4e74d709d73efa1356933fa6fbc59c1ae1653ea2048ca81a7013905",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p50_alpha_legal_mean.csv",
+      "source_sha256": "b6a562110cb56ed230a5770e191bb00df394cfe50add9d91dd7371c0a76be4bb",
+      "output_sha256": "b6a562110cb56ed230a5770e191bb00df394cfe50add9d91dd7371c0a76be4bb",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p50_alpha_legal_median.csv",
+      "source_sha256": "e20bb8fa59b22d18b4ea2b58f2886e6d04bdc2cc3a1a792cfdd74885bbad8c94",
+      "output_sha256": "e20bb8fa59b22d18b4ea2b58f2886e6d04bdc2cc3a1a792cfdd74885bbad8c94",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-response-time_maximum.csv",
+      "source_sha256": "7a43b4c4d41e332394a2edafb1cad471549b3375fb1ec892dfc0c1dcf8be7910",
+      "output_sha256": "7a43b4c4d41e332394a2edafb1cad471549b3375fb1ec892dfc0c1dcf8be7910",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-response-time_mean.csv",
+      "source_sha256": "3698438033d10704c108cd0c3282d54ccf4d828f91618e290e6754760274039c",
+      "output_sha256": "3698438033d10704c108cd0c3282d54ccf4d828f91618e290e6754760274039c",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-response-time_median.csv",
+      "source_sha256": "c18eed3a747c9d0c9fe4418e44a6fe06e1f53d2e3e7a105256633f95c31bcc14",
+      "output_sha256": "c18eed3a747c9d0c9fe4418e44a6fe06e1f53d2e3e7a105256633f95c31bcc14",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-strength_maximum.csv",
+      "source_sha256": "dc472003dfc7ae212606fa6750b083b825ba66f016d1cd1f0c9f915196ebc211",
+      "output_sha256": "dc472003dfc7ae212606fa6750b083b825ba66f016d1cd1f0c9f915196ebc211",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-strength_mean.csv",
+      "source_sha256": "7b9bb9a0f2ad65652c97ad2926492cdc3d84a9f4c0ad02faf71e2174efd54386",
+      "output_sha256": "7b9bb9a0f2ad65652c97ad2926492cdc3d84a9f4c0ad02faf71e2174efd54386",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/legal_p50_legal-strength_median.csv",
+      "source_sha256": "2e43e6ba97fe082fa2e79c52cb45e9da8d0d69735ef7567c0eceaaecee27f97a",
+      "output_sha256": "2e43e6ba97fe082fa2e79c52cb45e9da8d0d69735ef7567c0eceaaecee27f97a",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p10_alpha_platform_maximum.csv",
+      "source_sha256": "0fd8c024adc0468993c2fa954d25fc289dc549a4708f9a9b3279253bc6340590",
+      "output_sha256": "0fd8c024adc0468993c2fa954d25fc289dc549a4708f9a9b3279253bc6340590",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p10_alpha_platform_mean.csv",
+      "source_sha256": "25e05b8549995e46524ab89e7e2142f5ca4e54ee594c35094ae7079ad22adee1",
+      "output_sha256": "25e05b8549995e46524ab89e7e2142f5ca4e54ee594c35094ae7079ad22adee1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p10_alpha_platform_median.csv",
+      "source_sha256": "21a9b4a8cab2e53d1d9403fb972c297a2874ec01d0bc1829050a88fbc9ec4f83",
+      "output_sha256": "21a9b4a8cab2e53d1d9403fb972c297a2874ec01d0bc1829050a88fbc9ec4f83",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p10_platform-speed_maximum.csv",
+      "source_sha256": "3c144ff3bbf58dc1c7c218ad7023535be1d5d7d604864af0d737db1ad4592ecc",
+      "output_sha256": "3c144ff3bbf58dc1c7c218ad7023535be1d5d7d604864af0d737db1ad4592ecc",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p10_platform-speed_mean.csv",
+      "source_sha256": "bede1980cf309f2545260ae785dfbc3681cf10e23bc49d11eeb33c0f70b507fe",
+      "output_sha256": "bede1980cf309f2545260ae785dfbc3681cf10e23bc49d11eeb33c0f70b507fe",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p10_platform-speed_median.csv",
+      "source_sha256": "878adbc498bd723b70decdedb45365a905758598a8c18ff67dc38ca089ecc6d6",
+      "output_sha256": "878adbc498bd723b70decdedb45365a905758598a8c18ff67dc38ca089ecc6d6",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p30_alpha_platform_maximum.csv",
+      "source_sha256": "31ce2a2c91fa7cb97453e18adb1901a6b5dbecd258be7610cae15add5be390e4",
+      "output_sha256": "31ce2a2c91fa7cb97453e18adb1901a6b5dbecd258be7610cae15add5be390e4",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p30_alpha_platform_mean.csv",
+      "source_sha256": "1af7308c0b4369a59b4687c3508ed04400d63756f17f842ea0f3840b23f9e3cc",
+      "output_sha256": "1af7308c0b4369a59b4687c3508ed04400d63756f17f842ea0f3840b23f9e3cc",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p30_alpha_platform_median.csv",
+      "source_sha256": "aa1f224540b65ee9d9a80d7d8f79c30316145bce98b0873c2658929ab353948a",
+      "output_sha256": "aa1f224540b65ee9d9a80d7d8f79c30316145bce98b0873c2658929ab353948a",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p30_platform-speed_maximum.csv",
+      "source_sha256": "7bef8ea7c2ef422d9eec85445180d61c6ee89d5f544d8438a4d00178d15494f1",
+      "output_sha256": "7bef8ea7c2ef422d9eec85445180d61c6ee89d5f544d8438a4d00178d15494f1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p30_platform-speed_mean.csv",
+      "source_sha256": "a03d4895d6cdc171d9eb3646c04b696a6e8d59ad434c868bf172aee7d32f0b51",
+      "output_sha256": "a03d4895d6cdc171d9eb3646c04b696a6e8d59ad434c868bf172aee7d32f0b51",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p30_platform-speed_median.csv",
+      "source_sha256": "58e61e63170f94cf2a0df3f4772baef6a4e31a8ea486e4199a159741f4e27446",
+      "output_sha256": "58e61e63170f94cf2a0df3f4772baef6a4e31a8ea486e4199a159741f4e27446",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p50_alpha_platform_maximum.csv",
+      "source_sha256": "e4bb273528a8843b2ccd4acd24dec5dee48f32a4fda7b13ba8ee3007458e46a4",
+      "output_sha256": "e4bb273528a8843b2ccd4acd24dec5dee48f32a4fda7b13ba8ee3007458e46a4",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p50_alpha_platform_mean.csv",
+      "source_sha256": "a33b41af85164e985acb8a23005c49644f591de047ce4e50476b4549da461f5c",
+      "output_sha256": "a33b41af85164e985acb8a23005c49644f591de047ce4e50476b4549da461f5c",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p50_alpha_platform_median.csv",
+      "source_sha256": "74f080ee4e68be4242c6d016a0a6bd6906f560621a9b6c47418cf50397c88cc6",
+      "output_sha256": "74f080ee4e68be4242c6d016a0a6bd6906f560621a9b6c47418cf50397c88cc6",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p50_platform-speed_maximum.csv",
+      "source_sha256": "c0ecf323d4756bb0bfa805ecd1a0a7439f12801ef27fd0e1a2ddf08f5948486f",
+      "output_sha256": "c0ecf323d4756bb0bfa805ecd1a0a7439f12801ef27fd0e1a2ddf08f5948486f",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p50_platform-speed_mean.csv",
+      "source_sha256": "d36c379e26f9eb47e1672c33689c02fb017976320702ee541569478dac001675",
+      "output_sha256": "d36c379e26f9eb47e1672c33689c02fb017976320702ee541569478dac001675",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/platform_p50_platform-speed_median.csv",
+      "source_sha256": "338548cf02a7ecfb52acfd1c6b71f522b20473221e9240aa8e4bebe453d2d80d",
+      "output_sha256": "338548cf02a7ecfb52acfd1c6b71f522b20473221e9240aa8e4bebe453d2d80d",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS2d_bins_O_final/source.csv",
+      "source_sha256": "c11521e534835ab6f3863ae512600896bb53938c6e66318ebf00b8606b5cdf31",
+      "output_sha256": "c11521e534835ab6f3863ae512600896bb53938c6e66318ebf00b8606b5cdf31",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p10/legal70_E_mean.csv",
+      "source_sha256": "016372dfa2f05f6fe6c55459aaefae9a6497b13c534b8da4cfa6623254d888b2",
+      "output_sha256": "016372dfa2f05f6fe6c55459aaefae9a6497b13c534b8da4cfa6623254d888b2",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p10/legal70_O_final.csv",
+      "source_sha256": "ef2d6db239ff47edb948cdcd426510fe31defaa669895be596bf1fcecbfd5eb3",
+      "output_sha256": "ef2d6db239ff47edb948cdcd426510fe31defaa669895be596bf1fcecbfd5eb3",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p10/platform50_E_mean.csv",
+      "source_sha256": "f21de82dae61cfdc38f606d40b306306db6067f73942d9c7078535148aa701d1",
+      "output_sha256": "f21de82dae61cfdc38f606d40b306306db6067f73942d9c7078535148aa701d1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p10/platform50_O_final.csv",
+      "source_sha256": "683f67ea9d79be2ee7d995c8a182f7bc467adf8a9889609848ca283d471bfcf7",
+      "output_sha256": "683f67ea9d79be2ee7d995c8a182f7bc467adf8a9889609848ca283d471bfcf7",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p10/platform75_E_mean.csv",
+      "source_sha256": "5683422539a19d0427202a277a7d66d8d0eeb72d3a380d3460b03efa599cccb7",
+      "output_sha256": "5683422539a19d0427202a277a7d66d8d0eeb72d3a380d3460b03efa599cccb7",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p10/platform75_O_final.csv",
+      "source_sha256": "6ed9763dbcdd773f958d597418aa29307924af5e0b42f41a83b42aa617838b2f",
+      "output_sha256": "6ed9763dbcdd773f958d597418aa29307924af5e0b42f41a83b42aa617838b2f",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p30/legal70_E_mean.csv",
+      "source_sha256": "5b3761f5d511124259ee651cb2fae6918728d1dc67813288da5778fd6598ccc7",
+      "output_sha256": "5b3761f5d511124259ee651cb2fae6918728d1dc67813288da5778fd6598ccc7",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p30/legal70_O_final.csv",
+      "source_sha256": "e65100ab31c14fcfb5a05eea7c289258cc2e5a0f137b4b2ddf2344a026bcb345",
+      "output_sha256": "e65100ab31c14fcfb5a05eea7c289258cc2e5a0f137b4b2ddf2344a026bcb345",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p30/platform50_E_mean.csv",
+      "source_sha256": "6735ca32a01dca489eb5d1c88c251b739609c2aecd7f19773a005aeeb02f8e04",
+      "output_sha256": "6735ca32a01dca489eb5d1c88c251b739609c2aecd7f19773a005aeeb02f8e04",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p30/platform50_O_final.csv",
+      "source_sha256": "445e7fc49bce4b6e8c056138ca9f6c48a9e7687dad625ee8c88c0477760963de",
+      "output_sha256": "445e7fc49bce4b6e8c056138ca9f6c48a9e7687dad625ee8c88c0477760963de",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p30/platform75_E_mean.csv",
+      "source_sha256": "fec9dd65db48105a26f7937aed5c6ad7e1d1b3b4dbf7a116dd7924baf80b09c3",
+      "output_sha256": "fec9dd65db48105a26f7937aed5c6ad7e1d1b3b4dbf7a116dd7924baf80b09c3",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p30/platform75_O_final.csv",
+      "source_sha256": "1269e7ca77b3ec1410ca90d9f334eee39777162fcb2d36c2dcffae02fdb4d432",
+      "output_sha256": "1269e7ca77b3ec1410ca90d9f334eee39777162fcb2d36c2dcffae02fdb4d432",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p50/legal70_E_mean.csv",
+      "source_sha256": "149bd568b6afba5cb40c01e3e32084a8f79b8cfa76f523ac3d9360e1ca273e45",
+      "output_sha256": "149bd568b6afba5cb40c01e3e32084a8f79b8cfa76f523ac3d9360e1ca273e45",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p50/legal70_O_final.csv",
+      "source_sha256": "c00aa8ba0b26eb3d9e11897382742bb9e1d7d27b6763af65eddab37e0ae0885d",
+      "output_sha256": "c00aa8ba0b26eb3d9e11897382742bb9e1d7d27b6763af65eddab37e0ae0885d",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p50/platform50_E_mean.csv",
+      "source_sha256": "d2abde4e9f7acc2de708cafa40cf57efb2eb36807652bbc053a1ab936664ae73",
+      "output_sha256": "d2abde4e9f7acc2de708cafa40cf57efb2eb36807652bbc053a1ab936664ae73",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p50/platform50_O_final.csv",
+      "source_sha256": "9f6745e2f3b1f9f8b0e179de9a9e2672cfd1dc8903d816a640115c7db06c733d",
+      "output_sha256": "9f6745e2f3b1f9f8b0e179de9a9e2672cfd1dc8903d816a640115c7db06c733d",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p50/platform75_E_mean.csv",
+      "source_sha256": "c5fdad028f6c2387425808ee21f209f718bb0b3c05f54d8ec4c4446351e82e99",
+      "output_sha256": "c5fdad028f6c2387425808ee21f209f718bb0b3c05f54d8ec4c4446351e82e99",
+      "byte_identical": true
+    },
+    {
+      "path": "data/figS4_accuracy_p50/platform75_O_final.csv",
+      "source_sha256": "c57b019ae9b8e6ece8772e7df42e3c384533992458d1435b4a298430782edddd",
+      "output_sha256": "c57b019ae9b8e6ece8772e7df42e3c384533992458d1435b4a298430782edddd",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p10_alpha_legal_bins.csv",
+      "source_sha256": "9f10cd4c28f5dd5ed8c235c6e6186e6448b2d17785aac64a6dd43c1bf99ac17c",
+      "output_sha256": "9f10cd4c28f5dd5ed8c235c6e6186e6448b2d17785aac64a6dd43c1bf99ac17c",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p10_alpha_legal_points.csv",
+      "source_sha256": "b2239d687b68352747bb3b5e81f0cc2b7551333ed090e54c043dd7528b69cc64",
+      "output_sha256": "b2239d687b68352747bb3b5e81f0cc2b7551333ed090e54c043dd7528b69cc64",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p10_legal-response-time_bins.csv",
+      "source_sha256": "ba2e0642d340db5f7625709cb1f5c3f0dd2ccefc693dbd769748f371dcaf39ec",
+      "output_sha256": "ba2e0642d340db5f7625709cb1f5c3f0dd2ccefc693dbd769748f371dcaf39ec",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p10_legal-response-time_points.csv",
+      "source_sha256": "7576b989bf0f9fb9826308f55e7dc0a6e591b3b1ce6989343c9d77da16b6e1a9",
+      "output_sha256": "7576b989bf0f9fb9826308f55e7dc0a6e591b3b1ce6989343c9d77da16b6e1a9",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p10_legal-strength_bins.csv",
+      "source_sha256": "b5fa7569d2f618038a54010dc49c5aac17592704b5bd94ea173d99f2f50c9baf",
+      "output_sha256": "b5fa7569d2f618038a54010dc49c5aac17592704b5bd94ea173d99f2f50c9baf",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p10_legal-strength_points.csv",
+      "source_sha256": "28db47518817d63123e60c137a4eecdb81ac9c2b88055df97b743f47279713ff",
+      "output_sha256": "28db47518817d63123e60c137a4eecdb81ac9c2b88055df97b743f47279713ff",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p30_alpha_legal_bins.csv",
+      "source_sha256": "edf890dbd94c654cd7771bc5d511b66723a8aca5196c5077e1b74518105f2c74",
+      "output_sha256": "edf890dbd94c654cd7771bc5d511b66723a8aca5196c5077e1b74518105f2c74",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p30_alpha_legal_points.csv",
+      "source_sha256": "01e10cb0e0dd5f4fb97f42f277d0dbc58509897d4d1ce1b251306480b6417d41",
+      "output_sha256": "01e10cb0e0dd5f4fb97f42f277d0dbc58509897d4d1ce1b251306480b6417d41",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p30_legal-response-time_bins.csv",
+      "source_sha256": "cbbeede9300f12a5bfcce9b1013e66054007f4a39904bdcad7bc94b78e61876e",
+      "output_sha256": "cbbeede9300f12a5bfcce9b1013e66054007f4a39904bdcad7bc94b78e61876e",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p30_legal-response-time_points.csv",
+      "source_sha256": "e24ac793d2400151210f796d742007f1b777bb82b49c41c03cbf51967e41b742",
+      "output_sha256": "e24ac793d2400151210f796d742007f1b777bb82b49c41c03cbf51967e41b742",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p30_legal-strength_bins.csv",
+      "source_sha256": "2b926a8ce496f1ce162394f001d15034b145d8726178cae325923f21de0495e3",
+      "output_sha256": "2b926a8ce496f1ce162394f001d15034b145d8726178cae325923f21de0495e3",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p30_legal-strength_points.csv",
+      "source_sha256": "ff22415e40f257de572aba26dbb01bccdb026aa817e163d85e4f917a1a4f2099",
+      "output_sha256": "ff22415e40f257de572aba26dbb01bccdb026aa817e163d85e4f917a1a4f2099",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p50_alpha_legal_bins.csv",
+      "source_sha256": "7fa1a3493bd5d6478b142f94b95759b60008cc18736727777441ab8ff39158c8",
+      "output_sha256": "7fa1a3493bd5d6478b142f94b95759b60008cc18736727777441ab8ff39158c8",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p50_alpha_legal_points.csv",
+      "source_sha256": "57fce9ed107bbf9812932894df7398903c5c5b6da36964f5abd90c2061ff026b",
+      "output_sha256": "57fce9ed107bbf9812932894df7398903c5c5b6da36964f5abd90c2061ff026b",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p50_legal-response-time_bins.csv",
+      "source_sha256": "89eb7c368858936c2ca01d1a0caa346372d844853b5b04f2c3fdec1e2203f709",
+      "output_sha256": "89eb7c368858936c2ca01d1a0caa346372d844853b5b04f2c3fdec1e2203f709",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p50_legal-response-time_points.csv",
+      "source_sha256": "e6a7444abfa9bcaf27a4647eb48f197f0cebde8d7f2499cbc8e361af186d7277",
+      "output_sha256": "e6a7444abfa9bcaf27a4647eb48f197f0cebde8d7f2499cbc8e361af186d7277",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p50_legal-strength_bins.csv",
+      "source_sha256": "9732e3f95ba5971fd8f8dce3131d2a515606e51b584f4aaaabaf1ad3425732e9",
+      "output_sha256": "9732e3f95ba5971fd8f8dce3131d2a515606e51b584f4aaaabaf1ad3425732e9",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_E_mean/p50_legal-strength_points.csv",
+      "source_sha256": "fc253b8cb03dc02e9c6b31457229fad0aac3c4da1020749c789deb6ba4b116f9",
+      "output_sha256": "fc253b8cb03dc02e9c6b31457229fad0aac3c4da1020749c789deb6ba4b116f9",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p10_alpha_legal_bins.csv",
+      "source_sha256": "22f63b2db9519d5cf8bdd12fde61e7dfab83e6243cfb462b741649956611da29",
+      "output_sha256": "22f63b2db9519d5cf8bdd12fde61e7dfab83e6243cfb462b741649956611da29",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p10_alpha_legal_points.csv",
+      "source_sha256": "d3e80eefeab5da0fc7a67433c5e1c015f95ca7be7693a6c4347c96cb945fef7e",
+      "output_sha256": "d3e80eefeab5da0fc7a67433c5e1c015f95ca7be7693a6c4347c96cb945fef7e",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p10_legal-response-time_bins.csv",
+      "source_sha256": "22c41fe8a1018c598c1a81617e4c043c8f8126af8c358f9d856bb09c672e5baa",
+      "output_sha256": "22c41fe8a1018c598c1a81617e4c043c8f8126af8c358f9d856bb09c672e5baa",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p10_legal-response-time_points.csv",
+      "source_sha256": "d56159b38defdfa441e01d053ccccc12333bdc5f85375b200ce85710bc54ef76",
+      "output_sha256": "d56159b38defdfa441e01d053ccccc12333bdc5f85375b200ce85710bc54ef76",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p10_legal-strength_bins.csv",
+      "source_sha256": "d85314eeefc26f8554e3020bf47ae7782141041578019ec389e1ee3d6a2ef743",
+      "output_sha256": "d85314eeefc26f8554e3020bf47ae7782141041578019ec389e1ee3d6a2ef743",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p10_legal-strength_points.csv",
+      "source_sha256": "bbd0f3d15761a761eb80ae4d3adec6151c951bbb08253566cb13f9e6f2515088",
+      "output_sha256": "bbd0f3d15761a761eb80ae4d3adec6151c951bbb08253566cb13f9e6f2515088",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p30_alpha_legal_bins.csv",
+      "source_sha256": "cef29bc7bbc46b9abc8a1b273582478125f76ce8443c1b85b4c3f5e9dd4709ea",
+      "output_sha256": "cef29bc7bbc46b9abc8a1b273582478125f76ce8443c1b85b4c3f5e9dd4709ea",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p30_alpha_legal_points.csv",
+      "source_sha256": "e6bbb14a85c3c461e95e9a84d3af9687753da7d3050c3b485ab8bfe344a04953",
+      "output_sha256": "e6bbb14a85c3c461e95e9a84d3af9687753da7d3050c3b485ab8bfe344a04953",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p30_legal-response-time_bins.csv",
+      "source_sha256": "0ba11e79f6e2b942cead206eda634531edd3e3047db88fa91b56556f1cf24431",
+      "output_sha256": "0ba11e79f6e2b942cead206eda634531edd3e3047db88fa91b56556f1cf24431",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p30_legal-response-time_points.csv",
+      "source_sha256": "c0dc8ab13e3f7662c8a0f6d5b981e06e9a0cf8a70142bb90005cf3d0bc8befb0",
+      "output_sha256": "c0dc8ab13e3f7662c8a0f6d5b981e06e9a0cf8a70142bb90005cf3d0bc8befb0",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p30_legal-strength_bins.csv",
+      "source_sha256": "183ec97075fb64956f346f7dc49c37ea6f4c34a1d69c8e4571d34ff7dfcfc680",
+      "output_sha256": "183ec97075fb64956f346f7dc49c37ea6f4c34a1d69c8e4571d34ff7dfcfc680",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p30_legal-strength_points.csv",
+      "source_sha256": "414533a666073d5151963fc7306b02c699db9ea6797b49c5ba60f772cff4b89f",
+      "output_sha256": "414533a666073d5151963fc7306b02c699db9ea6797b49c5ba60f772cff4b89f",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p50_alpha_legal_bins.csv",
+      "source_sha256": "cb446667d85caa8426a3f579ab84626192ba903c891de2f7aaf91aa6b940482f",
+      "output_sha256": "cb446667d85caa8426a3f579ab84626192ba903c891de2f7aaf91aa6b940482f",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p50_alpha_legal_points.csv",
+      "source_sha256": "0d6e258b9f6fe5139cec4b1e37ccbf75ef104b4ff9232b6cf88aa86775b8f037",
+      "output_sha256": "0d6e258b9f6fe5139cec4b1e37ccbf75ef104b4ff9232b6cf88aa86775b8f037",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p50_legal-response-time_bins.csv",
+      "source_sha256": "9d6a6b7ecccad1f4d0824f548b920278fe419703252bd582d1116932165ea8c9",
+      "output_sha256": "9d6a6b7ecccad1f4d0824f548b920278fe419703252bd582d1116932165ea8c9",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p50_legal-response-time_points.csv",
+      "source_sha256": "243b8d07edb8413613381df1543d80776c73139a7dece490fddc3e0a3fda58b4",
+      "output_sha256": "243b8d07edb8413613381df1543d80776c73139a7dece490fddc3e0a3fda58b4",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p50_legal-strength_bins.csv",
+      "source_sha256": "b2fc9672a2fa17c81326e17e2d11a20aa6413e78821a2a4746180f0d03a2e1b2",
+      "output_sha256": "b2fc9672a2fa17c81326e17e2d11a20aa6413e78821a2a4746180f0d03a2e1b2",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_legal_O_final/p50_legal-strength_points.csv",
+      "source_sha256": "822b072522e968d9ec554180783be5ee4ca3c13ee180fbed706f2e8ae5d875ef",
+      "output_sha256": "822b072522e968d9ec554180783be5ee4ca3c13ee180fbed706f2e8ae5d875ef",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p10_alpha_platform_bins.csv",
+      "source_sha256": "f8aca993e4971cc17a3f0b4086b92504526ec7e70a69e183b36c04a8a96b1bee",
+      "output_sha256": "f8aca993e4971cc17a3f0b4086b92504526ec7e70a69e183b36c04a8a96b1bee",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p10_alpha_platform_points.csv",
+      "source_sha256": "cb3a97ef89e7d9d3a5d22731b48c647edfe7d2b493db08e17b7946830de5ca0c",
+      "output_sha256": "cb3a97ef89e7d9d3a5d22731b48c647edfe7d2b493db08e17b7946830de5ca0c",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p10_platform-speed_bins.csv",
+      "source_sha256": "e9a526da1723b3c8d366d0cb4509bf8b89fbc6a674ea0e01cef671e0f9c60623",
+      "output_sha256": "e9a526da1723b3c8d366d0cb4509bf8b89fbc6a674ea0e01cef671e0f9c60623",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p10_platform-speed_points.csv",
+      "source_sha256": "f838f15b646e524c34970c1fc544d1b0b8d932a9d5d78e48388e06ac0b1157a6",
+      "output_sha256": "f838f15b646e524c34970c1fc544d1b0b8d932a9d5d78e48388e06ac0b1157a6",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p30_alpha_platform_bins.csv",
+      "source_sha256": "62eeeabd86ed01966e47266837e414bbea812c01157116e387665eed12acd7dd",
+      "output_sha256": "62eeeabd86ed01966e47266837e414bbea812c01157116e387665eed12acd7dd",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p30_alpha_platform_points.csv",
+      "source_sha256": "0ea72e5488bb3dd18770ea2bea8c564088858e249807347a6885eb7bd93ced3b",
+      "output_sha256": "0ea72e5488bb3dd18770ea2bea8c564088858e249807347a6885eb7bd93ced3b",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p30_platform-speed_bins.csv",
+      "source_sha256": "cab08dc5759a7b3903494f65ea723f217e6fddfe72f0a8a0a8c67839f629c4c1",
+      "output_sha256": "cab08dc5759a7b3903494f65ea723f217e6fddfe72f0a8a0a8c67839f629c4c1",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p30_platform-speed_points.csv",
+      "source_sha256": "d4342a2b77aca5fd8105361408824a5e96de3bdcb28f5c13a01111727d893fda",
+      "output_sha256": "d4342a2b77aca5fd8105361408824a5e96de3bdcb28f5c13a01111727d893fda",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p50_alpha_platform_bins.csv",
+      "source_sha256": "c37eff45568efd794a06b8198a8e84460105fe861289ff2601bd38430901bf4c",
+      "output_sha256": "c37eff45568efd794a06b8198a8e84460105fe861289ff2601bd38430901bf4c",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p50_alpha_platform_points.csv",
+      "source_sha256": "aedfecc616eb1c5000104d060158871ebada62f8fd2c6918a5666b807c408daf",
+      "output_sha256": "aedfecc616eb1c5000104d060158871ebada62f8fd2c6918a5666b807c408daf",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p50_platform-speed_bins.csv",
+      "source_sha256": "fe130f08ab130477881815400c3784566cd4c83708d195f99a21ef4a6b2eb473",
+      "output_sha256": "fe130f08ab130477881815400c3784566cd4c83708d195f99a21ef4a6b2eb473",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_E_mean/p50_platform-speed_points.csv",
+      "source_sha256": "333e4120a519f9c2113eead221a836a5b9fafddcd99ffff17e80f469ad25af65",
+      "output_sha256": "333e4120a519f9c2113eead221a836a5b9fafddcd99ffff17e80f469ad25af65",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p10_alpha_platform_bins.csv",
+      "source_sha256": "096336648a2f60c074cf04ef4f2aed8f9b06503829becc5c2d5c572e52b9abe8",
+      "output_sha256": "096336648a2f60c074cf04ef4f2aed8f9b06503829becc5c2d5c572e52b9abe8",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p10_alpha_platform_points.csv",
+      "source_sha256": "a407bc299ac63effe619492c87ea03f9bad3a6c9835d23718ec50906066ef46a",
+      "output_sha256": "a407bc299ac63effe619492c87ea03f9bad3a6c9835d23718ec50906066ef46a",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p10_platform-speed_bins.csv",
+      "source_sha256": "a359d3ddd6c87f9efa9a4e7471ae54a9bf99d120728e99074fe320cb48036bfd",
+      "output_sha256": "a359d3ddd6c87f9efa9a4e7471ae54a9bf99d120728e99074fe320cb48036bfd",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p10_platform-speed_points.csv",
+      "source_sha256": "6c07921fb01f79bf7dea839504c470837da8f15e7d00a1ac08967880ae36b753",
+      "output_sha256": "6c07921fb01f79bf7dea839504c470837da8f15e7d00a1ac08967880ae36b753",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p30_alpha_platform_bins.csv",
+      "source_sha256": "0d59e36ad93f7e4f830fba4ab82da3453c268be94126879b1de9ed66e1e1fdd4",
+      "output_sha256": "0d59e36ad93f7e4f830fba4ab82da3453c268be94126879b1de9ed66e1e1fdd4",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p30_alpha_platform_points.csv",
+      "source_sha256": "29d3f8c1a66d7825f8c607011fba31be8e27da4ccb7122da3a6c777c5bd8c8ec",
+      "output_sha256": "29d3f8c1a66d7825f8c607011fba31be8e27da4ccb7122da3a6c777c5bd8c8ec",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p30_platform-speed_bins.csv",
+      "source_sha256": "6a005c934107aaac6ee2af6906042ddd0671a0957c66d2e6becc586033afcf2b",
+      "output_sha256": "6a005c934107aaac6ee2af6906042ddd0671a0957c66d2e6becc586033afcf2b",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p30_platform-speed_points.csv",
+      "source_sha256": "e9af2cba18655a88da2279a2ff5d863e93df5a016e8dcfa3b02f12c79835dc8e",
+      "output_sha256": "e9af2cba18655a88da2279a2ff5d863e93df5a016e8dcfa3b02f12c79835dc8e",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p50_alpha_platform_bins.csv",
+      "source_sha256": "bcd0a95df5ba1d49ce60031e35ffa1887f4e7772e09675ee14bf50e5f33921c6",
+      "output_sha256": "bcd0a95df5ba1d49ce60031e35ffa1887f4e7772e09675ee14bf50e5f33921c6",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p50_alpha_platform_points.csv",
+      "source_sha256": "55f5134fa4d55f30b5613ef2fd110179139f557f9259ab4dd65c97f32c589bcc",
+      "output_sha256": "55f5134fa4d55f30b5613ef2fd110179139f557f9259ab4dd65c97f32c589bcc",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p50_platform-speed_bins.csv",
+      "source_sha256": "46cfacc8de77c9cb841c2c18bfaf5ab46123628d569319060d7996f29c606989",
+      "output_sha256": "46cfacc8de77c9cb841c2c18bfaf5ab46123628d569319060d7996f29c606989",
+      "byte_identical": true
+    },
+    {
+      "path": "data/sensitivity_response_platform_O_final/p50_platform-speed_points.csv",
+      "source_sha256": "73fa94b7da225e212261f48938366bc48f568aa09ffbb6bca5690f7c62968b3e",
+      "output_sha256": "73fa94b7da225e212261f48938366bc48f568aa09ffbb6bca5690f7c62968b3e",
+      "byte_identical": true
+    }
+  ],
+  "bootstrap_archive": {
+    "path": "revision_review/results_v2/processed/sensitivity_bootstrap_draws.npz",
+    "sha256": "e8bf2d74aa6cd2638c0d6e805ed6f80409377fcd96cb5776eeb55f17dc53d23b",
+    "size_bytes": 2613203,
+    "size_mib": 2.4921445846557617
+  }
+}

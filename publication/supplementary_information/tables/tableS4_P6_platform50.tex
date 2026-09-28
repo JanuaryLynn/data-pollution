@@ -1,0 +1,63 @@
+% Table S7. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 217mm+14\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}C{11mm}C{13mm}C{17mm}C{17mm}R{48mm}R{48mm}R{48mm}C{15mm}@{}}
+\caption{Platform outcomes across true-positive and true-negative rates at 50\% coverage}\label{tab:tableS4_P6_platform50}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{TPR (\%)} & \multicolumn{1}{c}{TNR (\%)} & \multicolumn{1}{r}{$\bar E$} & \multicolumn{1}{r}{$O(50)$} & \multicolumn{1}{r}{$P_R(50)$} & \multicolumn{1}{c}{$n_{\mathrm{PR}}$} \\
+\midrule
+\endfirsthead
+\caption[]{Platform outcomes across true-positive and true-negative rates at 50\% coverage (continued)}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{TPR (\%)} & \multicolumn{1}{c}{TNR (\%)} & \multicolumn{1}{r}{$\bar E$} & \multicolumn{1}{r}{$O(50)$} & \multicolumn{1}{r}{$P_R(50)$} & \multicolumn{1}{c}{$n_{\mathrm{PR}}$} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{8}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Means with pointwise 95\% Student-$t$ confidence intervals in brackets; 30 independent runs per condition. Intervals are not clipped. $p_0$, TPR, TNR and outcomes are percentages. TPR and TNR are the true-positive and true-negative rates. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. $P_R(50)$ averages defined run-level precision ratios. $n_{\mathrm{PR}}$ is the number of runs with defined precision (30 in every condition). Per-step audit coverage is fixed at $n_p=50\%$ and selection is degree-targeted. All networks are BA with $N=1000$. Unrounded results, condition IDs and sample sizes are in \texttt{tableS4\_P6\_platform50.csv}.}}\\
+\endlastfoot
+31 & 10 & 70 & 70 & \ABMci{84.56}{83.82}{85.30} & \ABMci{53.99}{52.48}{55.49} & \ABMci{20.12}{19.55}{20.68} & 30 \\*
+160 & 10 & 70 & 80 & \ABMci{85.06}{84.11}{86.01} & \ABMci{53.76}{52.16}{55.36} & \ABMci{26.99}{26.04}{27.93} & 30 \\*
+161 & 10 & 70 & 90 & \ABMci{84.47}{83.74}{85.19} & \ABMci{50.54}{50.03}{51.04} & \ABMci{42.62}{41.73}{43.51} & 30 \\
+\addlinespace[2pt]
+162 & 10 & 80 & 70 & \ABMci{90.15}{89.46}{90.84} & \ABMci{55.97}{53.60}{58.34} & \ABMci{13.76}{13.07}{14.46} & 30 \\*
+32 & 10 & 80 & 80 & \ABMci{89.59}{88.69}{90.49} & \ABMci{53.00}{51.64}{54.37} & \ABMci{19.65}{18.44}{20.86} & 30 \\*
+163 & 10 & 80 & 90 & \ABMci{89.40}{88.57}{90.23} & \ABMci{51.48}{50.79}{52.16} & \ABMci{33.70}{32.46}{34.95} & 30 \\
+\addlinespace[2pt]
+164 & 10 & 90 & 70 & \ABMci{92.75}{92.12}{93.38} & \ABMci{54.23}{51.92}{56.53} & \ABMci{10.11}{9.46}{10.76} & 30 \\*
+165 & 10 & 90 & 80 & \ABMci{92.52}{92.01}{93.04} & \ABMci{51.91}{51.12}{52.70} & \ABMci{14.55}{13.81}{15.28} & 30 \\*
+33 & 10 & 90 & 90 & \ABMci{93.32}{92.65}{93.99} & \ABMci{52.11}{51.44}{52.77} & \ABMci{24.15}{22.83}{25.47} & 30 \\
+\midrule
+40 & 30 & 70 & 70 & \ABMci{72.12}{70.96}{73.29} & \ABMci{52.56}{51.25}{53.86} & \ABMci{31.35}{30.75}{31.96} & 30 \\*
+172 & 30 & 70 & 80 & \ABMci{72.31}{71.14}{73.48} & \ABMci{51.79}{50.93}{52.65} & \ABMci{40.42}{39.80}{41.04} & 30 \\*
+173 & 30 & 70 & 90 & \ABMci{71.77}{70.83}{72.71} & \ABMci{49.76}{49.42}{50.10} & \ABMci{57.91}{57.29}{58.52} & 30 \\
+\addlinespace[2pt]
+174 & 30 & 80 & 70 & \ABMci{76.91}{75.71}{78.11} & \ABMci{52.72}{51.08}{54.35} & \ABMci{26.66}{25.93}{27.40} & 30 \\*
+41 & 30 & 80 & 80 & \ABMci{77.76}{76.42}{79.10} & \ABMci{52.50}{51.47}{53.53} & \ABMci{35.04}{34.05}{36.03} & 30 \\*
+175 & 30 & 80 & 90 & \ABMci{77.14}{75.79}{78.48} & \ABMci{50.45}{49.92}{50.97} & \ABMci{52.07}{50.97}{53.17} & 30 \\
+\addlinespace[2pt]
+176 & 30 & 90 & 70 & \ABMci{82.33}{81.17}{83.49} & \ABMci{53.85}{52.46}{55.23} & \ABMci{21.86}{21.07}{22.65} & 30 \\*
+177 & 30 & 90 & 80 & \ABMci{80.42}{79.66}{81.18} & \ABMci{51.37}{50.81}{51.93} & \ABMci{31.10}{30.47}{31.73} & 30 \\*
+42 & 30 & 90 & 90 & \ABMci{81.24}{80.18}{82.29} & \ABMci{50.64}{50.05}{51.23} & \ABMci{46.58}{45.41}{47.75} & 30 \\
+\midrule
+49 & 50 & 70 & 70 & \ABMci{62.93}{62.06}{63.80} & \ABMci{51.31}{50.79}{51.83} & \ABMci{37.84}{37.47}{38.20} & 30 \\*
+184 & 50 & 70 & 80 & \ABMci{64.56}{63.05}{66.07} & \ABMci{51.57}{50.79}{52.35} & \ABMci{47.31}{46.63}{47.98} & 30 \\*
+185 & 50 & 70 & 90 & \ABMci{62.46}{61.42}{63.50} & \ABMci{49.37}{49.10}{49.65} & \ABMci{64.94}{64.46}{65.42} & 30 \\
+\addlinespace[2pt]
+186 & 50 & 80 & 70 & \ABMci{68.18}{66.48}{69.88} & \ABMci{52.58}{51.28}{53.89} & \ABMci{33.85}{32.93}{34.78} & 30 \\*
+50 & 50 & 80 & 80 & \ABMci{68.42}{66.92}{69.92} & \ABMci{51.44}{50.71}{52.16} & \ABMci{43.29}{42.40}{44.18} & 30 \\*
+187 & 50 & 80 & 90 & \ABMci{69.72}{67.86}{71.58} & \ABMci{50.19}{49.67}{50.71} & \ABMci{59.96}{58.81}{61.11} & 30 \\
+\addlinespace[2pt]
+188 & 50 & 90 & 70 & \ABMci{72.87}{71.06}{74.68} & \ABMci{53.22}{51.82}{54.62} & \ABMci{30.19}{29.22}{31.16} & 30 \\*
+189 & 50 & 90 & 80 & \ABMci{73.35}{71.62}{75.07} & \ABMci{52.37}{51.46}{53.29} & \ABMci{38.83}{37.79}{39.88} & 30 \\*
+51 & 50 & 90 & 90 & \ABMci{72.03}{70.39}{73.68} & \ABMci{50.03}{49.61}{50.44} & \ABMci{56.68}{55.58}{57.79} & 30 \\
+\end{longtable}
+\endgroup

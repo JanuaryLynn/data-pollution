@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "checks": {
+    "console_argv_one_headless_flag": true,
+    "symlink_invocation_name_preserved": true,
+    "shell_argv_unchanged": true,
+    "console_exe_prefix": true,
+    "subprocess_receives_atomic_paths_with_spaces": true,
+    "console_ignores_unused_external_java": true,
+    "bundled_runtime_and_config_hashed": true,
+    "changed_bundled_runtime_changes_signature": true,
+    "resolved_and_invocation_paths_recorded": true,
+    "console_reproduces_failure_from_project_cwd": true,
+    "console_cwd_is_invocation_install_folder": true,
+    "shell_cwd_remains_project_root": true,
+    "runner_actual_console_symlink_argv": true,
+    "absolute_output_stays_in_project_folder": true,
+    "validator_console_cwd_is_install_folder": true,
+    "validator_actual_console_symlink_argv": true,
+    "validator_actual_shell_argv_unchanged": true,
+    "runner_production_Popen_uses_launcher_cwd": true,
+    "validator_production_run_uses_launch_cwd": true,
+    "validator_production_launch_cwd_comes_from_helper": true,
+    "prior_linux_console_shim_table_accepted": true
+  },
+  "scope": "Argument construction, symlink, fingerprint and working-directory checks; fake Console reproduces the missing cfg failure from a project directory. Previous Linux shim diagnostic table is retained and revalidated. Not a macOS runtime test or formal experiment.",
+  "formal_runs_executed": 0,
+  "actual_diagnostic_runs_this_check": 0,
+  "prior_diagnostic_tables_revalidated": 1,
+  "source_sha256": "1184ec681f5e20287db694feb2383a6f26c7a85b79bcd89fe9af16cdd8be22af",
+  "patch_version": "console-launcher-v2",
+  "validator_source_sha256": "279b843d83e42571c7bc4bcefdd9f865b7d9ed961ce423989514851ad93291ce",
+  "protected_files": {
+    "status": "passed",
+    "unchanged_protected_files": 84,
+    "formal_outputs_present": false
+  },
+  "legacy_full_diagnostics_evidence": "model_validation.json records the v1 validator regression: 38 valid diagnostics and 5 invalid-input checks. No new NetLogo runs were required for this working-directory patch."
+}

@@ -1,0 +1,407 @@
+{
+  "status": "PASS",
+  "checked_at_utc": "2026-09-26T11:42:25.789625+00:00",
+  "table_tex_count": 17,
+  "figure_pdf_count": 11,
+  "all_28_source_files_byte_identical": true,
+  "merged_pdf_pages": 32,
+  "toc_counts": {
+    "tables": 17,
+    "figures": 11
+  },
+  "toc_pages_match_actual_pdf": true,
+  "table_page_range": [
+    3,
+    20
+  ],
+  "figure_page_range": [
+    22,
+    32
+  ],
+  "table_S14_continuation_page": 17,
+  "reading_notes": {
+    "status": "PASS",
+    "findings": [],
+    "checked": [
+      "Table notes distinguish Student-t condition summaries, Welch contrasts and separate dimensionless PAWN bootstrap intervals.",
+      "Figure reading notes correctly restrict need-not-contain-estimate to bootstrap intervals.",
+      "Percentages, percentage-point differences, network/review counts and S1 thousands are distinguished.",
+      "Thirty runs are per condition/LHS point; condition and sensitivity-response reuse is stated.",
+      "No change to per-table notes or figure PDFs."
+    ]
+  },
+  "source_files": {
+    "tables": [
+      {
+        "file": "tableS10_H2.tex",
+        "source_sha256": "230b0cbeea25bafc75a21933dae9b1a3146bea8d481bb29b2b0a1d28d88f826d",
+        "merged_sha256": "230b0cbeea25bafc75a21933dae9b1a3146bea8d481bb29b2b0a1d28d88f826d",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS11_H3.tex",
+        "source_sha256": "62573e1c46e0a47d5eb2ef979c6934cef4eef44904504d6db6f498519a285d4b",
+        "merged_sha256": "62573e1c46e0a47d5eb2ef979c6934cef4eef44904504d6db6f498519a285d4b",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS12_P3_differences.tex",
+        "source_sha256": "79382e3b17080efa2221e91d990db008aed9c57676b735cdb88955e858c29f10",
+        "merged_sha256": "79382e3b17080efa2221e91d990db008aed9c57676b735cdb88955e858c29f10",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS13_P5_differences.tex",
+        "source_sha256": "55b41a4ced506d61c35b9869a3bf5a02faeab26d3d9552ac488e0feaf4fe72b1",
+        "merged_sha256": "55b41a4ced506d61c35b9869a3bf5a02faeab26d3d9552ac488e0feaf4fe72b1",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS14_P6_differences.tex",
+        "source_sha256": "b7530f5b7c0e28d5121942f958d2a9716f342db592f5b24a601e852cd8e168c9",
+        "merged_sha256": "b7530f5b7c0e28d5121942f958d2a9716f342db592f5b24a601e852cd8e168c9",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS15_topology_differences.tex",
+        "source_sha256": "270c33a9154925e8984d3bdf11ea67853c34d2ea08ba6f46fc8fd2fdf5e77dc1",
+        "merged_sha256": "270c33a9154925e8984d3bdf11ea67853c34d2ea08ba6f46fc8fd2fdf5e77dc1",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS16_scale_differences.tex",
+        "source_sha256": "ecc8044685b16a656b51bcdd6b91c229af13b09848096a5fae82185e42f7f462",
+        "merged_sha256": "ecc8044685b16a656b51bcdd6b91c229af13b09848096a5fae82185e42f7f462",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS17_P3_workload_differences.tex",
+        "source_sha256": "95c15ab2c419b1ce94f93f941db17f62a42dfa0d5757a9c5724a295be3d1cb46",
+        "merged_sha256": "95c15ab2c419b1ce94f93f941db17f62a42dfa0d5757a9c5724a295be3d1cb46",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS1_P3.tex",
+        "source_sha256": "656a60e985e2dbf48155198e43eeeca32762dc6037123f30831702388d981389",
+        "merged_sha256": "656a60e985e2dbf48155198e43eeeca32762dc6037123f30831702388d981389",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS1_P3_workload.tex",
+        "source_sha256": "cfa925cbfde0bbee57da05a746ad0375bfc335e5987fcd76921d4b7a5e7504b4",
+        "merged_sha256": "cfa925cbfde0bbee57da05a746ad0375bfc335e5987fcd76921d4b7a5e7504b4",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS3_P5_legal.tex",
+        "source_sha256": "594993fa5c7174e22c09203a39ac867e28048c97030833308ae1b5328cce59d4",
+        "merged_sha256": "594993fa5c7174e22c09203a39ac867e28048c97030833308ae1b5328cce59d4",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS3_P5_platform.tex",
+        "source_sha256": "71776641d2555bf4832d78c2991b5f2c7c9496b48d5809309f5f3d6d88011b9b",
+        "merged_sha256": "71776641d2555bf4832d78c2991b5f2c7c9496b48d5809309f5f3d6d88011b9b",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS4_P6_legal.tex",
+        "source_sha256": "f14d20151e8a117fe705ebe93db294d02fc350539a1cc6b37539dc231a15235f",
+        "merged_sha256": "f14d20151e8a117fe705ebe93db294d02fc350539a1cc6b37539dc231a15235f",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS4_P6_platform50.tex",
+        "source_sha256": "59186875259c7ebcbee8597b55751d37ab6947cae1600e679eb5a4258f148024",
+        "merged_sha256": "59186875259c7ebcbee8597b55751d37ab6947cae1600e679eb5a4258f148024",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS4_P6_platform75.tex",
+        "source_sha256": "d2291fee7e7c482bf7f1ccfc562a6f448abd80b4f0c9cc3f3113a4afefd83cdb",
+        "merged_sha256": "d2291fee7e7c482bf7f1ccfc562a6f448abd80b4f0c9cc3f3113a4afefd83cdb",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS9_H1.tex",
+        "source_sha256": "8a09ecf42d2a1fdd8f8baa0b72f413060667e47d95984edcb2a081f391b5e18f",
+        "merged_sha256": "8a09ecf42d2a1fdd8f8baa0b72f413060667e47d95984edcb2a081f391b5e18f",
+        "byte_identical": true
+      },
+      {
+        "file": "tableS_network.tex",
+        "source_sha256": "70d98e7795a614b58e6107913365b54516a92b0fafa6f7c62c40cb4405ddb731",
+        "merged_sha256": "70d98e7795a614b58e6107913365b54516a92b0fafa6f7c62c40cb4405ddb731",
+        "byte_identical": true
+      }
+    ],
+    "figures": [
+      {
+        "file": "figS1_workload.pdf",
+        "source_sha256": "4a91c8a2970951ca4d86d2c550c0c07e6d22753394b433e497e46b70d9b50bf4",
+        "merged_sha256": "4a91c8a2970951ca4d86d2c550c0c07e6d22753394b433e497e46b70d9b50bf4",
+        "byte_identical": true
+      },
+      {
+        "file": "figS2b_PRCC.pdf",
+        "source_sha256": "40820a1728f7084f6acb966a92bd25f23587736cf16552332fc9e7a8763a7bcf",
+        "merged_sha256": "40820a1728f7084f6acb966a92bd25f23587736cf16552332fc9e7a8763a7bcf",
+        "byte_identical": true
+      },
+      {
+        "file": "figS2d_bins_E_mean.pdf",
+        "source_sha256": "dffa7d8b52b0c56e31ec7c35a536fe6094a2e6ccfca7969c2d59a95095269da7",
+        "merged_sha256": "dffa7d8b52b0c56e31ec7c35a536fe6094a2e6ccfca7969c2d59a95095269da7",
+        "byte_identical": true
+      },
+      {
+        "file": "figS2d_bins_O_final.pdf",
+        "source_sha256": "d172cf6781620a5ca5e4a1eb03167f09582c066877da90bbbf482312f45cb4be",
+        "merged_sha256": "d172cf6781620a5ca5e4a1eb03167f09582c066877da90bbbf482312f45cb4be",
+        "byte_identical": true
+      },
+      {
+        "file": "figS4_accuracy_p10.pdf",
+        "source_sha256": "1f8950870c755c1e7ea2edd96ad3854e6eade245b6e781a88a95c11789df0739",
+        "merged_sha256": "1f8950870c755c1e7ea2edd96ad3854e6eade245b6e781a88a95c11789df0739",
+        "byte_identical": true
+      },
+      {
+        "file": "figS4_accuracy_p30.pdf",
+        "source_sha256": "74262341ba5e575407180f485d012414049f33454f741cd9fa7c3236338b8b40",
+        "merged_sha256": "74262341ba5e575407180f485d012414049f33454f741cd9fa7c3236338b8b40",
+        "byte_identical": true
+      },
+      {
+        "file": "figS4_accuracy_p50.pdf",
+        "source_sha256": "094c3488e1882174f9888643b47f2788b6016bc17fbf69af1a3dc3ba13752c34",
+        "merged_sha256": "094c3488e1882174f9888643b47f2788b6016bc17fbf69af1a3dc3ba13752c34",
+        "byte_identical": true
+      },
+      {
+        "file": "sensitivity_response_legal_E_mean.pdf",
+        "source_sha256": "975a067ef156350507451a0970c97a60892ffe3786780adb6f604f9e6ce378dd",
+        "merged_sha256": "975a067ef156350507451a0970c97a60892ffe3786780adb6f604f9e6ce378dd",
+        "byte_identical": true
+      },
+      {
+        "file": "sensitivity_response_legal_O_final.pdf",
+        "source_sha256": "82d040ae795ffbc0b047a2d4e11603bfb549ae0cb4fdf99067b7be8820f46060",
+        "merged_sha256": "82d040ae795ffbc0b047a2d4e11603bfb549ae0cb4fdf99067b7be8820f46060",
+        "byte_identical": true
+      },
+      {
+        "file": "sensitivity_response_platform_E_mean.pdf",
+        "source_sha256": "a06d605fc150624172211ef12097ceb2d290726dc11013a298563e63e754d4d5",
+        "merged_sha256": "a06d605fc150624172211ef12097ceb2d290726dc11013a298563e63e754d4d5",
+        "byte_identical": true
+      },
+      {
+        "file": "sensitivity_response_platform_O_final.pdf",
+        "source_sha256": "d06c6857e0b63e7253a57c4e1741e26fa498515ba1ca3b5288cd59db3ed44016",
+        "merged_sha256": "d06c6857e0b63e7253a57c4e1741e26fa498515ba1ca3b5288cd59db3ed44016",
+        "byte_identical": true
+      }
+    ]
+  },
+  "toc_entries": [
+    {
+      "item": "Table S1",
+      "page": 3,
+      "toc_title": "Realized network diagnostics",
+      "actual_pdf_heading": "Table S1 Realized network diagnostics",
+      "matches": true
+    },
+    {
+      "item": "Table S2",
+      "page": 4,
+      "toc_title": "Outcomes under fixed and state-responsive platform moderation",
+      "actual_pdf_heading": "Table S2 Outcomes under fixed and state-responsive platform moderation",
+      "matches": true
+    },
+    {
+      "item": "Table S3",
+      "page": 5,
+      "toc_title": "Review burden under fixed and state-responsive platform moderation",
+      "actual_pdf_heading": "Table S3 Review burden under fixed and state-responsive platform moderation",
+      "matches": true
+    },
+    {
+      "item": "Table S4",
+      "page": 6,
+      "toc_title": "Legal outcomes under random and degree-targeted selection",
+      "actual_pdf_heading": "Table S4 Legal outcomes under random and degree-targeted selection",
+      "matches": true
+    },
+    {
+      "item": "Table S5",
+      "page": 7,
+      "toc_title": "Platform outcomes under random and degree-targeted selection",
+      "actual_pdf_heading": "Table S5 Platform outcomes under random and degree-targeted selection",
+      "matches": true
+    },
+    {
+      "item": "Table S6",
+      "page": 8,
+      "toc_title": "Legal outcomes across true-positive and true-negative rates",
+      "actual_pdf_heading": "Table S6 Legal outcomes across true-positive and true-negative rates",
+      "matches": true
+    },
+    {
+      "item": "Table S7",
+      "page": 9,
+      "toc_title": "Platform outcomes across true-positive and true-negative rates at 50\\% coverage",
+      "actual_pdf_heading": "Table S7 Platform outcomes across true-positive and true-negative rates at 50% coverage",
+      "matches": true
+    },
+    {
+      "item": "Table S8",
+      "page": 10,
+      "toc_title": "Platform outcomes across true-positive and true-negative rates at 75\\% coverage",
+      "actual_pdf_heading": "Table S8 Platform outcomes across true-positive and true-negative rates at 75% coverage",
+      "matches": true
+    },
+    {
+      "item": "Table S9",
+      "page": 11,
+      "toc_title": "H1: differences in mean-effectiveness gains",
+      "actual_pdf_heading": "Table S9 H1: differences in mean-effectiveness gains",
+      "matches": true
+    },
+    {
+      "item": "Table S10",
+      "page": 12,
+      "toc_title": "H2: PAWN index differences and wrongful-exposure comparisons",
+      "actual_pdf_heading": "Table S10 H2: PAWN index differences and wrongful-exposure comparisons",
+      "matches": true
+    },
+    {
+      "item": "Table S11",
+      "page": 13,
+      "toc_title": "H3: effectiveness and wrongful-exposure changes",
+      "actual_pdf_heading": "Table S11 H3: effectiveness and wrongful-exposure changes",
+      "matches": true
+    },
+    {
+      "item": "Table S12",
+      "page": 14,
+      "toc_title": "Outcome differences: state-responsive minus fixed moderation",
+      "actual_pdf_heading": "Table S12 Outcome differences: state-responsive minus fixed moderation",
+      "matches": true
+    },
+    {
+      "item": "Table S13",
+      "page": 15,
+      "toc_title": "Outcome differences: degree-targeted minus random selection",
+      "actual_pdf_heading": "Table S13 Outcome differences: degree-targeted minus random selection",
+      "matches": true
+    },
+    {
+      "item": "Table S14",
+      "page": 16,
+      "toc_title": "Outcome differences from separately increasing TPR and TNR",
+      "actual_pdf_heading": "Table S14 Outcome differences from separately increasing TPR and TNR",
+      "matches": true
+    },
+    {
+      "item": "Table S15",
+      "page": 18,
+      "toc_title": "Network-topology differences relative to BA",
+      "actual_pdf_heading": "Table S15 Network-topology differences relative to BA",
+      "matches": true
+    },
+    {
+      "item": "Table S16",
+      "page": 19,
+      "toc_title": "Network-size differences: 5,000 minus 1,000 nodes",
+      "actual_pdf_heading": "Table S16 Network-size differences: 5,000 minus 1,000 nodes",
+      "matches": true
+    },
+    {
+      "item": "Table S17",
+      "page": 20,
+      "toc_title": "Review-burden differences: state-responsive minus fixed moderation",
+      "actual_pdf_heading": "Table S17 Review-burden differences: state-responsive minus fixed moderation",
+      "matches": true
+    },
+    {
+      "item": "Fig. S1",
+      "page": 22,
+      "toc_title": "Fixed and state-responsive platform auditing",
+      "actual_pdf_heading": "Figure S1: Platform workload specifications (P3). Fixed auditing reviews 75% of accounts per step; responsive auditing",
+      "matches": true
+    },
+    {
+      "item": "Fig. S2",
+      "page": 23,
+      "toc_title": "Independent TPR/TNR variation: $p_0=10\\%$",
+      "actual_pdf_heading": "Figure S2: Independent TPR and TNR variation (P6), p0 = 10%. Rows identify governance and coverage settings;",
+      "matches": true
+    },
+    {
+      "item": "Fig. S3",
+      "page": 24,
+      "toc_title": "Independent TPR/TNR variation: $p_0=30\\%$",
+      "actual_pdf_heading": "Figure S3: Independent TPR and TNR variation at p0 = 30%. Design, cell summaries and colour scale follow Fig. S2.",
+      "matches": true
+    },
+    {
+      "item": "Fig. S4",
+      "page": 25,
+      "toc_title": "Independent TPR/TNR variation: $p_0=50\\%$",
+      "actual_pdf_heading": "Figure S4: Independent TPR and TNR variation at p0 = 50%. Design, cell summaries and colour scale follow Fig. S2.",
+      "matches": true
+    },
+    {
+      "item": "Fig. S5",
+      "page": 26,
+      "toc_title": "PRCC estimates and uncertainty intervals",
+      "actual_pdf_heading": "Figure S5: Partial rank correlations (PRCC). Points and whiskers show estimates and marginal 95% row-bootstrap",
+      "matches": true
+    },
+    {
+      "item": "Fig. S6",
+      "page": 27,
+      "toc_title": "PAWN diagnostics: mean effectiveness",
+      "actual_pdf_heading": "Figure S6: PAWN diagnostics for mean effectiveness ¯E. Point estimates compare 5, 10 and 20 fixed input bins with",
+      "matches": true
+    },
+    {
+      "item": "Fig. S7",
+      "page": 28,
+      "toc_title": "PAWN diagnostics: wrongful exposure",
+      "actual_pdf_heading": "Figure S7: PAWN diagnostics for wrongful exposure O(50). Settings and graphical encodings follow Fig. S6.",
+      "matches": true
+    },
+    {
+      "item": "Fig. S8",
+      "page": 29,
+      "toc_title": "Legal input--response patterns: mean effectiveness",
+      "actual_pdf_heading": "Figure S8: Input–response patterns for legal governance and mean effectiveness ¯E. Each panel shows 500 LHS responses,",
+      "matches": true
+    },
+    {
+      "item": "Fig. S9",
+      "page": 30,
+      "toc_title": "Legal input--response patterns: wrongful exposure",
+      "actual_pdf_heading": "Figure S9: Input–response patterns for legal governance and wrongful exposure O(50). Sampling, bin summaries and",
+      "matches": true
+    },
+    {
+      "item": "Fig. S10",
+      "page": 31,
+      "toc_title": "Platform input--response patterns: mean effectiveness",
+      "actual_pdf_heading": "Figure S10: Input–response patterns for platform governance and mean effectiveness ¯E. Sampling, bin summaries and",
+      "matches": true
+    },
+    {
+      "item": "Fig. S11",
+      "page": 32,
+      "toc_title": "Platform input--response patterns: wrongful exposure",
+      "actual_pdf_heading": "Figure S11: Input–response patterns for platform governance and wrongful exposure O(50). Sampling, bin summaries",
+      "matches": true
+    }
+  ],
+  "issues": [],
+  "scope": "Read-only integrity/reading-notes/TOC-content check. Folio orientation is outside this check and was being adjusted by the parent; page counts and content were stable."
+}

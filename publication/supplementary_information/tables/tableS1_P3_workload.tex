@@ -1,0 +1,42 @@
+% Table S3. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 207mm+10\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}C{12mm}C{15mm}L{29mm}C{15mm}R{68mm}R{68mm}@{}}
+\caption{Review burden under fixed and state-responsive platform moderation}\label{tab:tableS1_P3_workload}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Workload} & \multicolumn{1}{c}{$\kappa$} & \multicolumn{1}{r}{Reviews} & \multicolumn{1}{r}{Clean reviews} \\
+\midrule
+\endfirsthead
+\caption[]{Review burden under fixed and state-responsive platform moderation (continued)}\\
+\toprule
+\multicolumn{1}{c}{ID} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Workload} & \multicolumn{1}{c}{$\kappa$} & \multicolumn{1}{r}{Reviews} & \multicolumn{1}{r}{Clean reviews} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{6}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{6}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Means with pointwise 95\% Student-$t$ confidence intervals in brackets; 30 independent runs per condition. Intervals are not clipped. The Reviews column counts all review events over steps 1--50, including repeated reviews of an account. The Clean reviews column counts events involving accounts that were clean when reviewed (TN+FP). Both columns are event counts, not percentages or numbers of distinct accounts. $p_0$ is a percentage. Fixed coverage is 75\% per step, also the responsive ceiling; $\mathrm{TPR}=\mathrm{TNR}=80\%$. Both modes use degree targeting; $\kappa$ is inactive in fixed mode. All networks are BA with $N=1000$. Unrounded results, condition IDs and sample sizes are in \texttt{tableS1\_P3\_workload.csv}.}}\\
+\endlastfoot
+35 & 10 & Fixed & 1 & \ABMci{37500.00}{37500.00}{37500.00} & \ABMci{37265.47}{37253.24}{37277.69} \\
+97 & 10 & Responsive & 1 & \ABMci{14606.73}{14448.33}{14765.14} & \ABMci{11965.30}{11855.07}{12075.53} \\
+98 & 10 & Responsive & 2 & \ABMci{19149.60}{18798.70}{19500.50} & \ABMci{17125.20}{16819.97}{17430.43} \\
+99 & 10 & Responsive & 5 & \ABMci{23389.83}{23043.83}{23735.83} & \ABMci{22180.33}{21858.47}{22502.19} \\
+\midrule
+44 & 30 & Fixed & 1 & \ABMci{37500.00}{37500.00}{37500.00} & \ABMci{36874.73}{36852.83}{36896.64} \\
+100 & 30 & Responsive & 1 & \ABMci{18117.03}{17985.13}{18248.94} & \ABMci{14585.43}{14484.38}{14686.48} \\
+101 & 30 & Responsive & 2 & \ABMci{22561.60}{22311.22}{22811.98} & \ABMci{19962.00}{19743.16}{20180.84} \\
+102 & 30 & Responsive & 5 & \ABMci{25271.33}{25054.72}{25487.95} & \ABMci{23638.60}{23432.19}{23845.01} \\
+\midrule
+53 & 50 & Fixed & 1 & \ABMci{37500.00}{37500.00}{37500.00} & \ABMci{36536.90}{36517.79}{36556.01} \\
+103 & 50 & Responsive & 1 & \ABMci{19995.53}{19844.34}{20146.73} & \ABMci{15923.03}{15801.17}{16044.89} \\
+104 & 50 & Responsive & 2 & \ABMci{24677.20}{24477.06}{24877.34} & \ABMci{21588.73}{21419.50}{21757.97} \\
+105 & 50 & Responsive & 5 & \ABMci{25530.17}{25304.19}{25756.15} & \ABMci{23599.20}{23395.49}{23802.91} \\
+\end{longtable}
+\endgroup

@@ -1,0 +1,345 @@
+{
+  "schema": "ABM-independent-analysis-review-v1",
+  "status": "passed",
+  "review_scope": "source inspection against frozen protocol and independent numeric cross-checks; no all-bootstrap rerun",
+  "checks": {
+    "all_run_metric_identities": {
+      "status": "passed",
+      "runs": 95850,
+      "PR_final_NA": 360,
+      "NA_treatment": "none"
+    },
+    "selected_raw_to_processed": {
+      "status": "passed",
+      "selected": [
+        {
+          "run_id": "c0001_r01",
+          "raw_csv": "attempts/grid_001_20260922T090204736688Z/raw.csv"
+        },
+        {
+          "run_id": "c0196_r01",
+          "raw_csv": "attempts/p4_001_20260922T092602997096Z/raw.csv"
+        }
+      ]
+    },
+    "grid_time_means": {
+      "status": "passed",
+      "independent_runs": 5850,
+      "steps_included": "1..50",
+      "step0_excluded": true
+    },
+    "selected_Welch_contrasts": {
+      "status": "passed",
+      "comparisons": [
+        {
+          "comparison": "H1_legal_tau1_minus_tau5_p10",
+          "outcome": "E_mean",
+          "estimate": -34.00760000000004,
+          "ci95": [
+            -35.0941009264294,
+            -32.92109907357068
+          ]
+        },
+        {
+          "comparison": "H1_platform_coverage100_minus_75_p50",
+          "outcome": "E_mean",
+          "estimate": -0.4810000000000372,
+          "ci95": [
+            -0.5618190084872029,
+            -0.40018099151287145
+          ]
+        },
+        {
+          "comparison": "H3_platform_coverage_p30",
+          "outcome": "E_mean",
+          "estimate": 22.030599999999993,
+          "ci95": [
+            20.68857548614395,
+            23.372624513856035
+          ]
+        },
+        {
+          "comparison": "H3_legal_frequency_p50",
+          "outcome": "O_final",
+          "estimate": 74.16666666666667,
+          "ci95": [
+            73.69117070127737,
+            74.64216263205597
+          ]
+        },
+        {
+          "comparison": "H3_legal_accuracy_p10",
+          "outcome": "O_final",
+          "estimate": -30.040000000000003,
+          "ci95": [
+            -30.65471190280878,
+            -29.425288097191224
+          ]
+        },
+        {
+          "comparison": "H3_platform_accuracy_p50",
+          "outcome": "E_mean",
+          "estimate": 0.9923333333333488,
+          "ci95": [
+            0.9152712381369836,
+            1.069395428529714
+          ]
+        }
+      ]
+    },
+    "PR_summary": {
+      "status": "passed",
+      "example_condition": 4,
+      "mean_of_run_ratios": 35.26577898355977,
+      "pooled_event_ratio_for_comparison_only": 35.49694663244535,
+      "undefined_condition_count": 12
+    },
+    "H3_run_paired_covariance": {
+      "status": "passed",
+      "comparison": "H3_legal_coverage_p10",
+      "E_O_estimator_covariance": 0.09299015325670487
+    },
+    "PAWN_PRCC_point_estimates": {
+      "status": "passed",
+      "strata_checked": 6,
+      "responses_per_stratum": 2,
+      "reference": "scipy.stats.ks_2samp; rankdata and numpy.linalg.lstsq",
+      "estimates": [
+        {
+          "stratum": "legal_p010",
+          "outcome": "E_mean",
+          "PAWN": {
+            "legal-strength": 0.43,
+            "legal-response-time": 0.23500000000000004,
+            "alpha_legal": 0.11200000000000002
+          },
+          "PRCC": {
+            "legal-strength": 0.9353296736638013,
+            "legal-response-time": -0.8949518093761721,
+            "alpha_legal": 0.3377668496567064
+          }
+        },
+        {
+          "stratum": "legal_p010",
+          "outcome": "O_final",
+          "PAWN": {
+            "legal-strength": 0.30099999999999993,
+            "legal-response-time": 0.23600000000000004,
+            "alpha_legal": 0.22399999999999998
+          },
+          "PRCC": {
+            "legal-strength": 0.8283056022626935,
+            "legal-response-time": -0.7799847886552478,
+            "alpha_legal": -0.7738666287200235
+          }
+        },
+        {
+          "stratum": "legal_p030",
+          "outcome": "E_mean",
+          "PAWN": {
+            "legal-strength": 0.45299999999999996,
+            "legal-response-time": 0.22800000000000004,
+            "alpha_legal": 0.11399999999999999
+          },
+          "PRCC": {
+            "legal-strength": 0.9467969388756875,
+            "legal-response-time": -0.8855577735043036,
+            "alpha_legal": 0.3096104097994355
+          }
+        },
+        {
+          "stratum": "legal_p030",
+          "outcome": "O_final",
+          "PAWN": {
+            "legal-strength": 0.30799999999999994,
+            "legal-response-time": 0.251,
+            "alpha_legal": 0.2
+          },
+          "PRCC": {
+            "legal-strength": 0.8271414838645709,
+            "legal-response-time": -0.7787624148540797,
+            "alpha_legal": -0.7491553638279984
+          }
+        },
+        {
+          "stratum": "legal_p050",
+          "outcome": "E_mean",
+          "PAWN": {
+            "legal-strength": 0.46599999999999997,
+            "legal-response-time": 0.22200000000000003,
+            "alpha_legal": 0.10600000000000004
+          },
+          "PRCC": {
+            "legal-strength": 0.9555247052501498,
+            "legal-response-time": -0.8857342355590434,
+            "alpha_legal": 0.30088690468661405
+          }
+        },
+        {
+          "stratum": "legal_p050",
+          "outcome": "O_final",
+          "PAWN": {
+            "legal-strength": 0.30900000000000005,
+            "legal-response-time": 0.257,
+            "alpha_legal": 0.18800000000000003
+          },
+          "PRCC": {
+            "legal-strength": 0.8298110838970105,
+            "legal-response-time": -0.7942951033963032,
+            "alpha_legal": -0.7224228734481485
+          }
+        },
+        {
+          "stratum": "platform_p010",
+          "outcome": "E_mean",
+          "PAWN": {
+            "platform-speed": 0.595,
+            "alpha_platform": 0.153
+          },
+          "PRCC": {
+            "platform-speed": 0.9916387206040689,
+            "alpha_platform": 0.8870016169839273
+          }
+        },
+        {
+          "stratum": "platform_p010",
+          "outcome": "O_final",
+          "PAWN": {
+            "platform-speed": 0.533,
+            "alpha_platform": 0.189
+          },
+          "PRCC": {
+            "platform-speed": 0.9667442282029212,
+            "alpha_platform": -0.6512876948739095
+          }
+        },
+        {
+          "stratum": "platform_p030",
+          "outcome": "E_mean",
+          "PAWN": {
+            "platform-speed": 0.64,
+            "alpha_platform": 0.15
+          },
+          "PRCC": {
+            "platform-speed": 0.9928712520949886,
+            "alpha_platform": 0.8585089220563906
+          }
+        },
+        {
+          "stratum": "platform_p030",
+          "outcome": "O_final",
+          "PAWN": {
+            "platform-speed": 0.547,
+            "alpha_platform": 0.188
+          },
+          "PRCC": {
+            "platform-speed": 0.9682473238415259,
+            "alpha_platform": -0.6589774071575839
+          }
+        },
+        {
+          "stratum": "platform_p050",
+          "outcome": "E_mean",
+          "PAWN": {
+            "platform-speed": 0.655,
+            "alpha_platform": 0.152
+          },
+          "PRCC": {
+            "platform-speed": 0.9933130495663213,
+            "alpha_platform": 0.8359937897267874
+          }
+        },
+        {
+          "stratum": "platform_p050",
+          "outcome": "O_final",
+          "PAWN": {
+            "platform-speed": 0.559,
+            "alpha_platform": 0.179
+          },
+          "PRCC": {
+            "platform-speed": 0.9695521975662004,
+            "alpha_platform": -0.6658671400343398
+          }
+        }
+      ]
+    },
+    "selected_bootstrap_reproduction": {
+      "status": "passed",
+      "strata": [
+        {
+          "stratum": "legal_p010",
+          "row_draws_checked": 3,
+          "within_point_draws_checked": 3,
+          "fixed_original_bins": true,
+          "E_O_pairs_preserved": true
+        },
+        {
+          "stratum": "legal_p030",
+          "row_draws_checked": 3,
+          "within_point_draws_checked": 3,
+          "fixed_original_bins": true,
+          "E_O_pairs_preserved": true
+        },
+        {
+          "stratum": "legal_p050",
+          "row_draws_checked": 3,
+          "within_point_draws_checked": 3,
+          "fixed_original_bins": true,
+          "E_O_pairs_preserved": true
+        },
+        {
+          "stratum": "platform_p010",
+          "row_draws_checked": 3,
+          "within_point_draws_checked": 3,
+          "fixed_original_bins": true,
+          "E_O_pairs_preserved": true
+        },
+        {
+          "stratum": "platform_p030",
+          "row_draws_checked": 3,
+          "within_point_draws_checked": 3,
+          "fixed_original_bins": true,
+          "E_O_pairs_preserved": true
+        },
+        {
+          "stratum": "platform_p050",
+          "row_draws_checked": 3,
+          "within_point_draws_checked": 3,
+          "fixed_original_bins": true,
+          "E_O_pairs_preserved": true
+        }
+      ],
+      "full_bootstrap_rerun": false
+    },
+    "all_PAWN_difference_intervals": {
+      "status": "passed",
+      "rows": 18,
+      "draws_per_interval": 1000,
+      "paired_input_indices": true,
+      "MC_and_row_intervals_separate": true
+    }
+  },
+  "source_sha256": {
+    "scripts/audit_extract.py": "2b3084a1508b34a0901500609310ca1877583a4f68c4f9c64d9d57d290d28c58",
+    "scripts/summarize_contrasts.py": "e0ae800aacf7b223def8fa6e6dce5543f213ecbcd3517705abc24d137df2bc39",
+    "scripts/analyze_sensitivity.py": "a62cc6e69c6f07ff09f43141c2ad1e525aa11e03eacc9cf303a375f8dc5cf1c8",
+    "processed/run_metrics.csv": "56aa809179a2516c915512b5e2a52a45aefef7ffedc88113ca8cc75fa60f2ee1",
+    "processed/contrasts.csv": "008b2a110bc3df4144d34e51e60f189b24b78644bf95b126fd89d61cd7e7dd6b",
+    "processed/sensitivity_indices.csv": "217cedc877f4419f22dacd2e6e453f5dc2a27f44ab8603847d88977ea8e2e950",
+    "processed/sensitivity_bootstrap_draws.npz": "e8bf2d74aa6cd2638c0d6e805ed6f80409377fcd96cb5776eeb55f17dc53d23b"
+  },
+  "remaining_scientific_limits": [
+    "P4 end-only archives do not allow independent reconstruction of E_mean time paths. The stored model reporter is the frozen expected-response estimator.",
+    "Ordinary row bootstrap does not preserve LHS stratification; intervals describe approximate design stability. Within-point bootstrap is a separate Monte Carlo diagnostic.",
+    "All intervals are marginal/unadjusted; no joint confidence claim or equivalence claim is justified.",
+    "Simulation behavior is conditional on fixed finite network, no spontaneous recovery/exogenous pollution, no FP feedback on state or edges, and chosen input ranges.",
+    "PAWN targets the 30-run mean response per design row, not the full distribution of individual stochastic run outcomes."
+  ],
+  "fixed_during_review": [
+    {
+      "issue": "Weighted PAWN constant-response detection initially inspected all original rows instead of the sampled positive-weight support.",
+      "resolution": "Owner changed the test to positive-weight support and reran sensitivity analysis; current outputs independently rechecked.",
+      "impact_on_current_results": "No substantive numerical result changed; actual valid bootstrap samples remain nondegenerate."
+    }
+  ]
+}

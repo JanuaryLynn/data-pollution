@@ -1,0 +1,45 @@
+% Table S9. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 216mm+6\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}L{23mm}C{15mm}L{122mm}R{56mm}@{}}
+\caption{H1: differences in mean-effectiveness gains}\label{tab:tableS9_H1}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Difference in gains} & \multicolumn{1}{r}{$\Delta\Delta\bar E$ (pp)} \\
+\midrule
+\endfirsthead
+\caption[]{H1: differences in mean-effectiveness gains (continued)}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{l}{Difference in gains} & \multicolumn{1}{r}{$\Delta\Delta\bar E$ (pp)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{4}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Entries are differences in gains formed from four independent condition means, in percentage points, with marginal 95\% Welch confidence intervals in brackets; 30 independent runs per condition and no multiplicity adjustment. Legal coverage gain is $\bar E(L=90\%)-\bar E(L=50\%)$ at the stated response interval, with $\mathrm{TPR}=\mathrm{TNR}=95\%$. Platform accuracy gain is $\bar E(\mathrm{TPR}=\mathrm{TNR}=90\%)-\bar E(\mathrm{TPR}=\mathrm{TNR}=70\%)$ at the stated coverage. $\bar E$ averages steps 1--50. Coverage values in the row labels are percentages; response intervals are steps. The 12 contrasts concern the specified endpoints; contrasts sharing conditions reuse the same runs. Unrounded results, comparison IDs, condition weights and sample sizes are in \texttt{tableS9\_H1\_source.csv}.}}\\
+\endlastfoot
+Legal & 10 & Coverage gain at $\tau_L=1$ minus gain at $\tau_L=5$ & \ABMci{-34.01}{-35.09}{-32.92} \\*
+Legal & 10 & Coverage gain at $\tau_L=1$ minus gain at $\tau_L=10$ & \ABMci{-26.48}{-27.42}{-25.54} \\
+\addlinespace[2pt]
+Platform & 10 & Accuracy gain at $n_p=100$ minus gain at $n_p=50$ & \ABMci{-8.62}{-9.60}{-7.64} \\*
+Platform & 10 & Accuracy gain at $n_p=100$ minus gain at $n_p=75$ & \ABMci{-0.17}{-0.24}{-0.10} \\
+\midrule
+Legal & 30 & Coverage gain at $\tau_L=1$ minus gain at $\tau_L=5$ & \ABMci{-29.58}{-30.83}{-28.33} \\*
+Legal & 30 & Coverage gain at $\tau_L=1$ minus gain at $\tau_L=10$ & \ABMci{-18.95}{-20.18}{-17.72} \\
+\addlinespace[2pt]
+Platform & 30 & Accuracy gain at $n_p=100$ minus gain at $n_p=50$ & \ABMci{-8.76}{-10.30}{-7.22} \\*
+Platform & 30 & Accuracy gain at $n_p=100$ minus gain at $n_p=75$ & \ABMci{-0.33}{-0.39}{-0.27} \\
+\midrule
+Legal & 50 & Coverage gain at $\tau_L=1$ minus gain at $\tau_L=5$ & \ABMci{-25.71}{-27.75}{-23.68} \\*
+Legal & 50 & Coverage gain at $\tau_L=1$ minus gain at $\tau_L=10$ & \ABMci{-11.73}{-13.74}{-9.71} \\
+\addlinespace[2pt]
+Platform & 50 & Accuracy gain at $n_p=100$ minus gain at $n_p=50$ & \ABMci{-8.59}{-10.42}{-6.76} \\*
+Platform & 50 & Accuracy gain at $n_p=100$ minus gain at $n_p=75$ & \ABMci{-0.48}{-0.56}{-0.40} \\
+\end{longtable}
+\endgroup

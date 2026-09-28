@@ -1,0 +1,27 @@
+{
+  "model_sha256": "67398c3efcadbff75aeeb2aaddefa8398c47ad015503168f181942fba04ce702",
+  "model_wrapper_sha256": "75a71177b31ff2bf8ee04ea04ef1ea08ddc301ee2a8a956070867a4f7f3454b8",
+  "legacy_fixture_sha256": "9cec63f1cd67d53b4d733fe3fc8864e415df7db818e3eb4c64c8a2c802cabb46",
+  "batches": {
+    "diagnostics": {
+      "xml_sha256": "f009ec78fbe31f31ade6da9aeb6cf5869b46b67fce6042f9f369698e5724e857",
+      "csv_sha256": "315fcb445dcecb3aa189095c90486ef81c2950c0b28d31c98f88794bd959b726"
+    },
+    "minimal_metrics": {
+      "xml_sha256": "0d4142b1f8adb2641c344565f6eabdf19ab4c7923b06f7134e7fb27968b99f35",
+      "csv_sha256": "94df0258506665aef604a79191351a0c3f02de3f9835c5b28671baffcdf25b24"
+    },
+    "end_only": {
+      "xml_sha256": "c61a33b40a1cf84de6544d09d34a41a0086874442c2301d7354b548c09fc0e1c",
+      "csv_sha256": "c6c49cfc3ea198c35cbd064261a070c578c05ce8c786943ef553b29f7c850296"
+    },
+    "legacy": {
+      "xml_sha256": "367454a64764731e42d40d56ad824e62d571cbcf9fcf1fa08d99979034e9442e",
+      "csv_sha256": "7145a8f52ece6e1cbb7afe96c07bb77ca8d64f6f5cbdcb5e09f4200e42a86d16"
+    },
+    "invalid_inputs": {
+      "xml_sha256": "63dcd5eb6bd2c1f6b6a87004879482f0e56c5482ac9cbf5f4686d020dbefc9ab",
+      "csv_sha256": "68f7120648df5980e758cf3c34b6f11a20706795d91637f37cd4ed1d20d8f31e"
+    }
+  }
+}

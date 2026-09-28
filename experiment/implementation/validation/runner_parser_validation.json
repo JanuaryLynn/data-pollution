@@ -1,0 +1,121 @@
+{
+  "valid_control": {
+    "passed": true,
+    "valid_runs": 1,
+    "run_issues": {},
+    "file_issues": []
+  },
+  "missing_step": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {
+      "c0004_r01": [
+        "Incomplete steps: expected 51, found 50"
+      ]
+    },
+    "file_issues": []
+  },
+  "duplicate_step": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {
+      "c0004_r01": [
+        "Line 59: Duplicate step 50"
+      ]
+    },
+    "file_issues": []
+  },
+  "wrong_seed": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {
+      "c0004_r01": [
+        "Line 58: run-seed differs from frozen manifest",
+        "Incomplete steps: expected 51, found 50"
+      ]
+    },
+    "file_issues": []
+  },
+  "wrong_parameter": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {
+      "c0004_r01": [
+        "Line 58: Parameter mismatch: legal-tpr",
+        "Incomplete steps: expected 51, found 50"
+      ]
+    },
+    "file_issues": []
+  },
+  "wrong_cumulative_count": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {
+      "c0004_r01": [
+        "Line 58: cumulative confusion totals do not equal reviews",
+        "Incomplete steps: expected 51, found 50"
+      ]
+    },
+    "file_issues": []
+  },
+  "wrong_average": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {
+      "c0004_r01": [
+        "Running mean mismatch at 50"
+      ]
+    },
+    "file_issues": []
+  },
+  "wrong_version": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {
+      "c0004_r01": [
+        "Line 58: model-version differs from frozen manifest",
+        "Incomplete steps: expected 51, found 50"
+      ]
+    },
+    "file_issues": []
+  },
+  "unknown_identity": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {
+      "c0004_r01": [
+        "Incomplete steps: expected 51, found 50"
+      ]
+    },
+    "file_issues": [
+      "Unexpected condition/replicate (999, 1) near line 58"
+    ]
+  },
+  "duplicate_behavior_identity": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {
+      "c0004_r01": [
+        "Line 58: One identity maps to multiple BehaviorSpace run numbers",
+        "Incomplete steps: expected 51, found 50"
+      ]
+    },
+    "file_issues": []
+  },
+  "damaged_header": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {},
+    "file_issues": [
+      "Duplicate or missing columns: ['condition-id']"
+    ]
+  },
+  "wrong_runtime": {
+    "passed": true,
+    "valid_runs": 0,
+    "run_issues": {},
+    "file_issues": [
+      "Output is not a NetLogo 6.4.0 BehaviorSpace table"
+    ]
+  }
+}

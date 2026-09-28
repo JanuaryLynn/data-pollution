@@ -1,0 +1,115 @@
+\documentclass[tikz,border=4pt]{standalone}
+\input{figure_style.tex}
+\begin{document}
+\begin{tikzpicture}
+
+% Values and error widths are read from the supplied CSV files.
+\begin{groupplot}[abm axis,group style={group size=3 by 5,horizontal sep=0.65cm,vertical sep=0.9cm},
+ width=4.1cm,height=2.35cm,xmin=-0.45,xmax=3.45,xtick={0,1,2,3},
+ xticklabels={Fixed,$\kappa=1$,$\kappa=2$,$\kappa=5$},xmajorgrids=false,
+ ylabel style={align=center},title style={at={(0,1)},anchor=south west,yshift=3pt}]
+
+\nextgroupplot[title={(a) $p_0=10\%$},ymin=-3,ymax=105,ytick={0,25,50,75,100},ylabel={Mean effectiveness\\$\bar E$ (\%)},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/E_mean_p10.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/E_mean_p10.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/E_mean_p10.csv};
+\nextgroupplot[title={(b) $p_0=30\%$},ymin=-3,ymax=105,ytick={0,25,50,75,100},yticklabels={},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/E_mean_p30.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/E_mean_p30.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/E_mean_p30.csv};
+\nextgroupplot[title={(c) $p_0=50\%$},ymin=-3,ymax=105,ytick={0,25,50,75,100},yticklabels={},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/E_mean_p50.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/E_mean_p50.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/E_mean_p50.csv};
+\nextgroupplot[title={(d)},ymin=-3,ymax=105,ytick={0,25,50,75,100},ylabel={Wrongful exposure\\$O(50)$ (\%)},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/O_final_p10.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/O_final_p10.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/O_final_p10.csv};
+\nextgroupplot[title={(e)},ymin=-3,ymax=105,ytick={0,25,50,75,100},yticklabels={},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/O_final_p30.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/O_final_p30.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/O_final_p30.csv};
+\nextgroupplot[title={(f)},ymin=-3,ymax=105,ytick={0,25,50,75,100},yticklabels={},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/O_final_p50.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/O_final_p50.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/O_final_p50.csv};
+\nextgroupplot[title={(g)},ymin=-2,ymax=60,ytick={0,20,40,60},ylabel={Removal precision\\$P_R(50)$ (\%)},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/PR_final_p10.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/PR_final_p10.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/PR_final_p10.csv};
+\nextgroupplot[title={(h)},ymin=-2,ymax=60,ytick={0,20,40,60},yticklabels={},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/PR_final_p30.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/PR_final_p30.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/PR_final_p30.csv};
+\nextgroupplot[title={(i)},ymin=-2,ymax=60,ytick={0,20,40,60},yticklabels={},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/PR_final_p50.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/PR_final_p50.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/PR_final_p50.csv};
+\nextgroupplot[title={(j)},ymin=-1,ymax=40,ytick={0,10,20,30,40},ylabel={Reviews\\(thousands)},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/cumulative_reviews_p10.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/cumulative_reviews_p10.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/cumulative_reviews_p10.csv};
+\nextgroupplot[title={(k)},ymin=-1,ymax=40,ytick={0,10,20,30,40},yticklabels={},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/cumulative_reviews_p30.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/cumulative_reviews_p30.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/cumulative_reviews_p30.csv};
+\nextgroupplot[title={(l)},ymin=-1,ymax=40,ytick={0,10,20,30,40},yticklabels={},xticklabels={},xtick style={draw=none}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/cumulative_reviews_p50.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/cumulative_reviews_p50.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/cumulative_reviews_p50.csv};
+\nextgroupplot[title={(m)},ymin=-1,ymax=40,ytick={0,10,20,30,40},ylabel={Clean reviews\\(thousands)}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/clean_review_exposure_p10.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/clean_review_exposure_p10.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/clean_review_exposure_p10.csv};
+\nextgroupplot[title={(n)},ymin=-1,ymax=40,ytick={0,10,20,30,40},yticklabels={}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/clean_review_exposure_p30.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/clean_review_exposure_p30.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/clean_review_exposure_p30.csv};
+\nextgroupplot[title={(o)},ymin=-1,ymax=40,ytick={0,10,20,30,40},yticklabels={}]
+\addplot[only marks,mark=none,forget plot,
+error bars/.cd,y dir=both,y explicit,error bar style={draw=black!80,line width=0.55pt},error mark options={rotate=90,mark size=1.7pt}]
+table[col sep=comma,x=plot_x,y=value,y error minus=error_minus,y error plus=error_plus] {data/figS1_workload/clean_review_exposure_p50.csv};
+\addplot[only marks,mark=diamond*,mark size=2.3pt,black!75,restrict x to domain=-0.1:0.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/clean_review_exposure_p50.csv};
+\addplot[only marks,mark=*,mark size=2.0pt,abmBlue,restrict x to domain=0.9:3.1,forget plot] table[col sep=comma,x=plot_x,y=value] {data/figS1_workload/clean_review_exposure_p50.csv};
+\end{groupplot}
+% Graphical key; no data lines connect the discrete workload specifications.
+\coordinate (legendbase) at ($(group c1r5.south west)!0.5!(group c3r5.south east)+(0,-1.05cm)$);
+\begin{scope}[shift={(legendbase)},font=\fontsize{8}{10}\selectfont]
+\draw[black!75] plot[only marks,mark=diamond*,mark size=2.3pt] coordinates {(-5.65,0)};
+\node[anchor=west] at (-5.43,0) {Fixed coverage};
+\draw[abmBlue] plot[only marks,mark=*,mark size=2pt] coordinates {(-2.6,0)};
+\node[anchor=west] at (-2.38,0) {State-responsive coverage};
+\draw[black!80,line width=0.55pt] (2.12,-0.13)--(2.12,0.13);
+\draw[black!80,line width=0.55pt] (2.02,-0.13)--(2.22,-0.13) (2.02,0.13)--(2.22,0.13);
+\node[anchor=west] at (2.38,0) {95\% Student-$t$ CI};
+\end{scope}
+\end{tikzpicture}
+\end{document}

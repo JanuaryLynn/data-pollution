@@ -1,0 +1,647 @@
+{
+  "checked_at_utc": "2026-09-22T10:21:17+00:00",
+  "valid_runs": 95850,
+  "total_manifest_runs": 95850,
+  "attempts": [
+    {
+      "attempt": "grid_001_20260922T090204736688Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:20:44+00:00"
+    },
+    {
+      "attempt": "grid_002_20260922T091648773322Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:20:51+00:00"
+    },
+    {
+      "attempt": "grid_003_20260922T091852953922Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:20:59+00:00"
+    },
+    {
+      "attempt": "grid_004_20260922T092022904643Z",
+      "valid_runs": 1350,
+      "expected_runs": 1350,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:06+00:00"
+    },
+    {
+      "attempt": "p4_001_20260922T092602997096Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:06+00:00"
+    },
+    {
+      "attempt": "p4_002_20260922T092650738727Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:06+00:00"
+    },
+    {
+      "attempt": "p4_003_20260922T092745109594Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:06+00:00"
+    },
+    {
+      "attempt": "p4_004_20260922T092834989625Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:06+00:00"
+    },
+    {
+      "attempt": "p4_005_20260922T092923703358Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:06+00:00"
+    },
+    {
+      "attempt": "p4_006_20260922T093018238665Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:07+00:00"
+    },
+    {
+      "attempt": "p4_007_20260922T093106176055Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:07+00:00"
+    },
+    {
+      "attempt": "p4_008_20260922T093154135263Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:07+00:00"
+    },
+    {
+      "attempt": "p4_009_20260922T093249676062Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:07+00:00"
+    },
+    {
+      "attempt": "p4_010_20260922T093338582714Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:07+00:00"
+    },
+    {
+      "attempt": "p4_011_20260922T093428613071Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:07+00:00"
+    },
+    {
+      "attempt": "p4_012_20260922T093527159039Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:08+00:00"
+    },
+    {
+      "attempt": "p4_013_20260922T093626205523Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:08+00:00"
+    },
+    {
+      "attempt": "p4_014_20260922T093718360661Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:08+00:00"
+    },
+    {
+      "attempt": "p4_015_20260922T093816213550Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:08+00:00"
+    },
+    {
+      "attempt": "p4_016_20260922T093905357010Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:08+00:00"
+    },
+    {
+      "attempt": "p4_017_20260922T093955179996Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:08+00:00"
+    },
+    {
+      "attempt": "p4_018_20260922T094044245140Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:09+00:00"
+    },
+    {
+      "attempt": "p4_019_20260922T094132522323Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:09+00:00"
+    },
+    {
+      "attempt": "p4_020_20260922T094221175848Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:09+00:00"
+    },
+    {
+      "attempt": "p4_021_20260922T094315393031Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:09+00:00"
+    },
+    {
+      "attempt": "p4_022_20260922T094404028709Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:09+00:00"
+    },
+    {
+      "attempt": "p4_023_20260922T094456364940Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:10+00:00"
+    },
+    {
+      "attempt": "p4_024_20260922T094548122947Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:10+00:00"
+    },
+    {
+      "attempt": "p4_025_20260922T094642243254Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:10+00:00"
+    },
+    {
+      "attempt": "p4_026_20260922T094742443931Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:10+00:00"
+    },
+    {
+      "attempt": "p4_027_20260922T094832150070Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:10+00:00"
+    },
+    {
+      "attempt": "p4_028_20260922T094920879208Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:10+00:00"
+    },
+    {
+      "attempt": "p4_029_20260922T095017105735Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:11+00:00"
+    },
+    {
+      "attempt": "p4_030_20260922T095105747099Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:11+00:00"
+    },
+    {
+      "attempt": "p4_031_20260922T095204324068Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:11+00:00"
+    },
+    {
+      "attempt": "p4_032_20260922T095257753858Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:11+00:00"
+    },
+    {
+      "attempt": "p4_033_20260922T095347136984Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:11+00:00"
+    },
+    {
+      "attempt": "p4_034_20260922T095440332180Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:11+00:00"
+    },
+    {
+      "attempt": "p4_035_20260922T095531202410Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:12+00:00"
+    },
+    {
+      "attempt": "p4_036_20260922T095633946675Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:12+00:00"
+    },
+    {
+      "attempt": "p4_037_20260922T095723110020Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:12+00:00"
+    },
+    {
+      "attempt": "p4_038_20260922T095814717313Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:12+00:00"
+    },
+    {
+      "attempt": "p4_039_20260922T095906451318Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:12+00:00"
+    },
+    {
+      "attempt": "p4_040_20260922T100006539221Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:12+00:00"
+    },
+    {
+      "attempt": "p4_041_20260922T100059759551Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:13+00:00"
+    },
+    {
+      "attempt": "p4_042_20260922T100200206391Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:13+00:00"
+    },
+    {
+      "attempt": "p4_043_20260922T100256515717Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:13+00:00"
+    },
+    {
+      "attempt": "p4_044_20260922T100350191506Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:13+00:00"
+    },
+    {
+      "attempt": "p4_045_20260922T100442919416Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:13+00:00"
+    },
+    {
+      "attempt": "p4_046_20260922T100533225968Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:14+00:00"
+    },
+    {
+      "attempt": "p4_047_20260922T100629125242Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:14+00:00"
+    },
+    {
+      "attempt": "p4_048_20260922T100730017860Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:14+00:00"
+    },
+    {
+      "attempt": "p4_049_20260922T100820337782Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:14+00:00"
+    },
+    {
+      "attempt": "p4_050_20260922T100912976232Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:14+00:00"
+    },
+    {
+      "attempt": "p4_051_20260922T101017597907Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:14+00:00"
+    },
+    {
+      "attempt": "p4_052_20260922T101120675997Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:15+00:00"
+    },
+    {
+      "attempt": "p4_053_20260922T101218702545Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:15+00:00"
+    },
+    {
+      "attempt": "p4_054_20260922T101309240672Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:15+00:00"
+    },
+    {
+      "attempt": "p4_055_20260922T101402437079Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:15+00:00"
+    },
+    {
+      "attempt": "p4_056_20260922T101454640748Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:15+00:00"
+    },
+    {
+      "attempt": "p4_057_20260922T101547135277Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:15+00:00"
+    },
+    {
+      "attempt": "p4_058_20260922T101639144124Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:16+00:00"
+    },
+    {
+      "attempt": "p4_059_20260922T101731020612Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:16+00:00"
+    },
+    {
+      "attempt": "p4_060_20260922T101822410828Z",
+      "valid_runs": 1500,
+      "expected_runs": 1500,
+      "invalid_runs": 0,
+      "file_issues": [],
+      "runtime_error_in_log": false,
+      "returncode": 0,
+      "checked_at_utc": "2026-09-22T10:21:16+00:00"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+actor,p0,stratum,outcome,method,bins,aggregation,input,estimate,n_lhs,repeats,estimate_20,rank_30,rank_20,estimable,row_ci95_low,row_ci95_high,row_valid_resamples,mc_ci95_low,mc_ci95_high,mc_valid_resamples
+legal,50,legal_p050,O_final,PAWN,5,median,legal-response-time,0.226,500,30,0.226,2,2,True,0.2,0.29016626506,1000,0.22,0.228,1000
+legal,50,legal_p050,O_final,PAWN,10,median,legal-response-time,0.257,500,30,0.264,2,2,True,0.239517752973,0.33791507454,1000,0.252,0.264,1000
+legal,50,legal_p050,O_final,PAWN,20,median,legal-response-time,0.291,500,30,0.293,2,2,True,0.288487404215,0.383746583482,1000,0.282,0.294,1000

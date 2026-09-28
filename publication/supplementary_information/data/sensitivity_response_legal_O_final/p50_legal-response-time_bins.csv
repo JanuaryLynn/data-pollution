@@ -1,0 +1,11 @@
+actor,p0,stratum,input,outcome,bin,n_lhs,x_mean,response_mean,response_min,response_max
+legal,50,legal_p050,legal-response-time,O_final,1,50,1.5,48.6804,0.326666666667,99.98
+legal,50,legal_p050,legal-response-time,O_final,2,50,3.5,29.2066666667,0.0266666666667,91.4466666667
+legal,50,legal_p050,legal-response-time,O_final,3,50,5.5,13.3016666667,0.0633333333333,59.35
+legal,50,legal_p050,legal-response-time,O_final,4,50,7.5,6.93533333333,0.09,39.0833333333
+legal,50,legal_p050,legal-response-time,O_final,5,50,9.5,5.116,0.0266666666667,21.7433333333
+legal,50,legal_p050,legal-response-time,O_final,6,50,11.5,2.72026666667,0.0533333333333,10.35
+legal,50,legal_p050,legal-response-time,O_final,7,50,13.5,3.315,0.0133333333333,11.4233333333
+legal,50,legal_p050,legal-response-time,O_final,8,50,15.5,2.48073333333,0.0333333333333,9.89
+legal,50,legal_p050,legal-response-time,O_final,9,50,17.5,2.04653333333,0.0233333333333,8.18666666667
+legal,50,legal_p050,legal-response-time,O_final,10,50,19.5,1.7666,0.0133333333333,5.62666666667

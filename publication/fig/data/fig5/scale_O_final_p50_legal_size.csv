@@ -1,0 +1,2 @@
+comparison_id,outcome,family,actor,p0,expected_sign,path,primary_hypothesis,contrast_unit,interval_method,paired_runs,unique_conditions,n_min,combined_weights,estimate,se,df,ci_low,ci_high,ci_status,interval_direction,mean,y,errminus,errplus
+scale_legal_N5000_minus_N1000_p50,O_final,scale,legal,50,unspecified,,False,percentage_points,independent_condition_weighted_Welch,False,2,30,"{""26"":-1.0,""95"":1.0}",0.062,0.26518499290100001,36.982051937000001,-0.47532463627100002,0.59932463627099997,estimated,includes_zero,0.062,1,0.53732463627100002,0.53732463627100002

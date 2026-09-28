@@ -1,0 +1,25 @@
+% Shared style for the supplementary tables. No figure dependencies.
+% Page geometry is controlled by supplementary_information.tex.
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,booktabs,longtable,array}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\newlength{\ABMtablewidth}
+% Same-line estimate [95% interval], with mathematical minus signs.
+\newcommand{\ABMci}[3]{\mbox{\ensuremath{#1}\,{\fontsize{8}{10}\selectfont\ensuremath{[#2,\,#3]}}}}
+\newcommand{\ABMnote}[1]{{\fontsize{8.5}{11}\selectfont\raggedright\textit{Note.} #1\par}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\listtablename}{List of tables}
+\captionsetup[table]{font=small,labelfont=bf,labelsep=space,justification=raggedright,singlelinecheck=false,skip=6pt}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\setlength{\LTleft}{\fill}
+\setlength{\LTright}{\fill}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\pagestyle{plain}

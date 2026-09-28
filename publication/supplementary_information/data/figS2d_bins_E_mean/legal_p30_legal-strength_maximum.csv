@@ -1,0 +1,4 @@
+actor,p0,stratum,outcome,method,bins,aggregation,input,estimate,n_lhs,repeats,estimate_20,rank_30,rank_20,estimable,row_ci95_low,row_ci95_high,row_valid_resamples,mc_ci95_low,mc_ci95_high,mc_valid_resamples
+legal,30,legal_p030,E_mean,PAWN,5,maximum,legal-strength,0.594,500,30,0.594,1,1,True,0.538481067014,0.669538353863,1000,0.588,0.596,1000
+legal,30,legal_p030,E_mean,PAWN,10,maximum,legal-strength,0.662,500,30,0.66,1,1,True,0.613817171717,0.770600452489,1000,0.658,0.666,1000
+legal,30,legal_p030,E_mean,PAWN,20,maximum,legal-strength,0.752,500,30,0.754,1,1,True,0.6794,0.887434210526,1000,0.748,0.758,1000

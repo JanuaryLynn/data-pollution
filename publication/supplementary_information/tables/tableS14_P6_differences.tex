@@ -1,0 +1,99 @@
+% Table S14. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 238mm+14\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}L{20mm}C{13mm}C{20mm}L{35mm}L{24mm}R{42mm}R{42mm}R{42mm}@{}}
+\caption{Outcome differences from separately increasing TPR and TNR}\label{tab:tableS14_P6_differences}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{Coverage (\%)} & \multicolumn{1}{l}{Varied rate (\%)} & \multicolumn{1}{l}{Fixed rate (\%)} & \multicolumn{1}{r}{$\Delta\bar E$ (pp)} & \multicolumn{1}{r}{$\Delta O(50)$ (pp)} & \multicolumn{1}{r}{$\Delta P_R(50)$ (pp)} \\
+\midrule
+\endfirsthead
+\caption[]{Outcome differences from separately increasing TPR and TNR (continued)}\\
+\toprule
+\multicolumn{1}{l}{Regime} & \multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{Coverage (\%)} & \multicolumn{1}{l}{Varied rate (\%)} & \multicolumn{1}{l}{Fixed rate (\%)} & \multicolumn{1}{r}{$\Delta\bar E$ (pp)} & \multicolumn{1}{r}{$\Delta O(50)$ (pp)} & \multicolumn{1}{r}{$\Delta P_R(50)$ (pp)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{8}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{8}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Differences between independent condition means, with marginal 95\% Welch confidence intervals in brackets; 30 independent runs per condition and no multiplicity adjustment. All differences are in percentage points. TPR and TNR are the true-positive and true-negative rates. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. $P_R(50)$ averages defined run-level precision ratios. Each contrast raises one rate while holding the other at the displayed value: legal 100\% minus 90\% at $L=70\%$ and $\tau_L=5$; platform 90\% minus 70\% at $n_p=50\%$ or 75\% with fixed workload. Selection is degree-targeted. The table contains 18 legal and 36 platform contrasts. Intervals crossing zero do not establish equivalence; TNR effects on pollution states are constrained by the model structure. Unrounded results, comparison IDs, condition weights and sample sizes are in \texttt{tableS14\_P6\_differences\_source.csv}.}}\\
+\endlastfoot
+Legal & 10 & 70 & TPR: $100-90$ & TNR $=90$ & \ABMci{10.71}{9.96}{11.45} & \ABMci{5.72}{4.83}{6.61} & \ABMci{-5.06}{-5.68}{-4.44} \\*
+Legal & 10 & 70 & TPR: $100-90$ & TNR $=95$ & \ABMci{10.81}{10.09}{11.53} & \ABMci{3.77}{3.17}{4.36} & \ABMci{-3.01}{-3.44}{-2.57} \\*
+Legal & 10 & 70 & TPR: $100-90$ & TNR $=100$ & \ABMci{10.93}{9.95}{11.90} & \ABMci{0.00}{0.00}{0.00} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[2pt]
+Legal & 10 & 70 & TNR: $100-90$ & TPR $=90$ & \ABMci{0.05}{-0.72}{0.82} & \ABMci{-30.04}{-30.65}{-29.43} & \ABMci{11.16}{10.83}{11.48} \\*
+Legal & 10 & 70 & TNR: $100-90$ & TPR $=95$ & \ABMci{0.17}{-0.68}{1.02} & \ABMci{-33.41}{-34.02}{-32.81} & \ABMci{13.50}{12.99}{14.01} \\*
+Legal & 10 & 70 & TNR: $100-90$ & TPR $=100$ & \ABMci{0.27}{-0.69}{1.23} & \ABMci{-35.76}{-36.43}{-35.09} & \ABMci{16.22}{15.67}{16.76} \\
+\addlinespace[2pt]
+Platform & 10 & 50 & TPR: $90-70$ & TNR $=70$ & \ABMci{8.19}{7.24}{9.15} & \ABMci{0.24}{-2.46}{2.94} & \ABMci{-10.01}{-10.85}{-9.17} \\*
+Platform & 10 & 50 & TPR: $90-70$ & TNR $=80$ & \ABMci{7.47}{6.40}{8.53} & \ABMci{-1.85}{-3.61}{-0.09} & \ABMci{-12.44}{-13.61}{-11.27} \\*
+Platform & 10 & 50 & TPR: $90-70$ & TNR $=90$ & \ABMci{8.85}{7.89}{9.82} & \ABMci{1.57}{0.75}{2.39} & \ABMci{-18.47}{-20.04}{-16.91} \\
+\addlinespace[2pt]
+Platform & 10 & 50 & TNR: $90-70$ & TPR $=70$ & \ABMci{-0.09}{-1.11}{0.92} & \ABMci{-3.45}{-5.02}{-1.88} & \ABMci{22.50}{21.46}{23.54} \\*
+Platform & 10 & 50 & TNR: $90-70$ & TPR $=80$ & \ABMci{-0.75}{-1.81}{0.31} & \ABMci{-4.50}{-6.95}{-2.04} & \ABMci{19.94}{18.53}{21.34} \\*
+Platform & 10 & 50 & TNR: $90-70$ & TPR $=90$ & \ABMci{0.57}{-0.33}{1.47} & \ABMci{-2.12}{-4.50}{0.26} & \ABMci{14.04}{12.59}{15.49} \\
+\addlinespace[2pt]
+Platform & 10 & 75 & TPR: $90-70$ & TNR $=70$ & \ABMci{0.29}{0.23}{0.36} & \ABMci{0.01}{-0.02}{0.03} & \ABMci{-0.72}{-0.99}{-0.44} \\*
+Platform & 10 & 75 & TPR: $90-70$ & TNR $=80$ & \ABMci{0.31}{0.27}{0.35} & \ABMci{0.02}{-0.07}{0.11} & \ABMci{-1.15}{-1.40}{-0.89} \\*
+Platform & 10 & 75 & TPR: $90-70$ & TNR $=90$ & \ABMci{0.33}{0.27}{0.38} & \ABMci{-0.02}{-0.34}{0.29} & \ABMci{-2.31}{-2.88}{-1.74} \\
+\addlinespace[2pt]
+Platform & 10 & 75 & TNR: $90-70$ & TPR $=70$ & \ABMci{-0.02}{-0.10}{0.06} & \ABMci{-4.18}{-4.41}{-3.95} & \ABMci{4.32}{3.71}{4.93} \\*
+Platform & 10 & 75 & TNR: $90-70$ & TPR $=80$ & \ABMci{-0.01}{-0.03}{0.02} & \ABMci{-4.22}{-4.45}{-3.99} & \ABMci{3.11}{2.93}{3.30} \\*
+Platform & 10 & 75 & TNR: $90-70$ & TPR $=90$ & \ABMci{0.01}{-0.01}{0.03} & \ABMci{-4.21}{-4.44}{-3.99} & \ABMci{2.73}{2.58}{2.88} \\
+\midrule
+Legal & 30 & 70 & TPR: $100-90$ & TNR $=90$ & \ABMci{11.38}{10.70}{12.07} & \ABMci{6.04}{5.18}{6.90} & \ABMci{-3.64}{-4.10}{-3.18} \\*
+Legal & 30 & 70 & TPR: $100-90$ & TNR $=95$ & \ABMci{10.40}{9.65}{11.15} & \ABMci{3.49}{2.91}{4.07} & \ABMci{-1.91}{-2.21}{-1.61} \\*
+Legal & 30 & 70 & TPR: $100-90$ & TNR $=100$ & \ABMci{10.83}{10.16}{11.50} & \ABMci{0.00}{0.00}{0.00} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[2pt]
+Legal & 30 & 70 & TNR: $100-90$ & TPR $=90$ & \ABMci{0.32}{-0.30}{0.94} & \ABMci{-26.44}{-27.00}{-25.88} & \ABMci{8.58}{8.32}{8.84} \\*
+Legal & 30 & 70 & TNR: $100-90$ & TPR $=95$ & \ABMci{0.06}{-0.69}{0.81} & \ABMci{-29.42}{-30.12}{-28.71} & \ABMci{10.11}{9.75}{10.47} \\*
+Legal & 30 & 70 & TNR: $100-90$ & TPR $=100$ & \ABMci{-0.23}{-0.96}{0.49} & \ABMci{-32.48}{-33.16}{-31.80} & \ABMci{12.22}{11.83}{12.61} \\
+\addlinespace[2pt]
+Platform & 30 & 50 & TPR: $90-70$ & TNR $=70$ & \ABMci{10.21}{8.60}{11.81} & \ABMci{1.29}{-0.57}{3.15} & \ABMci{-9.49}{-10.47}{-8.52} \\*
+Platform & 30 & 50 & TPR: $90-70$ & TNR $=80$ & \ABMci{8.12}{6.75}{9.49} & \ABMci{-0.42}{-1.43}{0.59} & \ABMci{-9.32}{-10.18}{-8.45} \\*
+Platform & 30 & 50 & TPR: $90-70$ & TNR $=90$ & \ABMci{9.47}{8.08}{10.85} & \ABMci{0.88}{0.21}{1.55} & \ABMci{-11.32}{-12.63}{-10.02} \\
+\addlinespace[2pt]
+Platform & 30 & 50 & TNR: $90-70$ & TPR $=70$ & \ABMci{-0.36}{-1.82}{1.11} & \ABMci{-2.80}{-4.14}{-1.46} & \ABMci{26.55}{25.71}{27.40} \\*
+Platform & 30 & 50 & TNR: $90-70$ & TPR $=80$ & \ABMci{0.23}{-1.54}{2.00} & \ABMci{-2.27}{-3.98}{-0.56} & \ABMci{25.41}{24.11}{26.70} \\*
+Platform & 30 & 50 & TNR: $90-70$ & TPR $=90$ & \ABMci{-1.09}{-2.62}{0.44} & \ABMci{-3.21}{-4.70}{-1.72} & \ABMci{24.72}{23.33}{26.11} \\
+\addlinespace[2pt]
+Platform & 30 & 75 & TPR: $90-70$ & TNR $=70$ & \ABMci{0.68}{0.62}{0.73} & \ABMci{0.02}{0.00}{0.04} & \ABMci{-1.38}{-1.55}{-1.21} \\*
+Platform & 30 & 75 & TPR: $90-70$ & TNR $=80$ & \ABMci{0.64}{0.57}{0.70} & \ABMci{0.06}{-0.04}{0.15} & \ABMci{-1.75}{-2.08}{-1.42} \\*
+Platform & 30 & 75 & TPR: $90-70$ & TNR $=90$ & \ABMci{0.74}{0.67}{0.80} & \ABMci{-0.44}{-0.80}{-0.09} & \ABMci{-3.90}{-4.48}{-3.32} \\
+\addlinespace[2pt]
+Platform & 30 & 75 & TNR: $90-70$ & TPR $=70$ & \ABMci{-0.05}{-0.14}{0.03} & \ABMci{-4.11}{-4.36}{-3.85} & \ABMci{9.43}{8.86}{10.01} \\*
+Platform & 30 & 75 & TNR: $90-70$ & TPR $=80$ & \ABMci{-0.01}{-0.05}{0.03} & \ABMci{-4.39}{-4.61}{-4.18} & \ABMci{7.88}{7.61}{8.15} \\*
+Platform & 30 & 75 & TNR: $90-70$ & TPR $=90$ & \ABMci{0.01}{-0.02}{0.03} & \ABMci{-4.57}{-4.83}{-4.31} & \ABMci{6.92}{6.73}{7.10} \\
+\midrule
+Legal & 50 & 70 & TPR: $100-90$ & TNR $=90$ & \ABMci{10.13}{9.47}{10.79} & \ABMci{5.06}{4.26}{5.85} & \ABMci{-2.41}{-2.77}{-2.06} \\*
+Legal & 50 & 70 & TPR: $100-90$ & TNR $=95$ & \ABMci{10.71}{10.08}{11.33} & \ABMci{3.22}{2.71}{3.73} & \ABMci{-1.41}{-1.60}{-1.22} \\*
+Legal & 50 & 70 & TPR: $100-90$ & TNR $=100$ & \ABMci{10.74}{10.15}{11.33} & \ABMci{0.00}{0.00}{0.00} & \ABMci{0.00}{0.00}{0.00} \\
+\addlinespace[2pt]
+Legal & 50 & 70 & TNR: $100-90$ & TPR $=90$ & \ABMci{-0.21}{-0.80}{0.39} & \ABMci{-24.30}{-24.96}{-23.65} & \ABMci{7.34}{7.10}{7.57} \\*
+Legal & 50 & 70 & TNR: $100-90$ & TPR $=95$ & \ABMci{-0.67}{-1.41}{0.07} & \ABMci{-27.49}{-28.10}{-26.89} & \ABMci{8.79}{8.48}{9.11} \\*
+Legal & 50 & 70 & TNR: $100-90$ & TPR $=100$ & \ABMci{0.40}{-0.25}{1.05} & \ABMci{-29.36}{-29.84}{-28.88} & \ABMci{9.75}{9.47}{10.02} \\
+\addlinespace[2pt]
+Platform & 50 & 50 & TPR: $90-70$ & TNR $=70$ & \ABMci{9.94}{7.96}{11.92} & \ABMci{1.92}{0.44}{3.40} & \ABMci{-7.65}{-8.67}{-6.62} \\*
+Platform & 50 & 50 & TPR: $90-70$ & TNR $=80$ & \ABMci{8.79}{6.54}{11.03} & \ABMci{0.80}{-0.38}{1.98} & \ABMci{-8.47}{-9.70}{-7.25} \\*
+Platform & 50 & 50 & TPR: $90-70$ & TNR $=90$ & \ABMci{9.57}{7.66}{11.48} & \ABMci{0.65}{0.17}{1.14} & \ABMci{-8.26}{-9.45}{-7.07} \\
+\addlinespace[2pt]
+Platform & 50 & 50 & TNR: $90-70$ & TPR $=70$ & \ABMci{-0.47}{-1.80}{0.86} & \ABMci{-1.93}{-2.51}{-1.35} & \ABMci{27.10}{26.51}{27.70} \\*
+Platform & 50 & 50 & TNR: $90-70$ & TPR $=80$ & \ABMci{1.54}{-0.93}{4.00} & \ABMci{-2.40}{-3.79}{-1.01} & \ABMci{26.11}{24.67}{27.56} \\*
+Platform & 50 & 50 & TNR: $90-70$ & TPR $=90$ & \ABMci{-0.83}{-3.22}{1.56} & \ABMci{-3.20}{-4.65}{-1.75} & \ABMci{26.49}{25.06}{27.93} \\
+\addlinespace[2pt]
+Platform & 50 & 75 & TPR: $90-70$ & TNR $=70$ & \ABMci{0.95}{0.87}{1.03} & \ABMci{-0.01}{-0.03}{0.02} & \ABMci{-1.78}{-2.06}{-1.50} \\*
+Platform & 50 & 75 & TPR: $90-70$ & TNR $=80$ & \ABMci{0.93}{0.87}{1.00} & \ABMci{0.01}{-0.09}{0.12} & \ABMci{-2.10}{-2.36}{-1.84} \\*
+Platform & 50 & 75 & TPR: $90-70$ & TNR $=90$ & \ABMci{0.93}{0.87}{0.99} & \ABMci{0.25}{-0.14}{0.63} & \ABMci{-3.61}{-4.08}{-3.14} \\
+\addlinespace[2pt]
+Platform & 50 & 75 & TNR: $90-70$ & TPR $=70$ & \ABMci{0.06}{-0.03}{0.15} & \ABMci{-4.74}{-5.00}{-4.49} & \ABMci{11.66}{11.13}{12.18} \\*
+Platform & 50 & 75 & TNR: $90-70$ & TPR $=80$ & \ABMci{-0.00}{-0.06}{0.05} & \ABMci{-4.42}{-4.69}{-4.15} & \ABMci{10.76}{10.49}{11.03} \\*
+Platform & 50 & 75 & TNR: $90-70$ & TPR $=90$ & \ABMci{0.04}{0.00}{0.08} & \ABMci{-4.49}{-4.79}{-4.19} & \ABMci{9.82}{9.67}{9.98} \\
+\end{longtable}
+\endgroup

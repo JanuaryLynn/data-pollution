@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "check": "independent CSV-to-XML full reconciliation",
+  "parameters": 21,
+  "conditions": 3195,
+  "runs": 95850,
+  "unique_seeds": 95850,
+  "jobs": 64,
+  "expected_observation_rows": 388350,
+  "all_formal_runs_planned": true,
+  "model_source_sha256": "67398c3efcadbff75aeeb2aaddefa8398c47ad015503168f181942fba04ce702",
+  "new_simulations_in_this_check": 0
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "figure": "figS4_accuracy_p10",
+    "issues": [],
+    "data_csv": 6,
+    "cells": 54,
+    "dynamic_labels": true,
+    "size_mm": [
+      161.4,
+      187.3
+    ]
+  },
+  {
+    "figure": "figS4_accuracy_p30",
+    "issues": [],
+    "data_csv": 6,
+    "cells": 54,
+    "dynamic_labels": true,
+    "size_mm": [
+      161.4,
+      187.3
+    ]
+  },
+  {
+    "figure": "figS4_accuracy_p50",
+    "issues": [],
+    "data_csv": 6,
+    "cells": 54,
+    "dynamic_labels": true,
+    "size_mm": [
+      161.4,
+      187.3
+    ]
+  }
+]

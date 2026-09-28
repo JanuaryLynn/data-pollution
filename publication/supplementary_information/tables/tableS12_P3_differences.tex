@@ -1,0 +1,39 @@
+% Table S12. Values and source identifiers retained from the supplied files.
+\begingroup
+\fontsize{9.5}{11.5}\selectfont
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+% Standard booktabs rule spacing.
+\setlength{\ABMtablewidth}{\dimexpr 195mm+8\tabcolsep\relax}
+\setlength{\LTcapwidth}{\ABMtablewidth}
+\begin{longtable}{@{}C{16mm}C{14mm}R{55mm}R{55mm}R{55mm}@{}}
+\caption{Outcome differences: state-responsive minus fixed moderation}\label{tab:tableS12_P3_differences}\\
+\toprule
+\multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{$\kappa$} & \multicolumn{1}{r}{$\Delta\bar E$ (pp)} & \multicolumn{1}{r}{$\Delta O(50)$ (pp)} & \multicolumn{1}{r}{$\Delta P_R(50)$ (pp)} \\
+\midrule
+\endfirsthead
+\caption[]{Outcome differences: state-responsive minus fixed moderation (continued)}\\
+\toprule
+\multicolumn{1}{c}{$p_0$ (\%)} & \multicolumn{1}{c}{$\kappa$} & \multicolumn{1}{r}{$\Delta\bar E$ (pp)} & \multicolumn{1}{r}{$\Delta O(50)$ (pp)} & \multicolumn{1}{r}{$\Delta P_R(50)$ (pp)} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r@{}}{\fontsize{8}{10}\selectfont\itshape Continued on next page}\\
+\endfoot
+\bottomrule
+\addlinespace[4pt]
+\multicolumn{5}{@{}p{\ABMtablewidth}@{}}{\ABMnote{Differences between independent condition means, with marginal 95\% Welch confidence intervals in brackets; 30 independent runs per condition and no multiplicity adjustment. All differences are in percentage points. $\bar E$ averages effectiveness over steps 1--50; $O(50)$ is the percentage of distinct accounts ever wronged by step 50. $P_R(50)$ averages defined run-level precision ratios. Subtraction is responsive moderation at the stated $\kappa$ minus fixed moderation. Fixed per-step coverage is 75\%, also the responsive ceiling; both modes use degree targeting, $\mathrm{TPR}=\mathrm{TNR}=80\%$, and the whole network as the candidate pool. Unrounded results, comparison IDs, condition weights and sample sizes are in \texttt{tableS12\_P3\_differences\_source.csv}.}}\\
+\endlastfoot
+10 & 1 & \ABMci{-24.73}{-24.98}{-24.47} & \ABMci{-59.92}{-60.69}{-59.14} & \ABMci{44.33}{44.05}{44.62} \\
+10 & 2 & \ABMci{-15.63}{-15.92}{-15.35} & \ABMci{-49.82}{-50.22}{-49.43} & \ABMci{29.77}{29.46}{30.07} \\
+10 & 5 & \ABMci{-7.15}{-7.26}{-7.04} & \ABMci{-39.99}{-40.77}{-39.21} & \ABMci{15.45}{15.18}{15.72} \\
+\midrule
+30 & 1 & \ABMci{-29.85}{-30.07}{-29.63} & \ABMci{-51.87}{-52.25}{-51.48} & \ABMci{42.84}{42.53}{43.15} \\
+30 & 2 & \ABMci{-17.67}{-17.88}{-17.47} & \ABMci{-44.97}{-45.35}{-44.59} & \ABMci{27.83}{27.53}{28.12} \\
+30 & 5 & \ABMci{-7.31}{-7.40}{-7.23} & \ABMci{-34.02}{-34.82}{-33.22} & \ABMci{15.20}{14.86}{15.53} \\
+\midrule
+50 & 1 & \ABMci{-32.32}{-32.58}{-32.07} & \ABMci{-49.49}{-49.90}{-49.08} & \ABMci{41.07}{40.78}{41.36} \\
+50 & 2 & \ABMci{-19.00}{-19.16}{-18.84} & \ABMci{-43.89}{-44.38}{-43.40} & \ABMci{26.97}{26.73}{27.21} \\
+50 & 5 & \ABMci{-7.13}{-7.21}{-7.05} & \ABMci{-32.87}{-33.73}{-32.02} & \ABMci{15.21}{14.91}{15.51} \\
+\end{longtable}
+\endgroup

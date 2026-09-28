@@ -1,0 +1,24 @@
+{
+  "figS2d_bins_E_mean": {
+    "csv_references_identical": true,
+    "series": 45,
+    "plotted_values": 135,
+    "pdf_pages": 1,
+    "dimensions_mm": [
+      165.75,
+      156.33
+    ],
+    "visual_review": "passed; both panels and all symbol / line-pattern keys checked"
+  },
+  "figS2d_bins_O_final": {
+    "csv_references_identical": true,
+    "series": 45,
+    "plotted_values": 135,
+    "pdf_pages": 1,
+    "dimensions_mm": [
+      165.75,
+      156.33
+    ],
+    "visual_review": "passed; both panels and all symbol / line-pattern keys checked"
+  }
+}

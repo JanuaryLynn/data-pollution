@@ -1,0 +1,178 @@
+{
+  "pdf_pages": 19,
+  "latex_warnings": [],
+  "visual_review": "All 19 pages inspected. No clipped or overlapping text. S14 continued header verified.",
+  "page_text_bounds": [
+    {
+      "page": 1,
+      "x_min": 42.16,
+      "y_min": 40.88,
+      "x_max": 799.75,
+      "y_max": 336.68,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 2,
+      "x_min": 96.46,
+      "y_min": 42.12,
+      "x_max": 745.06,
+      "y_max": 521.32,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 3,
+      "x_min": 95.04,
+      "y_min": 43.46,
+      "x_max": 746.66,
+      "y_max": 289.52,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 4,
+      "x_min": 106.61,
+      "y_min": 43.46,
+      "x_max": 734.28,
+      "y_max": 300.47,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 5,
+      "x_min": 139.86,
+      "y_min": 43.46,
+      "x_max": 701.67,
+      "y_max": 466.89,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 6,
+      "x_min": 139.86,
+      "y_min": 43.46,
+      "x_max": 701.66,
+      "y_max": 466.89,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 7,
+      "x_min": 85.12,
+      "y_min": 43.46,
+      "x_max": 758.09,
+      "y_max": 487.78,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 8,
+      "x_min": 85.12,
+      "y_min": 43.46,
+      "x_max": 756.73,
+      "y_max": 487.07,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 9,
+      "x_min": 85.12,
+      "y_min": 43.46,
+      "x_max": 756.73,
+      "y_max": 487.07,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 10,
+      "x_min": 102.48,
+      "y_min": 43.46,
+      "x_max": 739.08,
+      "y_max": 306.45,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 11,
+      "x_min": 83.17,
+      "y_min": 43.46,
+      "x_max": 760.05,
+      "y_max": 408.41,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 12,
+      "x_min": 71.3,
+      "y_min": 43.46,
+      "x_max": 770.44,
+      "y_max": 337.6,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 13,
+      "x_min": 128.26,
+      "y_min": 43.46,
+      "x_max": 714.82,
+      "y_max": 263.35,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 14,
+      "x_min": 114.35,
+      "y_min": 43.46,
+      "x_max": 727.18,
+      "y_max": 465.89,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 15,
+      "x_min": 55.35,
+      "y_min": 43.46,
+      "x_max": 786.21,
+      "y_max": 527.38,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 16,
+      "x_min": 55.35,
+      "y_min": 43.46,
+      "x_max": 787.44,
+      "y_max": 418.79,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 17,
+      "x_min": 60.76,
+      "y_min": 43.46,
+      "x_max": 780.77,
+      "y_max": 386.67,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 18,
+      "x_min": 59.34,
+      "y_min": 43.46,
+      "x_max": 782.18,
+      "y_max": 263.35,
+      "width": 841.89,
+      "height": 595.28
+    },
+    {
+      "page": 19,
+      "x_min": 109.56,
+      "y_min": 43.46,
+      "x_max": 731.95,
+      "y_max": 274.31,
+      "width": 841.89,
+      "height": 595.28
+    }
+  ]
+}

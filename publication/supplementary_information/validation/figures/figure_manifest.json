@@ -1,0 +1,79 @@
+[
+  {
+    "number": "S1",
+    "source": "figS1_workload.tex",
+    "pdf": "figures/figS1_workload.pdf",
+    "label": "fig:supp-figS1_workload",
+    "caption": "Platform workload specifications (P3). Fixed auditing reviews 75\\% of accounts per step; responsive auditing uses $\\min\\{N,\\operatorname{round}(0.75N),\\operatorname{round}(\\kappa I_t)\\}$, where $I_t$ is the number of polluted accounts before review and $\\kappa=1,2,5$. Both modes use TPR$=$TNR$=80\\%$. Points and whiskers show means and 95\\% Student-$t$ CIs. Precision is defined in all 30 runs per condition; review counts are in thousands."
+  },
+  {
+    "number": "S2",
+    "source": "figS4_accuracy_p10.tex",
+    "pdf": "figures/figS4_accuracy_p10.pdf",
+    "label": "fig:supp-figS4_accuracy_p10",
+    "caption": "Independent TPR and TNR variation (P6), $p_0=10\\%$. Rows identify governance and coverage settings; platform auditing is fixed. Cells show 30-run means, rounded to one decimal, on a common 0--100\\% scale. Full means and 95\\% Student-$t$ CIs are retained in the plot CSVs. False-positive flags accumulate wrongful exposure without deleting accounts or links or feeding back into diffusion."
+  },
+  {
+    "number": "S3",
+    "source": "figS4_accuracy_p30.tex",
+    "pdf": "figures/figS4_accuracy_p30.pdf",
+    "label": "fig:supp-figS4_accuracy_p30",
+    "caption": "Independent TPR and TNR variation at $p_0=30\\%$. Design, cell summaries and colour scale follow Fig.~\\ref{fig:supp-figS4_accuracy_p10}."
+  },
+  {
+    "number": "S4",
+    "source": "figS4_accuracy_p50.tex",
+    "pdf": "figures/figS4_accuracy_p50.pdf",
+    "label": "fig:supp-figS4_accuracy_p50",
+    "caption": "Independent TPR and TNR variation at $p_0=50\\%$. Design, cell summaries and colour scale follow Fig.~\\ref{fig:supp-figS4_accuracy_p10}."
+  },
+  {
+    "number": "S5",
+    "source": "figS2b_PRCC.tex",
+    "pdf": "figures/figS2b_PRCC.pdf",
+    "label": "fig:supp-figS2b_PRCC",
+    "caption": "Partial rank correlations (PRCC). Points and whiskers show estimates and marginal 95\\% row-bootstrap stability intervals; shaded columns report separate 95\\% within-point Monte Carlo intervals. Each bootstrap uses 1,000 resamples. Row resampling does not preserve LHS strata. PRCC describes conditional rank association; directional interpretation relies on monotonicity and does not replace the primary PAWN analysis."
+  },
+  {
+    "number": "S6",
+    "source": "figS2d_bins_E_mean.tex",
+    "pdf": "figures/figS2d_bins_E_mean.pdf",
+    "label": "fig:supp-figS2d_bins_E_mean",
+    "caption": "PAWN diagnostics for mean effectiveness $\\bar E$. Point estimates compare 5, 10 and 20 fixed input bins with median, mean and maximum aggregation; the primary estimator remains the 10-bin median. Full bootstrap intervals, 20- versus 30-run estimates and rankings are provided in \\texttt{sensitivity\\_diagnostics.csv}."
+  },
+  {
+    "number": "S7",
+    "source": "figS2d_bins_O_final.tex",
+    "pdf": "figures/figS2d_bins_O_final.pdf",
+    "label": "fig:supp-figS2d_bins_O_final",
+    "caption": "PAWN diagnostics for wrongful exposure $O(50)$. Settings and graphical encodings follow Fig.~\\ref{fig:supp-figS2d_bins_E_mean}."
+  },
+  {
+    "number": "S8",
+    "source": "sensitivity_response_legal_E_mean.tex",
+    "pdf": "figures/sensitivity_response_legal_E_mean.pdf",
+    "label": "fig:supp-sensitivity_response_legal_E_mean",
+    "caption": "Input--response patterns for legal governance and mean effectiveness $\\bar E$. Each panel shows 500 LHS responses, each averaged over 30 runs; other inputs vary simultaneously. Lines connect means within 10 fixed input bins. These descriptive summaries are neither isolated single-input causal curves nor confidence bands; they help assess saturation, discreteness and monotonicity."
+  },
+  {
+    "number": "S9",
+    "source": "sensitivity_response_legal_O_final.tex",
+    "pdf": "figures/sensitivity_response_legal_O_final.pdf",
+    "label": "fig:supp-sensitivity_response_legal_O_final",
+    "caption": "Input--response patterns for legal governance and wrongful exposure $O(50)$. Sampling, bin summaries and interpretation follow Fig.~\\ref{fig:supp-sensitivity_response_legal_E_mean}."
+  },
+  {
+    "number": "S10",
+    "source": "sensitivity_response_platform_E_mean.tex",
+    "pdf": "figures/sensitivity_response_platform_E_mean.pdf",
+    "label": "fig:supp-sensitivity_response_platform_E_mean",
+    "caption": "Input--response patterns for platform governance and mean effectiveness $\\bar E$. Sampling, bin summaries and interpretation follow Fig.~\\ref{fig:supp-sensitivity_response_legal_E_mean}."
+  },
+  {
+    "number": "S11",
+    "source": "sensitivity_response_platform_O_final.tex",
+    "pdf": "figures/sensitivity_response_platform_O_final.pdf",
+    "label": "fig:supp-sensitivity_response_platform_O_final",
+    "caption": "Input--response patterns for platform governance and wrongful exposure $O(50)$. Sampling, bin summaries and interpretation follow Fig.~\\ref{fig:supp-sensitivity_response_legal_E_mean}."
+  }
+]
