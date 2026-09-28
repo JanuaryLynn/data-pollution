@@ -23,9 +23,9 @@ Paths below are relative to the repository root.
 | Path | Contents |
 |---|---|
 | `experiment/implementation/` | NetLogo model, parameter configurations, random-seed manifest, BehaviorSpace jobs, execution scripts, and experiment protocol. |
-| `experiment/source_update/` | Archived simulation outputs and execution records used in the analysis. |
+| `experiment/source/` | Archived simulation outputs and execution records used in the analysis. |
 | `experiment/processed/` | Extracted run-level metrics, condition summaries, statistical contrasts, and sensitivity-analysis results. |
-| `experiment/scripts_update/` | Python scripts for auditing outputs, extracting metrics, computing statistics, and generating analysis figures and tables. |
+| `experiment/scripts/` | Python scripts for auditing outputs, extracting metrics, computing statistics, and generating analysis figures and tables. |
 | `experiment/audit/` | Data-integrity checks, provenance records, and audit results. |
 | `experiment/validation/` | Analysis validation records. Model validation files are also retained within `implementation/`. |
 | `experiment/requirements-analysis.txt` | Python dependency versions for the analysis environment. |
@@ -35,31 +35,6 @@ Paths below are relative to the repository root.
 | `publication/supplementary_information/` | The combined Supplementary Information project and its supporting figure and table materials. |
 
 The paths and explicit commands in this README describe the Version 3 layout. Earlier documentation and archived execution logs may refer to the original package directory names.
-
-## Experimental design
-
-The current dataset contains **3,195 unique parameter configurations**, each evaluated using **30 independent simulation runs**, for a total of **95,850 runs**.
-
-| Component | Unique configurations | Runs |
-|---|---:|---:|
-| Grid experiments and robustness checks | 195 | 5,850 |
-| Global sensitivity design: legal governance | 1,500 | 45,000 |
-| Global sensitivity design: platform governance | 1,500 | 45,000 |
-| **Total** | **3,195** | **95,850** |
-
-The experiments cover:
-
-- Benchmark outcomes under no governance, legal intervention, and platform moderation.
-- Legal coverage and response-interval sweeps, and platform coverage and accuracy sweeps.
-- Random versus degree-targeted selection, including low-coverage conditions.
-- Fixed versus state-responsive platform auditing.
-- Separate variation of true-positive and true-negative rates (TPR and TNR).
-- Alternative network topologies (BA, ER, and WS) and network sizes.
-- Global sensitivity analysis using PAWN indices and supplementary partial rank correlation coefficients (PRCC).
-
-Sensitivity analysis uses 500 Latin hypercube sampling (LHS) points for each governance regime and initial pollution level, with initial pollution set to 10%, 30%, or 50%. Each point's response is averaged over 30 runs.
-
-Identical configurations share the same archived set of 30 runs across tables, figures, and diagnostic analyses. Reusing these results does not create additional independent runs. Matching replicate numbers across different configurations do not indicate paired simulations or shared network realizations.
 
 ## Key data and design files
 
@@ -78,20 +53,6 @@ Identical configurations share the same archived set of 30 runs across tables, f
 
 Grid experiments retain observations from steps 0–50. The sensitivity experiments retain terminal records that include outcomes accumulated within each run; complete step-by-step trajectories are not archived for those runs.
 
-## Outcome definitions and statistical conventions
-
-- **Mean effectiveness** (`E_mean`, or $\bar E$) averages effectiveness over steps 1–50 within each run; step 0 is excluded.
-- **Final effectiveness** (`E_final`, or $E(50)$) is effectiveness at step 50.
-- **Wrongful exposure** (`O_final`, or $O(50)$) is the percentage of distinct accounts ever wronged by step 50. Each account is counted at most once in this measure.
-- **Removal precision** (`PR_final`, or $P_R(50)$) is calculated within each run and then averaged over runs with a defined ratio. Undefined precision is retained as missing, rather than replaced with zero.
-- **Review totals** count review events, including repeated reviews of the same account. Clean-account review totals are therefore distinct from the number of unique accounts exposed to wrongful intervention.
-
-Effectiveness, wrongful exposure, and precision are reported as percentages; differences in these outcomes are expressed in percentage points. Sensitivity indices are dimensionless, and workload differences count review events.
-
-Condition means use Student-t confidence intervals. Prespecified condition contrasts use Welch–Satterthwaite intervals. Reported 95% intervals are marginal, without multiplicity adjustment, and are not clipped to the outcome bounds. An interval containing zero does not establish equivalence.
-
-The primary PAWN specification uses the median Kolmogorov–Smirnov distance across 10 fixed input bins. Row-bootstrap stability intervals and within-point Monte Carlo intervals are calculated separately, with 1,000 resamples for each procedure. They are not combined into a single interval. PRCC provides supplementary information about conditional rank association.
-
 ## Reproducing the analysis
 
 The archived results can be inspected without rerunning NetLogo. To execute the analysis scripts, use Python 3.12 and install the dependencies from the repository root:
@@ -107,12 +68,12 @@ The commands below use explicit paths for the current directory layout and write
 The raw-output directory passed to `--outputs` must directly contain `execution_binding.json`, `run_status.csv`, and `attempts/`. The following shell commands accommodate an archive stored either directly in `source_update/` or in its `outputs/` subdirectory:
 
 ```bash
-ABM_RAW_OUTPUTS="experiment/source_update"
+ABM_RAW_OUTPUTS="experiment/source"
 if [ -d "$ABM_RAW_OUTPUTS/outputs" ]; then
     ABM_RAW_OUTPUTS="$ABM_RAW_OUTPUTS/outputs"
 fi
 
-python3 experiment/scripts_update/audit_extract.py \
+python3 experiment/scripts/audit_extract.py \
     --project experiment/implementation \
     --outputs "$ABM_RAW_OUTPUTS" \
     --out experiment/reproduced
@@ -123,12 +84,12 @@ If the archive has an additional enclosing directory, set `ABM_RAW_OUTPUTS` to t
 ### 2. Recompute summaries, contrasts, and sensitivity results
 
 ```bash
-python3 experiment/scripts_update/summarize_contrasts.py \
+python3 experiment/scripts/summarize_contrasts.py \
     --project experiment/implementation \
     --data experiment/reproduced/processed \
     --out experiment/reproduced
 
-python3 experiment/scripts_update/analyze_sensitivity.py \
+python3 experiment/scripts/analyze_sensitivity.py \
     --project experiment/implementation \
     --data experiment/reproduced/processed/run_metrics.csv \
     --out experiment/reproduced
@@ -139,16 +100,16 @@ Sensitivity analysis repeats the archived bootstrap procedures and can take subs
 ### 3. Generate analysis figures and tables
 
 ```bash
-python3 experiment/scripts_update/make_figures.py \
+python3 experiment/scripts/make_figures.py \
     --project experiment/implementation \
     --data experiment/reproduced/processed \
     --out experiment/reproduced/figures
 
-python3 experiment/scripts_update/make_sensitivity_figures.py \
+python3 experiment/scripts/make_sensitivity_figures.py \
     --data experiment/reproduced/processed \
     --out experiment/reproduced
 
-python3 experiment/scripts_update/make_tables.py \
+python3 experiment/scripts/make_tables.py \
     --project experiment/implementation \
     --data experiment/reproduced/processed \
     --out experiment/reproduced/tables
@@ -156,7 +117,7 @@ python3 experiment/scripts_update/make_tables.py \
 
 To regenerate these figures and tables from the supplied summaries, replace `experiment/reproduced/processed` with `experiment/processed` in the three commands above. Input–response figures are generated separately by `analyze_sensitivity.py`.
 
-The retained `run_pipeline.py` and `package_results.py` convenience wrappers contain paths from the earlier package layout. Use the explicit commands above with the current `scripts_update/` and `source_update/` directory names. The optional combined figure-atlas generator has been removed.
+The retained `run_pipeline.py` and `package_results.py` convenience wrappers contain paths from the earlier package layout. Use the explicit commands above with the current `scripts/` and `source/` directory names. The optional combined figure-atlas generator has been removed.
 
 ## Running the NetLogo model
 
